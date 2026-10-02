@@ -11,6 +11,8 @@ import WakeCore
 struct StudySessionView: View {
     let pack: Pack
     var flipMode = false
+    /// Skip the cards and go straight to the quiz (for packs already learned).
+    var startWithQuiz = false
 
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
@@ -61,6 +63,9 @@ struct StudySessionView: View {
             }
             .navigationTitle(pack.title)
             .navigationBarTitleDisplayMode(.inline)
+            .onAppear {
+                if startWithQuiz && stage == .cards { startPractice() }
+            }
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Close") { dismiss() }
@@ -230,8 +235,10 @@ struct StudySessionView: View {
             Image(systemName: "checkmark.seal.fill")
                 .font(.system(size: 80))
                 .foregroundStyle(.green)
-            Text("\(pack.title) learned!").font(.largeTitle.bold())
-            Text("These \(words.count) words are now in your review schedule and your alarm. They'll come back tomorrow.")
+            let again = flipMode || startWithQuiz
+            Text(again ? "Nice work!" : "\(pack.title) learned!").font(.largeTitle.bold())
+            Text(again ? "These words stay in your review schedule and your alarm."
+                       : "These \(words.count) words are now in your review schedule and your alarm. They'll come back tomorrow.")
                 .multilineTextAlignment(.center)
                 .foregroundStyle(.secondary)
             if !missed.isEmpty {

@@ -93,6 +93,7 @@ struct PackDetailView: View {
     @Query private var progress: [PackProgress]
     @Query private var reviews: [ReviewState]
     @State private var studying = false
+    @State private var quizzing = false
 
     private var learned: Bool {
         progress.contains { $0.packID == pack.id && $0.language == library.language && $0.learnedAt != nil }
@@ -113,14 +114,27 @@ struct PackDetailView: View {
     var body: some View {
         List {
             Section {
+                if learned {
+                    // Already learned: quiz straight away, no need to click through the cards.
+                    Button {
+                        quizzing = true
+                    } label: {
+                        Label("Quiz me", systemImage: "checklist")
+                            .font(.title3.bold())
+                            .frame(maxWidth: .infinity, minHeight: 44)
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .listRowBackground(Color.clear)
+                    .listRowInsets(EdgeInsets())
+                }
                 Button {
                     studying = true
                 } label: {
-                    Label(learned ? "Study again" : "Start learning", systemImage: "play.fill")
+                    Label(learned ? "Flashcards" : "Start learning", systemImage: learned ? "rectangle.on.rectangle" : "play.fill")
                         .font(.title3.bold())
                         .frame(maxWidth: .infinity, minHeight: 44)
                 }
-                .buttonStyle(.borderedProminent)
+                .buttonStyle(learned ? AnyPrimitiveButtonStyle(.bordered) : AnyPrimitiveButtonStyle(.borderedProminent))
                 .disabled(blockedReason != nil)
                 .listRowBackground(Color.clear)
                 .listRowInsets(EdgeInsets())
@@ -150,6 +164,9 @@ struct PackDetailView: View {
         .fullScreenCover(isPresented: $studying) {
             StudySessionView(pack: pack, flipMode: learned)
         }
+        .fullScreenCover(isPresented: $quizzing) {
+            StudySessionView(pack: pack, startWithQuiz: true)
+        }
     }
 }
 
@@ -175,5 +192,18 @@ private struct WordRow: View {
             }
         }
         .padding(.vertical, 2)
+    }
+}
+
+/// Lets one button switch between bordered and prominent styles.
+struct AnyPrimitiveButtonStyle: PrimitiveButtonStyle {
+    private let make: (Configuration) -> AnyView
+
+    init<S: PrimitiveButtonStyle>(_ style: S) {
+        make = { AnyView(style.makeBody(configuration: $0)) }
+    }
+
+    func makeBody(configuration: Configuration) -> some View {
+        make(configuration)
     }
 }
