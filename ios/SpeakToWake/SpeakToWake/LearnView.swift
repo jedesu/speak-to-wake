@@ -6,10 +6,32 @@ import WakeCore
 struct LearnView: View {
     private let library = AppContent.library
     @Query private var progress: [PackProgress]
+    @Query private var reviews: [ReviewState]
+    @State private var reviewing = false
 
     var body: some View {
         NavigationStack {
             List {
+                if !reviews.isEmpty {
+                    Section {
+                        let due = Learning.dueCount(reviews)
+                        Button {
+                            reviewing = true
+                        } label: {
+                            HStack {
+                                Image(systemName: "arrow.triangle.2.circlepath")
+                                    .font(.title2)
+                                VStack(alignment: .leading) {
+                                    Text("Review").font(.headline)
+                                    Text(due == 0 ? "Nothing due today. You can review early."
+                                                  : "\(due) \(due == 1 ? "word" : "words") due today")
+                                        .font(.subheadline)
+                                        .foregroundStyle(due > Learning.overdueLimit ? .red : .secondary)
+                                }
+                            }
+                        }
+                    }
+                }
                 ForEach(library.themes, id: \.theme) { group in
                     Section(group.theme.capitalized) {
                         ForEach(group.packs) { pack in
@@ -25,6 +47,9 @@ struct LearnView: View {
                 PackDetailView(pack: pack)
             }
             .settingsButton()
+            .fullScreenCover(isPresented: $reviewing) {
+                ReviewSessionView()
+            }
         }
     }
 
@@ -60,13 +85,54 @@ private struct PackRow: View {
     }
 }
 
-/// The words in one pack. Studying them comes in the Learn step (piece 3).
+/// The words in one pack, and the button to study them.
 struct PackDetailView: View {
     let pack: Pack
     private let library = AppContent.library
 
+    @Query private var progress: [PackProgress]
+    @Query private var reviews: [ReviewState]
+    @State private var studying = false
+
+    private var learned: Bool {
+        progress.contains { $0.packID == pack.id && $0.language == library.language && $0.learnedAt != nil }
+    }
+
+    /// Why studying is blocked, if it is.
+    private var blockedReason: String? {
+        if pack.tier == .premium {
+            return "This is a Premium pack. Unlocking packs comes later."
+        }
+        let due = Learning.dueCount(reviews)
+        if !learned && due > Learning.overdueLimit {
+            return "You have \(due) words due. Do a Review first, so old words don't pile up."
+        }
+        return nil
+    }
+
     var body: some View {
         List {
+            Section {
+                Button {
+                    studying = true
+                } label: {
+                    Label(learned ? "Study again" : "Start learning", systemImage: "play.fill")
+                        .font(.title3.bold())
+                        .frame(maxWidth: .infinity, minHeight: 44)
+                }
+                .buttonStyle(.borderedProminent)
+                .disabled(blockedReason != nil)
+                .listRowBackground(Color.clear)
+                .listRowInsets(EdgeInsets())
+                if let blockedReason {
+                    Label(blockedReason, systemImage: "lock.fill")
+                        .foregroundStyle(.secondary)
+                }
+                if learned {
+                    Label("Learned. These words are in your reviews and alarm.", systemImage: "checkmark.circle.fill")
+                        .foregroundStyle(.green)
+                }
+            }
             Section {
                 ForEach(library.words(in: pack)) { word in
                     WordRow(word: word)
@@ -81,6 +147,9 @@ struct PackDetailView: View {
             }
         }
         .navigationTitle(pack.title)
+        .fullScreenCover(isPresented: $studying) {
+            StudySessionView(pack: pack, flipMode: learned)
+        }
     }
 }
 

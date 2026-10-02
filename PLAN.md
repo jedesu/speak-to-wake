@@ -66,6 +66,12 @@ This also fixes the "I never learned this word" problem and gives us something t
 ## How vocabulary learning works (research-based)
 - **Learn when alert, review when groggy.** Sleep inertia (a drop in memory and attention after waking) typically lasts 15-30 minutes. So the alarm is for *retrieving* words you already learned, never for teaching new ones. New words are taught in the Learn tab at a time you choose.
 - **Small batches, then immediate recall.** A study session introduces about 5 words, then tests you on them right away. Actively recalling beats rereading.
+- **Evidence for quizzing over flashcards alone (the "testing effect"):**
+  - Karpicke & Roediger (2008, *Science*), 40 Swahili–English word pairs. After one week, students who kept testing themselves recalled about 80%; students who kept re-studying recalled about a third.
+  - Meta-analyses: Rowland (2014), 159 comparisons, g = 0.50. Adesope et al. (2017), 217 studies, g = 0.61. Feedback roughly doubles the benefit (0.73 vs 0.39).
+  - Multiple-choice quizzes also work when the wrong options are plausible (Little, Bjork et al. 2012). Effortful recall, such as saying the word aloud, helps more.
+  - **In the app:** a first study session shows plain flashcards (you can't recall an unseen word), then offers practice as the recommended next step. "Study again" uses flip cards: you try to recall the meaning before revealing it. Every quiz shows the right answer as feedback.
+  - **Caveat:** the studies are mostly college students in labs, and none involve just-woken users. Phase 5 can compare flashcard-only words with practiced words.
 - **Spacing.** Words come back at growing gaps: a simple Leitner box system, with Box 1 the next day, Box 2 two days later, Box 3 four days later, roughly doubling. A miss drops the word back a box. A fancier algorithm (SM-2 or FSRS) is a later upgrade.
 - **Many exposures, varied ways.** Words usually need 10-30 encounters. The mix of challenge types (say it, hear and tap, picture match, and so on) gives varied exposure.
 - **Mandarin specifics:** teach each word with its pinyin and tone from the start, plus audio. Show an example sentence with each word. Order words within a pack by frequency, such as the HSK 1 list (about 150 words).

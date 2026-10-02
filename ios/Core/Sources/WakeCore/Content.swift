@@ -58,6 +58,7 @@ public struct ContentLibrary: Sendable {
     public let words: [Word]
 
     private let wordsByPack: [String: [Word]]
+    private let wordsByID: [String: Word]
 
     public init(packsJSON: Data, wordsJSON: Data) throws {
         struct PacksFile: Decodable {
@@ -81,6 +82,12 @@ public struct ContentLibrary: Sendable {
         }
         let concepts = self.concepts
         wordsByPack = Dictionary(grouping: words) { concepts[$0.conceptId]?.packId ?? "" }
+        wordsByID = Dictionary(uniqueKeysWithValues: words.map { ($0.id, $0) })
+    }
+
+    /// Looks up a word by its saved id, like "zh-CN:apple".
+    public func word(id: String) -> Word? {
+        wordsByID[id]
     }
 
     /// Loads `packs.json` and `words.<language>.json` from a bundle (the app's, by default).
