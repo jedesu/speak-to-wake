@@ -15,3 +15,8 @@ xcuserdata/
 
 # Misc
 *.log
+
+# Python
+.venv/
+__pycache__/
+.pytest_cache/

@@ -84,11 +84,32 @@ Bottom tab bar with three tabs. (You suggested two, and Learn and Alarm are the 
 - **Pricing guess:** about $4-6/month or $40-60/year. This sits just under Alarmy Premium ($59.99/year) and Memrise ($61.99/year).
 - **Keep the alarm free.** The alarm is the hook, and the content is what you charge for.
 
+### Packs are shared across languages
+A pack such as "Fruit 1" is a list of **concepts** (apple, banana, ...). Each language supplies its own words for those same concepts (苹果 / りんご / 사과). So:
+- Unlocking "Fruit 2" unlocks it for every language you have access to. Pack access and language access are two separate gates.
+- Adding a new language means translating the existing concept lists, not designing new packs. Emoji for picture match are shared as well.
+- Translations aren't always one-to-one (measure words, politeness levels), so each language entry can carry its own notes.
+
+### Free vs Premium tiers
+| | Free | Premium |
+|---|---|---|
+| Alarm and all challenge types | Yes | Yes |
+| Languages | **One** (chosen at setup) | **All** |
+| Packs | Starter packs (level 1 of each theme) | **All** packs |
+| Earning more | Yes, see below | Not needed |
+| Extras (custom-word import, chained challenges) | No | Yes |
+
+**Earning packs on Free:** consistent use unlocks the next pack. For example, a 7-day wake-up streak or mastering a pack earns one pack token to spend on any locked pack, in your one language. Earned packs stay unlocked. This rewards the behavior we want (waking up and learning), gives free users a reason to stay, and still leaves Premium as the shortcut to everything.
+- **Risk to test:** if earning is too easy, nobody pays. If it's too hard, free users leave. The exact thresholds are a pricing experiment for your class survey.
+
 **For v1:** your brief excludes payments, so we build packs with a `isPremium` flag and show locked-pack screens. We don't wire up real payments (StoreKit) unless there's time. For the class, you can test willingness to pay with a survey or a "fake door" paywall instead.
 
 ## Data model (SwiftData)
-- `Pack`: id, language, theme (e.g. fruit), level (1, 2, ...), title, isPremium, learnedAt (nil until you finish studying it)
-- `Word`: id, packID (nil for user-added words), language, text, romanization, meaning, source (starter or user), difficulty, learned (true once studied)
+- `Pack`: id, theme (e.g. fruit), level (1, 2, ...), title, tier (free or premium). Not tied to a language.
+- `Concept`: id, packID, englishGloss, emoji. One row per idea, shared by all languages.
+- `Word`: id, conceptID (nil for user-added words), language, text, romanization, meaning, notes, source (starter or user), difficulty, learned (true once studied)
+- `Entitlement`: isPremium, chosenLanguage (Free tier), unlockedPackIDs, packTokens (earned)
+- `PackProgress`: packID, language, learnedAt (nil until you finish studying that pack in that language)
 - `ReviewState`: wordID, box (spaced repetition level 0-5), dueDate, timesCorrect, timesMissed
 - `Word` also gets optional `emoji` (for picture match) and `exampleSentence` (for read aloud).
 - `Attempt`: id, wordID, challengeType, date, transcript (speech types only), chosenOption (tap types only), matchScore, passed, retryNumber, context (wake or midday), userSaidCorrect? (self-labeled for Phase 5)
