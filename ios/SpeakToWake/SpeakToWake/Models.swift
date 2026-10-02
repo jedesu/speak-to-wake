@@ -42,6 +42,28 @@ final class ReviewState {
     }
 }
 
+extension ReviewState {
+    /// The saved record as a card the SRS rules can work with.
+    var card: Card {
+        Card(itemID: wordID, box: box, due: Day(due), timesCorrect: timesCorrect,
+             timesMissed: timesMissed, lastReviewed: lastReviewed.map { Day($0) })
+    }
+
+    convenience init(_ card: Card) {
+        self.init(wordID: card.itemID, box: card.box, due: card.due.startDate())
+        update(from: card)
+    }
+
+    /// Saves the result of `SRS.learn` or `SRS.review` back into this record.
+    func update(from card: Card) {
+        box = card.box
+        due = card.due.startDate()
+        timesCorrect = card.timesCorrect
+        timesMissed = card.timesMissed
+        lastReviewed = card.lastReviewed?.startDate()
+    }
+}
+
 /// One answer to one challenge. Exported as CSV for the Phase 5 test report.
 @Model
 final class Attempt {
