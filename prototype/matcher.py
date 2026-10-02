@@ -15,7 +15,7 @@ from dataclasses import dataclass, field
 from pypinyin import Style, pinyin
 
 # --- Tunable settings -------------------------------------------------------
-TONE_COST = 0.25         # same sounds, different tone
+TONE_COST = 0.35         # same sounds, different tone (a 1-syllable tone slip fails)
 CONFUSABLE_COST = 0.5    # initial or final is a commonly confused pair
 PASS_SCORE = 0.85        # at or above: pass
 NEAR_SCORE = 0.70        # at or above (but below pass): "near", app decides

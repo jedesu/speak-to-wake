@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A10000000000000000000012 /* PinyinMatcher in Frameworks */ = {isa = PBXBuildFile; productRef = A10000000000000000000011 /* PinyinMatcher */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		A10000000000000000000003 /* SpeakToWake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeakToWake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A10000000000000000000012 /* PinyinMatcher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +70,7 @@
 			);
 			name = SpeakToWake;
 			packageProductDependencies = (
+				A10000000000000000000011 /* PinyinMatcher */,
 			);
 			productName = SpeakToWake;
 			productReference = A10000000000000000000003 /* SpeakToWake.app */;
@@ -94,6 +100,9 @@
 			);
 			mainGroup = A10000000000000000000001;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				A10000000000000000000010 /* XCLocalSwiftPackageReference "../PinyinMatcher" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A10000000000000000000002 /* Products */;
 			projectDirPath = "";
@@ -237,6 +246,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		A10000000000000000000010 /* XCLocalSwiftPackageReference "../PinyinMatcher" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../PinyinMatcher;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A10000000000000000000011 /* PinyinMatcher */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PinyinMatcher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A10000000000000000000000 /* Project object */;
 }

@@ -19,7 +19,9 @@ final class LiveTranscriber {
     private var inputBuilder: AsyncStream<AnalyzerInput>.Continuation?
     private var resultsTask: Task<Void, Never>?
 
-    func start(locale: Locale) async {
+    /// `hints` are words the recognizer should expect. Without them it guesses the
+    /// most common word that fits the sound (shuì can come out as 对 duì).
+    func start(locale: Locale, hints: [String] = []) async {
         guard !isListening else { return }
         errorMessage = nil
         finalText = ""
@@ -42,6 +44,11 @@ final class LiveTranscriber {
                 attributeOptions: []
             )
             let analyzer = SpeechAnalyzer(modules: [transcriber])
+            if !hints.isEmpty {
+                let context = AnalysisContext()
+                context.contextualStrings[.general] = hints
+                try await analyzer.setContext(context)
+            }
             let format = await SpeechAnalyzer.bestAvailableAudioFormat(compatibleWith: [transcriber])
             let (inputSequence, inputBuilder) = AsyncStream<AnalyzerInput>.makeStream()
 
