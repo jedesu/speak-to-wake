@@ -1,0 +1,748 @@
+{
+ "language": "zh-CN",
+ "words": [
+  {
+   "conceptId": "apple",
+   "text": "苹果",
+   "pinyin": "píngguǒ",
+   "example": {
+    "text": "我喜欢吃苹果。",
+    "pinyin": "Wǒ xǐhuan chī píngguǒ.",
+    "english": "I like eating apples."
+   }
+  },
+  {
+   "conceptId": "banana",
+   "text": "香蕉",
+   "pinyin": "xiāngjiāo",
+   "example": {
+    "text": "香蕉很甜。",
+    "pinyin": "Xiāngjiāo hěn tián.",
+    "english": "Bananas are sweet."
+   }
+  },
+  {
+   "conceptId": "orange",
+   "text": "橙子",
+   "pinyin": "chéngzi",
+   "example": {
+    "text": "我想吃橙子。",
+    "pinyin": "Wǒ xiǎng chī chéngzi.",
+    "english": "I want to eat an orange."
+   }
+  },
+  {
+   "conceptId": "watermelon",
+   "text": "西瓜",
+   "pinyin": "xīguā",
+   "example": {
+    "text": "夏天我爱吃西瓜。",
+    "pinyin": "Xiàtiān wǒ ài chī xīguā.",
+    "english": "In summer I love eating watermelon."
+   }
+  },
+  {
+   "conceptId": "grape",
+   "text": "葡萄",
+   "pinyin": "pútao",
+   "example": {
+    "text": "这个葡萄很好吃。",
+    "pinyin": "Zhège pútao hěn hǎochī.",
+    "english": "This grape is delicious."
+   }
+  },
+  {
+   "conceptId": "strawberry",
+   "text": "草莓",
+   "pinyin": "cǎoméi",
+   "example": {
+    "text": "草莓是红色的。",
+    "pinyin": "Cǎoméi shì hóngsè de.",
+    "english": "Strawberries are red."
+   }
+  },
+  {
+   "conceptId": "peach",
+   "text": "桃子",
+   "pinyin": "táozi",
+   "example": {
+    "text": "桃子很好吃。",
+    "pinyin": "Táozi hěn hǎochī.",
+    "english": "Peaches are tasty."
+   }
+  },
+  {
+   "conceptId": "pear",
+   "text": "梨",
+   "pinyin": "lí",
+   "example": {
+    "text": "我要一个梨。",
+    "pinyin": "Wǒ yào yí ge lí.",
+    "english": "I want a pear."
+   }
+  },
+  {
+   "conceptId": "lemon",
+   "text": "柠檬",
+   "pinyin": "níngméng",
+   "example": {
+    "text": "我不喜欢柠檬。",
+    "pinyin": "Wǒ bù xǐhuan níngméng.",
+    "english": "I don't like lemons."
+   }
+  },
+  {
+   "conceptId": "mango",
+   "text": "芒果",
+   "pinyin": "mángguǒ",
+   "example": {
+    "text": "芒果很甜。",
+    "pinyin": "Mángguǒ hěn tián.",
+    "english": "Mangoes are sweet."
+   }
+  },
+  {
+   "conceptId": "pineapple",
+   "text": "菠萝",
+   "pinyin": "bōluó",
+   "example": {
+    "text": "我喜欢菠萝。",
+    "pinyin": "Wǒ xǐhuan bōluó.",
+    "english": "I like pineapple."
+   }
+  },
+  {
+   "conceptId": "dog",
+   "text": "狗",
+   "pinyin": "gǒu",
+   "example": {
+    "text": "我有一只狗。",
+    "pinyin": "Wǒ yǒu yì zhī gǒu.",
+    "english": "I have a dog."
+   }
+  },
+  {
+   "conceptId": "cat",
+   "text": "猫",
+   "pinyin": "māo",
+   "example": {
+    "text": "那只猫很可爱。",
+    "pinyin": "Nà zhī māo hěn kě'ài.",
+    "english": "That cat is very cute."
+   }
+  },
+  {
+   "conceptId": "bird",
+   "text": "鸟",
+   "pinyin": "niǎo",
+   "example": {
+    "text": "树上有一只鸟。",
+    "pinyin": "Shù shang yǒu yì zhī niǎo.",
+    "english": "There is a bird in the tree."
+   }
+  },
+  {
+   "conceptId": "fish",
+   "text": "鱼",
+   "pinyin": "yú",
+   "example": {
+    "text": "鱼在水里。",
+    "pinyin": "Yú zài shuǐ lǐ.",
+    "english": "The fish is in the water."
+   }
+  },
+  {
+   "conceptId": "horse",
+   "text": "马",
+   "pinyin": "mǎ",
+   "example": {
+    "text": "他骑马。",
+    "pinyin": "Tā qí mǎ.",
+    "english": "He rides a horse."
+   }
+  },
+  {
+   "conceptId": "pig",
+   "text": "猪",
+   "pinyin": "zhū",
+   "example": {
+    "text": "猪很胖。",
+    "pinyin": "Zhū hěn pàng.",
+    "english": "Pigs are fat."
+   }
+  },
+  {
+   "conceptId": "cow",
+   "text": "牛",
+   "pinyin": "niú",
+   "example": {
+    "text": "牛吃草。",
+    "pinyin": "Niú chī cǎo.",
+    "english": "Cows eat grass."
+   }
+  },
+  {
+   "conceptId": "sheep",
+   "text": "羊",
+   "pinyin": "yáng",
+   "example": {
+    "text": "羊很白。",
+    "pinyin": "Yáng hěn bái.",
+    "english": "The sheep is very white."
+   }
+  },
+  {
+   "conceptId": "rabbit",
+   "text": "兔子",
+   "pinyin": "tùzi",
+   "example": {
+    "text": "兔子很可爱。",
+    "pinyin": "Tùzi hěn kě'ài.",
+    "english": "Rabbits are cute."
+   }
+  },
+  {
+   "conceptId": "tiger",
+   "text": "老虎",
+   "pinyin": "lǎohǔ",
+   "example": {
+    "text": "老虎很大。",
+    "pinyin": "Lǎohǔ hěn dà.",
+    "english": "Tigers are big."
+   }
+  },
+  {
+   "conceptId": "monkey",
+   "text": "猴子",
+   "pinyin": "hóuzi",
+   "example": {
+    "text": "猴子爱吃香蕉。",
+    "pinyin": "Hóuzi ài chī xiāngjiāo.",
+    "english": "Monkeys love eating bananas."
+   }
+  },
+  {
+   "conceptId": "red",
+   "text": "红色",
+   "pinyin": "hóngsè",
+   "example": {
+    "text": "苹果是红色的。",
+    "pinyin": "Píngguǒ shì hóngsè de.",
+    "english": "Apples are red."
+   }
+  },
+  {
+   "conceptId": "blue",
+   "text": "蓝色",
+   "pinyin": "lánsè",
+   "example": {
+    "text": "天空是蓝色的。",
+    "pinyin": "Tiānkōng shì lánsè de.",
+    "english": "The sky is blue."
+   }
+  },
+  {
+   "conceptId": "green",
+   "text": "绿色",
+   "pinyin": "lǜsè",
+   "example": {
+    "text": "草是绿色的。",
+    "pinyin": "Cǎo shì lǜsè de.",
+    "english": "Grass is green."
+   }
+  },
+  {
+   "conceptId": "yellow",
+   "text": "黄色",
+   "pinyin": "huángsè",
+   "example": {
+    "text": "香蕉是黄色的。",
+    "pinyin": "Xiāngjiāo shì huángsè de.",
+    "english": "Bananas are yellow."
+   }
+  },
+  {
+   "conceptId": "white",
+   "text": "白色",
+   "pinyin": "báisè",
+   "example": {
+    "text": "雪是白色的。",
+    "pinyin": "Xuě shì báisè de.",
+    "english": "Snow is white."
+   }
+  },
+  {
+   "conceptId": "black",
+   "text": "黑色",
+   "pinyin": "hēisè",
+   "example": {
+    "text": "我的猫是黑色的。",
+    "pinyin": "Wǒ de māo shì hēisè de.",
+    "english": "My cat is black."
+   }
+  },
+  {
+   "conceptId": "purple",
+   "text": "紫色",
+   "pinyin": "zǐsè",
+   "example": {
+    "text": "葡萄是紫色的。",
+    "pinyin": "Pútao shì zǐsè de.",
+    "english": "Grapes are purple."
+   }
+  },
+  {
+   "conceptId": "pink",
+   "text": "粉色",
+   "pinyin": "fěnsè",
+   "example": {
+    "text": "她喜欢粉色。",
+    "pinyin": "Tā xǐhuan fěnsè.",
+    "english": "She likes pink."
+   }
+  },
+  {
+   "conceptId": "orange-color",
+   "text": "橙色",
+   "pinyin": "chéngsè",
+   "example": {
+    "text": "橙子是橙色的。",
+    "pinyin": "Chéngzi shì chéngsè de.",
+    "english": "Oranges are orange."
+   }
+  },
+  {
+   "conceptId": "gray",
+   "text": "灰色",
+   "pinyin": "huīsè",
+   "example": {
+    "text": "大象是灰色的。",
+    "pinyin": "Dàxiàng shì huīsè de.",
+    "english": "Elephants are gray."
+   }
+  },
+  {
+   "conceptId": "brown",
+   "text": "棕色",
+   "pinyin": "zōngsè",
+   "example": {
+    "text": "这只狗是棕色的。",
+    "pinyin": "Zhè zhī gǒu shì zōngsè de.",
+    "english": "This dog is brown."
+   }
+  },
+  {
+   "conceptId": "one",
+   "text": "一",
+   "pinyin": "yī",
+   "example": {
+    "text": "我有一个苹果。",
+    "pinyin": "Wǒ yǒu yí ge píngguǒ.",
+    "english": "I have an apple."
+   }
+  },
+  {
+   "conceptId": "two",
+   "text": "二",
+   "pinyin": "èr",
+   "example": {
+    "text": "现在是二月。",
+    "pinyin": "Xiànzài shì èryuè.",
+    "english": "It is February now."
+   }
+  },
+  {
+   "conceptId": "three",
+   "text": "三",
+   "pinyin": "sān",
+   "example": {
+    "text": "我有三只猫。",
+    "pinyin": "Wǒ yǒu sān zhī māo.",
+    "english": "I have three cats."
+   }
+  },
+  {
+   "conceptId": "four",
+   "text": "四",
+   "pinyin": "sì",
+   "example": {
+    "text": "我家有四个人。",
+    "pinyin": "Wǒ jiā yǒu sì ge rén.",
+    "english": "There are four people in my family."
+   }
+  },
+  {
+   "conceptId": "five",
+   "text": "五",
+   "pinyin": "wǔ",
+   "example": {
+    "text": "我有五个朋友。",
+    "pinyin": "Wǒ yǒu wǔ ge péngyou.",
+    "english": "I have five friends."
+   }
+  },
+  {
+   "conceptId": "six",
+   "text": "六",
+   "pinyin": "liù",
+   "example": {
+    "text": "现在六点。",
+    "pinyin": "Xiànzài liù diǎn.",
+    "english": "It is six o'clock now."
+   }
+  },
+  {
+   "conceptId": "seven",
+   "text": "七",
+   "pinyin": "qī",
+   "example": {
+    "text": "一周有七天。",
+    "pinyin": "Yì zhōu yǒu qī tiān.",
+    "english": "A week has seven days."
+   }
+  },
+  {
+   "conceptId": "eight",
+   "text": "八",
+   "pinyin": "bā",
+   "example": {
+    "text": "我八岁。",
+    "pinyin": "Wǒ bā suì.",
+    "english": "I am eight years old."
+   }
+  },
+  {
+   "conceptId": "nine",
+   "text": "九",
+   "pinyin": "jiǔ",
+   "example": {
+    "text": "我九点起床。",
+    "pinyin": "Wǒ jiǔ diǎn qǐchuáng.",
+    "english": "I get up at nine."
+   }
+  },
+  {
+   "conceptId": "ten",
+   "text": "十",
+   "pinyin": "shí",
+   "example": {
+    "text": "现在十点。",
+    "pinyin": "Xiànzài shí diǎn.",
+    "english": "It is ten o'clock now."
+   }
+  },
+  {
+   "conceptId": "mom",
+   "text": "妈妈",
+   "pinyin": "māma",
+   "example": {
+    "text": "我爱我的妈妈。",
+    "pinyin": "Wǒ ài wǒ de māma.",
+    "english": "I love my mom."
+   }
+  },
+  {
+   "conceptId": "dad",
+   "text": "爸爸",
+   "pinyin": "bàba",
+   "example": {
+    "text": "我爸爸是老师。",
+    "pinyin": "Wǒ bàba shì lǎoshī.",
+    "english": "My dad is a teacher."
+   }
+  },
+  {
+   "conceptId": "older-brother",
+   "text": "哥哥",
+   "pinyin": "gēge",
+   "example": {
+    "text": "我哥哥很高。",
+    "pinyin": "Wǒ gēge hěn gāo.",
+    "english": "My older brother is tall."
+   }
+  },
+  {
+   "conceptId": "older-sister",
+   "text": "姐姐",
+   "pinyin": "jiějie",
+   "example": {
+    "text": "我姐姐喜欢猫。",
+    "pinyin": "Wǒ jiějie xǐhuan māo.",
+    "english": "My older sister likes cats."
+   }
+  },
+  {
+   "conceptId": "friend",
+   "text": "朋友",
+   "pinyin": "péngyou",
+   "example": {
+    "text": "他是我的朋友。",
+    "pinyin": "Tā shì wǒ de péngyou.",
+    "english": "He is my friend."
+   }
+  },
+  {
+   "conceptId": "grandma",
+   "text": "奶奶",
+   "pinyin": "nǎinai",
+   "example": {
+    "text": "奶奶在家。",
+    "pinyin": "Nǎinai zài jiā.",
+    "english": "Grandma is at home."
+   }
+  },
+  {
+   "conceptId": "grandpa",
+   "text": "爷爷",
+   "pinyin": "yéye",
+   "example": {
+    "text": "爷爷喜欢喝茶。",
+    "pinyin": "Yéye xǐhuan hē chá.",
+    "english": "Grandpa likes drinking tea."
+   }
+  },
+  {
+   "conceptId": "younger-brother",
+   "text": "弟弟",
+   "pinyin": "dìdi",
+   "example": {
+    "text": "我弟弟六岁。",
+    "pinyin": "Wǒ dìdi liù suì.",
+    "english": "My younger brother is six."
+   }
+  },
+  {
+   "conceptId": "younger-sister",
+   "text": "妹妹",
+   "pinyin": "mèimei",
+   "example": {
+    "text": "我妹妹很可爱。",
+    "pinyin": "Wǒ mèimei hěn kě'ài.",
+    "english": "My younger sister is very cute."
+   }
+  },
+  {
+   "conceptId": "baby",
+   "text": "宝宝",
+   "pinyin": "bǎobao",
+   "example": {
+    "text": "宝宝在睡觉。",
+    "pinyin": "Bǎobao zài shuìjiào.",
+    "english": "The baby is sleeping."
+   }
+  },
+  {
+   "conceptId": "rice",
+   "text": "米饭",
+   "pinyin": "mǐfàn",
+   "example": {
+    "text": "我想吃米饭。",
+    "pinyin": "Wǒ xiǎng chī mǐfàn.",
+    "english": "I want to eat rice."
+   }
+  },
+  {
+   "conceptId": "water",
+   "text": "水",
+   "pinyin": "shuǐ",
+   "example": {
+    "text": "我要喝水。",
+    "pinyin": "Wǒ yào hē shuǐ.",
+    "english": "I want to drink water."
+   }
+  },
+  {
+   "conceptId": "tea",
+   "text": "茶",
+   "pinyin": "chá",
+   "example": {
+    "text": "你喝茶吗？",
+    "pinyin": "Nǐ hē chá ma?",
+    "english": "Do you drink tea?"
+   }
+  },
+  {
+   "conceptId": "noodles",
+   "text": "面条",
+   "pinyin": "miàntiáo",
+   "example": {
+    "text": "我喜欢吃面条。",
+    "pinyin": "Wǒ xǐhuan chī miàntiáo.",
+    "english": "I like eating noodles."
+   }
+  },
+  {
+   "conceptId": "egg",
+   "text": "鸡蛋",
+   "pinyin": "jīdàn",
+   "example": {
+    "text": "我早饭吃鸡蛋。",
+    "pinyin": "Wǒ zǎofàn chī jīdàn.",
+    "english": "I eat eggs for breakfast."
+   }
+  },
+  {
+   "conceptId": "bread",
+   "text": "面包",
+   "pinyin": "miànbāo",
+   "example": {
+    "text": "我想吃面包。",
+    "pinyin": "Wǒ xiǎng chī miànbāo.",
+    "english": "I want to eat bread."
+   }
+  },
+  {
+   "conceptId": "milk",
+   "text": "牛奶",
+   "pinyin": "niúnǎi",
+   "example": {
+    "text": "我每天喝牛奶。",
+    "pinyin": "Wǒ měitiān hē niúnǎi.",
+    "english": "I drink milk every day."
+   }
+  },
+  {
+   "conceptId": "meat",
+   "text": "肉",
+   "pinyin": "ròu",
+   "example": {
+    "text": "他不吃肉。",
+    "pinyin": "Tā bù chī ròu.",
+    "english": "He doesn't eat meat."
+   }
+  },
+  {
+   "conceptId": "soup",
+   "text": "汤",
+   "pinyin": "tāng",
+   "example": {
+    "text": "这个汤很热。",
+    "pinyin": "Zhège tāng hěn rè.",
+    "english": "This soup is hot."
+   }
+  },
+  {
+   "conceptId": "coffee",
+   "text": "咖啡",
+   "pinyin": "kāfēi",
+   "example": {
+    "text": "我早上喝咖啡。",
+    "pinyin": "Wǒ zǎoshang hē kāfēi.",
+    "english": "I drink coffee in the morning."
+   }
+  },
+  {
+   "conceptId": "cake",
+   "text": "蛋糕",
+   "pinyin": "dàngāo",
+   "example": {
+    "text": "这个蛋糕很好吃。",
+    "pinyin": "Zhège dàngāo hěn hǎochī.",
+    "english": "This cake is delicious."
+   }
+  },
+  {
+   "conceptId": "hello",
+   "text": "你好",
+   "pinyin": "nǐ hǎo",
+   "example": {
+    "text": "你好，我叫小明。",
+    "pinyin": "Nǐ hǎo, wǒ jiào Xiǎo Míng.",
+    "english": "Hello, my name is Xiao Ming."
+   },
+   "alternates": [
+    "您好"
+   ]
+  },
+  {
+   "conceptId": "thanks",
+   "text": "谢谢",
+   "pinyin": "xièxie",
+   "example": {
+    "text": "谢谢你！",
+    "pinyin": "Xièxie nǐ!",
+    "english": "Thank you!"
+   }
+  },
+  {
+   "conceptId": "goodbye",
+   "text": "再见",
+   "pinyin": "zàijiàn",
+   "example": {
+    "text": "明天见，再见！",
+    "pinyin": "Míngtiān jiàn, zàijiàn!",
+    "english": "See you tomorrow, goodbye!"
+   }
+  },
+  {
+   "conceptId": "sorry",
+   "text": "对不起",
+   "pinyin": "duìbuqǐ",
+   "example": {
+    "text": "对不起，我来晚了。",
+    "pinyin": "Duìbuqǐ, wǒ lái wǎn le.",
+    "english": "Sorry, I'm late."
+   }
+  },
+  {
+   "conceptId": "please",
+   "text": "请",
+   "pinyin": "qǐng",
+   "example": {
+    "text": "请坐。",
+    "pinyin": "Qǐng zuò.",
+    "english": "Please sit."
+   }
+  },
+  {
+   "conceptId": "good-morning",
+   "text": "早上好",
+   "pinyin": "zǎoshang hǎo",
+   "example": {
+    "text": "早上好，老师！",
+    "pinyin": "Zǎoshang hǎo, lǎoshī!",
+    "english": "Good morning, teacher!"
+   }
+  },
+  {
+   "conceptId": "good-night",
+   "text": "晚安",
+   "pinyin": "wǎn'ān",
+   "example": {
+    "text": "晚安，宝宝。",
+    "pinyin": "Wǎn'ān, bǎobao.",
+    "english": "Good night, baby."
+   }
+  },
+  {
+   "conceptId": "youre-welcome",
+   "text": "不客气",
+   "pinyin": "bú kèqi",
+   "example": {
+    "text": "不客气！",
+    "pinyin": "Bú kèqi!",
+    "english": "You're welcome!"
+   }
+  },
+  {
+   "conceptId": "no-problem",
+   "text": "没关系",
+   "pinyin": "méi guānxi",
+   "example": {
+    "text": "没关系，我不忙。",
+    "pinyin": "Méi guānxi, wǒ bù máng.",
+    "english": "It's okay, I'm not busy."
+   }
+  },
+  {
+   "conceptId": "welcome",
+   "text": "欢迎",
+   "pinyin": "huānyíng",
+   "example": {
+    "text": "欢迎来我家！",
+    "pinyin": "Huānyíng lái wǒ jiā!",
+    "english": "Welcome to my home!"
+   }
+  }
+ ]
+}

@@ -1,0 +1,548 @@
+{
+ "packs": [
+  {
+   "id": "fruit-1",
+   "theme": "fruit",
+   "level": 1,
+   "title": "Fruit 1",
+   "tier": "free"
+  },
+  {
+   "id": "fruit-2",
+   "theme": "fruit",
+   "level": 2,
+   "title": "Fruit 2",
+   "tier": "premium"
+  },
+  {
+   "id": "animals-1",
+   "theme": "animals",
+   "level": 1,
+   "title": "Animals 1",
+   "tier": "free"
+  },
+  {
+   "id": "animals-2",
+   "theme": "animals",
+   "level": 2,
+   "title": "Animals 2",
+   "tier": "premium"
+  },
+  {
+   "id": "colors-1",
+   "theme": "colors",
+   "level": 1,
+   "title": "Colors 1",
+   "tier": "free"
+  },
+  {
+   "id": "colors-2",
+   "theme": "colors",
+   "level": 2,
+   "title": "Colors 2",
+   "tier": "premium"
+  },
+  {
+   "id": "numbers-1",
+   "theme": "numbers",
+   "level": 1,
+   "title": "Numbers 1",
+   "tier": "free"
+  },
+  {
+   "id": "numbers-2",
+   "theme": "numbers",
+   "level": 2,
+   "title": "Numbers 2",
+   "tier": "premium"
+  },
+  {
+   "id": "family-1",
+   "theme": "family",
+   "level": 1,
+   "title": "Family 1",
+   "tier": "free"
+  },
+  {
+   "id": "family-2",
+   "theme": "family",
+   "level": 2,
+   "title": "Family 2",
+   "tier": "premium"
+  },
+  {
+   "id": "food-1",
+   "theme": "food",
+   "level": 1,
+   "title": "Food 1",
+   "tier": "free"
+  },
+  {
+   "id": "food-2",
+   "theme": "food",
+   "level": 2,
+   "title": "Food 2",
+   "tier": "premium"
+  },
+  {
+   "id": "greetings-1",
+   "theme": "greetings",
+   "level": 1,
+   "title": "Greetings 1",
+   "tier": "free"
+  },
+  {
+   "id": "greetings-2",
+   "theme": "greetings",
+   "level": 2,
+   "title": "Greetings 2",
+   "tier": "premium"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "apple",
+   "packId": "fruit-1",
+   "english": "apple",
+   "emoji": "🍎"
+  },
+  {
+   "id": "banana",
+   "packId": "fruit-1",
+   "english": "banana",
+   "emoji": "🍌"
+  },
+  {
+   "id": "orange",
+   "packId": "fruit-1",
+   "english": "orange (fruit)",
+   "emoji": "🍊"
+  },
+  {
+   "id": "watermelon",
+   "packId": "fruit-1",
+   "english": "watermelon",
+   "emoji": "🍉"
+  },
+  {
+   "id": "grape",
+   "packId": "fruit-1",
+   "english": "grape",
+   "emoji": "🍇"
+  },
+  {
+   "id": "strawberry",
+   "packId": "fruit-2",
+   "english": "strawberry",
+   "emoji": "🍓"
+  },
+  {
+   "id": "peach",
+   "packId": "fruit-2",
+   "english": "peach",
+   "emoji": "🍑"
+  },
+  {
+   "id": "pear",
+   "packId": "fruit-2",
+   "english": "pear",
+   "emoji": "🍐"
+  },
+  {
+   "id": "lemon",
+   "packId": "fruit-2",
+   "english": "lemon",
+   "emoji": "🍋"
+  },
+  {
+   "id": "mango",
+   "packId": "fruit-2",
+   "english": "mango",
+   "emoji": "🥭"
+  },
+  {
+   "id": "pineapple",
+   "packId": "fruit-2",
+   "english": "pineapple",
+   "emoji": "🍍"
+  },
+  {
+   "id": "dog",
+   "packId": "animals-1",
+   "english": "dog",
+   "emoji": "🐶"
+  },
+  {
+   "id": "cat",
+   "packId": "animals-1",
+   "english": "cat",
+   "emoji": "🐱"
+  },
+  {
+   "id": "bird",
+   "packId": "animals-1",
+   "english": "bird",
+   "emoji": "🐦"
+  },
+  {
+   "id": "fish",
+   "packId": "animals-1",
+   "english": "fish",
+   "emoji": "🐟"
+  },
+  {
+   "id": "horse",
+   "packId": "animals-1",
+   "english": "horse",
+   "emoji": "🐴"
+  },
+  {
+   "id": "pig",
+   "packId": "animals-2",
+   "english": "pig",
+   "emoji": "🐷"
+  },
+  {
+   "id": "cow",
+   "packId": "animals-2",
+   "english": "cow",
+   "emoji": "🐮"
+  },
+  {
+   "id": "sheep",
+   "packId": "animals-2",
+   "english": "sheep",
+   "emoji": "🐑"
+  },
+  {
+   "id": "rabbit",
+   "packId": "animals-2",
+   "english": "rabbit",
+   "emoji": "🐰"
+  },
+  {
+   "id": "tiger",
+   "packId": "animals-2",
+   "english": "tiger",
+   "emoji": "🐯"
+  },
+  {
+   "id": "monkey",
+   "packId": "animals-2",
+   "english": "monkey",
+   "emoji": "🐵"
+  },
+  {
+   "id": "red",
+   "packId": "colors-1",
+   "english": "red",
+   "emoji": "🔴"
+  },
+  {
+   "id": "blue",
+   "packId": "colors-1",
+   "english": "blue",
+   "emoji": "🔵"
+  },
+  {
+   "id": "green",
+   "packId": "colors-1",
+   "english": "green",
+   "emoji": "🟢"
+  },
+  {
+   "id": "yellow",
+   "packId": "colors-1",
+   "english": "yellow",
+   "emoji": "🟡"
+  },
+  {
+   "id": "white",
+   "packId": "colors-1",
+   "english": "white",
+   "emoji": "⚪"
+  },
+  {
+   "id": "black",
+   "packId": "colors-1",
+   "english": "black",
+   "emoji": "⚫"
+  },
+  {
+   "id": "purple",
+   "packId": "colors-2",
+   "english": "purple",
+   "emoji": "🟣"
+  },
+  {
+   "id": "pink",
+   "packId": "colors-2",
+   "english": "pink",
+   "emoji": "🩷"
+  },
+  {
+   "id": "orange-color",
+   "packId": "colors-2",
+   "english": "orange (color)",
+   "emoji": "🟠"
+  },
+  {
+   "id": "gray",
+   "packId": "colors-2",
+   "english": "gray",
+   "emoji": "🩶"
+  },
+  {
+   "id": "brown",
+   "packId": "colors-2",
+   "english": "brown",
+   "emoji": "🟤"
+  },
+  {
+   "id": "one",
+   "packId": "numbers-1",
+   "english": "one",
+   "emoji": "1️⃣"
+  },
+  {
+   "id": "two",
+   "packId": "numbers-1",
+   "english": "two",
+   "emoji": "2️⃣"
+  },
+  {
+   "id": "three",
+   "packId": "numbers-1",
+   "english": "three",
+   "emoji": "3️⃣"
+  },
+  {
+   "id": "four",
+   "packId": "numbers-1",
+   "english": "four",
+   "emoji": "4️⃣"
+  },
+  {
+   "id": "five",
+   "packId": "numbers-1",
+   "english": "five",
+   "emoji": "5️⃣"
+  },
+  {
+   "id": "six",
+   "packId": "numbers-2",
+   "english": "six",
+   "emoji": "6️⃣"
+  },
+  {
+   "id": "seven",
+   "packId": "numbers-2",
+   "english": "seven",
+   "emoji": "7️⃣"
+  },
+  {
+   "id": "eight",
+   "packId": "numbers-2",
+   "english": "eight",
+   "emoji": "8️⃣"
+  },
+  {
+   "id": "nine",
+   "packId": "numbers-2",
+   "english": "nine",
+   "emoji": "9️⃣"
+  },
+  {
+   "id": "ten",
+   "packId": "numbers-2",
+   "english": "ten",
+   "emoji": "🔟"
+  },
+  {
+   "id": "mom",
+   "packId": "family-1",
+   "english": "mom",
+   "emoji": "👩"
+  },
+  {
+   "id": "dad",
+   "packId": "family-1",
+   "english": "dad",
+   "emoji": "👨"
+  },
+  {
+   "id": "older-brother",
+   "packId": "family-1",
+   "english": "older brother",
+   "emoji": null
+  },
+  {
+   "id": "older-sister",
+   "packId": "family-1",
+   "english": "older sister",
+   "emoji": null
+  },
+  {
+   "id": "friend",
+   "packId": "family-1",
+   "english": "friend",
+   "emoji": "🤝"
+  },
+  {
+   "id": "grandma",
+   "packId": "family-2",
+   "english": "grandma (paternal)",
+   "emoji": "👵"
+  },
+  {
+   "id": "grandpa",
+   "packId": "family-2",
+   "english": "grandpa (paternal)",
+   "emoji": "👴"
+  },
+  {
+   "id": "younger-brother",
+   "packId": "family-2",
+   "english": "younger brother",
+   "emoji": null
+  },
+  {
+   "id": "younger-sister",
+   "packId": "family-2",
+   "english": "younger sister",
+   "emoji": null
+  },
+  {
+   "id": "baby",
+   "packId": "family-2",
+   "english": "baby",
+   "emoji": "👶"
+  },
+  {
+   "id": "rice",
+   "packId": "food-1",
+   "english": "cooked rice",
+   "emoji": "🍚"
+  },
+  {
+   "id": "water",
+   "packId": "food-1",
+   "english": "water",
+   "emoji": "💧"
+  },
+  {
+   "id": "tea",
+   "packId": "food-1",
+   "english": "tea",
+   "emoji": "🍵"
+  },
+  {
+   "id": "noodles",
+   "packId": "food-1",
+   "english": "noodles",
+   "emoji": "🍜"
+  },
+  {
+   "id": "egg",
+   "packId": "food-1",
+   "english": "egg",
+   "emoji": "🥚"
+  },
+  {
+   "id": "bread",
+   "packId": "food-2",
+   "english": "bread",
+   "emoji": "🍞"
+  },
+  {
+   "id": "milk",
+   "packId": "food-2",
+   "english": "milk",
+   "emoji": "🥛"
+  },
+  {
+   "id": "meat",
+   "packId": "food-2",
+   "english": "meat",
+   "emoji": "🥩"
+  },
+  {
+   "id": "soup",
+   "packId": "food-2",
+   "english": "soup",
+   "emoji": "🥣"
+  },
+  {
+   "id": "coffee",
+   "packId": "food-2",
+   "english": "coffee",
+   "emoji": "☕"
+  },
+  {
+   "id": "cake",
+   "packId": "food-2",
+   "english": "cake",
+   "emoji": "🍰"
+  },
+  {
+   "id": "hello",
+   "packId": "greetings-1",
+   "english": "hello",
+   "emoji": "👋"
+  },
+  {
+   "id": "thanks",
+   "packId": "greetings-1",
+   "english": "thank you",
+   "emoji": "🙏"
+  },
+  {
+   "id": "goodbye",
+   "packId": "greetings-1",
+   "english": "goodbye",
+   "emoji": null
+  },
+  {
+   "id": "sorry",
+   "packId": "greetings-1",
+   "english": "sorry",
+   "emoji": null
+  },
+  {
+   "id": "please",
+   "packId": "greetings-1",
+   "english": "please (offering/requesting)",
+   "emoji": null
+  },
+  {
+   "id": "good-morning",
+   "packId": "greetings-2",
+   "english": "good morning",
+   "emoji": null
+  },
+  {
+   "id": "good-night",
+   "packId": "greetings-2",
+   "english": "good night",
+   "emoji": null
+  },
+  {
+   "id": "youre-welcome",
+   "packId": "greetings-2",
+   "english": "you're welcome",
+   "emoji": null
+  },
+  {
+   "id": "no-problem",
+   "packId": "greetings-2",
+   "english": "no problem / it's okay",
+   "emoji": null
+  },
+  {
+   "id": "welcome",
+   "packId": "greetings-2",
+   "english": "welcome",
+   "emoji": null
+  }
+ ]
+}

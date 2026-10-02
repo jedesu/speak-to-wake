@@ -45,6 +45,10 @@ Every wake-up is a short sequence of prompts, and each prompt is one of these ty
 | **Meaning quiz** | See a word, tap the right meaning (or the reverse) | Nothing extra |
 | **Picture match** | See a picture, tap the matching word | Emoji / SF Symbols for v1 (no image licensing) |
 | **Match pairs** | Tap to pair 4 words with their meanings | Nothing extra |
+| **True or false** | See "苹果 means banana": tap True or False | Nothing extra |
+| **Fill the blank** | Complete an example sentence by tapping the missing word | Example sentences in the word data |
+
+The tap-quiz generator is already prototyped in `prototype/quizzes.py`, with tests. Wrong answers come from the same theme (harder) or from other themes (easier, good when groggy). Fill-the-blank uses other-theme wrong answers on purpose, since same-theme words (other fruits) can also fit the blank and make it unfair. The trade-off is that it's easy; a per-word list of safe wrong answers could improve it later.
 
 - **Text-to-speech** uses Apple's built-in voices, which are free and on-device.
 - **Mixing the types:** speech prompts are the core of the app. Tap quizzes are the easier variety and also the fallback after failed speech attempts. You choose which types are on in Settings.
