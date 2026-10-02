@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A10000000000000000000012 /* PinyinMatcher in Frameworks */ = {isa = PBXBuildFile; productRef = A10000000000000000000011 /* PinyinMatcher */; };
+		A10000000000000000000014 /* WakeCore in Frameworks */ = {isa = PBXBuildFile; productRef = A10000000000000000000013 /* WakeCore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,12 @@
 			path = SpeakToWake;
 			sourceTree = "<group>";
 		};
+		A10000000000000000000015 /* data */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			name = data;
+			path = ../../data;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,6 +35,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A10000000000000000000012 /* PinyinMatcher in Frameworks */,
+				A10000000000000000000014 /* WakeCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +46,7 @@
 			isa = PBXGroup;
 			children = (
 				A10000000000000000000004 /* SpeakToWake */,
+				A10000000000000000000015 /* data */,
 				A10000000000000000000002 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -67,10 +76,12 @@
 			);
 			fileSystemSynchronizedGroups = (
 				A10000000000000000000004 /* SpeakToWake */,
+				A10000000000000000000015 /* data */,
 			);
 			name = SpeakToWake;
 			packageProductDependencies = (
 				A10000000000000000000011 /* PinyinMatcher */,
+				A10000000000000000000013 /* WakeCore */,
 			);
 			productName = SpeakToWake;
 			productReference = A10000000000000000000003 /* SpeakToWake.app */;
@@ -101,7 +112,7 @@
 			mainGroup = A10000000000000000000001;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				A10000000000000000000010 /* XCLocalSwiftPackageReference "../PinyinMatcher" */,
+				A10000000000000000000010 /* XCLocalSwiftPackageReference "../Core" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A10000000000000000000002 /* Products */;
@@ -250,9 +261,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		A10000000000000000000010 /* XCLocalSwiftPackageReference "../PinyinMatcher" */ = {
+		A10000000000000000000010 /* XCLocalSwiftPackageReference "../Core" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = ../PinyinMatcher;
+			relativePath = ../Core;
 		};
 /* End XCLocalSwiftPackageReference section */
 
@@ -260,6 +271,10 @@
 		A10000000000000000000011 /* PinyinMatcher */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = PinyinMatcher;
+		};
+		A10000000000000000000013 /* WakeCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WakeCore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

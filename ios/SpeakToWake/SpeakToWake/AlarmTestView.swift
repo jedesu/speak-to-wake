@@ -6,7 +6,7 @@ struct AlarmTestView: View {
     private var controller = AlarmController.shared
 
     var body: some View {
-        NavigationStack {
+        Group {
             List {
                 Section {
                     LabeledContent("Permission", value: permissionText)

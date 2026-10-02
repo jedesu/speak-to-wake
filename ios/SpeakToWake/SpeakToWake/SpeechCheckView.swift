@@ -36,7 +36,7 @@ struct SpeechCheckView: View {
     }
 
     var body: some View {
-        NavigationStack {
+        Group {
             List {
                 if model.state == .installed, let locale = model.matchedLocale {
                     Section {

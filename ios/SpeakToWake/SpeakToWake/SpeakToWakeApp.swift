@@ -1,3 +1,4 @@
+import SwiftData
 import SwiftUI
 
 @main
@@ -7,11 +8,17 @@ struct SpeakToWakeApp: App {
     var body: some Scene {
         WindowGroup {
             TabView {
-                Tab("Alarm", systemImage: "alarm") {
-                    AlarmTestView()
+                Tab("Learn", systemImage: "book") {
+                    LearnView()
                 }
-                Tab("Speech", systemImage: "waveform") {
-                    SpeechCheckView()
+                Tab("Alarm", systemImage: "alarm") {
+                    NavigationStack {
+                        AlarmTestView()
+                            .settingsButton()
+                    }
+                }
+                Tab("Progress", systemImage: "chart.bar") {
+                    ProgressTabView()
                 }
             }
             .fullScreenCover(isPresented: $alarms.showChallenge) {
@@ -19,5 +26,6 @@ struct SpeakToWakeApp: App {
             }
             .task { alarms.startObserving() }
         }
+        .modelContainer(for: [PackProgress.self, ReviewState.self, Attempt.self])
     }
 }
