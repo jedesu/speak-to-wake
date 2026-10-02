@@ -48,8 +48,10 @@ Android gives much more control over dismissal. The catch is more fiddly setup a
 **Stay on iOS with AlarmKit and the re-ring design.** You have the Mac and iPhone, SpeechAnalyzer is the best free on-device option, and AlarmKit gives the reliability that matters most (rings through Silent and Focus). We trade away a hard block on Stop, but the re-ring loop plus a bounded limit gives the same penalty with a built-in safety. Android remains a "later" option if hard blocking turns out to be essential.
 
 ## Things to TEST on the device
-1. Alarm rings with the app closed, phone on Silent, and Focus on.
-2. The second button opens the app into the challenge.
-3. Stop's custom action runs reliably (the forum bug).
-4. Re-ring scheduling works from the Stop action.
+1. Alarm rings with the app closed, phone on Silent, and Focus on. **Not yet tested systematically.**
+2. The second button opens the app into the challenge. **PASSED (Oct 2, 2026):** Speak opens the full-screen challenge; passing it cancels pending re-rings.
+3. Stop's custom action runs reliably (the forum bug). **PASSED so far:** Stop ran its intent every time in testing (phone unlocked, alarm shown as a banner). Keep checking with the phone locked.
+4. Re-ring scheduling works from the Stop action. **PASSED:** each Stop scheduled the next re-ring, counted up to the limit.
+
+Also confirmed: **AlarmKit works with a free Apple ID** (Personal Team), no paid developer account needed.
 5. `zh-CN` appears in `SpeechTranscriber.supportedLocales` and downloads. **PASSED (Oct 2, 2026, iPhone 17 Pro, iOS 26.6):** zh-CN supported and model already installed.

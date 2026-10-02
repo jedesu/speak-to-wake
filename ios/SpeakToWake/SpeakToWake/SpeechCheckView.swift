@@ -5,30 +5,9 @@ import SwiftUI
 struct SpeechCheckView: View {
     @State private var model = SpeechModelManager()
     @State private var listener = LiveTranscriber()
-    @State private var target = targets[0]
+    @State private var target = PracticeWord.all[0]
 
     @State private var useHints = true
-
-    struct Target: Hashable {
-        let hanzi: String
-        let pinyin: String
-        let english: String
-        /// Same sounds with other tones, so the recognizer hears the right syllable
-        /// but still has to pick by tone.
-        var toneNeighbors: [String] = []
-
-        var hints: [String] { [hanzi] + toneNeighbors }
-    }
-
-    static let targets = [
-        Target(hanzi: "苹果", pinyin: "píngguǒ", english: "apple"),
-        Target(hanzi: "你好", pinyin: "nǐ hǎo", english: "hello"),
-        Target(hanzi: "谢谢", pinyin: "xièxie", english: "thank you", toneNeighbors: ["写写"]),
-        Target(hanzi: "老师", pinyin: "lǎoshī", english: "teacher", toneNeighbors: ["老是", "老实"]),
-        Target(hanzi: "水", pinyin: "shuǐ", english: "water", toneNeighbors: ["睡", "谁"]),
-        Target(hanzi: "买", pinyin: "mǎi", english: "buy", toneNeighbors: ["卖", "埋"]),
-        Target(hanzi: "我是学生", pinyin: "wǒ shì xuéshēng", english: "I am a student"),
-    ]
 
     /// What happened on the last attempt, shown after you tap Stop.
     enum Outcome {
@@ -52,7 +31,7 @@ struct SpeechCheckView: View {
             outcome = .correct(word: target.hanzi, result: result)
         } else {
             outcome = .wrong(word: target.hanzi, heard: heard, result: result)
-            target = Self.targets.filter { $0 != target }.randomElement() ?? target
+            target = PracticeWord.all.filter { $0 != target }.randomElement() ?? target
         }
     }
 
@@ -62,7 +41,7 @@ struct SpeechCheckView: View {
                 if model.state == .installed, let locale = model.matchedLocale {
                     Section {
                         Picker("Say this", selection: $target) {
-                            ForEach(Self.targets, id: \.hanzi) { t in
+                            ForEach(PracticeWord.all, id: \.hanzi) { t in
                                 Text("\(t.hanzi)  \(t.pinyin)").tag(t)
                             }
                         }
