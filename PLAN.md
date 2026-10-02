@@ -69,7 +69,10 @@ This also fixes the "I never learned this word" problem and gives us something t
 - **Spacing.** Words come back at growing gaps: a simple Leitner box system, with Box 1 the next day, Box 2 two days later, Box 3 four days later, roughly doubling. A miss drops the word back a box. A fancier algorithm (SM-2 or FSRS) is a later upgrade.
 - **Many exposures, varied ways.** Words usually need 10-30 encounters. The mix of challenge types (say it, hear and tap, picture match, and so on) gives varied exposure.
 - **Mandarin specifics:** teach each word with its pinyin and tone from the start, plus audio. Show an example sentence with each word. Order words within a pack by frequency, such as the HSK 1 list (about 150 words).
-- **Alarm word choice:** 1-3 prompts, drawn from words that are due, weighted toward the easier boxes at first.
+- **Alarm word choice:** 1-3 prompts, drawn from words that are due. Normal difficulty asks the most overdue and weakest words first. Easy difficulty asks the best-known words first, which suits a groggy brain. If few words are due, it fills with the soonest-upcoming ones.
+- **Dates, not clock times:** a word learned at 8 pm is due at tomorrow's 7 am alarm.
+- **Early reviews don't promote:** reviewing a word before it's due never moves it up a box. A miss still drops it.
+- **Alarm alone can't keep up (simulated, with assumed accuracy rates):** with 35 words learned in the first week and 3 alarm prompts a day, about 30 words stayed overdue for weeks. Adding a 10-word **Review** session in the Learn tab cut it to about 2 within a month. So the Learn tab gets a "Review" button, and new packs are gated when too many words are overdue, so the backlog can't pile up.
 
 ## Screens
 Bottom tab bar with three tabs. (You suggested two, and Learn and Alarm are the core. I'd add Progress as a third so the streak has a home. Settings sits behind a gear icon.)
