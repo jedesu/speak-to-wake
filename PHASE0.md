@@ -52,4 +52,4 @@ Android gives much more control over dismissal. The catch is more fiddly setup a
 2. The second button opens the app into the challenge.
 3. Stop's custom action runs reliably (the forum bug).
 4. Re-ring scheduling works from the Stop action.
-5. `zh-CN` appears in `SpeechTranscriber.supportedLocales` and downloads.
+5. `zh-CN` appears in `SpeechTranscriber.supportedLocales` and downloads. **PASSED (Oct 2, 2026, iPhone 17 Pro, iOS 26.6):** zh-CN supported and model already installed.

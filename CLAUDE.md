@@ -11,7 +11,7 @@ A class project (individual entrepreneurship class, ~3 months from late Sept 202
 - Keep v1 out of scope: accounts/login, real payments, social features, AI-generated lessons, multiple languages at once.
 
 ## Decisions made
-- Platform: native iOS 26, Swift + SwiftUI, AlarmKit, SpeechAnalyzer, SwiftData. Mac + iPhone.
+- Platform: native iOS 26 (built with Xcode 27), Swift + SwiftUI, AlarmKit, SpeechAnalyzer, SwiftData. Mac + iPhone.
 - Language: Mandarin (zh-CN, simplified) first. Data model supports more languages later. Japanese and Korean come later.
 - AlarmKit cannot remove the Stop button. Design: a second "Speak" button opens the challenge, and Stop schedules a bounded series of re-rings until the challenge is passed. See PHASE0.md.
 - Matching is by pinyin, not characters. Tones are not graded precisely.
@@ -28,11 +28,23 @@ Done (Python prototypes in prototype/, run on Windows, 1,200+ tests):
 
 Run the Python tests: `cd prototype && python -m pytest -q` (needs `pip install pypinyin pytest`; a venv at .venv is gitignored).
 
-Not done: everything that needs a Mac and iPhone.
+Done on the Mac (Oct 2026):
+- Setup: macOS 27, **Xcode 27** (iOS 27 SDK), iPhone 17 Pro on **iOS 26.6**, Developer Mode on, free Apple ID (Personal Team `522FQ565F9`). Deployment target is iOS 26.0.
+- iOS app in `ios/SpeakToWake/` (hand-written project file using a synchronized folder: new .swift files in `ios/SpeakToWake/SpeakToWake/` are picked up automatically). Bundle ID `com.jedesu.SpeakToWake`.
+- Speech check screen: **zh-CN is supported on the phone and its model is installed** (also yue-CN, zh-HK, zh-TW; 30 locales total).
+
+Build, install and launch on the phone from the command line (phone plugged in):
+```
+cd ios/SpeakToWake
+xcodebuild -project SpeakToWake.xcodeproj -scheme SpeakToWake -destination 'id=00008150-001A0C3C3A02401C' -derivedDataPath build -allowProvisioningUpdates build
+xcrun devicectl device install app --device 00008150-001A0C3C3A02401C build/Build/Products/Debug-iphoneos/SpeakToWake.app
+xcrun devicectl device process launch --device 00008150-001A0C3C3A02401C com.jedesu.SpeakToWake
+```
+Screenshots: `xcrun devicectl device capture screenshot --device <id> --destination shot.png`. Launch the app first, and ask before taking one, since it captures whatever is on screen.
 
 ## Next steps (on the Mac)
-1. Confirm Xcode 26, iOS 26 on the iPhone, Developer Mode on, free Apple ID signed in.
-2. Phase 1: minimal SwiftUI app that checks `SpeechTranscriber.supportedLocales` for zh-CN, downloads the model, and runs the speech check screen. Port matcher.py to Swift and run cases.json against it. Log every attempt (CSV export).
+1. ~~Confirm setup.~~ Done.
+2. Phase 1: ~~check zh-CN support and model download~~ (done). Next: live mic transcription screen. Then port matcher.py to Swift and run cases.json against it. Log every attempt (CSV export).
 3. Phase 2: AlarmKit alarm with Speak button and re-ring loop. Run the device tests listed in PHASE0.md. Open question: does AlarmKit work with a free Apple ID?
 4. Port srs.py, quizzes.py and the data files, then build the Learn and Alarm tabs.
 
