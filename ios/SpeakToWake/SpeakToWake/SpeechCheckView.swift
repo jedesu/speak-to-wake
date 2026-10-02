@@ -3,10 +3,46 @@ import SwiftUI
 /// Phase 1 debug screen: is Mandarin speech recognition available on this phone?
 struct SpeechCheckView: View {
     @State private var model = SpeechModelManager()
+    @State private var listener = LiveTranscriber()
 
     var body: some View {
         NavigationStack {
             List {
+                if model.state == .installed, let locale = model.matchedLocale {
+                    Section {
+                        Text(listener.transcript.isEmpty ? "Try saying 苹果 (píngguǒ)" : listener.transcript)
+                            .font(.largeTitle)
+                            .foregroundStyle(listener.transcript.isEmpty ? .secondary : .primary)
+                            .frame(maxWidth: .infinity, minHeight: 80)
+                        if !listener.volatileText.isEmpty {
+                            Text("Still guessing: \(listener.volatileText)")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                        }
+                        Button {
+                            Task {
+                                if listener.isListening {
+                                    await listener.stop()
+                                } else {
+                                    await listener.start(locale: locale)
+                                }
+                            }
+                        } label: {
+                            Label(listener.isListening ? "Stop" : "Start talking",
+                                  systemImage: listener.isListening ? "stop.circle.fill" : "mic.circle.fill")
+                                .font(.title2)
+                                .frame(maxWidth: .infinity)
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .tint(listener.isListening ? .red : .accentColor)
+                        if let error = listener.errorMessage {
+                            Text(error).foregroundStyle(.red)
+                        }
+                    } header: {
+                        Text("Try it")
+                    }
+                }
+
                 Section("Mandarin (zh-CN)") {
                     statusRow
                     if let locale = model.matchedLocale {
