@@ -8,6 +8,9 @@ struct AlarmTestView: View {
     var body: some View {
         Group {
             List {
+                Section("Volume") {
+                    VolumeCheckView()
+                }
                 Section {
                     LabeledContent("Permission", value: permissionText)
                     if controller.authorization == .notDetermined {
@@ -16,7 +19,7 @@ struct AlarmTestView: View {
                         }
                     }
                     if controller.authorization == .denied {
-                        Text("Turn alarms on in Settings → Apps → Speak to Wake.")
+                        Text("Turn alarms on in Settings → Apps → Mingo.")
                             .foregroundStyle(.red)
                     }
                     Button {
@@ -28,6 +31,9 @@ struct AlarmTestView: View {
                     }
                     .buttonStyle(.borderedProminent)
                     .disabled(controller.authorization == .denied)
+                    Button("Try the wake-up challenge now") {
+                        controller.showChallenge = true
+                    }
                 }
 
                 Section("Pending alarms (\(controller.alarms.count))") {

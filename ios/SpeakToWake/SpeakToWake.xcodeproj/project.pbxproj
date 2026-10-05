@@ -188,8 +188,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Speak to Wake";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Speak to Wake listens while you say a word in Mandarin, to check your pronunciation. Audio stays on your iPhone.";
+				INFOPLIST_KEY_CFBundleDisplayName = "Mingo";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Mingo listens while you say a word in Mandarin, to check your pronunciation. Audio stays on your iPhone.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
@@ -217,8 +217,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Speak to Wake";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Speak to Wake listens while you say a word in Mandarin, to check your pronunciation. Audio stays on your iPhone.";
+				INFOPLIST_KEY_CFBundleDisplayName = "Mingo";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Mingo listens while you say a word in Mandarin, to check your pronunciation. Audio stays on your iPhone.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;

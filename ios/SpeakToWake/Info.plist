@@ -2,7 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+	</array>
 	<key>NSAlarmKitUsageDescription</key>
-	<string>Speak to Wake sets your wake-up alarms. They ring even when your phone is on Silent.</string>
+	<string>Mingo sets your wake-up alarms. They ring even when your phone is on Silent.</string>
 </dict>
 </plist>

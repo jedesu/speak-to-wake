@@ -1,4 +1,4 @@
-# Speak-to-Wake: Project Plan (draft for approval)
+# Mingo: Project Plan
 
 An alarm that won't stop until you say a target word or phrase out loud in the language you're learning.
 
@@ -90,9 +90,9 @@ Bottom tab bar with three tabs. (You suggested two, and Learn and Alarm are the 
 6. **Prototype/Debug** (Phase 1 only) – speech-check screen with attempt log and CSV export.
 
 ## Monetization (design now, charge later)
-**Recommendation:** freemium with one Premium subscription, plus an optional lifetime price.
-- **Free:** the alarm itself, all challenge types, and the first level of each theme (Fruit 1, Animals 1, and so on).
-- **Premium:** every "level 2+" pack (Fruit 2, ...), plus extras like custom-word import and chained challenges.
+**Decided (Oct 2026, matches the discovery report):** freemium with one **Pro** subscription at $4.99/month or $49.99/year. Pro is called `premium` in the data files.
+- **Free:** the speaking alarm, all challenge types, and the first level of each theme (Fruit 1, Animals 1, and so on) in one language. The alarm picks from words you've learned at random.
+- **Pro:** **spaced repetition** (the alarm and Review pick the words you're about to forget), every "level 2+" pack (Fruit 2, ...), more languages, custom word lists and detailed progress stats.
 - **Why a subscription over per-pack purchases:** per-pack payments ask for a decision every time and feel nickel-and-dimey. One Premium unlock is simpler and gives recurring revenue. I'd still test per-pack pricing in your survey.
 - **Pricing guess:** about $4-6/month or $40-60/year. This sits just under Alarmy Premium ($59.99/year) and Memrise ($61.99/year).
 - **Keep the alarm free.** The alarm is the hook, and the content is what you charge for.
@@ -107,12 +107,14 @@ A pack such as "Fruit 1" is a list of **concepts** (apple, banana, ...). Each la
 | | Free | Premium |
 |---|---|---|
 | Alarm and all challenge types | Yes | Yes |
+| Spaced repetition | No: random learned words | **Yes** |
+| Progress | Streak | Streak plus detailed stats |
 | Languages | **One** (chosen at setup) | **All** |
 | Packs | Starter packs (level 1 of each theme) | **All** packs |
 | Earning more | Yes, see below | Not needed |
 | Extras (custom-word import, chained challenges) | No | Yes |
 
-**Earning packs on Free:** consistent use unlocks the next pack. For example, a 7-day wake-up streak or mastering a pack earns one pack token to spend on any locked pack, in your one language. Earned packs stay unlocked. This rewards the behavior we want (waking up and learning), gives free users a reason to stay, and still leaves Premium as the shortcut to everything.
+**Earning packs on Free:** consistent use unlocks the next pack. For example, a 7-day wake-up streak earns one pack token to spend on any locked pack, in your one language. Earned packs stay unlocked. This rewards the behavior we want (waking up and learning), gives free users a reason to stay, and still leaves Premium as the shortcut to everything.
 - **Risk to test:** if earning is too easy, nobody pays. If it's too hard, free users leave. The exact thresholds are a pricing experiment for your class survey.
 
 **For v1:** your brief excludes payments, so we build packs with a `isPremium` flag and show locked-pack screens. We don't wire up real payments (StoreKit) unless there's time. For the class, you can test willingness to pay with a survey or a "fake door" paywall instead.

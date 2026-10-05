@@ -9,8 +9,9 @@ final class Speaker {
     func say(_ text: String, slow: Bool = false) {
         synthesizer.stopSpeaking(at: .immediate)
         let session = AVAudioSession.sharedInstance()
+        AlarmSound.shared.hold(for: slow ? 3.5 : 2.5)
         // Don't take over the session while the mic is recording.
-        if session.category != .playAndRecord {
+        if !LiveTranscriber.isRecording {
             try? session.setCategory(.playback, mode: .spokenAudio, options: [.duckOthers])
             try? session.setActive(true)
         }

@@ -39,6 +39,12 @@ final class AlarmController {
         updatesTask = Task {
             for await alarms in AlarmManager.shared.alarmUpdates {
                 self.alarms = alarms
+                // Ringing while the app is open: show our ringing screen, like Alarmy.
+                if alarms.contains(where: { $0.state == .alerting }) && !showChallenge {
+                    record("Alarm ringing with the app open: showing the ringing screen")
+                    showChallenge = true
+                    await ensureBackupRing()
+                }
             }
         }
     }
@@ -62,21 +68,48 @@ final class AlarmController {
 
     func handleStop() async {
         record("Stop tapped")
+        // With the challenge already open, a backup ring is set and the app's own
+        // sound is playing, so Stop only silences the system alarm.
+        guard !showChallenge else { return }
         await reRingIfUnsolved(after: Self.reRingDelay)
     }
 
     func handleSpeak() async {
         record("Speak tapped: opening challenge")
         showChallenge = true
-        // Backup ring in case the app is closed before the challenge is passed.
+        await ensureBackupRing()
+    }
+
+    /// Stops a system alarm that is still ringing, once the challenge takes over
+    /// (the app's own sound keeps going).
+    func silenceSystemAlarm() {
+        for alarm in alarms where alarm.state == .alerting {
+            try? AlarmManager.shared.stop(id: alarm.id)
+        }
+    }
+
+    /// Makes sure a system alarm will ring again if the app is closed before the
+    /// challenge is passed.
+    private func ensureBackupRing() async {
+        guard !alarms.contains(where: { $0.state == .scheduled }) else { return }
         await reRingIfUnsolved(after: Self.speakBackupDelay)
     }
 
     func challengePassed() {
+        AlarmSound.shared.stop()
         solved = true
         showChallenge = false
         cancelAll()
         record("Challenge passed: pending re-rings cancelled")
+    }
+
+    /// The "press and hold" way out. Stops re-rings, but the log shows it wasn't solved.
+    func emergencyDismiss() {
+        AlarmSound.shared.stop()
+        solved = true
+        showChallenge = false
+        cancelAll()
+        record("Emergency exit used: alarm off without passing")
     }
 
     func cancelAll() {

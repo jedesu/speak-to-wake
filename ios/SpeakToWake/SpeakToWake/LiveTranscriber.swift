@@ -14,6 +14,9 @@ final class LiveTranscriber {
 
     var transcript: String { finalText + volatileText }
 
+    /// True while any transcriber has the mic, so sounds don't play into it.
+    static private(set) var isRecording = false
+
     private let mic = MicCapture()
     private var analyzer: SpeechAnalyzer?
     private var inputBuilder: AsyncStream<AnalyzerInput>.Continuation?
@@ -76,6 +79,7 @@ final class LiveTranscriber {
             self.analyzer = analyzer
             self.inputBuilder = inputBuilder
             isListening = true
+            Self.isRecording = true
         } catch {
             errorMessage = error.localizedDescription
             await stop()
@@ -91,6 +95,7 @@ final class LiveTranscriber {
         inputBuilder = nil
         resultsTask = nil
         isListening = false
+        Self.isRecording = false
         try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
     }
 }
