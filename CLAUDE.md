@@ -12,7 +12,7 @@ A class project (individual entrepreneurship class, ~3 months from late Sept 202
 
 ## Decisions made
 - Platform: native iOS 26 (built with Xcode 27), Swift + SwiftUI, AlarmKit, SpeechAnalyzer, SwiftData. Mac + iPhone.
-- Language: Mandarin (zh-CN, simplified) first. Data model supports more languages later. Japanese and Korean come later.
+- Language: Mandarin (zh-CN, simplified) only for the MVP. Data model supports more languages later. Japanese and Korean come later.
 - AlarmKit cannot remove the Stop button. Design: a second "Speak" button opens the challenge, and Stop schedules a bounded series of re-rings until the challenge is passed. See PHASE0.md.
 - Matching is by pinyin, not characters. Homophones pass.
 - Pinyin style in the word data follows the standard dictionary (现代汉语词典), like Pleco, HelloChinese and the HSK lists: neutral tones are unmarked (葡萄 pútao, 谢谢 xièxie, 朋友 péngyou). An unmarked syllable means neutral tone, not a missing mark. Show a short note about this in the Learn tab.
@@ -27,7 +27,7 @@ A class project (individual entrepreneurship class, ~3 months from late Sept 202
 ## Status
 Done (Python prototypes in prototype/, run on Windows, 1,200+ tests):
 - matcher.py + cases.json: forgiving pinyin matcher (Phase 1a)
-- data/packs.json + data/words.zh-CN.json: 14 packs, 74 words (Phase 3a)
+- data/packs.json + data/words.zh-CN.json: **HSK 1 (HSK 2.0 list), 152 words in 16 topic sections** (user decision for the MVP, Oct 2026: Mandarin only, vocabulary organised by HSK). Each pack has `hsk` and `order`; `theme` is the topic, used to pick fair wrong answers. All HSK 1 sections are free; Pro later adds HSK 2+. Erhua forms (这儿/那儿/哪儿) are left out because the pinyin check can't match them yet; 这/那/哪 are in. 谁 uses the everyday reading shéi (the data check accepts shéi or shuí).
 - quizzes.py: tap-quiz generators
 - srs.py: Leitner spaced repetition, plus simulate_srs.py
 

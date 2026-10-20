@@ -15,6 +15,10 @@ public struct Pack: Codable, Hashable, Identifiable, Sendable {
     public let level: Int
     public let title: String
     public let tier: Tier
+    /// HSK level (1 for the HSK 1 sections), if the pack is part of the HSK list.
+    public let hsk: Int?
+    /// Position within its HSK level: section 1, 2, 3...
+    public let order: Int?
 }
 
 public struct Concept: Codable, Hashable, Identifiable, Sendable {
@@ -110,6 +114,14 @@ public struct ContentLibrary: Sendable {
     public func pack(for word: Word) -> Pack? {
         guard let packId = concepts[word.conceptId]?.packId else { return nil }
         return packs.first { $0.id == packId }
+    }
+
+    /// HSK levels, each with its sections in order. Packs outside HSK are left out.
+    public var hskLevels: [(level: Int, packs: [Pack])] {
+        let levels = Set(packs.compactMap(\.hsk)).sorted()
+        return levels.map { level in
+            (level, packs.filter { $0.hsk == level }.sorted { ($0.order ?? 0) < ($1.order ?? 0) })
+        }
     }
 
     /// Themes in the order they first appear in packs.json, each with its packs by level.

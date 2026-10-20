@@ -16,6 +16,7 @@ WORDS = words_file["words"]
 
 SANDHI_FREE = {"一": "1245", "不": "245",  # tone changes before other tones
                "只": "13"}  # zhī (measure word); the library often guesses zhǐ
+ALT_READINGS = {"谁": ["shei2"]}  # shéi is the everyday reading; the library only gives shuí
 
 
 def render(base: str, tone: int) -> str:
@@ -56,7 +57,10 @@ def pinyin_regex(text: str) -> re.Pattern:
             tones = {1, 2, 3, 4, 5}
         else:
             tones = {tone, 5}  # many words are normally said with a neutral tone
-        parts.append("(?:" + "|".join(re.escape(flat(render(base, t))) for t in sorted(tones)) + ")")
+        options = [flat(render(base, t)) for t in sorted(tones)]
+        for alt in ALT_READINGS.get(ch, []):
+            options.append(flat(render(alt[:-1], int(alt[-1]))))
+        parts.append("(?:" + "|".join(re.escape(o) for o in options) + ")")
     return re.compile("".join(parts))
 
 

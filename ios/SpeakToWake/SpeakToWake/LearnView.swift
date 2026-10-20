@@ -32,13 +32,17 @@ struct LearnView: View {
                         }
                     }
                 }
-                ForEach(library.themes, id: \.theme) { group in
-                    Section(group.theme.capitalized) {
+                ForEach(library.hskLevels, id: \.level) { group in
+                    Section {
                         ForEach(group.packs) { pack in
                             NavigationLink(value: pack) {
                                 PackRow(pack: pack, learned: isLearned(pack))
                             }
                         }
+                    } header: {
+                        let words = group.packs.reduce(0) { $0 + library.words(in: $1).count }
+                        let learned = group.packs.filter(isLearned).count
+                        Text("HSK \(group.level) · \(words) words · \(learned) of \(group.packs.count) sections learned")
                     }
                 }
             }
@@ -66,10 +70,10 @@ private struct PackRow: View {
 
     var body: some View {
         HStack(spacing: 12) {
-            Text(words.first.flatMap { AppContent.library.concept(for: $0)?.emoji } ?? "📦")
+            Text(words.lazy.compactMap { AppContent.library.concept(for: $0)?.emoji }.first ?? "📘")
                 .font(.largeTitle)
             VStack(alignment: .leading, spacing: 2) {
-                Text(pack.title).font(.headline)
+                Text(pack.order.map { "\($0). \(pack.title)" } ?? pack.title).font(.headline)
                 Text("\(words.count) words · \(words.prefix(3).map(\.text).joined(separator: " "))")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)

@@ -16,8 +16,8 @@ let library: ContentLibrary = {
 
 @Test func loadsStarterContent() {
     #expect(library.language == "zh-CN")
-    #expect(library.packs.count == 14)
-    #expect(library.words.count == 74)
+    #expect(library.packs.count == 16)
+    #expect(library.words.count == 152)
 }
 
 @Test func everyWordHasAConceptAndPack() {
@@ -35,11 +35,13 @@ let library: ContentLibrary = {
 
 @Test func wordIDsAreUnique() {
     #expect(Set(library.words.map(\.id)).count == library.words.count)
-    #expect(library.words.first?.id == "zh-CN:apple")
+    #expect(library.words.first?.id == "zh-CN:hello")
 }
 
-@Test func themesGroupLevelsInOrder() {
-    let fruit = library.themes.first { $0.theme == "fruit" }
-    #expect(fruit?.packs.map(\.level) == [1, 2])
-    #expect(fruit?.packs.first?.tier == .free)
+@Test func hskSectionsAreInOrderAndFree() {
+    let hsk1 = library.hskLevels.first { $0.level == 1 }
+    #expect(hsk1?.packs.count == 16)
+    #expect(hsk1?.packs.map { $0.order ?? 0 } == Array(1...16))
+    #expect(hsk1?.packs.allSatisfy { $0.tier == .free } == true)
+    #expect(hsk1?.packs.first?.title == "Greetings")
 }
