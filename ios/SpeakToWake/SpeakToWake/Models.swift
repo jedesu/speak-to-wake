@@ -106,3 +106,58 @@ enum AppContent {
         }
     }()
 }
+
+/// One of the user's alarms. Its id is also the system (AlarmKit) alarm's id.
+@Model
+final class AlarmConfig {
+    @Attribute(.unique) var id: UUID
+    var hour: Int
+    var minute: Int
+    /// Calendar weekdays, 1 = Sunday ... 7 = Saturday. Empty means ring once.
+    var weekdays: [Int]
+    var label: String
+    var enabled: Bool
+    /// When it's next due to ring; used to switch off one-time alarms after they ring.
+    var nextRing: Date?
+    var createdAt: Date
+
+    init(hour: Int = 7, minute: Int = 0, weekdays: [Int] = [], label: String = "", enabled: Bool = true) {
+        id = UUID()
+        self.hour = hour
+        self.minute = minute
+        self.weekdays = weekdays
+        self.label = label
+        self.enabled = enabled
+        createdAt = .now
+    }
+
+    var timeText: String {
+        let date = Calendar.current.date(from: DateComponents(hour: hour, minute: minute)) ?? .now
+        return date.formatted(date: .omitted, time: .shortened)
+    }
+
+    var daysText: String {
+        let days = Set(weekdays)
+        switch days {
+        case []: return "Once"
+        case Set(1...7): return "Every day"
+        case [2, 3, 4, 5, 6]: return "Weekdays"
+        case [1, 7]: return "Weekends"
+        default:
+            let symbols = Calendar.current.shortWeekdaySymbols
+            return (1...7).filter(days.contains).map { symbols[$0 - 1] }.joined(separator: " ")
+        }
+    }
+
+    /// The next time this alarm will ring, from `now`.
+    func nextRingDate(after now: Date = .now, calendar: Calendar = .current) -> Date? {
+        if weekdays.isEmpty {
+            return calendar.nextDate(after: now, matching: DateComponents(hour: hour, minute: minute, second: 0),
+                                     matchingPolicy: .nextTime)
+        }
+        return weekdays.compactMap { day in
+            calendar.nextDate(after: now, matching: DateComponents(hour: hour, minute: minute, second: 0, weekday: day),
+                              matchingPolicy: .nextTime)
+        }.min()
+    }
+}

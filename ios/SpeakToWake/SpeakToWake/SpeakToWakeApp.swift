@@ -12,10 +12,7 @@ struct SpeakToWakeApp: App {
                     LearnView()
                 }
                 Tab("Alarm", systemImage: "alarm") {
-                    NavigationStack {
-                        AlarmTestView()
-                            .settingsButton()
-                    }
+                    AlarmTabView()
                 }
                 Tab("Progress", systemImage: "chart.bar") {
                     ProgressTabView()
@@ -26,6 +23,6 @@ struct SpeakToWakeApp: App {
             }
             .task { alarms.startObserving() }
         }
-        .modelContainer(for: [PackProgress.self, ReviewState.self, Attempt.self])
+        .modelContainer(for: [PackProgress.self, ReviewState.self, Attempt.self, AlarmConfig.self])
     }
 }

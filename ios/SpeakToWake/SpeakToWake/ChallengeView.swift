@@ -17,7 +17,7 @@ struct ChallengeView: View {
         if started {
             challenge
         } else {
-            RingingView {
+            RingingView(label: AlarmController.shared.ringingLabel) {
                 AlarmController.shared.silenceSystemAlarm()
                 started = true
             }

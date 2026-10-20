@@ -19,7 +19,7 @@ struct StopAlarmIntent: LiveActivityIntent {
     }
 
     func perform() async throws -> some IntentResult {
-        await AlarmController.shared.handleStop()
+        await AlarmController.shared.handleStop(alarmID: alarmID)
         return .result()
     }
 }
@@ -42,7 +42,7 @@ struct OpenChallengeIntent: LiveActivityIntent {
     }
 
     func perform() async throws -> some IntentResult {
-        await AlarmController.shared.handleSpeak()
+        await AlarmController.shared.handleSpeak(alarmID: alarmID)
         return .result()
     }
 }

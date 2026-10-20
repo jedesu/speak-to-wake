@@ -3,6 +3,7 @@ import SwiftUI
 /// The full-screen "alarm is ringing" page shown before the challenge, like
 /// Alarmy's: big clock, a label, a bouncing mascot and one big Start button.
 struct RingingView: View {
+    var label: String?
     let onStart: () -> Void
 
     @State private var bounce = false
@@ -25,7 +26,7 @@ struct RingingView: View {
                 .foregroundStyle(.white)
                 .padding(.top, 40)
 
-                Text("☀️ Time to wake up")
+                Text("☀️ \(label ?? "Time to wake up")")
                     .font(.title3.bold())
                     .padding(.horizontal, 16)
                     .padding(.vertical, 8)

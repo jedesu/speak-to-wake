@@ -44,7 +44,7 @@ struct AlarmTestView: View {
                         LabeledContent(scheduleText(alarm), value: stateText(alarm.state))
                     }
                     if !controller.alarms.isEmpty {
-                        Button("Cancel all", role: .destructive) { controller.cancelAll() }
+                        Button("Cancel re-rings", role: .destructive) { controller.cancelReRings() }
                     }
                 }
 
