@@ -21,7 +21,12 @@ struct SpeakToWakeApp: App {
             }
             .fullScreenCover(isPresented: $alarms.showChallenge) {
                 ChallengeView()
+                    .fontDesign(.rounded)
+                    .tint(Theme.accent)
             }
+            .fontDesign(.rounded)
+            .tint(Theme.accent)
+            .foregroundStyle(Theme.text)
             .task { alarms.startObserving() }
         }
         .modelContainer(for: [PackProgress.self, ReviewState.self, Attempt.self, AlarmConfig.self])

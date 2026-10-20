@@ -31,7 +31,7 @@ struct OnboardingView: View {
                     }
                     .accessibilityLabel("Back")
                     ProgressView(value: Double(step.rawValue), total: Double(Step.allCases.count - 1))
-                        .tint(.orange)
+                        .tint(Theme.accent)
                     Text("\(step.rawValue)/\(Step.allCases.count - 1)")
                         .font(.subheadline.monospacedDigit())
                         .foregroundStyle(.secondary)
@@ -59,10 +59,11 @@ struct OnboardingView: View {
                     .frame(maxWidth: .infinity, minHeight: 56)
             }
             .buttonStyle(.borderedProminent)
-            .tint(.orange)
+            .tint(Theme.accent)
             .clipShape(.capsule)
             .padding(24)
         }
+        .background(Theme.ground)
     }
 
     private var buttonTitle: String {
@@ -110,7 +111,7 @@ struct OnboardingView: View {
             Text("How it works").font(.largeTitle.bold())
             stepRow("book.fill", .blue, "Learn a few words",
                     "Study short HSK 1 sections with flashcards, audio and quick quizzes.")
-            stepRow("alarm.fill", .orange, "Your alarm asks them",
+            stepRow("alarm.fill", Theme.accent, "Your alarm asks them",
                     "In the morning, Mingo quizzes you on words you've learned.")
             stepRow("mic.fill", .green, "Say it to turn it off",
                     "Answer out loud or by tapping. A wrong answer gives you a new word.")
@@ -161,7 +162,7 @@ struct OnboardingView: View {
         HStack(alignment: .top, spacing: 16) {
             Image(systemName: icon)
                 .font(.title2)
-                .foregroundStyle(.orange)
+                .foregroundStyle(Theme.accent)
                 .frame(width: 36)
             VStack(alignment: .leading, spacing: 8) {
                 Text(title).font(.headline)
@@ -193,7 +194,7 @@ struct OnboardingView: View {
                         Text(Calendar.current.veryShortWeekdaySymbols[day - 1])
                             .font(.headline)
                             .frame(width: 40, height: 40)
-                            .background(on ? Color.orange : Color.secondary.opacity(0.15), in: .circle)
+                            .background(on ? Theme.accent : Color.secondary.opacity(0.15), in: .circle)
                             .foregroundStyle(on ? .white : .primary)
                     }
                     .buttonStyle(.plain)
@@ -222,7 +223,7 @@ struct OnboardingView: View {
                         .foregroundStyle(.secondary)
                 }
             }
-            .tint(.orange)
+            .tint(Theme.accent)
             Label("Your progress is saved on this iPhone.", systemImage: "iphone")
                 .font(.footnote)
                 .foregroundStyle(.secondary)

@@ -66,6 +66,7 @@ struct SettingsView: View {
                     NavigationLink("Alarm test") { AlarmTestView() }
                 }
             }
+            .softDawnList()
             .navigationTitle("Settings")
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {

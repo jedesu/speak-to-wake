@@ -34,10 +34,10 @@ struct ChallengeView: View {
                 } else if let prompt = session.prompt {
                     ScrollView {
                         if let message = session.message {
-                            Text(message)
+                            Label(message, systemImage: "arrow.triangle.2.circlepath")
                                 .font(.headline)
-                                .foregroundStyle(.red)
-                                .padding(.top)
+                                .foregroundStyle(Theme.accent)
+                                .padding(.bottom, 4)
                         }
                         promptView(prompt, session: session)
                             .id(prompt.id)
@@ -47,6 +47,7 @@ struct ChallengeView: View {
                 emergencyExit(session)
             }
         }
+        .background(Theme.ground)
         .onAppear {
             if session == nil { session = WakeSession(reviews: reviews) }
             AlarmSound.shared.start()
@@ -57,26 +58,35 @@ struct ChallengeView: View {
     }
 
     private func header(_ session: WakeSession) -> some View {
-        VStack(spacing: 8) {
-            Text("Good morning! Answer \(session.required) to turn off the alarm")
-                .font(.subheadline)
-                .foregroundStyle(.secondary)
-            HStack(spacing: 8) {
+        HStack(alignment: .center) {
+            VStack(alignment: .leading, spacing: 2) {
+                Text("Good morning")
+                    .font(.subheadline.bold())
+                    .foregroundStyle(Theme.muted)
+                Text("Say \(session.required) \(session.required == 1 ? "word" : "words") to wake up")
+                    .font(.title3.weight(.heavy))
+            }
+            Spacer()
+            HStack(spacing: 6) {
                 ForEach(0..<session.required, id: \.self) { i in
                     Circle()
-                        .fill(i < session.passed ? Color.green : Color.secondary.opacity(0.3))
-                        .frame(width: 14, height: 14)
+                        .fill(i < session.passed ? Theme.accent : Theme.toggleOff)
+                        .frame(width: 12, height: 12)
                 }
             }
+            .accessibilityElement()
+            .accessibilityLabel("\(session.passed) of \(session.required) done")
         }
-        .padding()
+        .padding(.horizontal, 22)
+        .padding(.top, 16)
+        .padding(.bottom, 12)
     }
 
     @ViewBuilder
     private func promptView(_ prompt: WakeSession.Prompt, session: WakeSession) -> some View {
         if prompt.challenge.isSpeech {
-            SpeechPromptView(word: prompt.word, challenge: prompt.challenge) { passed, transcript, score in
-                session.answer(correct: passed, transcript: transcript, score: score,
+            SpeechPromptView(word: prompt.word, challenge: prompt.challenge) { passed, transcript, score, usedHint in
+                session.answer(correct: passed, transcript: transcript, score: score, usedHint: usedHint,
                                reviews: reviews, context: modelContext)
             } onSwitchToTap: {
                 session.switchToTap()
@@ -84,8 +94,8 @@ struct ChallengeView: View {
                 AlarmSound.shared.setPaused(listening, reason: "listening")
             }
         } else if let quiz = prompt.quiz {
-            QuizCard(quiz: quiz) { correct, chosen in
-                session.answer(correct: correct, chosen: chosen, reviews: reviews, context: modelContext)
+            QuizCard(quiz: quiz) { correct, chosen, usedHint in
+                session.answer(correct: correct, chosen: chosen, usedHint: usedHint, reviews: reviews, context: modelContext)
             }
         }
     }
@@ -95,7 +105,7 @@ struct ChallengeView: View {
             Spacer()
             Image(systemName: "sun.max.fill")
                 .font(.system(size: 90))
-                .foregroundStyle(.orange)
+                .foregroundStyle(Theme.accent)
             Text("You're up!").font(.largeTitle.bold())
             Text("Alarm off. Have a good day.").foregroundStyle(.secondary)
             Spacer()
@@ -113,12 +123,10 @@ struct ChallengeView: View {
             Text("Your alarm only asks words you've learned. Learn a pack in the Learn tab so tomorrow's alarm has words.")
                 .multilineTextAlignment(.center)
                 .foregroundStyle(.secondary)
-            Button {
+            Button("Turn off alarm") {
                 AlarmController.shared.challengePassed()
-            } label: {
-                Text("Turn off alarm").font(.title3.bold()).frame(maxWidth: .infinity, minHeight: 44)
             }
-            .buttonStyle(.borderedProminent)
+            .buttonStyle(PrimaryButtonStyle())
             Spacer()
         }
         .padding()
@@ -132,7 +140,7 @@ struct ChallengeView: View {
                     .font(.footnote)
                     .multilineTextAlignment(.center)
                     .frame(maxWidth: .infinity, minHeight: 50)
-                    .background(.fill.tertiary, in: .rect(cornerRadius: 12))
+                    .background(Theme.tip, in: .rect(cornerRadius: 16))
                     .padding()
                     .onLongPressGesture(minimumDuration: 3) {
                         AlarmController.shared.emergencyDismiss()

@@ -46,6 +46,7 @@ struct LearnView: View {
                     }
                 }
             }
+            .softDawnList()
             .navigationTitle("Learn")
             .navigationDestination(for: Pack.self) { pack in
                 PackDetailView(pack: pack)
@@ -164,6 +165,7 @@ struct PackDetailView: View {
                 }
             }
         }
+        .softDawnList()
         .navigationTitle(pack.title)
         .fullScreenCover(isPresented: $studying) {
             StudySessionView(pack: pack, flipMode: learned)

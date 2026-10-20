@@ -14,6 +14,7 @@ struct ProgressTabView: View {
                 LabeledContent("Words in review", value: "\(reviews.count)")
                 LabeledContent("Answers so far", value: "\(attempts.count)")
             }
+            .softDawnList()
             .navigationTitle("Progress")
             .settingsButton()
         }

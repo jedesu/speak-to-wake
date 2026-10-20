@@ -51,7 +51,7 @@ struct StudySessionView: View {
                 case .practice:
                     if position < queue.count {
                         ScrollView {
-                            QuizCard(quiz: queue[position]) { correct, chosen in
+                            QuizCard(quiz: queue[position]) { correct, chosen, _ in
                                 answered(correct: correct, chosen: chosen)
                             }
                             .id(position)
@@ -61,6 +61,7 @@ struct StudySessionView: View {
                     done
                 }
             }
+            .background(Theme.ground)
             .navigationTitle(pack.title)
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
@@ -307,7 +308,7 @@ struct FlashcardView: View {
                 }
                 .padding()
                 .frame(maxWidth: .infinity)
-                .background(.fill.tertiary, in: .rect(cornerRadius: 16))
+                .background(Theme.chip, in: .rect(cornerRadius: 20))
             }
         }
         .padding()

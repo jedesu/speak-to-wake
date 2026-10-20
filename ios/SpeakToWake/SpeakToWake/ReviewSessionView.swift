@@ -24,8 +24,8 @@ struct ReviewSessionView: View {
                                            description: Text("Learn a pack first."))
                 } else if position < queue.count {
                     ScrollView {
-                        QuizCard(quiz: queue[position].quiz) { correct, chosen in
-                            answered(correct: correct, chosen: chosen)
+                        QuizCard(quiz: queue[position].quiz) { correct, chosen, usedHint in
+                            answered(correct: correct, chosen: chosen, usedHint: usedHint)
                         }
                         .id(position)
                     }
@@ -33,6 +33,7 @@ struct ReviewSessionView: View {
                     summary
                 }
             }
+            .background(Theme.ground)
             .navigationTitle("Review")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -50,7 +51,7 @@ struct ReviewSessionView: View {
         queue = ids.compactMap { AppContent.library.word(id: $0) }.map { (Learning.quiz(for: $0), false) }
     }
 
-    private func answered(correct: Bool, chosen: String) {
+    private func answered(correct: Bool, chosen: String, usedHint: Bool) {
         let (quiz, isRetry) = queue[position]
         Learning.record(quiz, correct: correct, chosen: chosen, context: "review", retry: isRetry ? 1 : 0,
                         in: modelContext)
@@ -58,7 +59,9 @@ struct ReviewSessionView: View {
             reviewedCount += 1
             if correct { rightFirstTime += 1 }
             if let state = reviews.first(where: { $0.wordID == quiz.target.id }) {
-                state.update(from: SRS.review(state.card, correct ? .correct : .missed, today: .today))
+                // A hint still counts as right, but the word stays in its box.
+                let outcome: SRS.Outcome = !correct ? .missed : usedHint ? .correctAfterRetry : .correct
+                state.update(from: SRS.review(state.card, outcome, today: .today))
             }
             if !correct {
                 queue.append((Learning.quiz(for: quiz.target, avoiding: quiz.kind), true))

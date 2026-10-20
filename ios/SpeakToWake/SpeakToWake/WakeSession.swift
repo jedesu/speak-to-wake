@@ -52,7 +52,7 @@ final class WakeSession {
 
     /// Call when a prompt is answered. Updates the review schedule and the log.
     func answer(correct: Bool, transcript: String? = nil, score: Double? = nil, chosen: String? = nil,
-                reviews: [ReviewState], context: ModelContext) {
+                usedHint: Bool = false, reviews: [ReviewState], context: ModelContext) {
         guard let prompt else { return }
         context.insert(Attempt(wordID: prompt.word.id, challengeType: prompt.challenge.logName, context: "wake",
                                passed: correct, retryNumber: misses, transcript: transcript, matchScore: score,
@@ -60,7 +60,9 @@ final class WakeSession {
         // Only the first answer for a word moves it in the review schedule.
         if answeredOnce.insert(prompt.word.id).inserted,
            let state = reviews.first(where: { $0.wordID == prompt.word.id }) {
-            state.update(from: SRS.review(state.card, correct ? .correct : .missed, today: .today))
+            // A hint still counts as right, but the word stays in its box.
+            let outcome: SRS.Outcome = !correct ? .missed : usedHint ? .correctAfterRetry : .correct
+            state.update(from: SRS.review(state.card, outcome, today: .today))
         }
         try? context.save()
 

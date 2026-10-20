@@ -1,12 +1,14 @@
 import SwiftData
 import SwiftUI
 
-/// Alarm tab, laid out like the Clock app's Alarms list.
+/// Alarm tab in the Soft Dawn style: a greeting, one card per alarm, and tips
+/// only when they matter.
 struct AlarmTabView: View {
     @Environment(\.modelContext) private var modelContext
     @Query(sort: [SortDescriptor(\AlarmConfig.hour), SortDescriptor(\AlarmConfig.minute)])
     private var configs: [AlarmConfig]
     @Query private var reviews: [ReviewState]
+    @Query private var progress: [PackProgress]
 
     private var controller = AlarmController.shared
     @State private var volume = VolumeMonitor()
@@ -15,33 +17,46 @@ struct AlarmTabView: View {
 
     var body: some View {
         NavigationStack {
-            List {
-                notices
-                ForEach(configs) { config in
-                    AlarmRow(config: config) { enabled in
-                        config.enabled = enabled
-                        Task { await controller.schedule(config) }
+            ScrollView {
+                VStack(spacing: 14) {
+                    header
+                    if controller.authorization == .denied {
+                        tip("exclamationmark.triangle.fill", "Alarms are off for Mingo",
+                            "Turn them on in Settings → Apps → Mingo.")
                     }
-                    .contentShape(.rect)
-                    .onTapGesture { editing = config }
-                }
-                .onDelete(perform: delete)
-            }
-            .listStyle(.plain)
-            .overlay {
-                if configs.isEmpty {
-                    ContentUnavailableView {
-                        Label("No Alarms", systemImage: "alarm")
-                    } description: {
-                        Text("Tap + to set a wake-up alarm.")
+                    if volume.isLow && !configs.isEmpty {
+                        tip("speaker.slash.fill", "Volume is at \(Int(volume.volume * 100))%",
+                            "Turn it up so the challenge can wake you.")
+                    }
+                    if configs.isEmpty {
+                        VStack(spacing: 12) {
+                            Image(systemName: "alarm").font(.system(size: 44)).foregroundStyle(Theme.accent)
+                            Text("No alarms yet").font(.title3.bold())
+                            Text("Tap + to set a wake-up alarm.").foregroundStyle(Theme.muted)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .card(padding: 32)
+                    }
+                    ForEach(configs) { config in
+                        Button {
+                            editing = config
+                        } label: {
+                            AlarmCard(config: config, words: AppSettings.promptsPerWake) { enabled in
+                                config.enabled = enabled
+                                Task { await controller.schedule(config) }
+                            }
+                        }
+                        .buttonStyle(.plain)
+                    }
+                    if !configs.isEmpty {
+                        wordsTip
                     }
                 }
+                .padding(.horizontal, 18)
+                .padding(.bottom, 24)
             }
-            .navigationTitle("Alarms")
+            .background(Theme.ground)
             .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    if !configs.isEmpty { EditButton() }
-                }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Add alarm", systemImage: "plus") { adding = true }
                 }
@@ -61,36 +76,55 @@ struct AlarmTabView: View {
         }
     }
 
-    /// Small notes above the list, only when they matter.
+    private var header: some View {
+        VStack(alignment: .leading, spacing: 2) {
+            Text(Self.greeting(for: .now))
+                .font(.subheadline.bold())
+                .foregroundStyle(Theme.muted)
+            Text("Your alarms")
+                .font(.largeTitle.weight(.heavy))
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.horizontal, 4)
+    }
+
+    /// Which words tomorrow's alarm can ask.
     @ViewBuilder
-    private var notices: some View {
-        if let next = configs.filter(\.enabled).compactMap({ $0.nextRingDate() }).min() {
-            TimelineView(.everyMinute) { context in
-                Text("Next alarm in \(Self.countdown(from: context.date, to: next))")
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
-            }
-            .listRowSeparator(.hidden)
-        }
-        if controller.authorization == .denied {
-            notice("Alarms are off for Mingo. Turn them on in Settings → Apps → Mingo.",
-                   systemImage: "exclamationmark.triangle.fill", color: .red)
-        }
-        if volume.isLow && !configs.isEmpty {
-            notice("Volume is at \(Int(volume.volume * 100))%. Turn it up so the challenge can wake you.",
-                   systemImage: "speaker.slash.fill", color: .orange)
-        }
-        if reviews.isEmpty && !configs.isEmpty {
-            notice("Your alarm asks words you've learned. Learn your first section in the Learn tab.",
-                   systemImage: "book.fill", color: .blue)
+    private var wordsTip: some View {
+        let library = AppContent.library
+        let learned = library.packs.filter { pack in progress.contains { $0.packID == pack.id && $0.learnedAt != nil } }
+        if learned.isEmpty {
+            tip("book.fill", "Learn your first words",
+                "Your alarm asks words you've learned. Start with HSK 1 · Greetings in the Learn tab.")
+        } else {
+            tip("character.book.closed.fill", "Your alarm's words come from",
+                "HSK 1 · " + learned.map(\.title).joined(separator: ", "))
         }
     }
 
-    private func notice(_ text: String, systemImage: String, color: Color) -> some View {
-        Label(text, systemImage: systemImage)
-            .font(.footnote)
-            .foregroundStyle(color)
-            .listRowSeparator(.hidden)
+    private func tip(_ icon: String, _ title: String, _ detail: String) -> some View {
+        HStack(spacing: 14) {
+            Image(systemName: icon)
+                .font(.title3)
+                .foregroundStyle(Theme.link)
+                .frame(width: 48, height: 48)
+                .background(Theme.card, in: .rect(cornerRadius: 14))
+            VStack(alignment: .leading, spacing: 2) {
+                Text(title).font(.subheadline.weight(.heavy))
+                Text(detail).font(.subheadline).foregroundStyle(Theme.muted)
+            }
+            Spacer(minLength: 0)
+        }
+        .padding(16)
+        .background(Theme.tip, in: .rect(cornerRadius: 24))
+    }
+
+    static func greeting(for date: Date) -> String {
+        switch Calendar.current.component(.hour, from: date) {
+        case 5..<12: "Good morning"
+        case 12..<18: "Good afternoon"
+        default: "Good evening"
+        }
     }
 
     static func countdown(from now: Date, to date: Date) -> String {
@@ -101,42 +135,54 @@ struct AlarmTabView: View {
         }
         return hours > 0 ? "\(hours) h \(rest) min" : "\(rest) min"
     }
-
-    private func delete(at offsets: IndexSet) {
-        for index in offsets {
-            controller.unschedule(configs[index])
-            modelContext.delete(configs[index])
-        }
-        try? modelContext.save()
-    }
 }
 
-private struct AlarmRow: View {
+/// One alarm: big time, on/off switch, label, day circles, and when it rings next.
+private struct AlarmCard: View {
     let config: AlarmConfig
+    let words: Int
     let onToggle: (Bool) -> Void
 
     var body: some View {
-        HStack {
-            VStack(alignment: .leading, spacing: 0) {
-                HStack(alignment: .firstTextBaseline, spacing: 2) {
+        VStack(alignment: .leading, spacing: 10) {
+            HStack {
+                HStack(alignment: .firstTextBaseline, spacing: 6) {
                     Text(config.timeDigits)
-                        .font(.system(size: 58, weight: .light))
+                        .font(.system(size: 52, weight: .heavy))
                         .monospacedDigit()
                     if let period = config.amPM {
-                        Text(period)
-                            .font(.system(size: 28, weight: .light))
+                        Text(period).font(.title3.bold()).foregroundStyle(config.enabled ? Theme.muted : Theme.off)
                     }
                 }
-                Text(config.subtitle)
-                    .font(.subheadline)
+                Spacer()
+                Toggle("On", isOn: Binding(get: { config.enabled }, set: onToggle))
+                    .labelsHidden()
+                    .tint(Theme.accent)
             }
-            .foregroundStyle(config.enabled ? .primary : .secondary)
-            Spacer()
-            Toggle("On", isOn: Binding(get: { config.enabled }, set: onToggle))
-                .labelsHidden()
-                .tint(.green)
+            Text(config.label.isEmpty ? "Alarm" : config.label)
+                .font(.headline)
+            HStack(spacing: 6) {
+                ForEach(1...7, id: \.self) { day in
+                    let on = config.weekdays.contains(day)
+                    Text(Calendar.current.veryShortWeekdaySymbols[day - 1])
+                        .font(.caption.bold())
+                        .frame(width: 30, height: 30)
+                        .background(on && config.enabled ? Theme.accent : Theme.chip, in: .circle)
+                        .foregroundStyle(on && config.enabled ? .white : Theme.muted)
+                }
+            }
+            .accessibilityElement()
+            .accessibilityLabel(config.daysText)
+            if config.enabled, let next = config.nextRingDate() {
+                TimelineView(.everyMinute) { context in
+                    Text("Rings in \(AlarmTabView.countdown(from: context.date, to: next)) · \(words) words to say")
+                        .font(.subheadline.bold())
+                        .foregroundStyle(Theme.muted)
+                }
+            }
         }
-        .padding(.vertical, 2)
+        .foregroundStyle(config.enabled ? Theme.text : Theme.off)
+        .card(padding: 22)
     }
 }
 
@@ -198,6 +244,7 @@ struct AlarmEditView: View {
                 }
             }
             .onAppear(perform: load)
+            .softDawnList()
         }
     }
 

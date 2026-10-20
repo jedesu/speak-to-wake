@@ -9,7 +9,7 @@ import WakeCore
 struct SpeechPromptView: View {
     let word: Word
     let challenge: Challenge
-    let onFinish: (_ passed: Bool, _ transcript: String, _ score: Double) -> Void
+    let onFinish: (_ passed: Bool, _ transcript: String, _ score: Double, _ usedHint: Bool) -> Void
     let onSwitchToTap: () -> Void
     var onListeningChange: (Bool) -> Void = { _ in }
 
@@ -19,11 +19,11 @@ struct SpeechPromptView: View {
     @State private var listener = LiveTranscriber()
     @State private var finished = false
     @State private var showText = false
+    @State private var usedHint = false
     @State private var idleTask: Task<Void, Never>?
     @State private var timedOut = false
 
     private let locale = Locale(identifier: "zh-CN")
-    private var english: String { AppContent.library.concept(for: word)?.english ?? "" }
 
     /// What has to be said.
     private var target: String {
@@ -35,40 +35,24 @@ struct SpeechPromptView: View {
     }
 
     var body: some View {
-        VStack(spacing: 20) {
-            Text(instruction)
-                .font(.headline)
-                .foregroundStyle(.secondary)
-            prompt
-                .frame(maxWidth: .infinity, minHeight: 160)
+        VStack(spacing: 16) {
+            VStack(spacing: 12) {
+                Text(instruction)
+                    .font(.caption.weight(.heavy))
+                    .textCase(.uppercase)
+                    .kerning(1)
+                    .foregroundStyle(Theme.muted)
+                prompt
+                hint
+            }
+            .frame(maxWidth: .infinity, minHeight: 300)
+            .card(padding: 24)
 
-            Text(listener.transcript.isEmpty ? (listener.isListening ? "Listening…" : " ") : listener.transcript)
-                .font(.title2)
-                .foregroundStyle(listener.transcript.isEmpty ? .secondary : .primary)
+            listeningCard
+
             if let error = listener.errorMessage {
                 Text(error).foregroundStyle(.red)
             }
-            if timedOut && !listener.isListening {
-                Text("Didn't hear anything. Tap Start talking.")
-                    .foregroundStyle(.orange)
-            }
-
-            Button {
-                Task {
-                    if listener.isListening {
-                        await judge()
-                    } else {
-                        await startListening()
-                    }
-                }
-            } label: {
-                Label(listener.isListening ? "Done" : "Start talking",
-                      systemImage: listener.isListening ? "stop.circle.fill" : "mic.circle.fill")
-                    .font(.title2.bold())
-                    .frame(maxWidth: .infinity, minHeight: 56)
-            }
-            .buttonStyle(.borderedProminent)
-            .tint(listener.isListening ? .red : .orange)
 
             Button("Can't talk right now? Answer by tapping") {
                 Task {
@@ -77,9 +61,11 @@ struct SpeechPromptView: View {
                     onSwitchToTap()
                 }
             }
-            .font(.footnote)
+            .font(.subheadline.bold())
+            .foregroundStyle(Theme.link)
+            .frame(minHeight: 44)
         }
-        .padding()
+        .padding(.horizontal, 18)
         .task {
             if challenge == .hearAndRepeat {
                 Speaker.shared.say(word.text)
@@ -104,14 +90,55 @@ struct SpeechPromptView: View {
         }
     }
 
+    /// "Listening…" with what it heard so far, and the round mic button.
+    private var listeningCard: some View {
+        HStack(spacing: 12) {
+            VStack(alignment: .leading, spacing: 2) {
+                if listener.isListening {
+                    Text(listener.transcript.isEmpty ? "Listening…" : listener.transcript)
+                        .font(.headline)
+                    Text("It passes as soon as it hears you")
+                        .font(.subheadline)
+                        .foregroundStyle(Theme.muted)
+                } else if timedOut {
+                    Text("Didn't hear anything").font(.headline)
+                    Text("Tap the mic and try again")
+                        .font(.subheadline)
+                        .foregroundStyle(Theme.muted)
+                } else {
+                    Text("Tap the mic to talk").font(.headline)
+                }
+            }
+            Spacer()
+            Button {
+                Task {
+                    if listener.isListening {
+                        await judge()
+                    } else {
+                        await startListening()
+                    }
+                }
+            } label: {
+                Image(systemName: listener.isListening ? "stop.fill" : "mic.fill")
+                    .font(.title)
+                    .foregroundStyle(.white)
+                    .frame(width: 64, height: 64)
+                    .background(Theme.accent, in: .circle)
+            }
+            .accessibilityLabel(listener.isListening ? "Done talking" : "Start talking")
+        }
+        .card(padding: 16)
+    }
+
     private var instruction: String {
         switch challenge {
         case .hearAndRepeat: "Listen, then say it back"
         case .readAloud: "Read this sentence out loud"
-        default: "Say this word out loud"
+        default: "Say it out loud"
         }
     }
 
+    /// Characters only: no pinyin or English, which would give the answer away.
     @ViewBuilder
     private var prompt: some View {
         switch challenge {
@@ -120,29 +147,49 @@ struct SpeechPromptView: View {
                 Button {
                     Speaker.shared.say(word.text)
                 } label: {
-                    Image(systemName: "speaker.wave.3.fill").font(.system(size: 64))
+                    Image(systemName: "speaker.wave.3.fill")
+                        .font(.system(size: 48))
+                        .foregroundStyle(Theme.accent)
+                        .frame(width: 104, height: 104)
+                        .background(Theme.chip, in: .circle)
                 }
                 .accessibilityLabel("Play the word again")
                 if showText {
-                    Text("\(word.text)  \(word.pinyin)").font(.title)
+                    Text(word.text).font(.system(size: 56, weight: .medium))
                 } else {
-                    Button("Show the word") { showText = true }
-                        .font(.footnote)
+                    Button("Show the word") {
+                        showText = true
+                        usedHint = true
+                    }
+                    .buttonStyle(ChipButtonStyle())
                 }
             }
         case .readAloud:
-            if let example = word.example {
-                VStack(spacing: 8) {
-                    Text(example.text).font(.largeTitle).multilineTextAlignment(.center)
-                    Text(example.pinyin).foregroundStyle(.secondary).multilineTextAlignment(.center)
-                    Text(example.english).font(.subheadline).multilineTextAlignment(.center)
-                }
-            }
+            Text(word.example?.text ?? word.text)
+                .font(.system(size: 34, weight: .medium))
+                .multilineTextAlignment(.center)
         default:
-            VStack(spacing: 6) {
-                Text(word.text).font(.system(size: 80))
-                Text(word.pinyin).font(.title2).foregroundStyle(.secondary)
-                Text(english).font(.title3)
+            Text(word.text).font(.system(size: 96, weight: .medium))
+        }
+    }
+
+    /// Show hint reveals the word's picture.
+    @ViewBuilder
+    private var hint: some View {
+        if challenge != .hearAndRepeat, let picture = AppContent.library.concept(for: word)?.emoji {
+            if usedHint {
+                Text(picture)
+                    .font(.system(size: 64))
+                    .frame(width: 112, height: 112)
+                    .background(Theme.chip, in: .circle)
+                    .accessibilityLabel("Hint picture")
+            } else {
+                Button {
+                    usedHint = true
+                } label: {
+                    Label("Show hint", systemImage: "lightbulb")
+                }
+                .buttonStyle(ChipButtonStyle())
             }
         }
     }
@@ -175,6 +222,6 @@ struct SpeechPromptView: View {
         idleTask?.cancel()
         await listener.stop()
         let result = check()
-        onFinish(result.verdict == .pass, listener.transcript, result.score)
+        onFinish(result.verdict == .pass, listener.transcript, result.score, usedHint)
     }
 }
