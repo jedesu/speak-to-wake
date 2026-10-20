@@ -5,8 +5,6 @@ import WakeCore
 /// Full-screen wake-up challenge, opened by the alarm's Speak button.
 /// A few correct answers turn the alarm off; a wrong answer swaps in another word.
 struct ChallengeView: View {
-    /// Seconds before the emergency exit appears, so nobody is ever stuck.
-    static let emergencyAfter: TimeInterval = 180
 
     @Environment(\.modelContext) private var modelContext
     @Query private var reviews: [ReviewState]
@@ -129,7 +127,7 @@ struct ChallengeView: View {
     /// Appears after a few minutes. Holding (not tapping) keeps it from being an easy way out.
     private func emergencyExit(_ session: WakeSession) -> some View {
         TimelineView(.periodic(from: .now, by: 5)) { context in
-            if context.date.timeIntervalSince(session.startedAt) >= Self.emergencyAfter && !session.finished {
+            if context.date.timeIntervalSince(session.startedAt) >= AppSettings.emergencyAfter && !session.finished {
                 Text("Stuck? Press and hold here for 3 seconds to turn the alarm off.")
                     .font(.footnote)
                     .multilineTextAlignment(.center)

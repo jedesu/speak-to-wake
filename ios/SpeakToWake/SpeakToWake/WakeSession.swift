@@ -16,8 +16,6 @@ final class WakeSession {
         let quiz: Quiz?
     }
 
-    static let defaultRequired = 3
-
     let required: Int
     let startedAt = Date.now
     private(set) var prompt: Prompt?
@@ -37,14 +35,18 @@ final class WakeSession {
     private var misses = 0
     private var rng = SystemRandomNumberGenerator()
 
-    init(reviews: [ReviewState], required: Int = defaultRequired, difficulty: SRS.Difficulty = .normal) {
+    private let allowSpeech: Bool
+
+    init(reviews: [ReviewState], required: Int = AppSettings.promptsPerWake, allowSpeech: Bool = AppSettings.speakingOn,
+         difficulty: SRS.Difficulty = .normal) {
+        self.allowSpeech = allowSpeech
         let library = AppContent.library
         let pool = reviews.compactMap { library.word(id: $0.wordID) }
         self.required = min(required, max(pool.count, 1))
         self.pool = pool
         let ids = SRS.pickForAlarm(reviews.map(\.card), today: .today, n: self.required, difficulty: difficulty)
         let words = ids.compactMap { library.word(id: $0) }
-        planned = Array(zip(words, planner.plan(words, using: &rng)))
+        planned = Array(zip(words, planner.plan(words, allowSpeech: allowSpeech, using: &rng)))
         advance()
     }
 
@@ -96,15 +98,15 @@ final class WakeSession {
             prompt = make(word, challenge)
         } else if let word = pool.randomElement(using: &rng) {
             // Fewer planned words than required (a small pool): ask any learned word.
-            prompt = make(word, planner.plan([word], using: &rng)[0])
+            prompt = make(word, planner.plan([word], allowSpeech: allowSpeech, using: &rng)[0])
         }
     }
 
     private func replace(after missed: Prompt) {
         let others = pool.filter { $0 != missed.word }
         let word = others.randomElement(using: &rng) ?? missed.word
-        let challenge = planner.replacement(after: missed.challenge, for: word,
-                                            speechMissesInARow: speechMissesInARow, using: &rng)
+        let challenge = planner.replacement(after: missed.challenge, for: word, speechMissesInARow: speechMissesInARow,
+                                            allowSpeech: allowSpeech, using: &rng)
         prompt = make(word, challenge)
     }
 

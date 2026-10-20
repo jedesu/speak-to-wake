@@ -15,8 +15,13 @@ final class AlarmSound {
     private var pauseReasons: Set<String> = []
     private var holdTask: Task<Void, Never>?
     private var vibrateTask: Task<Void, Never>?
+    private var startedAt = Date.now
+
+    /// With gentle wake-up on, the sound grows from quiet to full over this long.
+    static let rampSeconds: TimeInterval = 30
 
     func start() {
+        if !isOn { startedAt = .now }
         isOn = true
         update()
     }
@@ -72,7 +77,14 @@ final class AlarmSound {
                 print("[AlarmSound] player error: \(error)")
             }
         }
-        player?.volume = 1
+        if AppSettings.gentleWakeUp {
+            let elapsed = Date.now.timeIntervalSince(startedAt)
+            let progress = min(1, elapsed / Self.rampSeconds)
+            player?.volume = Float(0.15 + 0.85 * progress)
+            player?.setVolume(1, fadeDuration: max(0, Self.rampSeconds - elapsed))
+        } else {
+            player?.volume = 1
+        }
         player?.play()
         startVibrating()
     }

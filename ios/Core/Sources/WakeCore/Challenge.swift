@@ -61,15 +61,17 @@ public struct ChallengePlanner: Sendable {
     }
 
     /// One challenge per word, with at least one speech prompt if possible.
-    public func plan<R: RandomNumberGenerator>(_ words: [Word], requireSpeech: Bool = true, using rng: inout R) -> [Challenge] {
+    /// `allowSpeech` false (the user turned speaking off) gives tap quizzes only.
+    public func plan<R: RandomNumberGenerator>(_ words: [Word], requireSpeech: Bool = true, allowSpeech: Bool = true,
+                                               using rng: inout R) -> [Challenge] {
         var plan = words.map { word -> Challenge in
-            let speech = speechChallenges(for: word)
+            let speech = allowSpeech ? speechChallenges(for: word) : []
             if !speech.isEmpty && Double.random(in: 0..<1, using: &rng) < Self.speechShare {
                 return speech.randomElement(using: &rng)!
             }
             return tapChallenges(for: word).randomElement(using: &rng)!
         }
-        if requireSpeech && !plan.contains(where: \.isSpeech),
+        if allowSpeech && requireSpeech && !plan.contains(where: \.isSpeech),
            let i = words.firstIndex(where: { !speechChallenges(for: $0).isEmpty }) {
             plan[i] = speechChallenges(for: words[i]).randomElement(using: &rng)!
         }
@@ -79,8 +81,9 @@ public struct ChallengePlanner: Sendable {
     /// The challenge for a replacement word after a wrong answer. Speech stays
     /// speech (so the wake-up keeps its speaking prompt) until too many misses in a row.
     public func replacement<R: RandomNumberGenerator>(after missed: Challenge, for word: Word,
-                                                      speechMissesInARow: Int, using rng: inout R) -> Challenge {
-        if missed.isSpeech && speechMissesInARow < Self.speechFallbackAfter,
+                                                      speechMissesInARow: Int, allowSpeech: Bool = true,
+                                                      using rng: inout R) -> Challenge {
+        if allowSpeech && missed.isSpeech && speechMissesInARow < Self.speechFallbackAfter,
            let speech = speechChallenges(for: word).randomElement(using: &rng) {
             return speech
         }

@@ -50,3 +50,13 @@ private let twoCharWord = library.words.first { $0.text.count >= 2 }!
     let afterTap = planner.replacement(after: .tap(.trueFalse), for: twoCharWord, speechMissesInARow: 0, using: &rng)
     #expect(!afterTap.isSpeech)
 }
+
+@Test func speakingOffGivesTapQuizzesOnly() {
+    for seed in 0..<50 {
+        var rng = SeededRandom(seed: UInt64(seed))
+        let words = Array(library.words.shuffled(using: &rng).prefix(3))
+        #expect(planner.plan(words, allowSpeech: false, using: &rng).allSatisfy { !$0.isSpeech })
+    }
+    var rng = SeededRandom(seed: 3)
+    #expect(!planner.replacement(after: .sayIt, for: twoCharWord, speechMissesInARow: 0, allowSpeech: false, using: &rng).isSpeech)
+}

@@ -1,7 +1,7 @@
 import SwiftData
 import SwiftUI
 
-/// Alarm tab: the user's alarms, like the Clock app, plus a volume check.
+/// Alarm tab, laid out like the Clock app's Alarms list.
 struct AlarmTabView: View {
     @Environment(\.modelContext) private var modelContext
     @Query(sort: [SortDescriptor(\AlarmConfig.hour), SortDescriptor(\AlarmConfig.minute)])
@@ -9,48 +9,40 @@ struct AlarmTabView: View {
     @Query private var reviews: [ReviewState]
 
     private var controller = AlarmController.shared
+    @State private var volume = VolumeMonitor()
     @State private var editing: AlarmConfig?
     @State private var adding = false
 
     var body: some View {
         NavigationStack {
             List {
-                Section {
-                    nextRingRow
-                    VolumeCheckView()
+                notices
+                ForEach(configs) { config in
+                    AlarmRow(config: config) { enabled in
+                        config.enabled = enabled
+                        Task { await controller.schedule(config) }
+                    }
+                    .contentShape(.rect)
+                    .onTapGesture { editing = config }
                 }
-                if controller.authorization == .denied {
-                    Section {
-                        Label("Alarms are turned off for Mingo. Turn them on in Settings → Apps → Mingo.",
-                              systemImage: "exclamationmark.triangle.fill")
-                            .foregroundStyle(.red)
+                .onDelete(perform: delete)
+            }
+            .listStyle(.plain)
+            .overlay {
+                if configs.isEmpty {
+                    ContentUnavailableView {
+                        Label("No Alarms", systemImage: "alarm")
+                    } description: {
+                        Text("Tap + to set a wake-up alarm.")
                     }
-                }
-                if reviews.isEmpty {
-                    Section {
-                        Label("Your alarm only asks words you've learned. Learn a pack first in the Learn tab.",
-                              systemImage: "book")
-                            .foregroundStyle(.secondary)
-                    }
-                }
-                Section {
-                    if configs.isEmpty {
-                        Text("No alarms yet. Tap + to add one.").foregroundStyle(.secondary)
-                    }
-                    ForEach(configs) { config in
-                        AlarmRow(config: config) { enabled in
-                            config.enabled = enabled
-                            Task { await controller.schedule(config) }
-                        }
-                        .contentShape(.rect)
-                        .onTapGesture { editing = config }
-                    }
-                    .onDelete(perform: delete)
                 }
             }
-            .navigationTitle("Alarm")
+            .navigationTitle("Alarms")
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
+                    if !configs.isEmpty { EditButton() }
+                }
+                ToolbarItem(placement: .topBarTrailing) {
                     Button("Add alarm", systemImage: "plus") { adding = true }
                 }
             }
@@ -64,21 +56,41 @@ struct AlarmTabView: View {
             .task {
                 await controller.sync(configs)
             }
+            .onAppear { volume.start() }
+            .onDisappear { volume.stop() }
         }
     }
 
+    /// Small notes above the list, only when they matter.
     @ViewBuilder
-    private var nextRingRow: some View {
-        let next = configs.filter(\.enabled).compactMap { $0.nextRingDate() }.min()
-        TimelineView(.everyMinute) { context in
-            if let next {
-                Label("Rings in \(Self.countdown(from: context.date, to: next))", systemImage: "alarm.fill")
-                    .font(.headline)
-            } else {
-                Label("No alarm set", systemImage: "alarm")
+    private var notices: some View {
+        if let next = configs.filter(\.enabled).compactMap({ $0.nextRingDate() }).min() {
+            TimelineView(.everyMinute) { context in
+                Text("Next alarm in \(Self.countdown(from: context.date, to: next))")
+                    .font(.subheadline)
                     .foregroundStyle(.secondary)
             }
+            .listRowSeparator(.hidden)
         }
+        if controller.authorization == .denied {
+            notice("Alarms are off for Mingo. Turn them on in Settings → Apps → Mingo.",
+                   systemImage: "exclamationmark.triangle.fill", color: .red)
+        }
+        if volume.isLow && !configs.isEmpty {
+            notice("Volume is at \(Int(volume.volume * 100))%. Turn it up so the challenge can wake you.",
+                   systemImage: "speaker.slash.fill", color: .orange)
+        }
+        if reviews.isEmpty && !configs.isEmpty {
+            notice("Your alarm asks words you've learned. Learn your first section in the Learn tab.",
+                   systemImage: "book.fill", color: .blue)
+        }
+    }
+
+    private func notice(_ text: String, systemImage: String, color: Color) -> some View {
+        Label(text, systemImage: systemImage)
+            .font(.footnote)
+            .foregroundStyle(color)
+            .listRowSeparator(.hidden)
     }
 
     static func countdown(from now: Date, to date: Date) -> String {
@@ -105,23 +117,30 @@ private struct AlarmRow: View {
 
     var body: some View {
         HStack {
-            VStack(alignment: .leading, spacing: 2) {
-                Text(config.timeText)
-                    .font(.system(size: 44, weight: .light, design: .rounded))
-                    .monospacedDigit()
-                Text([config.label, config.daysText].filter { !$0.isEmpty }.joined(separator: " · "))
+            VStack(alignment: .leading, spacing: 0) {
+                HStack(alignment: .firstTextBaseline, spacing: 2) {
+                    Text(config.timeDigits)
+                        .font(.system(size: 58, weight: .light))
+                        .monospacedDigit()
+                    if let period = config.amPM {
+                        Text(period)
+                            .font(.system(size: 28, weight: .light))
+                    }
+                }
+                Text(config.subtitle)
                     .font(.subheadline)
-                    .foregroundStyle(.secondary)
             }
             .foregroundStyle(config.enabled ? .primary : .secondary)
             Spacer()
             Toggle("On", isOn: Binding(get: { config.enabled }, set: onToggle))
                 .labelsHidden()
+                .tint(.green)
         }
+        .padding(.vertical, 2)
     }
 }
 
-/// Add or edit an alarm: time wheel, repeat days, label.
+/// Add or edit an alarm, like the Clock app: time wheel, then Repeat and Label rows.
 struct AlarmEditView: View {
     /// nil when adding a new alarm.
     let config: AlarmConfig?
@@ -136,57 +155,39 @@ struct AlarmEditView: View {
     var body: some View {
         NavigationStack {
             Form {
-                DatePicker("Time", selection: $time, displayedComponents: .hourAndMinute)
-                    .datePickerStyle(.wheel)
-                    .labelsHidden()
-                    .frame(maxWidth: .infinity)
-
-                Section("Repeat") {
-                    HStack(spacing: 6) {
-                        ForEach(1...7, id: \.self) { day in
-                            let on = weekdays.contains(day)
-                            Button {
-                                if on { weekdays.remove(day) } else { weekdays.insert(day) }
-                            } label: {
-                                Text(Calendar.current.veryShortWeekdaySymbols[day - 1])
-                                    .font(.headline)
-                                    .frame(width: 38, height: 38)
-                                    .background(on ? Color.orange : Color.secondary.opacity(0.15), in: .circle)
-                                    .foregroundStyle(on ? .white : .primary)
-                            }
-                            .buttonStyle(.plain)
-                            .accessibilityLabel(Calendar.current.weekdaySymbols[day - 1])
-                            .accessibilityAddTraits(on ? .isSelected : [])
-                        }
-                    }
-                    .frame(maxWidth: .infinity)
-                    HStack {
-                        Button("Weekdays") { weekdays = [2, 3, 4, 5, 6] }
-                        Spacer()
-                        Button("Every day") { weekdays = Set(1...7) }
-                        Spacer()
-                        Button("Once") { weekdays = [] }
-                    }
-                    .buttonStyle(.borderless)
-                    .font(.subheadline)
+                Section {
+                    DatePicker("Time", selection: $time, displayedComponents: .hourAndMinute)
+                        .datePickerStyle(.wheel)
+                        .labelsHidden()
+                        .frame(maxWidth: .infinity)
                 }
+                .listRowBackground(Color.clear)
 
-                Section("Label") {
-                    TextField("Wake up early", text: $label)
+                Section {
+                    NavigationLink {
+                        RepeatPicker(weekdays: $weekdays)
+                    } label: {
+                        LabeledContent("Repeat", value: AlarmConfig.daysText(for: weekdays, never: "Never"))
+                    }
+                    LabeledContent("Label") {
+                        TextField("Alarm", text: $label)
+                            .multilineTextAlignment(.trailing)
+                    }
                 }
 
                 if let config {
                     Section {
-                        Button("Delete alarm", role: .destructive) {
+                        Button("Delete Alarm", role: .destructive) {
                             AlarmController.shared.unschedule(config)
                             modelContext.delete(config)
                             try? modelContext.save()
                             dismiss()
                         }
+                        .frame(maxWidth: .infinity)
                     }
                 }
             }
-            .navigationTitle(config == nil ? "Add alarm" : "Edit alarm")
+            .navigationTitle(config == nil ? "Add Alarm" : "Edit Alarm")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
@@ -219,5 +220,30 @@ struct AlarmEditView: View {
         try? modelContext.save()
         Task { await AlarmController.shared.schedule(target) }
         dismiss()
+    }
+}
+
+/// "Every Monday" ... "Every Sunday" with checkmarks, like the Clock app.
+private struct RepeatPicker: View {
+    @Binding var weekdays: Set<Int>
+
+    var body: some View {
+        List {
+            ForEach(1...7, id: \.self) { day in
+                Button {
+                    if weekdays.contains(day) { weekdays.remove(day) } else { weekdays.insert(day) }
+                } label: {
+                    HStack {
+                        Text("Every \(Calendar.current.weekdaySymbols[day - 1])")
+                            .foregroundStyle(.primary)
+                        Spacer()
+                        if weekdays.contains(day) {
+                            Image(systemName: "checkmark").foregroundStyle(.tint)
+                        }
+                    }
+                }
+            }
+        }
+        .navigationTitle("Repeat")
     }
 }

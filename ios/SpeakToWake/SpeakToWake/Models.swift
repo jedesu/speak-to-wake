@@ -136,10 +136,11 @@ final class AlarmConfig {
         return date.formatted(date: .omitted, time: .shortened)
     }
 
-    var daysText: String {
-        let days = Set(weekdays)
+    var daysText: String { Self.daysText(for: Set(weekdays)) }
+
+    static func daysText(for days: Set<Int>, never: String = "Once") -> String {
         switch days {
-        case []: return "Once"
+        case []: return never
         case Set(1...7): return "Every day"
         case [2, 3, 4, 5, 6]: return "Weekdays"
         case [1, 7]: return "Weekends"
@@ -147,6 +148,35 @@ final class AlarmConfig {
             let symbols = Calendar.current.shortWeekdaySymbols
             return (1...7).filter(days.contains).map { symbols[$0 - 1] }.joined(separator: " ")
         }
+    }
+
+    /// "Alarm, Weekdays" like the Clock app. Uses the label if there is one.
+    var subtitle: String {
+        let name = label.isEmpty ? "Alarm" : label
+        return weekdays.isEmpty ? name : "\(name), \(daysText)"
+    }
+
+    private var date: Date {
+        Calendar.current.date(from: DateComponents(hour: hour, minute: minute)) ?? .now
+    }
+
+    private static var uses12Hour: Bool {
+        DateFormatter.dateFormat(fromTemplate: "j", options: 0, locale: .current)?.contains("a") ?? true
+    }
+
+    /// "7:00" (no AM/PM), shown large.
+    var timeDigits: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = Self.uses12Hour ? "h:mm" : "HH:mm"
+        return formatter.string(from: date)
+    }
+
+    /// "AM"/"PM", shown smaller next to the time; nil on a 24-hour clock.
+    var amPM: String? {
+        guard Self.uses12Hour else { return nil }
+        let formatter = DateFormatter()
+        formatter.dateFormat = "a"
+        return formatter.string(from: date)
     }
 
     /// The next time this alarm will ring, from `now`.
