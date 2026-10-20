@@ -10,6 +10,9 @@ enum SupabaseConfig {
     /// Where Supabase sends the browser back after Google sign-in.
     static let callbackScheme = "mingo"
     static let redirect = "mingo://login-callback"
+    /// Sign in with Apple needs the paid Apple Developer account (entitlement +
+    /// keys for Supabase). Flip to true once that's set up; see CLAUDE.md.
+    static let appleSignInEnabled = false
 }
 
 struct SupabaseError: LocalizedError {
@@ -36,7 +39,12 @@ final class AuthService {
     var email: String? { session?.email }
     var userID: String? { session?.userID }
 
-    private var codeVerifier: String?
+    /// The PKCE secret for a sign-in in progress. Kept in UserDefaults too, because
+    /// an email link may be tapped after the app was closed.
+    private var codeVerifier: String? {
+        get { UserDefaults.standard.string(forKey: "pkceVerifier") }
+        set { UserDefaults.standard.set(newValue, forKey: "pkceVerifier") }
+    }
 
     // MARK: Google sign-in (OAuth with PKCE)
 
@@ -66,6 +74,40 @@ final class AuthService {
         }
         try await token(grant: "pkce", body: ["auth_code": code, "code_verifier": verifier])
         codeVerifier = nil
+    }
+
+    // MARK: Email sign-in link (no password)
+
+    /// Emails a sign-in link. Tapping it on the iPhone opens Mingo through
+    /// mingo://login-callback, and `finishSignIn(callback:)` completes it.
+    /// Creates the account the first time.
+    func sendEmailLink(to email: String) async throws {
+        let verifier = Self.randomURLSafeString()
+        codeVerifier = verifier
+        let challenge = Data(SHA256.hash(data: Data(verifier.utf8))).base64URLEncoded()
+        let redirect = SupabaseConfig.redirect.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        var request = authRequest("otp?redirect_to=\(redirect)")
+        request.httpBody = try JSONSerialization.data(withJSONObject: [
+            "email": email, "create_user": true,
+            "code_challenge": challenge, "code_challenge_method": "s256",
+        ])
+        _ = try await Self.send(request)
+    }
+
+    // MARK: Sign in with Apple (switched off until the paid developer account)
+
+    /// A random nonce; Apple gets its SHA-256, Supabase gets the original to check it.
+    func makeAppleNonce() -> (raw: String, hashed: String) {
+        let raw = Self.randomURLSafeString()
+        let hashed = SHA256.hash(data: Data(raw.utf8)).map { String(format: "%02x", $0) }.joined()
+        return (raw, hashed)
+    }
+
+    /// Exchanges Apple's identity token for a Supabase session.
+    func signInWithApple(idToken: String, rawNonce: String) async throws {
+        var request = authRequest("token?grant_type=id_token")
+        request.httpBody = try JSONSerialization.data(withJSONObject: ["provider": "apple", "id_token": idToken, "nonce": rawNonce])
+        store(try JSONDecoder().decode(TokenResponse.self, from: try await Self.send(request)))
     }
 
     func signOut() {
@@ -107,20 +149,29 @@ final class AuthService {
         return self.session!.accessToken
     }
 
-    private func token(grant: String, body: [String: String]) async throws {
-        struct TokenResponse: Decodable {
-            struct User: Decodable { let id: String; let email: String? }
-            let access_token: String
-            let refresh_token: String
-            let expires_in: Double
-            let user: User
-        }
-        var request = URLRequest(url: URL(string: SupabaseConfig.url.absoluteString + "/auth/v1/token?grant_type=\(grant)")!)
+    private struct TokenResponse: Decodable {
+        struct User: Decodable { let id: String; let email: String? }
+        let access_token: String
+        let refresh_token: String
+        let expires_in: Double
+        let user: User
+    }
+
+    private func authRequest(_ path: String) -> URLRequest {
+        var request = URLRequest(url: URL(string: SupabaseConfig.url.absoluteString + "/auth/v1/" + path)!)
         request.httpMethod = "POST"
-        request.httpBody = try JSONEncoder().encode(body)
         request.setValue(SupabaseConfig.publishableKey, forHTTPHeaderField: "apikey")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        let response = try JSONDecoder().decode(TokenResponse.self, from: try await Self.send(request))
+        return request
+    }
+
+    private func token(grant: String, body: [String: String]) async throws {
+        var request = authRequest("token?grant_type=\(grant)")
+        request.httpBody = try JSONEncoder().encode(body)
+        store(try JSONDecoder().decode(TokenResponse.self, from: try await Self.send(request)))
+    }
+
+    private func store(_ response: TokenResponse) {
         let new = Session(accessToken: response.access_token, refreshToken: response.refresh_token,
                           expiresAt: .now.addingTimeInterval(response.expires_in),
                           userID: response.user.id, email: response.user.email)

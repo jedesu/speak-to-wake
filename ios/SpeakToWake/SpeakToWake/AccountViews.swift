@@ -3,8 +3,9 @@ import SwiftData
 import SwiftUI
 import WakeCore
 
-/// "Save your progress": sign in with Google (Apple comes with the paid developer
-/// account). Shown after the first section, from Settings, and on the welcome screen.
+/// "Save your progress": Sign in with Apple (once the paid developer account
+/// exists), Google, or a sign-in link by email. Shown after the first section,
+/// from Settings, and on the welcome screen.
 struct SignInView: View {
     var title = "Save your progress"
     var message = "Your first section is free to try. Sign in to keep learning, save your progress and let your alarm quiz you."
@@ -14,62 +15,169 @@ struct SignInView: View {
     @Environment(\.webAuthenticationSession) private var webAuthenticationSession
     @State private var working = false
     @State private var error: String?
+    @State private var appleNonce = ""
+
+    // Email code
+    private enum EmailStep { case hidden, enterEmail, linkSent }
+    @State private var emailStep = EmailStep.hidden
+    @State private var email = ""
 
     var body: some View {
-        VStack(spacing: 18) {
-            Spacer()
-            Text("🐼").font(.system(size: 88)).accessibilityHidden(true)
-            Text(title).font(.largeTitle.weight(.heavy)).multilineTextAlignment(.center)
-            Text(message)
-                .multilineTextAlignment(.center)
-                .foregroundStyle(Theme.muted)
-            Spacer()
-            Button {
-                Task { await signIn() }
-            } label: {
-                HStack(spacing: 10) {
-                    if working { ProgressView().tint(Theme.text) } else { Image(systemName: "globe") }
-                    Text("Continue with Google")
+        ScrollView {
+            VStack(spacing: 16) {
+                Text("🐼").font(.system(size: 80)).accessibilityHidden(true).padding(.top, 32)
+                Text(title).font(.largeTitle.weight(.heavy)).multilineTextAlignment(.center)
+                Text(message)
+                    .multilineTextAlignment(.center)
+                    .foregroundStyle(Theme.muted)
+                    .padding(.bottom, 12)
+
+                if SupabaseConfig.appleSignInEnabled {
+                    SignInWithAppleButton(.continue) { request in
+                        let nonce = AuthService.shared.makeAppleNonce()
+                        appleNonce = nonce.raw
+                        request.requestedScopes = [.email]
+                        request.nonce = nonce.hashed
+                    } onCompletion: { result in
+                        Task { await finishApple(result) }
+                    }
+                    .signInWithAppleButtonStyle(.black)
+                    .frame(height: 56)
+                    .clipShape(.capsule)
                 }
-                .font(.title3.bold())
-                .frame(maxWidth: .infinity, minHeight: 56)
-                .foregroundStyle(Theme.text)
-                .background(Theme.card, in: .capsule)
-                .overlay(Capsule().stroke(Theme.toggleOff, lineWidth: 2))
+
+                Button {
+                    Task { await signInWithGoogle() }
+                } label: {
+                    optionLabel("Continue with Google", systemImage: "globe")
+                }
+                .buttonStyle(.plain)
+
+                emailSection
+
+                if let error {
+                    Text(error).font(.footnote).foregroundStyle(.red).multilineTextAlignment(.center)
+                }
+                if working { ProgressView() }
+
+                Button("Not now") { dismiss() }
+                    .font(.subheadline.bold())
+                    .foregroundStyle(Theme.link)
+                    .frame(minHeight: 44)
             }
-            .buttonStyle(.plain)
+            .padding(24)
             .disabled(working)
-            Text("Sign in with Apple is coming soon.")
-                .font(.footnote)
-                .foregroundStyle(Theme.muted)
-            if let error {
-                Text(error).font(.footnote).foregroundStyle(.red).multilineTextAlignment(.center)
-            }
-            Button("Not now") { dismiss() }
-                .font(.subheadline.bold())
-                .foregroundStyle(Theme.link)
-                .frame(minHeight: 44)
         }
-        .padding(24)
         .background(Theme.ground)
+        .onChange(of: AuthService.shared.isSignedIn) {
+            if AuthService.shared.isSignedIn { dismiss() }
+        }
     }
 
-    private func signIn() async {
+    private func optionLabel(_ text: String, systemImage: String) -> some View {
+        HStack(spacing: 10) {
+            Image(systemName: systemImage)
+            Text(text)
+        }
+        .font(.title3.bold())
+        .frame(maxWidth: .infinity, minHeight: 56)
+        .foregroundStyle(Theme.text)
+        .background(Theme.card, in: .capsule)
+        .overlay(Capsule().stroke(Theme.toggleOff, lineWidth: 2))
+    }
+
+    @ViewBuilder
+    private var emailSection: some View {
+        switch emailStep {
+        case .hidden:
+            Button {
+                emailStep = .enterEmail
+            } label: {
+                optionLabel("Continue with email", systemImage: "envelope")
+            }
+            .buttonStyle(.plain)
+        case .enterEmail:
+            VStack(spacing: 10) {
+                TextField("you@example.com", text: $email)
+                    .textContentType(.emailAddress)
+                    .keyboardType(.emailAddress)
+                    .textInputAutocapitalization(.never)
+                    .autocorrectionDisabled()
+                    .padding(.horizontal, 18)
+                    .frame(minHeight: 52)
+                    .background(Theme.card, in: .capsule)
+                Button("Email me a sign-in link") { Task { await sendLink() } }
+                    .buttonStyle(PrimaryButtonStyle())
+                    .disabled(!email.contains("@"))
+            }
+        case .linkSent:
+            VStack(spacing: 10) {
+                Image(systemName: "envelope.open.fill").font(.largeTitle).foregroundStyle(Theme.accent)
+                Text("Check your email").font(.title3.bold())
+                Text("We sent a sign-in link to \(email). Open it on this iPhone and tap Sign in. Mingo will open, signed in.")
+                    .font(.subheadline)
+                    .foregroundStyle(Theme.muted)
+                    .multilineTextAlignment(.center)
+                Button("Use a different email") { emailStep = .enterEmail }
+                    .font(.subheadline.bold())
+                    .foregroundStyle(Theme.link)
+                    .frame(minHeight: 44)
+            }
+            .card(padding: 18)
+        }
+    }
+
+    // MARK: Actions
+
+    private func run(_ action: () async throws -> Void) async {
         working = true
         error = nil
         defer { working = false }
         do {
+            try await action()
+        } catch let cancel as ASWebAuthenticationSessionError where cancel.code == .canceledLogin {
+            // Closed the Google page; nothing to report.
+        } catch let cancel as ASAuthorizationError where cancel.code == .canceled {
+            // Closed the Apple sheet.
+        } catch {
+            self.error = error.localizedDescription
+        }
+    }
+
+    private func signedIn() async {
+        await SyncService.shared.sync(modelContext)
+        dismiss()
+    }
+
+    private func signInWithGoogle() async {
+        await run {
             let callback = try await webAuthenticationSession.authenticate(
                 using: AuthService.shared.googleSignInURL(),
                 callbackURLScheme: SupabaseConfig.callbackScheme,
                 preferredBrowserSession: .shared)
             try await AuthService.shared.finishSignIn(callback: callback)
-            await SyncService.shared.sync(modelContext)
-            dismiss()
-        } catch let cancel as ASWebAuthenticationSessionError where cancel.code == .canceledLogin {
-            // The user closed the sign-in page; nothing to report.
-        } catch {
-            self.error = error.localizedDescription
+            await signedIn()
+        }
+    }
+
+    private func sendLink() async {
+        let address = email.trimmingCharacters(in: .whitespaces).lowercased()
+        await run {
+            try await AuthService.shared.sendEmailLink(to: address)
+            email = address
+            emailStep = .linkSent
+        }
+    }
+
+    private func finishApple(_ result: Result<ASAuthorization, Error>) async {
+        await run {
+            let authorization = try result.get()
+            guard let credential = authorization.credential as? ASAuthorizationAppleIDCredential,
+                  let tokenData = credential.identityToken, let token = String(data: tokenData, encoding: .utf8) else {
+                throw SupabaseError(message: "Apple didn't return a sign-in token.")
+            }
+            try await AuthService.shared.signInWithApple(idToken: token, rawNonce: appleNonce)
+            await signedIn()
         }
     }
 }
@@ -89,7 +197,7 @@ struct AccountCard: View {
                 Label {
                     VStack(alignment: .leading, spacing: 2) {
                         Text("Signed in").font(.headline)
-                        Text(auth.email ?? "Google account").font(.subheadline).foregroundStyle(Theme.muted)
+                        Text(auth.email ?? "Your account").font(.subheadline).foregroundStyle(Theme.muted)
                         if let last = sync.lastSync {
                             Text("Synced \(last.formatted(.relative(presentation: .named)))")
                                 .font(.caption).foregroundStyle(Theme.muted)

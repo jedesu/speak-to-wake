@@ -56,6 +56,14 @@ private struct SyncOnOpen: ViewModifier {
     func body(content: Content) -> some View {
         content
             .task { await SyncService.shared.sync(modelContext) }
+            .onOpenURL { url in
+                // The email sign-in link comes back as mingo://login-callback?code=…
+                guard url.scheme == SupabaseConfig.callbackScheme else { return }
+                Task {
+                    try? await AuthService.shared.finishSignIn(callback: url)
+                    await SyncService.shared.sync(modelContext)
+                }
+            }
             .onChange(of: scenePhase) {
                 if scenePhase == .active {
                     Task { await SyncService.shared.sync(modelContext) }
