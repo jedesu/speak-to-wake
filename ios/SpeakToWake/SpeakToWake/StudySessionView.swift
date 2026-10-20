@@ -102,7 +102,7 @@ struct StudySessionView: View {
             } label: {
                 Text("Show meaning").font(.title3.bold()).frame(maxWidth: .infinity, minHeight: 44)
             }
-            .buttonStyle(.borderedProminent)
+            .buttonStyle(PrimaryButtonStyle())
             .padding()
         } else {
             HStack(spacing: 12) {
@@ -111,15 +111,13 @@ struct StudySessionView: View {
                 } label: {
                     Text("Not yet").font(.title3.bold()).frame(maxWidth: .infinity, minHeight: 44)
                 }
-                .buttonStyle(.bordered)
-                .tint(.orange)
+                .buttonStyle(ChipButtonStyle())
                 Button {
                     rate(knewIt: true)
                 } label: {
                     Text("I knew it").font(.title3.bold()).frame(maxWidth: .infinity, minHeight: 44)
                 }
-                .buttonStyle(.borderedProminent)
-                .tint(.green)
+                .buttonStyle(PrimaryButtonStyle())
             }
             .padding()
         }
@@ -141,7 +139,9 @@ struct StudySessionView: View {
     private var nextButtons: some View {
             HStack {
                 Button("Back") { cardIndex -= 1 }
+                    .buttonStyle(ChipButtonStyle())
                     .disabled(cardIndex == 0)
+                    .opacity(cardIndex == 0 ? 0.4 : 1)
                 Spacer()
                 Button {
                     if cardIndex + 1 < words.count {
@@ -154,7 +154,7 @@ struct StudySessionView: View {
                         .font(.title3.bold())
                         .frame(minWidth: 160, minHeight: 44)
                 }
-                .buttonStyle(.borderedProminent)
+                .buttonStyle(PrimaryButtonStyle())
             }
             .padding()
     }
@@ -174,21 +174,21 @@ struct StudySessionView: View {
             }
             Text("A quick quiz now helps them stick. Recalling a word beats reading it again.")
                 .multilineTextAlignment(.center)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(Theme.muted)
             Spacer()
             Button {
                 startPractice()
             } label: {
                 Text("Practice now").font(.title3.bold()).frame(maxWidth: .infinity, minHeight: 44)
             }
-            .buttonStyle(.borderedProminent)
+            .buttonStyle(PrimaryButtonStyle())
             Button {
                 Learning.markLearned(pack, in: modelContext)
                 stage = .done
             } label: {
                 Text("Finish without practice").frame(maxWidth: .infinity, minHeight: 44)
             }
-            .buttonStyle(.bordered)
+            .buttonStyle(ChipButtonStyle())
             Button("Look at the cards again") {
                 cardIndex = 0
                 revealed = false
@@ -241,7 +241,7 @@ struct StudySessionView: View {
             Text(again ? "These words stay in your review schedule and your alarm."
                        : "These \(words.count) words are now in your review schedule and your alarm. They'll come back tomorrow.")
                 .multilineTextAlignment(.center)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(Theme.muted)
             if !missed.isEmpty {
                 Text("You got \(words.count - missed.count) of \(words.count) right the first time.")
             }
@@ -251,7 +251,7 @@ struct StudySessionView: View {
             } label: {
                 Text("Done").font(.title3.bold()).frame(maxWidth: .infinity, minHeight: 44)
             }
-            .buttonStyle(.borderedProminent)
+            .buttonStyle(PrimaryButtonStyle())
         }
         .padding()
     }
@@ -266,52 +266,55 @@ struct FlashcardView: View {
     private var concept: Concept? { AppContent.library.concept(for: word) }
 
     var body: some View {
-        VStack(spacing: 12) {
-            if !revealed {
-                Text("?").font(.system(size: 90, weight: .bold)).foregroundStyle(.tertiary)
-            } else if let emoji = concept?.emoji {
-                Text(emoji).font(.system(size: 90))
+        VStack(spacing: 14) {
+            Group {
+                if !revealed {
+                    Text("?").font(.system(size: 64, weight: .heavy)).foregroundStyle(Theme.off)
+                        .frame(width: 140, height: 140)
+                        .background(Theme.chip, in: .circle)
+                } else if WordPicture.exists(for: word) {
+                    WordPictureBubble(word: word, size: 140)
+                }
             }
-            Text(word.text).font(.system(size: 72))
-            HStack {
-                Text(word.pinyin).font(.title).foregroundStyle(.secondary)
-                Button {
-                    Speaker.shared.say(word.text)
-                } label: {
-                    Image(systemName: "speaker.wave.2.fill").font(.title2)
-                }
-                .accessibilityLabel("Play pronunciation")
-                Button {
-                    Speaker.shared.say(word.text, slow: true)
-                } label: {
-                    Image(systemName: "tortoise.fill").font(.title2)
-                }
-                .accessibilityLabel("Play slowly")
+            Text(word.text).font(.system(size: 72, weight: .medium))
+            HStack(spacing: 10) {
+                Text(word.pinyin).font(.title.weight(.semibold)).foregroundStyle(Theme.link)
+                soundButton("speaker.wave.2.fill", label: "Play pronunciation") { Speaker.shared.say(word.text) }
+                soundButton("tortoise.fill", label: "Play slowly") { Speaker.shared.say(word.text, slow: true) }
             }
             Text(revealed ? concept?.english ?? "" : "What does it mean?")
                 .font(.title2.bold())
-                .foregroundStyle(revealed ? .primary : .secondary)
+                .foregroundStyle(revealed ? Theme.text : Theme.muted)
 
             if revealed, let example = word.example {
                 VStack(spacing: 4) {
                     HStack {
-                        Text(example.text).font(.title3)
-                        Button {
-                            Speaker.shared.say(example.text)
-                        } label: {
-                            Image(systemName: "speaker.wave.2")
-                        }
-                        .accessibilityLabel("Play example sentence")
+                        Text(example.text).font(.title3.weight(.medium))
+                        soundButton("speaker.wave.2", label: "Play example sentence") { Speaker.shared.say(example.text) }
                     }
-                    Text(example.pinyin).font(.subheadline).foregroundStyle(.secondary)
-                    Text(example.english).font(.subheadline)
+                    Text(example.pinyin).font(.subheadline).foregroundStyle(Theme.muted)
+                    Text(example.english).font(.subheadline.bold())
                 }
-                .padding()
+                .multilineTextAlignment(.center)
+                .padding(14)
                 .frame(maxWidth: .infinity)
                 .background(Theme.chip, in: .rect(cornerRadius: 20))
             }
         }
-        .padding()
+        .frame(maxWidth: .infinity)
+        .card(padding: 22)
+        .padding(.horizontal, 18)
         .onAppear { Speaker.shared.say(word.text) }
+    }
+
+    private func soundButton(_ icon: String, label: String, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            Image(systemName: icon)
+                .font(.headline)
+                .foregroundStyle(Theme.link)
+                .frame(width: 44, height: 44)
+                .background(Theme.chip, in: .circle)
+        }
+        .accessibilityLabel(label)
     }
 }

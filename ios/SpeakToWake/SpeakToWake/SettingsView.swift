@@ -61,6 +61,10 @@ struct SettingsView: View {
                     }
                 }
 
+                Section("About") {
+                    NavigationLink("Picture credits") { LicenseView() }
+                }
+
                 Section("Developer") {
                     NavigationLink("Speech check") { SpeechCheckView() }
                     NavigationLink("Alarm test") { AlarmTestView() }
@@ -74,6 +78,30 @@ struct SettingsView: View {
                 }
             }
         }
+    }
+}
+
+/// Credits for the word pictures (the MIT license asks for its notice to be included).
+private struct LicenseView: View {
+    private var license: String {
+        Bundle.main.url(forResource: "FLUENT-EMOJI-LICENSE", withExtension: "txt")
+            .flatMap { try? String(contentsOf: $0, encoding: .utf8) } ?? ""
+    }
+
+    var body: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 12) {
+                Text("Word pictures are Microsoft Fluent Emoji (flat style), used under the MIT License.")
+                    .font(.headline)
+                Text(license)
+                    .font(.footnote.monospaced())
+                    .foregroundStyle(Theme.muted)
+            }
+            .card(padding: 20)
+            .padding(18)
+        }
+        .background(Theme.ground)
+        .navigationTitle("Picture credits")
     }
 }
 

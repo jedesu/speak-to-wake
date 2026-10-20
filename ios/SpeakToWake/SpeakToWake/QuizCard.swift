@@ -39,11 +39,11 @@ struct QuizCard: View {
         }
     }
 
-    /// The picture hint, for quizzes that show the word and ask what it means.
-    private var hintPicture: String? {
+    /// A picture hint, for quizzes that show the word and ask what it means.
+    private var hasHint: Bool {
         switch quiz.kind {
-        case .meaningToEnglish, .trueFalse: maker.emoji(quiz.target)
-        default: nil
+        case .meaningToEnglish, .trueFalse: WordPicture.exists(for: quiz.target)
+        default: false
         }
     }
 
@@ -108,8 +108,8 @@ struct QuizCard: View {
                 Image(systemName: "speaker.wave.3.fill").font(.system(size: 56))
             }
             .accessibilityLabel("Play the word again")
-        case .pictureMatch(_, let emoji, _):
-            Text(emoji).font(.system(size: 100))
+        case .pictureMatch(let target, _, _):
+            WordPicture(word: target, size: 120)
         case .trueFalse(let target, let shown, _):
             VStack(spacing: 6) {
                 Text(target.text).font(.system(size: 64, weight: .medium))
@@ -127,13 +127,9 @@ struct QuizCard: View {
 
     @ViewBuilder
     private var hint: some View {
-        if let picture = hintPicture {
+        if hasHint {
             if usedHint || answered {
-                Text(picture)
-                    .font(.system(size: 64))
-                    .frame(width: 112, height: 112)
-                    .background(Theme.chip, in: .circle)
-                    .accessibilityLabel("Hint picture")
+                WordPictureBubble(word: quiz.target)
             } else {
                 Button {
                     usedHint = true

@@ -176,13 +176,9 @@ struct SpeechPromptView: View {
     /// Show hint reveals the word's picture.
     @ViewBuilder
     private var hint: some View {
-        if challenge != .hearAndRepeat, let picture = AppContent.library.concept(for: word)?.emoji {
+        if challenge != .hearAndRepeat, WordPicture.exists(for: word) {
             if usedHint {
-                Text(picture)
-                    .font(.system(size: 64))
-                    .frame(width: 112, height: 112)
-                    .background(Theme.chip, in: .circle)
-                    .accessibilityLabel("Hint picture")
+                WordPictureBubble(word: word)
             } else {
                 Button {
                     usedHint = true

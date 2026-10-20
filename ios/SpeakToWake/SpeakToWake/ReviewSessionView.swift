@@ -82,14 +82,14 @@ struct ReviewSessionView: View {
                 .font(.title3)
             Text("Words you got right come back later. Missed words come back tomorrow.")
                 .multilineTextAlignment(.center)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(Theme.muted)
             Spacer()
             Button {
                 dismiss()
             } label: {
                 Text("Done").font(.title3.bold()).frame(maxWidth: .infinity, minHeight: 44)
             }
-            .buttonStyle(.borderedProminent)
+            .buttonStyle(PrimaryButtonStyle())
         }
         .padding()
     }

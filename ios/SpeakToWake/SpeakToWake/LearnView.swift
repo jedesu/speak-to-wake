@@ -2,7 +2,7 @@ import SwiftData
 import SwiftUI
 import WakeCore
 
-/// Learn tab: every pack, grouped by theme.
+/// Learn tab: HSK 1 progress, Review, and one card per section.
 struct LearnView: View {
     private let library = AppContent.library
     @Query private var progress: [PackProgress]
@@ -11,43 +11,23 @@ struct LearnView: View {
 
     var body: some View {
         NavigationStack {
-            List {
-                if !reviews.isEmpty {
-                    Section {
-                        let due = Learning.dueCount(reviews)
-                        Button {
-                            reviewing = true
-                        } label: {
-                            HStack {
-                                Image(systemName: "arrow.triangle.2.circlepath")
-                                    .font(.title2)
-                                VStack(alignment: .leading) {
-                                    Text("Review").font(.headline)
-                                    Text(due == 0 ? "Nothing due today. You can review early."
-                                                  : "\(due) \(due == 1 ? "word" : "words") due today")
-                                        .font(.subheadline)
-                                        .foregroundStyle(due > Learning.overdueLimit ? .red : .secondary)
-                                }
-                            }
-                        }
-                    }
-                }
-                ForEach(library.hskLevels, id: \.level) { group in
-                    Section {
+            ScrollView {
+                VStack(spacing: 14) {
+                    ForEach(library.hskLevels, id: \.level) { group in
+                        levelHeader(group.level, packs: group.packs)
+                        if !reviews.isEmpty { reviewCard }
                         ForEach(group.packs) { pack in
                             NavigationLink(value: pack) {
-                                PackRow(pack: pack, learned: isLearned(pack))
+                                SectionCard(pack: pack, learned: isLearned(pack))
                             }
+                            .buttonStyle(.plain)
                         }
-                    } header: {
-                        let words = group.packs.reduce(0) { $0 + library.words(in: $1).count }
-                        let learned = group.packs.filter(isLearned).count
-                        Text("HSK \(group.level) · \(words) words · \(learned) of \(group.packs.count) sections learned")
                     }
                 }
+                .padding(.horizontal, 18)
+                .padding(.bottom, 24)
             }
-            .softDawnList()
-            .navigationTitle("Learn")
+            .background(Theme.ground)
             .navigationDestination(for: Pack.self) { pack in
                 PackDetailView(pack: pack)
             }
@@ -58,39 +38,102 @@ struct LearnView: View {
         }
     }
 
+    private func levelHeader(_ level: Int, packs: [Pack]) -> some View {
+        let words = packs.reduce(0) { $0 + library.words(in: $1).count }
+        let learned = packs.filter(isLearned).count
+        return VStack(alignment: .leading, spacing: 10) {
+            Text("HSK \(level)")
+                .font(.subheadline.bold())
+                .foregroundStyle(Theme.muted)
+            Text("Learn")
+                .font(.largeTitle.weight(.heavy))
+            ProgressView(value: Double(learned), total: Double(max(packs.count, 1)))
+                .tint(Theme.accent)
+            Text("\(learned) of \(packs.count) sections · \(words) words")
+                .font(.subheadline.bold())
+                .foregroundStyle(Theme.muted)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.horizontal, 4)
+        .padding(.bottom, 4)
+    }
+
+    private var reviewCard: some View {
+        let due = Learning.dueCount(reviews)
+        return Button {
+            reviewing = true
+        } label: {
+            HStack(spacing: 14) {
+                Image(systemName: "arrow.triangle.2.circlepath")
+                    .font(.title2.bold())
+                    .foregroundStyle(.white)
+                    .frame(width: 52, height: 52)
+                    .background(Theme.accent, in: .rect(cornerRadius: 16))
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("Review").font(.headline)
+                    Text(due == 0 ? "Nothing due today. You can review early."
+                                  : "\(due) \(due == 1 ? "word" : "words") due today")
+                        .font(.subheadline.bold())
+                        .foregroundStyle(due > Learning.overdueLimit ? Theme.accent : Theme.muted)
+                }
+                Spacer()
+                Image(systemName: "chevron.right").foregroundStyle(Theme.muted)
+            }
+            .padding(16)
+            .background(Theme.tip, in: .rect(cornerRadius: 24))
+        }
+        .buttonStyle(.plain)
+    }
+
     private func isLearned(_ pack: Pack) -> Bool {
         progress.contains { $0.packID == pack.id && $0.language == library.language && $0.learnedAt != nil }
     }
 }
 
-private struct PackRow: View {
+/// One HSK section: picture tile, number and title, first few words, status.
+private struct SectionCard: View {
     let pack: Pack
     let learned: Bool
 
     private var words: [Word] { AppContent.library.words(in: pack) }
 
     var body: some View {
-        HStack(spacing: 12) {
-            Text(words.lazy.compactMap { AppContent.library.concept(for: $0)?.emoji }.first ?? "📘")
-                .font(.largeTitle)
-            VStack(alignment: .leading, spacing: 2) {
-                Text(pack.order.map { "\($0). \(pack.title)" } ?? pack.title).font(.headline)
+        HStack(spacing: 14) {
+            Group {
+                if let pictured = words.first(where: WordPicture.exists) {
+                    WordPicture(word: pictured, size: 38)
+                } else {
+                    Image(systemName: "character.book.closed.fill").font(.title2).foregroundStyle(Theme.accent)
+                }
+            }
+            .frame(width: 58, height: 58)
+            .background(Theme.chip, in: .rect(cornerRadius: 18))
+
+            VStack(alignment: .leading, spacing: 3) {
+                Text(pack.order.map { "\($0). \(pack.title)" } ?? pack.title)
+                    .font(.headline)
                 Text("\(words.count) words · \(words.prefix(3).map(\.text).joined(separator: " "))")
                     .font(.subheadline)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(Theme.muted)
                     .lineLimit(1)
             }
-            Spacer()
+            Spacer(minLength: 0)
             if learned {
-                Image(systemName: "checkmark.circle.fill").foregroundStyle(.green)
+                Image(systemName: "checkmark.circle.fill")
+                    .font(.title2)
+                    .foregroundStyle(Theme.accent)
+                    .accessibilityLabel("Learned")
             } else if pack.tier == .premium {
-                Image(systemName: "lock.fill").foregroundStyle(.secondary)
+                Image(systemName: "lock.fill").foregroundStyle(Theme.muted)
+            } else {
+                Image(systemName: "chevron.right").foregroundStyle(Theme.muted)
             }
         }
+        .card(padding: 14)
     }
 }
 
-/// The words in one pack, and the button to study them.
+/// The words in one section, and the buttons to study them.
 struct PackDetailView: View {
     let pack: Pack
     private let library = AppContent.library
@@ -107,7 +150,7 @@ struct PackDetailView: View {
     /// Why studying is blocked, if it is.
     private var blockedReason: String? {
         if pack.tier == .premium {
-            return "This is a Premium pack. Unlocking packs comes later."
+            return "This is a Pro section. Unlocking sections comes later."
         }
         let due = Learning.dueCount(reviews)
         if !learned && due > Learning.overdueLimit {
@@ -117,56 +160,22 @@ struct PackDetailView: View {
     }
 
     var body: some View {
-        List {
-            Section {
-                if learned {
-                    // Already learned: quiz straight away, no need to click through the cards.
-                    Button {
-                        quizzing = true
-                    } label: {
-                        Label("Quiz me", systemImage: "checklist")
-                            .font(.title3.bold())
-                            .frame(maxWidth: .infinity, minHeight: 44)
-                    }
-                    .buttonStyle(.borderedProminent)
-                    .listRowBackground(Color.clear)
-                    .listRowInsets(EdgeInsets())
-                }
-                Button {
-                    studying = true
-                } label: {
-                    Label(learned ? "Flashcards" : "Start learning", systemImage: learned ? "rectangle.on.rectangle" : "play.fill")
-                        .font(.title3.bold())
-                        .frame(maxWidth: .infinity, minHeight: 44)
-                }
-                .buttonStyle(learned ? AnyPrimitiveButtonStyle(.bordered) : AnyPrimitiveButtonStyle(.borderedProminent))
-                .disabled(blockedReason != nil)
-                .listRowBackground(Color.clear)
-                .listRowInsets(EdgeInsets())
-                if let blockedReason {
-                    Label(blockedReason, systemImage: "lock.fill")
-                        .foregroundStyle(.secondary)
-                }
-                if learned {
-                    Label("Learned. These words are in your reviews and alarm.", systemImage: "checkmark.circle.fill")
-                        .foregroundStyle(.green)
-                }
-            }
-            Section {
+        ScrollView {
+            VStack(spacing: 14) {
+                actions
                 ForEach(library.words(in: pack)) { word in
-                    WordRow(word: word)
+                    WordCard(word: word)
                 }
-            } footer: {
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("A syllable with no tone mark is a neutral tone: say it short and light, like the second ma in māma.")
-                    if pack.tier == .premium {
-                        Label("Premium pack", systemImage: "lock.fill")
-                    }
-                }
+                Text("A syllable with no tone mark is a neutral tone: say it short and light, like the second ma in māma.")
+                    .font(.footnote)
+                    .foregroundStyle(Theme.muted)
+                    .padding(.horizontal, 6)
             }
+            .padding(.horizontal, 18)
+            .padding(.bottom, 24)
         }
-        .softDawnList()
-        .navigationTitle(pack.title)
+        .background(Theme.ground)
+        .navigationTitle(pack.order.map { "\($0). \(pack.title)" } ?? pack.title)
         .fullScreenCover(isPresented: $studying) {
             StudySessionView(pack: pack, flipMode: learned)
         }
@@ -174,42 +183,84 @@ struct PackDetailView: View {
             StudySessionView(pack: pack, startWithQuiz: true)
         }
     }
+
+    private var actions: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("HSK \(pack.hsk ?? 1) · \(library.words(in: pack).count) words")
+                        .font(.subheadline.bold())
+                        .foregroundStyle(Theme.muted)
+                    Text(learned ? "Learned" : "Not learned yet")
+                        .font(.title3.weight(.heavy))
+                }
+                Spacer()
+                if learned {
+                    Image(systemName: "checkmark.seal.fill").font(.largeTitle).foregroundStyle(Theme.accent)
+                }
+            }
+            if learned {
+                // Already learned: quiz straight away, no need to click through the cards.
+                Button { quizzing = true } label: { Label("Quiz me", systemImage: "checklist") }
+                    .buttonStyle(PrimaryButtonStyle())
+                Button { studying = true } label: { Label("Flashcards", systemImage: "rectangle.on.rectangle") }
+                    .buttonStyle(ChipButtonStyle())
+                    .frame(maxWidth: .infinity)
+            } else {
+                Button { studying = true } label: { Label("Start learning", systemImage: "play.fill") }
+                    .buttonStyle(PrimaryButtonStyle())
+                    .disabled(blockedReason != nil)
+                    .opacity(blockedReason == nil ? 1 : 0.4)
+            }
+            if let blockedReason {
+                Label(blockedReason, systemImage: "lock.fill")
+                    .font(.subheadline)
+                    .foregroundStyle(Theme.muted)
+            }
+        }
+        .card(padding: 20)
+    }
 }
 
-private struct WordRow: View {
+/// One word in the section list: picture, characters, pinyin, meaning, example.
+private struct WordCard: View {
     let word: Word
 
     var body: some View {
-        HStack(alignment: .top, spacing: 12) {
-            Text(AppContent.library.concept(for: word)?.emoji ?? "")
-                .font(.title)
-                .frame(width: 40)
+        HStack(alignment: .top, spacing: 14) {
+            Group {
+                if WordPicture.exists(for: word) {
+                    WordPicture(word: word, size: 36)
+                } else {
+                    Text(word.text.prefix(1)).font(.title2.weight(.medium)).foregroundStyle(Theme.accent)
+                }
+            }
+            .frame(width: 54, height: 54)
+            .background(Theme.chip, in: .rect(cornerRadius: 16))
+
             VStack(alignment: .leading, spacing: 4) {
-                HStack(alignment: .firstTextBaseline) {
-                    Text(word.text).font(.title2)
-                    Text(word.pinyin).foregroundStyle(.secondary)
+                HStack(alignment: .firstTextBaseline, spacing: 8) {
+                    Text(word.text).font(.title2.weight(.semibold))
+                    Text(word.pinyin).foregroundStyle(Theme.muted)
                 }
                 Text(AppContent.library.concept(for: word)?.english ?? "")
+                    .font(.subheadline.bold())
                 if let example = word.example {
                     Text("\(example.text)  \(example.english)")
                         .font(.caption)
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(Theme.muted)
                 }
             }
+            Spacer(minLength: 0)
+            Button {
+                Speaker.shared.say(word.text)
+            } label: {
+                Image(systemName: "speaker.wave.2.fill")
+                    .foregroundStyle(Theme.link)
+                    .frame(width: 44, height: 44)
+            }
+            .accessibilityLabel("Play \(word.text)")
         }
-        .padding(.vertical, 2)
-    }
-}
-
-/// Lets one button switch between bordered and prominent styles.
-struct AnyPrimitiveButtonStyle: PrimitiveButtonStyle {
-    private let make: (Configuration) -> AnyView
-
-    init<S: PrimitiveButtonStyle>(_ style: S) {
-        make = { AnyView(style.makeBody(configuration: $0)) }
-    }
-
-    func makeBody(configuration: Configuration) -> some View {
-        make(configuration)
+        .card(padding: 14)
     }
 }
