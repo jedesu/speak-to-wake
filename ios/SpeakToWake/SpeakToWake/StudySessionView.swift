@@ -26,6 +26,7 @@ struct StudySessionView: View {
     @State private var missed: Set<String> = []
     @State private var revealed = false
     @State private var notKnown: Set<String> = []
+    @State private var askToSignIn = false
 
     private var words: [Word] { AppContent.library.words(in: pack) }
 
@@ -254,6 +255,15 @@ struct StudySessionView: View {
             .buttonStyle(PrimaryButtonStyle())
         }
         .padding()
+        .task {
+            if AuthService.shared.isSignedIn {
+                await SyncService.shared.sync(modelContext)
+            } else {
+                try? await Task.sleep(for: .seconds(1))
+                askToSignIn = true
+            }
+        }
+        .sheet(isPresented: $askToSignIn) { SignInView() }
     }
 }
 

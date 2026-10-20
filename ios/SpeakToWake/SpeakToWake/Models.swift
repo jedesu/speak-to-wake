@@ -81,6 +81,9 @@ final class Attempt {
     var chosenOption: String?
     /// The user's own verdict ("I said it right"), for measuring false rejects.
     var userSaidCorrect: Bool?
+    /// Stable id for the account copy, and whether it has been uploaded yet.
+    var uuid: UUID = UUID()
+    var uploaded: Bool = false
 
     init(date: Date = .now, wordID: String, challengeType: String, context: String, passed: Bool,
          retryNumber: Int = 0, transcript: String? = nil, matchScore: Double? = nil, chosenOption: String? = nil) {

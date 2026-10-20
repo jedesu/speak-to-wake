@@ -78,6 +78,7 @@ struct ReviewSessionView: View {
                 .font(.system(size: 80))
                 .foregroundStyle(.yellow)
             Text("Review done").font(.largeTitle.bold())
+                .task { await SyncService.shared.sync(modelContext) }
             Text("\(rightFirstTime) of \(reviewedCount) right the first time.")
                 .font(.title3)
             Text("Words you got right come back later. Missed words come back tomorrow.")

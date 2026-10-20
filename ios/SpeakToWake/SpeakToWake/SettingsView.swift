@@ -15,6 +15,10 @@ struct SettingsView: View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 10) {
+                    group("Account") {
+                        AccountCard()
+                    }
+
                     group("Wake-up challenge",
                           footer: "A wrong answer swaps in a different word. After two missed speaking prompts in a row, you get a tap quiz instead.") {
                         HStack {
@@ -51,12 +55,6 @@ struct SettingsView: View {
                     }
 
                     group("Your data") {
-                        Label {
-                            rowText("Saved on this iPhone", "No account needed")
-                        } icon: {
-                            Image(systemName: "iphone").foregroundStyle(Theme.link)
-                        }
-                        divider
                         Button {
                             hasOnboarded = false
                             dismiss()

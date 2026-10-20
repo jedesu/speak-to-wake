@@ -49,7 +49,8 @@ struct ChallengeView: View {
         }
         .background(Theme.ground)
         .onAppear {
-            if session == nil { session = WakeSession(reviews: reviews) }
+            // The alarm quizzes your words once you're signed in (the first section is a trial).
+            if session == nil { session = WakeSession(reviews: AuthService.shared.isSignedIn ? reviews : []) }
             AlarmSound.shared.start()
         }
         .onDisappear {
@@ -111,6 +112,7 @@ struct ChallengeView: View {
             Spacer()
         }
         .task {
+            await SyncService.shared.sync(modelContext)
             try? await Task.sleep(for: .seconds(1.5))
             AlarmController.shared.challengePassed()
         }
@@ -119,8 +121,10 @@ struct ChallengeView: View {
     private var noWords: some View {
         VStack(spacing: 16) {
             Spacer()
-            Text("No words to ask yet").font(.title.bold())
-            Text("Your alarm only asks words you've learned. Learn a pack in the Learn tab so tomorrow's alarm has words.")
+            Text(AuthService.shared.isSignedIn ? "No words to ask yet" : "Sign in to use your words").font(.title.bold())
+            Text(AuthService.shared.isSignedIn
+                 ? "Your alarm only asks words you've learned. Learn a section in the Learn tab so tomorrow's alarm has words."
+                 : "Sign in from Settings so your alarm can quiz you on the words you've learned.")
                 .multilineTextAlignment(.center)
                 .foregroundStyle(.secondary)
             Button("Turn off alarm") {

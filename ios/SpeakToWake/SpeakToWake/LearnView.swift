@@ -199,6 +199,14 @@ struct PackDetailView: View {
     @Query private var reviews: [ReviewState]
     @State private var studying = false
     @State private var quizzing = false
+    @State private var signingIn = false
+    private var auth = AuthService.shared
+
+    private var needsSignIn: Bool {
+        _ = auth.isSignedIn  // re-check when sign-in changes
+        let learnedIDs = Set(progress.filter { $0.learnedAt != nil }.map(\.packID))
+        return Learning.needsSignIn(toStudy: pack, learnedPackIDs: learnedIDs)
+    }
 
     private var learned: Bool {
         progress.contains { $0.packID == pack.id && $0.language == library.language && $0.learnedAt != nil }
@@ -241,6 +249,9 @@ struct PackDetailView: View {
         .fullScreenCover(isPresented: $quizzing) {
             StudySessionView(pack: pack, startWithQuiz: true)
         }
+        .sheet(isPresented: $signingIn) {
+            SignInView()
+        }
     }
 
     private var actions: some View {
@@ -265,6 +276,12 @@ struct PackDetailView: View {
                 Button { studying = true } label: { Label("Flashcards", systemImage: "rectangle.on.rectangle") }
                     .buttonStyle(ChipButtonStyle())
                     .frame(maxWidth: .infinity)
+            } else if needsSignIn && blockedReason == nil {
+                Button { signingIn = true } label: { Label("Sign in to keep learning", systemImage: "person.crop.circle") }
+                    .buttonStyle(PrimaryButtonStyle())
+                Text("Your first section was free. Sign in to save your progress and learn more.")
+                    .font(.subheadline)
+                    .foregroundStyle(Theme.muted)
             } else {
                 Button { studying = true } label: { Label("Start learning", systemImage: "play.fill") }
                     .buttonStyle(PrimaryButtonStyle())

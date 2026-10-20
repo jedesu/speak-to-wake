@@ -19,6 +19,7 @@ struct SpeakToWakeApp: App {
                     OnboardingView { hasOnboarded = true }
                 }
             }
+            .modifier(SyncOnOpen())
             .fullScreenCover(isPresented: $alarms.showChallenge) {
                 ChallengeView()
                     .fontDesign(.rounded)
@@ -44,5 +45,21 @@ struct SpeakToWakeApp: App {
                 ProgressTabView()
             }
         }
+    }
+}
+
+/// Syncs the account copy when the app opens or comes back to the front.
+private struct SyncOnOpen: ViewModifier {
+    @Environment(\.modelContext) private var modelContext
+    @Environment(\.scenePhase) private var scenePhase
+
+    func body(content: Content) -> some View {
+        content
+            .task { await SyncService.shared.sync(modelContext) }
+            .onChange(of: scenePhase) {
+                if scenePhase == .active {
+                    Task { await SyncService.shared.sync(modelContext) }
+                }
+            }
     }
 }

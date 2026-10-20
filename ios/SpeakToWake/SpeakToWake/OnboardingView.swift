@@ -15,6 +15,7 @@ struct OnboardingView: View {
     @AppStorage(AppSettings.Key.gentleWakeUp) private var gentleWakeUp = false
 
     @State private var step = Step.welcome
+    @State private var signingIn = false
     @State private var alarmTime = Calendar.current.date(from: DateComponents(hour: 7, minute: 0)) ?? .now
     @State private var weekdays: Set<Int> = [2, 3, 4, 5, 6]
     @State private var alarmsAllowed = AlarmController.shared.authorization == .authorized
@@ -100,9 +101,13 @@ struct OnboardingView: View {
                 .foregroundStyle(.secondary)
                 .multilineTextAlignment(.center)
             Spacer()
-            Text("HSK 1 · 152 words · works offline")
-                .font(.footnote)
-                .foregroundStyle(.secondary)
+            Button("I already have an account") { signingIn = true }
+                .font(.headline)
+                .foregroundStyle(Theme.link)
+                .frame(minHeight: 44)
+                .sheet(isPresented: $signingIn) {
+                    SignInView(title: "Welcome back", message: "Sign in to bring back your progress.")
+                }
         }
     }
 
