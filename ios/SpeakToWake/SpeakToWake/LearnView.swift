@@ -2,25 +2,44 @@ import SwiftData
 import SwiftUI
 import WakeCore
 
-/// Learn tab: HSK 1 progress, Review, and one card per section.
+/// Learn tab: overall progress, Review, and the sections, browsed either by
+/// HSK level or by topic (Food & drink, Places & travel...).
 struct LearnView: View {
+    private enum Mode: String, CaseIterable {
+        case levels = "HSK levels"
+        case topics = "Topics"
+    }
+
     private let library = AppContent.library
     @Query private var progress: [PackProgress]
     @Query private var reviews: [ReviewState]
     @State private var reviewing = false
+    @AppStorage(AppSettings.Key.learnMode) private var mode = Mode.levels
+    @AppStorage(AppSettings.Key.proUnlocked) private var proUnlocked = false
 
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(spacing: 14) {
-                    ForEach(library.hskLevels, id: \.level) { group in
-                        levelHeader(group.level, packs: group.packs)
-                        if !reviews.isEmpty { reviewCard }
-                        ForEach(group.packs) { pack in
-                            NavigationLink(value: pack) {
-                                SectionCard(pack: pack, learned: isLearned(pack))
-                            }
-                            .buttonStyle(.plain)
+                VStack(alignment: .leading, spacing: 14) {
+                    header
+                    if !reviews.isEmpty { reviewCard }
+                    Picker("Browse", selection: $mode) {
+                        ForEach(Mode.allCases, id: \.self) { Text($0.rawValue).tag($0) }
+                    }
+                    .pickerStyle(.segmented)
+                    .padding(.vertical, 4)
+
+                    switch mode {
+                    case .levels:
+                        ForEach(library.hskLevels, id: \.level) { group in
+                            groupHeader("HSK \(group.level)", packs: group.packs, isPro: group.level > 1)
+                            sectionCards(group.packs, showLevel: false)
+                        }
+                    case .topics:
+                        ForEach(library.topics) { topic in
+                            let packs = library.packs(in: topic)
+                            groupHeader(topic.title, packs: packs, isPro: false)
+                            sectionCards(packs, showLevel: true)
                         }
                     }
                 }
@@ -38,24 +57,53 @@ struct LearnView: View {
         }
     }
 
-    private func levelHeader(_ level: Int, packs: [Pack]) -> some View {
-        let words = packs.reduce(0) { $0 + library.words(in: $1).count }
-        let learned = packs.filter(isLearned).count
+    private var header: some View {
+        let learned = library.packs.filter(isLearned).count
         return VStack(alignment: .leading, spacing: 10) {
-            Text("HSK \(level)")
+            Text("Mandarin · HSK 1–\(library.hskLevels.last?.level ?? 1)")
                 .font(.subheadline.bold())
                 .foregroundStyle(Theme.muted)
             Text("Learn")
                 .font(.largeTitle.weight(.heavy))
-            ProgressView(value: Double(learned), total: Double(max(packs.count, 1)))
+            ProgressView(value: Double(learned), total: Double(max(library.packs.count, 1)))
                 .tint(Theme.accent)
-            Text("\(learned) of \(packs.count) sections · \(words) words")
+            Text("\(learned) of \(library.packs.count) sections · \(library.words.count) words")
                 .font(.subheadline.bold())
                 .foregroundStyle(Theme.muted)
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.horizontal, 4)
-        .padding(.bottom, 4)
+    }
+
+    private func groupHeader(_ title: String, packs: [Pack], isPro: Bool) -> some View {
+        let words = packs.reduce(0) { $0 + library.words(in: $1).count }
+        let learned = packs.filter(isLearned).count
+        return HStack(alignment: .firstTextBaseline) {
+            Text(title).font(.title2.weight(.heavy))
+            if isPro {
+                Text("PRO")
+                    .font(.caption2.weight(.heavy))
+                    .foregroundStyle(.white)
+                    .padding(.horizontal, 7)
+                    .padding(.vertical, 3)
+                    .background(Theme.accent, in: .capsule)
+            }
+            Spacer()
+            Text("\(learned)/\(packs.count) · \(words) words")
+                .font(.subheadline.bold())
+                .foregroundStyle(Theme.muted)
+        }
+        .padding(.horizontal, 4)
+        .padding(.top, 10)
+    }
+
+    private func sectionCards(_ packs: [Pack], showLevel: Bool) -> some View {
+        ForEach(packs) { pack in
+            NavigationLink(value: pack) {
+                SectionCard(pack: pack, learned: isLearned(pack), locked: !AppSettings.canOpen(pack) && !proUnlocked,
+                            showLevel: showLevel)
+            }
+            .buttonStyle(.plain)
+        }
     }
 
     private var reviewCard: some View {
@@ -90,10 +138,13 @@ struct LearnView: View {
     }
 }
 
-/// One HSK section: picture tile, number and title, first few words, status.
+/// One section: picture tile, number and title, first few words, status.
 private struct SectionCard: View {
     let pack: Pack
     let learned: Bool
+    let locked: Bool
+    /// In the Topics view, say which level the section is from.
+    var showLevel = false
 
     private var words: [Word] { AppContent.library.words(in: pack) }
 
@@ -108,9 +159,15 @@ private struct SectionCard: View {
             }
             .frame(width: 58, height: 58)
             .background(Theme.chip, in: .rect(cornerRadius: 18))
+            .opacity(locked ? 0.5 : 1)
 
             VStack(alignment: .leading, spacing: 3) {
-                Text(pack.order.map { "\($0). \(pack.title)" } ?? pack.title)
+                if showLevel {
+                    Text("HSK \(pack.hsk ?? 1)")
+                        .font(.caption.weight(.heavy))
+                        .foregroundStyle(Theme.link)
+                }
+                Text(showLevel ? pack.title : pack.order.map { "\($0). \(pack.title)" } ?? pack.title)
                     .font(.headline)
                 Text("\(words.count) words · \(words.prefix(3).map(\.text).joined(separator: " "))")
                     .font(.subheadline)
@@ -123,8 +180,8 @@ private struct SectionCard: View {
                     .font(.title2)
                     .foregroundStyle(Theme.accent)
                     .accessibilityLabel("Learned")
-            } else if pack.tier == .premium {
-                Image(systemName: "lock.fill").foregroundStyle(Theme.muted)
+            } else if locked {
+                Image(systemName: "lock.fill").foregroundStyle(Theme.muted).accessibilityLabel("Pro")
             } else {
                 Image(systemName: "chevron.right").foregroundStyle(Theme.muted)
             }
@@ -147,10 +204,12 @@ struct PackDetailView: View {
         progress.contains { $0.packID == pack.id && $0.language == library.language && $0.learnedAt != nil }
     }
 
+    @AppStorage(AppSettings.Key.proUnlocked) private var proUnlocked = false
+
     /// Why studying is blocked, if it is.
     private var blockedReason: String? {
-        if pack.tier == .premium {
-            return "This is a Pro section. Unlocking sections comes later."
+        if !AppSettings.canOpen(pack) && !proUnlocked {
+            return "HSK \(pack.hsk ?? 2) is part of Mingo Pro, which isn't available yet."
         }
         let due = Learning.dueCount(reviews)
         if !learned && due > Learning.overdueLimit {

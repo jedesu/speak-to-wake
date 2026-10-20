@@ -19,8 +19,15 @@ enum Learning {
     static func quiz(for word: Word, avoiding: Quiz.Kind? = nil) -> Quiz {
         let kinds = maker.availableKinds(for: word).filter { singleWordKinds.contains($0) }
         let kind = kinds.filter { $0 != avoiding }.randomElement() ?? kinds.randomElement()!
-        // The pool is every word in the app: wrong answers may be words you haven't learned yet.
-        return try! maker.make(kind, for: word, pool: AppContent.library.words)
+        return try! maker.make(kind, for: word, pool: pool(for: word))
+    }
+
+    /// Wrong answers come from the word's own HSK level or easier, so an HSK 1
+    /// learner never sees HSK 3 words among the choices.
+    static func pool(for word: Word) -> [Word] {
+        let library = AppContent.library
+        let level = library.pack(for: word)?.hsk ?? 1
+        return library.words.filter { (library.pack(for: $0)?.hsk ?? 1) <= level }
     }
 
     static func dueCount(_ reviews: [ReviewState], today: Day = .today) -> Int {

@@ -115,7 +115,7 @@ final class WakeSession {
     private func make(_ word: Word, _ challenge: Challenge) -> Prompt {
         var quiz: Quiz?
         if case .tap(let kind) = challenge {
-            quiz = try? Learning.maker.make(kind, for: word, pool: library.words)
+            quiz = try? Learning.maker.make(kind, for: word, pool: Learning.pool(for: word))
         }
         return Prompt(word: word, challenge: challenge, quiz: quiz)
     }

@@ -143,6 +143,411 @@
    "order": 16,
    "title": "Questions & little words",
    "tier": "free"
+  },
+  {
+   "id": "hsk2-01",
+   "theme": "family",
+   "level": 2,
+   "hsk": 2,
+   "order": 1,
+   "title": "Family",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk2-02",
+   "theme": "people",
+   "level": 2,
+   "hsk": 2,
+   "order": 2,
+   "title": "Meeting people",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk2-03",
+   "theme": "food",
+   "level": 2,
+   "hsk": 2,
+   "order": 3,
+   "title": "Food & drink 2",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk2-04",
+   "theme": "shopping",
+   "level": 2,
+   "hsk": 2,
+   "order": 4,
+   "title": "Shopping & money",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk2-05",
+   "theme": "time",
+   "level": 2,
+   "hsk": 2,
+   "order": 5,
+   "title": "Time & dates 2",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk2-06",
+   "theme": "routine",
+   "level": 2,
+   "hsk": 2,
+   "order": 6,
+   "title": "Daily routine",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk2-07",
+   "theme": "hobbies",
+   "level": 2,
+   "hsk": 2,
+   "order": 7,
+   "title": "Sports & hobbies",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk2-08",
+   "theme": "transport",
+   "level": 2,
+   "hsk": 2,
+   "order": 8,
+   "title": "Getting around",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk2-09",
+   "theme": "places",
+   "level": 2,
+   "hsk": 2,
+   "order": 9,
+   "title": "Places & directions",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk2-10",
+   "theme": "health",
+   "level": 2,
+   "hsk": 2,
+   "order": 10,
+   "title": "Body & health",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk2-11",
+   "theme": "describing",
+   "level": 2,
+   "hsk": 2,
+   "order": 11,
+   "title": "Weather & colors",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk2-12",
+   "theme": "school",
+   "level": 2,
+   "hsk": 2,
+   "order": 12,
+   "title": "School & things",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk2-13",
+   "theme": "feelings",
+   "level": 2,
+   "hsk": 2,
+   "order": 13,
+   "title": "Feelings & thinking",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk2-14",
+   "theme": "helping",
+   "level": 2,
+   "hsk": 2,
+   "order": 14,
+   "title": "Asking & helping",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk2-15",
+   "theme": "linking",
+   "level": 2,
+   "hsk": 2,
+   "order": 15,
+   "title": "Linking words",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk2-16",
+   "theme": "grammar",
+   "level": 2,
+   "hsk": 2,
+   "order": 16,
+   "title": "Grammar helpers 2",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk3-01",
+   "theme": "people",
+   "level": 3,
+   "hsk": 3,
+   "order": 1,
+   "title": "People 3",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk3-02",
+   "theme": "body",
+   "level": 3,
+   "hsk": 3,
+   "order": 2,
+   "title": "Body",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk3-03",
+   "theme": "health",
+   "level": 3,
+   "hsk": 3,
+   "order": 3,
+   "title": "Health",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk3-04",
+   "theme": "clothes",
+   "level": 3,
+   "hsk": 3,
+   "order": 4,
+   "title": "Clothes & things to wear",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk3-05",
+   "theme": "food",
+   "level": 3,
+   "hsk": 3,
+   "order": 5,
+   "title": "Food 3",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk3-06",
+   "theme": "eating",
+   "level": 3,
+   "hsk": 3,
+   "order": 6,
+   "title": "Meals & tastes",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk3-07",
+   "theme": "home",
+   "level": 3,
+   "hsk": 3,
+   "order": 7,
+   "title": "At home",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk3-08",
+   "theme": "town",
+   "level": 3,
+   "hsk": 3,
+   "order": 8,
+   "title": "Around town",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk3-09",
+   "theme": "travel",
+   "level": 3,
+   "hsk": 3,
+   "order": 9,
+   "title": "Travel",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk3-10",
+   "theme": "world",
+   "level": 3,
+   "hsk": 3,
+   "order": 10,
+   "title": "Directions & the world",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk3-11",
+   "theme": "nature",
+   "level": 3,
+   "hsk": 3,
+   "order": 11,
+   "title": "Nature & animals",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk3-12",
+   "theme": "seasons",
+   "level": 3,
+   "hsk": 3,
+   "order": 12,
+   "title": "Seasons & holidays",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk3-13",
+   "theme": "time",
+   "level": 3,
+   "hsk": 3,
+   "order": 13,
+   "title": "Time 3",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk3-14",
+   "theme": "frequency",
+   "level": 3,
+   "hsk": 3,
+   "order": 14,
+   "title": "How often",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk3-15",
+   "theme": "school",
+   "level": 3,
+   "hsk": 3,
+   "order": 15,
+   "title": "School 3",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk3-16",
+   "theme": "language",
+   "level": 3,
+   "hsk": 3,
+   "order": 16,
+   "title": "Learning Chinese",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk3-17",
+   "theme": "work",
+   "level": 3,
+   "hsk": 3,
+   "order": 17,
+   "title": "Work & meetings",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk3-18",
+   "theme": "hobbies",
+   "level": 3,
+   "hsk": 3,
+   "order": 18,
+   "title": "Hobbies & fun",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk3-19",
+   "theme": "media",
+   "level": 3,
+   "hsk": 3,
+   "order": 19,
+   "title": "Photos, news & tech",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk3-20",
+   "theme": "feelings",
+   "level": 3,
+   "hsk": 3,
+   "order": 20,
+   "title": "Feelings 3",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk3-21",
+   "theme": "describing",
+   "level": 3,
+   "hsk": 3,
+   "order": 21,
+   "title": "Describing people",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk3-22",
+   "theme": "qualities",
+   "level": 3,
+   "hsk": 3,
+   "order": 22,
+   "title": "Describing things",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk3-23",
+   "theme": "colors",
+   "level": 3,
+   "hsk": 3,
+   "order": 23,
+   "title": "Colors & measures",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk3-24",
+   "theme": "actions",
+   "level": 3,
+   "hsk": 3,
+   "order": 24,
+   "title": "Everyday actions 3",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk3-25",
+   "theme": "deciding",
+   "level": 3,
+   "hsk": 3,
+   "order": 25,
+   "title": "Thinking & deciding",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk3-26",
+   "theme": "doing",
+   "level": 3,
+   "hsk": 3,
+   "order": 26,
+   "title": "Helping & doing",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk3-27",
+   "theme": "cause",
+   "level": 3,
+   "hsk": 3,
+   "order": 27,
+   "title": "Reasons & effects",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk3-28",
+   "theme": "linking",
+   "level": 3,
+   "hsk": 3,
+   "order": 28,
+   "title": "Linking words 3",
+   "tier": "premium"
+  },
+  {
+   "id": "hsk3-29",
+   "theme": "grammar",
+   "level": 3,
+   "hsk": 3,
+   "order": 29,
+   "title": "Grammar helpers 3",
+   "tier": "premium"
   }
  ],
  "concepts": [
@@ -558,7 +963,7 @@
    "id": "fruit",
    "packId": "hsk1-07",
    "english": "fruit",
-   "emoji": "🍇"
+   "emoji": "🍓"
   },
   {
    "id": "apple",
@@ -612,12 +1017,6 @@
    "id": "day-of-month",
    "packId": "hsk1-08",
    "english": "day (of the month)",
-   "emoji": null
-  },
-  {
-   "id": "number-date",
-   "packId": "hsk1-08",
-   "english": "day of the month; number",
    "emoji": null
   },
   {
@@ -1056,6 +1455,2676 @@
    "id": "not-past",
    "packId": "hsk1-16",
    "english": "not (did not, have not)",
+   "emoji": null
+  },
+  {
+   "id": "older-brother",
+   "packId": "hsk2-01",
+   "english": "older brother",
+   "emoji": null
+  },
+  {
+   "id": "older-sister",
+   "packId": "hsk2-01",
+   "english": "older sister",
+   "emoji": null
+  },
+  {
+   "id": "younger-brother",
+   "packId": "hsk2-01",
+   "english": "younger brother",
+   "emoji": null
+  },
+  {
+   "id": "younger-sister",
+   "packId": "hsk2-01",
+   "english": "younger sister",
+   "emoji": null
+  },
+  {
+   "id": "husband",
+   "packId": "hsk2-01",
+   "english": "husband",
+   "emoji": "💍"
+  },
+  {
+   "id": "wife",
+   "packId": "hsk2-01",
+   "english": "wife",
+   "emoji": "👰"
+  },
+  {
+   "id": "child",
+   "packId": "hsk2-01",
+   "english": "child",
+   "emoji": "🧒"
+  },
+  {
+   "id": "man",
+   "packId": "hsk2-01",
+   "english": "man",
+   "emoji": null
+  },
+  {
+   "id": "woman",
+   "packId": "hsk2-01",
+   "english": "woman",
+   "emoji": null
+  },
+  {
+   "id": "you-2",
+   "packId": "hsk2-02",
+   "english": "you (polite)",
+   "emoji": null
+  },
+  {
+   "id": "surname",
+   "packId": "hsk2-02",
+   "english": "surname; to be surnamed",
+   "emoji": null
+  },
+  {
+   "id": "to-introduce",
+   "packId": "hsk2-02",
+   "english": "to introduce",
+   "emoji": null
+  },
+  {
+   "id": "to-welcome",
+   "packId": "hsk2-02",
+   "english": "to welcome",
+   "emoji": "🤗"
+  },
+  {
+   "id": "everyone",
+   "packId": "hsk2-02",
+   "english": "everyone",
+   "emoji": "🙌"
+  },
+  {
+   "id": "it",
+   "packId": "hsk2-02",
+   "english": "it (things, animals)",
+   "emoji": "🐾"
+  },
+  {
+   "id": "egg",
+   "packId": "hsk2-03",
+   "english": "egg",
+   "emoji": "🥚"
+  },
+  {
+   "id": "lamb",
+   "packId": "hsk2-03",
+   "english": "lamb, mutton",
+   "emoji": "🍖"
+  },
+  {
+   "id": "fish",
+   "packId": "hsk2-03",
+   "english": "fish",
+   "emoji": "🐟"
+  },
+  {
+   "id": "milk",
+   "packId": "hsk2-03",
+   "english": "milk",
+   "emoji": "🍼"
+  },
+  {
+   "id": "coffee",
+   "packId": "hsk2-03",
+   "english": "coffee",
+   "emoji": "☕"
+  },
+  {
+   "id": "watermelon",
+   "packId": "hsk2-03",
+   "english": "watermelon",
+   "emoji": "🍉"
+  },
+  {
+   "id": "delicious",
+   "packId": "hsk2-03",
+   "english": "delicious",
+   "emoji": "😋"
+  },
+  {
+   "id": "waiter",
+   "packId": "hsk2-03",
+   "english": "waiter, server",
+   "emoji": "🧑‍🍳"
+  },
+  {
+   "id": "ba",
+   "packId": "hsk2-03",
+   "english": "(suggestion: let's…; …right?)",
+   "emoji": null
+  },
+  {
+   "id": "cheap",
+   "packId": "hsk2-04",
+   "english": "cheap",
+   "emoji": "🏷️"
+  },
+  {
+   "id": "expensive",
+   "packId": "hsk2-04",
+   "english": "expensive",
+   "emoji": "💎"
+  },
+  {
+   "id": "to-sell",
+   "packId": "hsk2-04",
+   "english": "to sell",
+   "emoji": null
+  },
+  {
+   "id": "yuan-2",
+   "packId": "hsk2-04",
+   "english": "yuan (unit of money)",
+   "emoji": "💵"
+  },
+  {
+   "id": "thousand",
+   "packId": "hsk2-04",
+   "english": "thousand",
+   "emoji": null
+  },
+  {
+   "id": "hundred",
+   "packId": "hsk2-04",
+   "english": "hundred",
+   "emoji": "💯"
+  },
+  {
+   "id": "two-2",
+   "packId": "hsk2-04",
+   "english": "two (of something)",
+   "emoji": "✌️"
+  },
+  {
+   "id": "kilogram",
+   "packId": "hsk2-04",
+   "english": "kilogram",
+   "emoji": "⚖️"
+  },
+  {
+   "id": "ji-n",
+   "packId": "hsk2-04",
+   "english": "(measure word for clothes, matters)",
+   "emoji": null
+  },
+  {
+   "id": "zh-ng",
+   "packId": "hsk2-04",
+   "english": "(measure word for flat things)",
+   "emoji": null
+  },
+  {
+   "id": "ticket",
+   "packId": "hsk2-04",
+   "english": "ticket",
+   "emoji": "🎟️"
+  },
+  {
+   "id": "early-morning",
+   "packId": "hsk2-05",
+   "english": "early morning",
+   "emoji": "🌄"
+  },
+  {
+   "id": "evening",
+   "packId": "hsk2-05",
+   "english": "evening",
+   "emoji": "🌙"
+  },
+  {
+   "id": "time",
+   "packId": "hsk2-05",
+   "english": "time",
+   "emoji": "⌛"
+  },
+  {
+   "id": "hour",
+   "packId": "hsk2-05",
+   "english": "hour",
+   "emoji": "🕐"
+  },
+  {
+   "id": "last-year",
+   "packId": "hsk2-05",
+   "english": "last year",
+   "emoji": null
+  },
+  {
+   "id": "birthday",
+   "packId": "hsk2-05",
+   "english": "birthday",
+   "emoji": "🎈"
+  },
+  {
+   "id": "number-date",
+   "packId": "hsk2-05",
+   "english": "day of the month; number",
+   "emoji": null
+  },
+  {
+   "id": "every",
+   "packId": "hsk2-05",
+   "english": "every, each",
+   "emoji": null
+  },
+  {
+   "id": "time-2",
+   "packId": "hsk2-05",
+   "english": "time (occurrence)",
+   "emoji": null
+  },
+  {
+   "id": "first",
+   "packId": "hsk2-05",
+   "english": "first",
+   "emoji": "🥇"
+  },
+  {
+   "id": "already",
+   "packId": "hsk2-05",
+   "english": "already",
+   "emoji": null
+  },
+  {
+   "id": "to-get-up",
+   "packId": "hsk2-06",
+   "english": "to get up",
+   "emoji": "🛏️"
+  },
+  {
+   "id": "to-go-to-work",
+   "packId": "hsk2-06",
+   "english": "to go to work",
+   "emoji": null
+  },
+  {
+   "id": "to-rest",
+   "packId": "hsk2-06",
+   "english": "to rest",
+   "emoji": "🛋️"
+  },
+  {
+   "id": "to-wash",
+   "packId": "hsk2-06",
+   "english": "to wash",
+   "emoji": "🧼"
+  },
+  {
+   "id": "to-wear",
+   "packId": "hsk2-06",
+   "english": "to wear, put on",
+   "emoji": null
+  },
+  {
+   "id": "to-prepare",
+   "packId": "hsk2-06",
+   "english": "to prepare",
+   "emoji": null
+  },
+  {
+   "id": "to-begin",
+   "packId": "hsk2-06",
+   "english": "to begin",
+   "emoji": "▶️"
+  },
+  {
+   "id": "to-finish",
+   "packId": "hsk2-06",
+   "english": "to finish",
+   "emoji": null
+  },
+  {
+   "id": "zh-ngz-i",
+   "packId": "hsk2-06",
+   "english": "(in the middle of doing)",
+   "emoji": null
+  },
+  {
+   "id": "to-play-basketball",
+   "packId": "hsk2-07",
+   "english": "to play basketball",
+   "emoji": "🏀"
+  },
+  {
+   "id": "to-kick",
+   "packId": "hsk2-07",
+   "english": "to kick",
+   "emoji": "⚽"
+  },
+  {
+   "id": "to-run",
+   "packId": "hsk2-07",
+   "english": "to run, jog",
+   "emoji": "🏃"
+  },
+  {
+   "id": "to-swim",
+   "packId": "hsk2-07",
+   "english": "to swim",
+   "emoji": "🏊"
+  },
+  {
+   "id": "to-sing",
+   "packId": "hsk2-07",
+   "english": "to sing",
+   "emoji": "🎤"
+  },
+  {
+   "id": "to-dance",
+   "packId": "hsk2-07",
+   "english": "to dance",
+   "emoji": "💃"
+  },
+  {
+   "id": "sport",
+   "packId": "hsk2-07",
+   "english": "sport, exercise",
+   "emoji": "🏋️"
+  },
+  {
+   "id": "to-travel",
+   "packId": "hsk2-07",
+   "english": "to travel, tour",
+   "emoji": "🏖️"
+  },
+  {
+   "id": "to-play",
+   "packId": "hsk2-07",
+   "english": "to play, have fun",
+   "emoji": "🪁"
+  },
+  {
+   "id": "airport",
+   "packId": "hsk2-08",
+   "english": "airport",
+   "emoji": "🛫"
+  },
+  {
+   "id": "boat",
+   "packId": "hsk2-08",
+   "english": "boat, ship",
+   "emoji": "🚢"
+  },
+  {
+   "id": "bus",
+   "packId": "hsk2-08",
+   "english": "bus",
+   "emoji": "🚌"
+  },
+  {
+   "id": "bicycle",
+   "packId": "hsk2-08",
+   "english": "bicycle",
+   "emoji": "🚲"
+  },
+  {
+   "id": "road",
+   "packId": "hsk2-08",
+   "english": "road; route",
+   "emoji": "🛣️"
+  },
+  {
+   "id": "to-walk",
+   "packId": "hsk2-08",
+   "english": "to walk; to leave",
+   "emoji": "👣"
+  },
+  {
+   "id": "far",
+   "packId": "hsk2-08",
+   "english": "far",
+   "emoji": null
+  },
+  {
+   "id": "near",
+   "packId": "hsk2-08",
+   "english": "near",
+   "emoji": null
+  },
+  {
+   "id": "away-from",
+   "packId": "hsk2-08",
+   "english": "away from (distance)",
+   "emoji": null
+  },
+  {
+   "id": "to-arrive",
+   "packId": "hsk2-08",
+   "english": "to arrive; until",
+   "emoji": "🏁"
+  },
+  {
+   "id": "from",
+   "packId": "hsk2-08",
+   "english": "from",
+   "emoji": null
+  },
+  {
+   "id": "left-side",
+   "packId": "hsk2-09",
+   "english": "left side",
+   "emoji": "⬅️"
+  },
+  {
+   "id": "right-side",
+   "packId": "hsk2-09",
+   "english": "right side",
+   "emoji": "➡️"
+  },
+  {
+   "id": "beside",
+   "packId": "hsk2-09",
+   "english": "beside, next to",
+   "emoji": null
+  },
+  {
+   "id": "outside",
+   "packId": "hsk2-09",
+   "english": "outside",
+   "emoji": null
+  },
+  {
+   "id": "door",
+   "packId": "hsk2-09",
+   "english": "door",
+   "emoji": "🚪"
+  },
+  {
+   "id": "room",
+   "packId": "hsk2-09",
+   "english": "room",
+   "emoji": null
+  },
+  {
+   "id": "classroom",
+   "packId": "hsk2-09",
+   "english": "classroom",
+   "emoji": null
+  },
+  {
+   "id": "company",
+   "packId": "hsk2-09",
+   "english": "company",
+   "emoji": "🏢"
+  },
+  {
+   "id": "to-enter",
+   "packId": "hsk2-09",
+   "english": "to enter",
+   "emoji": null
+  },
+  {
+   "id": "to-go-out",
+   "packId": "hsk2-09",
+   "english": "to go out",
+   "emoji": null
+  },
+  {
+   "id": "toward",
+   "packId": "hsk2-09",
+   "english": "toward",
+   "emoji": null
+  },
+  {
+   "id": "body",
+   "packId": "hsk2-10",
+   "english": "body; health",
+   "emoji": "💪"
+  },
+  {
+   "id": "eye",
+   "packId": "hsk2-10",
+   "english": "eye",
+   "emoji": "👁️"
+  },
+  {
+   "id": "to-get-sick",
+   "packId": "hsk2-10",
+   "english": "to get sick",
+   "emoji": "🤒"
+  },
+  {
+   "id": "medicine",
+   "packId": "hsk2-10",
+   "english": "medicine",
+   "emoji": "💊"
+  },
+  {
+   "id": "tired",
+   "packId": "hsk2-10",
+   "english": "tired",
+   "emoji": "🥱"
+  },
+  {
+   "id": "to-laugh",
+   "packId": "hsk2-10",
+   "english": "to laugh, smile",
+   "emoji": "😄"
+  },
+  {
+   "id": "sunny",
+   "packId": "hsk2-11",
+   "english": "sunny",
+   "emoji": "☀️"
+  },
+  {
+   "id": "cloudy",
+   "packId": "hsk2-11",
+   "english": "cloudy, overcast",
+   "emoji": "☁️"
+  },
+  {
+   "id": "snow",
+   "packId": "hsk2-11",
+   "english": "snow",
+   "emoji": "❄️"
+  },
+  {
+   "id": "color",
+   "packId": "hsk2-11",
+   "english": "color",
+   "emoji": "🎨"
+  },
+  {
+   "id": "white",
+   "packId": "hsk2-11",
+   "english": "white",
+   "emoji": "⚪"
+  },
+  {
+   "id": "black",
+   "packId": "hsk2-11",
+   "english": "black",
+   "emoji": "⚫"
+  },
+  {
+   "id": "red",
+   "packId": "hsk2-11",
+   "english": "red",
+   "emoji": "🔴"
+  },
+  {
+   "id": "tall",
+   "packId": "hsk2-11",
+   "english": "tall, high",
+   "emoji": "🦒"
+  },
+  {
+   "id": "long",
+   "packId": "hsk2-11",
+   "english": "long",
+   "emoji": null
+  },
+  {
+   "id": "new",
+   "packId": "hsk2-11",
+   "english": "new",
+   "emoji": "🆕"
+  },
+  {
+   "id": "exam",
+   "packId": "hsk2-12",
+   "english": "exam; to take an exam",
+   "emoji": "📝"
+  },
+  {
+   "id": "class",
+   "packId": "hsk2-12",
+   "english": "class, lesson",
+   "emoji": "📚"
+  },
+  {
+   "id": "question",
+   "packId": "hsk2-12",
+   "english": "question (on a test)",
+   "emoji": null
+  },
+  {
+   "id": "question-2",
+   "packId": "hsk2-12",
+   "english": "question; problem",
+   "emoji": null
+  },
+  {
+   "id": "to-answer",
+   "packId": "hsk2-12",
+   "english": "to answer",
+   "emoji": "💬"
+  },
+  {
+   "id": "to-understand",
+   "packId": "hsk2-12",
+   "english": "to understand",
+   "emoji": "💡"
+  },
+  {
+   "id": "meaning",
+   "packId": "hsk2-12",
+   "english": "meaning",
+   "emoji": null
+  },
+  {
+   "id": "wrong",
+   "packId": "hsk2-12",
+   "english": "wrong",
+   "emoji": "❌"
+  },
+  {
+   "id": "newspaper",
+   "packId": "hsk2-12",
+   "english": "newspaper",
+   "emoji": "📰"
+  },
+  {
+   "id": "cell-phone",
+   "packId": "hsk2-12",
+   "english": "cell phone",
+   "emoji": "📲"
+  },
+  {
+   "id": "wristwatch",
+   "packId": "hsk2-12",
+   "english": "wristwatch",
+   "emoji": "⌚"
+  },
+  {
+   "id": "to-feel",
+   "packId": "hsk2-13",
+   "english": "to feel, think",
+   "emoji": null
+  },
+  {
+   "id": "to-hope",
+   "packId": "hsk2-13",
+   "english": "to hope",
+   "emoji": "🌈"
+  },
+  {
+   "id": "to-know",
+   "packId": "hsk2-13",
+   "english": "to know (a fact)",
+   "emoji": null
+  },
+  {
+   "id": "maybe",
+   "packId": "hsk2-13",
+   "english": "maybe, possible",
+   "emoji": "🤔"
+  },
+  {
+   "id": "happy-2",
+   "packId": "hsk2-13",
+   "english": "happy, joyful",
+   "emoji": "🥳"
+  },
+  {
+   "id": "busy",
+   "packId": "hsk2-13",
+   "english": "busy",
+   "emoji": null
+  },
+  {
+   "id": "fast",
+   "packId": "hsk2-13",
+   "english": "fast; soon",
+   "emoji": "⚡"
+  },
+  {
+   "id": "slow",
+   "packId": "hsk2-13",
+   "english": "slow",
+   "emoji": "🐢"
+  },
+  {
+   "id": "really",
+   "packId": "hsk2-13",
+   "english": "really, truly",
+   "emoji": null
+  },
+  {
+   "id": "very-2",
+   "packId": "hsk2-13",
+   "english": "very, extremely",
+   "emoji": null
+  },
+  {
+   "id": "most",
+   "packId": "hsk2-13",
+   "english": "most",
+   "emoji": null
+  },
+  {
+   "id": "to-tell",
+   "packId": "hsk2-14",
+   "english": "to tell",
+   "emoji": null
+  },
+  {
+   "id": "to-ask",
+   "packId": "hsk2-14",
+   "english": "to ask",
+   "emoji": null
+  },
+  {
+   "id": "to-help",
+   "packId": "hsk2-14",
+   "english": "to help; help",
+   "emoji": null
+  },
+  {
+   "id": "to-give",
+   "packId": "hsk2-14",
+   "english": "to give (as a gift); to see off",
+   "emoji": "🎀"
+  },
+  {
+   "id": "to-give-2",
+   "packId": "hsk2-14",
+   "english": "to give; for",
+   "emoji": null
+  },
+  {
+   "id": "to-let",
+   "packId": "hsk2-14",
+   "english": "to let; to make (someone do)",
+   "emoji": null
+  },
+  {
+   "id": "to-look-for",
+   "packId": "hsk2-14",
+   "english": "to look for",
+   "emoji": "🔍"
+  },
+  {
+   "id": "to-want",
+   "packId": "hsk2-14",
+   "english": "to want; will; need",
+   "emoji": null
+  },
+  {
+   "id": "can",
+   "packId": "hsk2-14",
+   "english": "can, may",
+   "emoji": null
+  },
+  {
+   "id": "don-t",
+   "packId": "hsk2-14",
+   "english": "don't",
+   "emoji": "✋"
+  },
+  {
+   "id": "matter",
+   "packId": "hsk2-14",
+   "english": "matter, thing to do",
+   "emoji": null
+  },
+  {
+   "id": "but",
+   "packId": "hsk2-15",
+   "english": "but",
+   "emoji": null
+  },
+  {
+   "id": "so",
+   "packId": "hsk2-15",
+   "english": "so, therefore",
+   "emoji": null
+  },
+  {
+   "id": "because",
+   "packId": "hsk2-15",
+   "english": "because",
+   "emoji": null
+  },
+  {
+   "id": "also",
+   "packId": "hsk2-15",
+   "english": "also, too",
+   "emoji": null
+  },
+  {
+   "id": "still",
+   "packId": "hsk2-15",
+   "english": "still; also",
+   "emoji": null
+  },
+  {
+   "id": "then",
+   "packId": "hsk2-15",
+   "english": "then, right away",
+   "emoji": null
+  },
+  {
+   "id": "again",
+   "packId": "hsk2-15",
+   "english": "again",
+   "emoji": "🔁"
+  },
+  {
+   "id": "together",
+   "packId": "hsk2-15",
+   "english": "together",
+   "emoji": null
+  },
+  {
+   "id": "zhe",
+   "packId": "hsk2-16",
+   "english": "(ongoing state)",
+   "emoji": null
+  },
+  {
+   "id": "de-2",
+   "packId": "hsk2-16",
+   "english": "(links a verb to how it's done)",
+   "emoji": null
+  },
+  {
+   "id": "for",
+   "packId": "hsk2-16",
+   "english": "for",
+   "emoji": null
+  },
+  {
+   "id": "than",
+   "packId": "hsk2-16",
+   "english": "than (comparing)",
+   "emoji": null
+  },
+  {
+   "id": "aunt",
+   "packId": "hsk3-01",
+   "english": "aunt (polite for older women)",
+   "emoji": null
+  },
+  {
+   "id": "uncle",
+   "packId": "hsk3-01",
+   "english": "uncle",
+   "emoji": null
+  },
+  {
+   "id": "grandma",
+   "packId": "hsk3-01",
+   "english": "grandma (father's mother)",
+   "emoji": "👵"
+  },
+  {
+   "id": "grandpa",
+   "packId": "hsk3-01",
+   "english": "grandpa (father's father)",
+   "emoji": "👴"
+  },
+  {
+   "id": "neighbor",
+   "packId": "hsk3-01",
+   "english": "neighbor",
+   "emoji": "🏘️"
+  },
+  {
+   "id": "colleague",
+   "packId": "hsk3-01",
+   "english": "colleague",
+   "emoji": "🧑‍💼"
+  },
+  {
+   "id": "guest",
+   "packId": "hsk3-01",
+   "english": "guest",
+   "emoji": "🛎️"
+  },
+  {
+   "id": "manager",
+   "packId": "hsk3-01",
+   "english": "manager",
+   "emoji": "📊"
+  },
+  {
+   "id": "driver",
+   "packId": "hsk3-01",
+   "english": "driver",
+   "emoji": "🚗"
+  },
+  {
+   "id": "principal",
+   "packId": "hsk3-01",
+   "english": "principal (of a school)",
+   "emoji": null
+  },
+  {
+   "id": "other-people",
+   "packId": "hsk3-01",
+   "english": "other people",
+   "emoji": null
+  },
+  {
+   "id": "oneself",
+   "packId": "hsk3-01",
+   "english": "oneself",
+   "emoji": "🪞"
+  },
+  {
+   "id": "nose",
+   "packId": "hsk3-02",
+   "english": "nose",
+   "emoji": "👃"
+  },
+  {
+   "id": "ear",
+   "packId": "hsk3-02",
+   "english": "ear",
+   "emoji": "🦻"
+  },
+  {
+   "id": "face",
+   "packId": "hsk3-02",
+   "english": "face",
+   "emoji": "🙂"
+  },
+  {
+   "id": "foot",
+   "packId": "hsk3-02",
+   "english": "foot",
+   "emoji": "🦶"
+  },
+  {
+   "id": "leg",
+   "packId": "hsk3-02",
+   "english": "leg",
+   "emoji": "🦵"
+  },
+  {
+   "id": "hair",
+   "packId": "hsk3-02",
+   "english": "hair",
+   "emoji": "💇"
+  },
+  {
+   "id": "mouth",
+   "packId": "hsk3-02",
+   "english": "mouth; (measure word for family members)",
+   "emoji": "👄"
+  },
+  {
+   "id": "sound",
+   "packId": "hsk3-02",
+   "english": "sound, voice",
+   "emoji": "🔊"
+  },
+  {
+   "id": "to-hurt",
+   "packId": "hsk3-03",
+   "english": "to hurt, ache",
+   "emoji": "🤕"
+  },
+  {
+   "id": "to-have-a-fever",
+   "packId": "hsk3-03",
+   "english": "to have a fever",
+   "emoji": "🌡️"
+  },
+  {
+   "id": "to-catch-a-cold",
+   "packId": "hsk3-03",
+   "english": "to catch a cold; a cold",
+   "emoji": "🤧"
+  },
+  {
+   "id": "healthy",
+   "packId": "hsk3-03",
+   "english": "healthy; health",
+   "emoji": "🍏"
+  },
+  {
+   "id": "to-check",
+   "packId": "hsk3-03",
+   "english": "to check, examine",
+   "emoji": null
+  },
+  {
+   "id": "comfortable",
+   "packId": "hsk3-03",
+   "english": "comfortable; feeling well",
+   "emoji": null
+  },
+  {
+   "id": "to-exercise",
+   "packId": "hsk3-03",
+   "english": "to exercise, work out",
+   "emoji": null
+  },
+  {
+   "id": "to-bathe",
+   "packId": "hsk3-03",
+   "english": "to bathe, shower",
+   "emoji": "🛁"
+  },
+  {
+   "id": "shirt",
+   "packId": "hsk3-04",
+   "english": "shirt",
+   "emoji": "👔"
+  },
+  {
+   "id": "pants",
+   "packId": "hsk3-04",
+   "english": "pants, trousers",
+   "emoji": "👖"
+  },
+  {
+   "id": "skirt",
+   "packId": "hsk3-04",
+   "english": "skirt",
+   "emoji": "👗"
+  },
+  {
+   "id": "hat",
+   "packId": "hsk3-04",
+   "english": "hat",
+   "emoji": "🧢"
+  },
+  {
+   "id": "shoe",
+   "packId": "hsk3-04",
+   "english": "shoe",
+   "emoji": "👟"
+  },
+  {
+   "id": "glasses",
+   "packId": "hsk3-04",
+   "english": "glasses",
+   "emoji": "👓"
+  },
+  {
+   "id": "umbrella",
+   "packId": "hsk3-04",
+   "english": "umbrella",
+   "emoji": "☂️"
+  },
+  {
+   "id": "pair",
+   "packId": "hsk3-04",
+   "english": "pair (measure word)",
+   "emoji": "🧦"
+  },
+  {
+   "id": "ti-o",
+   "packId": "hsk3-04",
+   "english": "(measure word for long, thin things)",
+   "emoji": null
+  },
+  {
+   "id": "bag",
+   "packId": "hsk3-04",
+   "english": "bag; to wrap",
+   "emoji": "👜"
+  },
+  {
+   "id": "cake",
+   "packId": "hsk3-05",
+   "english": "cake",
+   "emoji": "🍰"
+  },
+  {
+   "id": "juice",
+   "packId": "hsk3-05",
+   "english": "juice",
+   "emoji": "🧃"
+  },
+  {
+   "id": "bread",
+   "packId": "hsk3-05",
+   "english": "bread",
+   "emoji": "🍞"
+  },
+  {
+   "id": "noodles",
+   "packId": "hsk3-05",
+   "english": "noodles",
+   "emoji": "🍝"
+  },
+  {
+   "id": "beer",
+   "packId": "hsk3-05",
+   "english": "beer",
+   "emoji": "🍺"
+  },
+  {
+   "id": "sugar",
+   "packId": "hsk3-05",
+   "english": "sugar; candy",
+   "emoji": "🍬"
+  },
+  {
+   "id": "banana",
+   "packId": "hsk3-05",
+   "english": "banana",
+   "emoji": "🍌"
+  },
+  {
+   "id": "grape",
+   "packId": "hsk3-05",
+   "english": "grape",
+   "emoji": "🍇"
+  },
+  {
+   "id": "menu",
+   "packId": "hsk3-05",
+   "english": "menu",
+   "emoji": "📜"
+  },
+  {
+   "id": "full",
+   "packId": "hsk3-06",
+   "english": "full (after eating)",
+   "emoji": null
+  },
+  {
+   "id": "hungry",
+   "packId": "hsk3-06",
+   "english": "hungry",
+   "emoji": null
+  },
+  {
+   "id": "thirsty",
+   "packId": "hsk3-06",
+   "english": "thirsty",
+   "emoji": null
+  },
+  {
+   "id": "sweet",
+   "packId": "hsk3-06",
+   "english": "sweet",
+   "emoji": "🍭"
+  },
+  {
+   "id": "fresh",
+   "packId": "hsk3-06",
+   "english": "fresh",
+   "emoji": "🥗"
+  },
+  {
+   "id": "plate",
+   "packId": "hsk3-06",
+   "english": "plate",
+   "emoji": "🍽️"
+  },
+  {
+   "id": "bowl",
+   "packId": "hsk3-06",
+   "english": "bowl",
+   "emoji": "🥣"
+  },
+  {
+   "id": "chopsticks",
+   "packId": "hsk3-06",
+   "english": "chopsticks",
+   "emoji": null
+  },
+  {
+   "id": "kitchen",
+   "packId": "hsk3-07",
+   "english": "kitchen",
+   "emoji": "🍳"
+  },
+  {
+   "id": "refrigerator",
+   "packId": "hsk3-07",
+   "english": "refrigerator",
+   "emoji": "🧊"
+  },
+  {
+   "id": "air-conditioner",
+   "packId": "hsk3-07",
+   "english": "air conditioner",
+   "emoji": null
+  },
+  {
+   "id": "light",
+   "packId": "hsk3-07",
+   "english": "light, lamp",
+   "emoji": "🏮"
+  },
+  {
+   "id": "elevator",
+   "packId": "hsk3-07",
+   "english": "elevator",
+   "emoji": "🛗"
+  },
+  {
+   "id": "building",
+   "packId": "hsk3-07",
+   "english": "building; floor",
+   "emoji": "🏬"
+  },
+  {
+   "id": "floor",
+   "packId": "hsk3-07",
+   "english": "floor, story (measure word)",
+   "emoji": null
+  },
+  {
+   "id": "to-move",
+   "packId": "hsk3-07",
+   "english": "to move (house, things)",
+   "emoji": "🚚"
+  },
+  {
+   "id": "to-clean",
+   "packId": "hsk3-07",
+   "english": "to clean, sweep",
+   "emoji": "🧹"
+  },
+  {
+   "id": "clean",
+   "packId": "hsk3-07",
+   "english": "clean",
+   "emoji": null
+  },
+  {
+   "id": "to-brush",
+   "packId": "hsk3-07",
+   "english": "to brush",
+   "emoji": "🪥"
+  },
+  {
+   "id": "supermarket",
+   "packId": "hsk3-08",
+   "english": "supermarket",
+   "emoji": null
+  },
+  {
+   "id": "hotel",
+   "packId": "hsk3-08",
+   "english": "hotel",
+   "emoji": "🏨"
+  },
+  {
+   "id": "bank",
+   "packId": "hsk3-08",
+   "english": "bank",
+   "emoji": "🏦"
+  },
+  {
+   "id": "park",
+   "packId": "hsk3-08",
+   "english": "park",
+   "emoji": "🏞️"
+  },
+  {
+   "id": "library",
+   "packId": "hsk3-08",
+   "english": "library",
+   "emoji": null
+  },
+  {
+   "id": "restroom",
+   "packId": "hsk3-08",
+   "english": "restroom",
+   "emoji": "🚻"
+  },
+  {
+   "id": "office",
+   "packId": "hsk3-08",
+   "english": "office",
+   "emoji": null
+  },
+  {
+   "id": "garden",
+   "packId": "hsk3-08",
+   "english": "garden",
+   "emoji": "🏡"
+  },
+  {
+   "id": "street",
+   "packId": "hsk3-08",
+   "english": "street",
+   "emoji": null
+  },
+  {
+   "id": "city",
+   "packId": "hsk3-08",
+   "english": "city",
+   "emoji": "🏙️"
+  },
+  {
+   "id": "subway",
+   "packId": "hsk3-09",
+   "english": "subway",
+   "emoji": "🚇"
+  },
+  {
+   "id": "map",
+   "packId": "hsk3-09",
+   "english": "map",
+   "emoji": "🗺️"
+  },
+  {
+   "id": "passport",
+   "packId": "hsk3-09",
+   "english": "passport",
+   "emoji": "🛂"
+  },
+  {
+   "id": "suitcase",
+   "packId": "hsk3-09",
+   "english": "suitcase",
+   "emoji": "🧳"
+  },
+  {
+   "id": "station",
+   "packId": "hsk3-09",
+   "english": "station, stop; to stand",
+   "emoji": "🚏"
+  },
+  {
+   "id": "li-ng",
+   "packId": "hsk3-09",
+   "english": "(measure word for vehicles)",
+   "emoji": null
+  },
+  {
+   "id": "to-ride",
+   "packId": "hsk3-09",
+   "english": "to ride",
+   "emoji": "🛵"
+  },
+  {
+   "id": "to-pass-by",
+   "packId": "hsk3-09",
+   "english": "to pass by",
+   "emoji": null
+  },
+  {
+   "id": "to-leave",
+   "packId": "hsk3-09",
+   "english": "to leave",
+   "emoji": null
+  },
+  {
+   "id": "nearby",
+   "packId": "hsk3-09",
+   "english": "nearby",
+   "emoji": "📌"
+  },
+  {
+   "id": "place",
+   "packId": "hsk3-09",
+   "english": "place",
+   "emoji": null
+  },
+  {
+   "id": "east",
+   "packId": "hsk3-10",
+   "english": "east",
+   "emoji": "🧭"
+  },
+  {
+   "id": "south",
+   "packId": "hsk3-10",
+   "english": "south",
+   "emoji": null
+  },
+  {
+   "id": "west",
+   "packId": "hsk3-10",
+   "english": "west",
+   "emoji": null
+  },
+  {
+   "id": "the-north",
+   "packId": "hsk3-10",
+   "english": "the north",
+   "emoji": null
+  },
+  {
+   "id": "middle",
+   "packId": "hsk3-10",
+   "english": "middle, between",
+   "emoji": null
+  },
+  {
+   "id": "world",
+   "packId": "hsk3-10",
+   "english": "world",
+   "emoji": "🌍"
+  },
+  {
+   "id": "country",
+   "packId": "hsk3-10",
+   "english": "country",
+   "emoji": "🏳️"
+  },
+  {
+   "id": "river",
+   "packId": "hsk3-10",
+   "english": "river",
+   "emoji": "🌊"
+  },
+  {
+   "id": "environment",
+   "packId": "hsk3-10",
+   "english": "environment, surroundings",
+   "emoji": "♻️"
+  },
+  {
+   "id": "corner",
+   "packId": "hsk3-10",
+   "english": "corner; jiao (a tenth of a yuan)",
+   "emoji": "📐"
+  },
+  {
+   "id": "animal",
+   "packId": "hsk3-11",
+   "english": "animal",
+   "emoji": "🦁"
+  },
+  {
+   "id": "panda",
+   "packId": "hsk3-11",
+   "english": "panda",
+   "emoji": "🐼"
+  },
+  {
+   "id": "bird",
+   "packId": "hsk3-11",
+   "english": "bird",
+   "emoji": "🐦"
+  },
+  {
+   "id": "horse",
+   "packId": "hsk3-11",
+   "english": "horse",
+   "emoji": "🐴"
+  },
+  {
+   "id": "grass",
+   "packId": "hsk3-11",
+   "english": "grass",
+   "emoji": "🌿"
+  },
+  {
+   "id": "tree",
+   "packId": "hsk3-11",
+   "english": "tree",
+   "emoji": "🌳"
+  },
+  {
+   "id": "flower",
+   "packId": "hsk3-11",
+   "english": "flower; to spend",
+   "emoji": "🌷"
+  },
+  {
+   "id": "sun",
+   "packId": "hsk3-11",
+   "english": "sun",
+   "emoji": "🌞"
+  },
+  {
+   "id": "moon",
+   "packId": "hsk3-11",
+   "english": "moon",
+   "emoji": "🌕"
+  },
+  {
+   "id": "cloud",
+   "packId": "hsk3-11",
+   "english": "cloud",
+   "emoji": "🌫️"
+  },
+  {
+   "id": "to-blow",
+   "packId": "hsk3-11",
+   "english": "to blow (wind)",
+   "emoji": "🌬️"
+  },
+  {
+   "id": "spring",
+   "packId": "hsk3-12",
+   "english": "spring (season)",
+   "emoji": "🌱"
+  },
+  {
+   "id": "summer",
+   "packId": "hsk3-12",
+   "english": "summer",
+   "emoji": "🌴"
+  },
+  {
+   "id": "autumn",
+   "packId": "hsk3-12",
+   "english": "autumn",
+   "emoji": "🍂"
+  },
+  {
+   "id": "winter",
+   "packId": "hsk3-12",
+   "english": "winter",
+   "emoji": "⛄"
+  },
+  {
+   "id": "season",
+   "packId": "hsk3-12",
+   "english": "season",
+   "emoji": null
+  },
+  {
+   "id": "change",
+   "packId": "hsk3-12",
+   "english": "change; to change",
+   "emoji": "🔄"
+  },
+  {
+   "id": "weekend",
+   "packId": "hsk3-12",
+   "english": "weekend",
+   "emoji": "🎡"
+  },
+  {
+   "id": "holiday",
+   "packId": "hsk3-12",
+   "english": "holiday, festival",
+   "emoji": "🎊"
+  },
+  {
+   "id": "just-now",
+   "packId": "hsk3-13",
+   "english": "just now",
+   "emoji": null
+  },
+  {
+   "id": "right-away",
+   "packId": "hsk3-13",
+   "english": "right away",
+   "emoji": null
+  },
+  {
+   "id": "recently",
+   "packId": "hsk3-13",
+   "english": "recently, lately",
+   "emoji": null
+  },
+  {
+   "id": "before",
+   "packId": "hsk3-13",
+   "english": "before; in the past",
+   "emoji": null
+  },
+  {
+   "id": "after",
+   "packId": "hsk3-13",
+   "english": "after; in the future",
+   "emoji": null
+  },
+  {
+   "id": "the-past",
+   "packId": "hsk3-13",
+   "english": "the past; to go over",
+   "emoji": null
+  },
+  {
+   "id": "a-little-while",
+   "packId": "hsk3-13",
+   "english": "a little while",
+   "emoji": null
+  },
+  {
+   "id": "long-2",
+   "packId": "hsk3-13",
+   "english": "long (time)",
+   "emoji": null
+  },
+  {
+   "id": "quarter",
+   "packId": "hsk3-13",
+   "english": "quarter (of an hour)",
+   "emoji": null
+  },
+  {
+   "id": "half",
+   "packId": "hsk3-13",
+   "english": "half",
+   "emoji": "🌓"
+  },
+  {
+   "id": "minute-2",
+   "packId": "hsk3-13",
+   "english": "minute; fen (a cent); point",
+   "emoji": null
+  },
+  {
+   "id": "often",
+   "packId": "hsk3-14",
+   "english": "often",
+   "emoji": null
+  },
+  {
+   "id": "always",
+   "packId": "hsk3-14",
+   "english": "always",
+   "emoji": null
+  },
+  {
+   "id": "all-along",
+   "packId": "hsk3-14",
+   "english": "all along; straight",
+   "emoji": null
+  },
+  {
+   "id": "usually",
+   "packId": "hsk3-14",
+   "english": "usually; ordinary",
+   "emoji": null
+  },
+  {
+   "id": "in-total",
+   "packId": "hsk3-14",
+   "english": "in total",
+   "emoji": null
+  },
+  {
+   "id": "almost",
+   "packId": "hsk3-14",
+   "english": "almost",
+   "emoji": null
+  },
+  {
+   "id": "finally",
+   "packId": "hsk3-14",
+   "english": "finally",
+   "emoji": "🎉"
+  },
+  {
+   "id": "suddenly",
+   "packId": "hsk3-14",
+   "english": "suddenly",
+   "emoji": null
+  },
+  {
+   "id": "again-2",
+   "packId": "hsk3-14",
+   "english": "again (already happened)",
+   "emoji": null
+  },
+  {
+   "id": "not-until",
+   "packId": "hsk3-14",
+   "english": "not until; only",
+   "emoji": null
+  },
+  {
+   "id": "even-more",
+   "packId": "hsk3-14",
+   "english": "even more",
+   "emoji": null
+  },
+  {
+   "id": "class-2",
+   "packId": "hsk3-15",
+   "english": "class (group of students)",
+   "emoji": null
+  },
+  {
+   "id": "grade",
+   "packId": "hsk3-15",
+   "english": "grade, year (in school)",
+   "emoji": null
+  },
+  {
+   "id": "math",
+   "packId": "hsk3-15",
+   "english": "math",
+   "emoji": "🔢"
+  },
+  {
+   "id": "history",
+   "packId": "hsk3-15",
+   "english": "history",
+   "emoji": "🏛️"
+  },
+  {
+   "id": "sports",
+   "packId": "hsk3-15",
+   "english": "sports, PE",
+   "emoji": null
+  },
+  {
+   "id": "homework",
+   "packId": "hsk3-15",
+   "english": "homework",
+   "emoji": "📓"
+  },
+  {
+   "id": "to-practice",
+   "packId": "hsk3-15",
+   "english": "to practice; exercise",
+   "emoji": null
+  },
+  {
+   "id": "to-review",
+   "packId": "hsk3-15",
+   "english": "to review (lessons)",
+   "emoji": null
+  },
+  {
+   "id": "grade-2",
+   "packId": "hsk3-15",
+   "english": "grade, result",
+   "emoji": "🅰️"
+  },
+  {
+   "id": "blackboard",
+   "packId": "hsk3-15",
+   "english": "blackboard",
+   "emoji": null
+  },
+  {
+   "id": "pencil",
+   "packId": "hsk3-15",
+   "english": "pencil",
+   "emoji": "🖍️"
+  },
+  {
+   "id": "word",
+   "packId": "hsk3-16",
+   "english": "word, expression",
+   "emoji": null
+  },
+  {
+   "id": "sentence",
+   "packId": "hsk3-16",
+   "english": "sentence",
+   "emoji": null
+  },
+  {
+   "id": "dictionary",
+   "packId": "hsk3-16",
+   "english": "dictionary",
+   "emoji": "📙"
+  },
+  {
+   "id": "mandarin",
+   "packId": "hsk3-16",
+   "english": "Mandarin (standard Chinese)",
+   "emoji": null
+  },
+  {
+   "id": "to-speak",
+   "packId": "hsk3-16",
+   "english": "to speak; to explain",
+   "emoji": null
+  },
+  {
+   "id": "to-teach",
+   "packId": "hsk3-16",
+   "english": "to teach",
+   "emoji": null
+  },
+  {
+   "id": "level",
+   "packId": "hsk3-16",
+   "english": "level, standard",
+   "emoji": null
+  },
+  {
+   "id": "to-improve",
+   "packId": "hsk3-16",
+   "english": "to improve",
+   "emoji": "📈"
+  },
+  {
+   "id": "to-understand-2",
+   "packId": "hsk3-16",
+   "english": "to understand; clear",
+   "emoji": null
+  },
+  {
+   "id": "clear",
+   "packId": "hsk3-16",
+   "english": "clear",
+   "emoji": null
+  },
+  {
+   "id": "to-understand-3",
+   "packId": "hsk3-16",
+   "english": "to understand, know about",
+   "emoji": null
+  },
+  {
+   "id": "meeting",
+   "packId": "hsk3-17",
+   "english": "meeting",
+   "emoji": "📋"
+  },
+  {
+   "id": "way",
+   "packId": "hsk3-17",
+   "english": "way, method",
+   "emoji": null
+  },
+  {
+   "id": "to-solve",
+   "packId": "hsk3-17",
+   "english": "to solve",
+   "emoji": "🧩"
+  },
+  {
+   "id": "to-complete",
+   "packId": "hsk3-17",
+   "english": "to complete",
+   "emoji": "✅"
+  },
+  {
+   "id": "to-hold",
+   "packId": "hsk3-17",
+   "english": "to hold (an event)",
+   "emoji": null
+  },
+  {
+   "id": "to-take-part-in",
+   "packId": "hsk3-17",
+   "english": "to take part in",
+   "emoji": null
+  },
+  {
+   "id": "to-end",
+   "packId": "hsk3-17",
+   "english": "to end",
+   "emoji": "🔚"
+  },
+  {
+   "id": "chance",
+   "packId": "hsk3-17",
+   "english": "chance, opportunity",
+   "emoji": "🍀"
+  },
+  {
+   "id": "to-require",
+   "packId": "hsk3-17",
+   "english": "to require; requirement",
+   "emoji": null
+  },
+  {
+   "id": "hobby",
+   "packId": "hsk3-18",
+   "english": "hobby",
+   "emoji": null
+  },
+  {
+   "id": "interest",
+   "packId": "hsk3-18",
+   "english": "interest",
+   "emoji": null
+  },
+  {
+   "id": "music",
+   "packId": "hsk3-18",
+   "english": "music",
+   "emoji": "🎵"
+  },
+  {
+   "id": "game",
+   "packId": "hsk3-18",
+   "english": "game",
+   "emoji": "🎮"
+  },
+  {
+   "id": "program",
+   "packId": "hsk3-18",
+   "english": "program, show",
+   "emoji": null
+  },
+  {
+   "id": "to-perform",
+   "packId": "hsk3-18",
+   "english": "to perform; performance",
+   "emoji": "🎭"
+  },
+  {
+   "id": "competition",
+   "packId": "hsk3-18",
+   "english": "competition, match",
+   "emoji": "🏆"
+  },
+  {
+   "id": "to-draw",
+   "packId": "hsk3-18",
+   "english": "to draw; painting",
+   "emoji": "🖼️"
+  },
+  {
+   "id": "to-climb-mountains",
+   "packId": "hsk3-18",
+   "english": "to climb mountains, hike",
+   "emoji": "⛰️"
+  },
+  {
+   "id": "to-go-online",
+   "packId": "hsk3-19",
+   "english": "to go online",
+   "emoji": "🌐"
+  },
+  {
+   "id": "photo",
+   "packId": "hsk3-19",
+   "english": "photo",
+   "emoji": "🤳"
+  },
+  {
+   "id": "camera",
+   "packId": "hsk3-19",
+   "english": "camera",
+   "emoji": "📷"
+  },
+  {
+   "id": "electronic",
+   "packId": "hsk3-19",
+   "english": "electronic",
+   "emoji": "🔌"
+  },
+  {
+   "id": "news",
+   "packId": "hsk3-19",
+   "english": "news",
+   "emoji": "🗞️"
+  },
+  {
+   "id": "letter",
+   "packId": "hsk3-19",
+   "english": "letter (mail)",
+   "emoji": "✉️"
+  },
+  {
+   "id": "story",
+   "packId": "hsk3-19",
+   "english": "story",
+   "emoji": "🧚"
+  },
+  {
+   "id": "culture",
+   "packId": "hsk3-19",
+   "english": "culture",
+   "emoji": "🏯"
+  },
+  {
+   "id": "to-worry",
+   "packId": "hsk3-20",
+   "english": "to worry",
+   "emoji": null
+  },
+  {
+   "id": "to-be-afraid",
+   "packId": "hsk3-20",
+   "english": "to be afraid",
+   "emoji": "😨"
+  },
+  {
+   "id": "angry",
+   "packId": "hsk3-20",
+   "english": "angry",
+   "emoji": "😠"
+  },
+  {
+   "id": "sad",
+   "packId": "hsk3-20",
+   "english": "sad",
+   "emoji": "😢"
+  },
+  {
+   "id": "anxious",
+   "packId": "hsk3-20",
+   "english": "anxious, in a hurry",
+   "emoji": null
+  },
+  {
+   "id": "to-be-at-ease",
+   "packId": "hsk3-20",
+   "english": "to be at ease",
+   "emoji": null
+  },
+  {
+   "id": "satisfied",
+   "packId": "hsk3-20",
+   "english": "satisfied",
+   "emoji": "👏"
+  },
+  {
+   "id": "to-care-about",
+   "packId": "hsk3-20",
+   "english": "to care about",
+   "emoji": "🫶"
+  },
+  {
+   "id": "to-cry",
+   "packId": "hsk3-20",
+   "english": "to cry",
+   "emoji": "😭"
+  },
+  {
+   "id": "strange",
+   "packId": "hsk3-20",
+   "english": "strange",
+   "emoji": "🤨"
+  },
+  {
+   "id": "short",
+   "packId": "hsk3-21",
+   "english": "short (height)",
+   "emoji": null
+  },
+  {
+   "id": "fat",
+   "packId": "hsk3-21",
+   "english": "fat, chubby",
+   "emoji": null
+  },
+  {
+   "id": "thin",
+   "packId": "hsk3-21",
+   "english": "thin",
+   "emoji": null
+  },
+  {
+   "id": "young",
+   "packId": "hsk3-21",
+   "english": "young",
+   "emoji": null
+  },
+  {
+   "id": "old",
+   "packId": "hsk3-21",
+   "english": "old (people, things)",
+   "emoji": null
+  },
+  {
+   "id": "smart",
+   "packId": "hsk3-21",
+   "english": "smart",
+   "emoji": "🧠"
+  },
+  {
+   "id": "cute",
+   "packId": "hsk3-21",
+   "english": "cute",
+   "emoji": "🥰"
+  },
+  {
+   "id": "warm",
+   "packId": "hsk3-21",
+   "english": "warm, enthusiastic",
+   "emoji": null
+  },
+  {
+   "id": "serious",
+   "packId": "hsk3-21",
+   "english": "serious, conscientious",
+   "emoji": null
+  },
+  {
+   "id": "to-work-hard",
+   "packId": "hsk3-21",
+   "english": "to work hard",
+   "emoji": null
+  },
+  {
+   "id": "famous",
+   "packId": "hsk3-21",
+   "english": "famous",
+   "emoji": "⭐"
+  },
+  {
+   "id": "quiet",
+   "packId": "hsk3-22",
+   "english": "quiet",
+   "emoji": "🤫"
+  },
+  {
+   "id": "convenient",
+   "packId": "hsk3-22",
+   "english": "convenient",
+   "emoji": null
+  },
+  {
+   "id": "simple",
+   "packId": "hsk3-22",
+   "english": "simple",
+   "emoji": null
+  },
+  {
+   "id": "easy",
+   "packId": "hsk3-22",
+   "english": "easy",
+   "emoji": null
+  },
+  {
+   "id": "difficult",
+   "packId": "hsk3-22",
+   "english": "difficult",
+   "emoji": null
+  },
+  {
+   "id": "bad",
+   "packId": "hsk3-22",
+   "english": "bad; broken",
+   "emoji": null
+  },
+  {
+   "id": "old-2",
+   "packId": "hsk3-22",
+   "english": "old (things)",
+   "emoji": null
+  },
+  {
+   "id": "short-2",
+   "packId": "hsk3-22",
+   "english": "short (length)",
+   "emoji": null
+  },
+  {
+   "id": "low",
+   "packId": "hsk3-22",
+   "english": "low",
+   "emoji": null
+  },
+  {
+   "id": "poor",
+   "packId": "hsk3-22",
+   "english": "poor (quality); to be short of",
+   "emoji": null
+  },
+  {
+   "id": "especially",
+   "packId": "hsk3-22",
+   "english": "especially; special",
+   "emoji": null
+  },
+  {
+   "id": "important",
+   "packId": "hsk3-22",
+   "english": "important",
+   "emoji": "❗"
+  },
+  {
+   "id": "identical",
+   "packId": "hsk3-22",
+   "english": "identical, the same",
+   "emoji": null
+  },
+  {
+   "id": "main",
+   "packId": "hsk3-22",
+   "english": "main, chief",
+   "emoji": null
+  },
+  {
+   "id": "the-same",
+   "packId": "hsk3-22",
+   "english": "the same",
+   "emoji": null
+  },
+  {
+   "id": "yellow",
+   "packId": "hsk3-23",
+   "english": "yellow",
+   "emoji": "🟡"
+  },
+  {
+   "id": "blue",
+   "packId": "hsk3-23",
+   "english": "blue",
+   "emoji": "🔵"
+  },
+  {
+   "id": "green",
+   "packId": "hsk3-23",
+   "english": "green",
+   "emoji": "🟢"
+  },
+  {
+   "id": "ten-thousand",
+   "packId": "hsk3-23",
+   "english": "ten thousand",
+   "emoji": null
+  },
+  {
+   "id": "meter",
+   "packId": "hsk3-23",
+   "english": "meter; rice",
+   "emoji": "📏"
+  },
+  {
+   "id": "w-i",
+   "packId": "hsk3-23",
+   "english": "(polite measure word for people)",
+   "emoji": null
+  },
+  {
+   "id": "section",
+   "packId": "hsk3-23",
+   "english": "section, period (of time)",
+   "emoji": null
+  },
+  {
+   "id": "kind",
+   "packId": "hsk3-23",
+   "english": "kind, type",
+   "emoji": null
+  },
+  {
+   "id": "to-take",
+   "packId": "hsk3-24",
+   "english": "to take, hold",
+   "emoji": null
+  },
+  {
+   "id": "to-put",
+   "packId": "hsk3-24",
+   "english": "to put",
+   "emoji": null
+  },
+  {
+   "id": "to-bring",
+   "packId": "hsk3-24",
+   "english": "to bring, take along",
+   "emoji": null
+  },
+  {
+   "id": "to-change",
+   "packId": "hsk3-24",
+   "english": "to change, exchange",
+   "emoji": null
+  },
+  {
+   "id": "to-borrow",
+   "packId": "hsk3-24",
+   "english": "to borrow; to lend",
+   "emoji": null
+  },
+  {
+   "id": "to-pick-up",
+   "packId": "hsk3-24",
+   "english": "to pick up (someone); to answer (the phone)",
+   "emoji": null
+  },
+  {
+   "id": "to-close",
+   "packId": "hsk3-24",
+   "english": "to close; to turn off",
+   "emoji": null
+  },
+  {
+   "id": "to-use",
+   "packId": "hsk3-24",
+   "english": "to use",
+   "emoji": null
+  },
+  {
+   "id": "to-forget",
+   "packId": "hsk3-24",
+   "english": "to forget",
+   "emoji": null
+  },
+  {
+   "id": "to-remember",
+   "packId": "hsk3-24",
+   "english": "to remember",
+   "emoji": null
+  },
+  {
+   "id": "to-run-into",
+   "packId": "hsk3-24",
+   "english": "to run into",
+   "emoji": null
+  },
+  {
+   "id": "to-meet",
+   "packId": "hsk3-24",
+   "english": "to meet (up)",
+   "emoji": null
+  },
+  {
+   "id": "to-plan",
+   "packId": "hsk3-25",
+   "english": "to plan; plan",
+   "emoji": null
+  },
+  {
+   "id": "to-decide",
+   "packId": "hsk3-25",
+   "english": "to decide",
+   "emoji": null
+  },
+  {
+   "id": "to-choose",
+   "packId": "hsk3-25",
+   "english": "to choose",
+   "emoji": null
+  },
+  {
+   "id": "to-think",
+   "packId": "hsk3-25",
+   "english": "to think, believe",
+   "emoji": null
+  },
+  {
+   "id": "to-think-2",
+   "packId": "hsk3-25",
+   "english": "to think (mistakenly)",
+   "emoji": null
+  },
+  {
+   "id": "to-believe",
+   "packId": "hsk3-25",
+   "english": "to believe, trust",
+   "emoji": null
+  },
+  {
+   "id": "to-agree",
+   "packId": "hsk3-25",
+   "english": "to agree",
+   "emoji": null
+  },
+  {
+   "id": "to-be-willing",
+   "packId": "hsk3-25",
+   "english": "to be willing",
+   "emoji": null
+  },
+  {
+   "id": "to-need",
+   "packId": "hsk3-25",
+   "english": "to need",
+   "emoji": null
+  },
+  {
+   "id": "should",
+   "packId": "hsk3-25",
+   "english": "should",
+   "emoji": null
+  },
+  {
+   "id": "must",
+   "packId": "hsk3-25",
+   "english": "must",
+   "emoji": null
+  },
+  {
+   "id": "to-help-2",
+   "packId": "hsk3-26",
+   "english": "to help (out)",
+   "emoji": null
+  },
+  {
+   "id": "to-take-care-of",
+   "packId": "hsk3-26",
+   "english": "to take care of",
+   "emoji": null
+  },
+  {
+   "id": "to-pay-attention",
+   "packId": "hsk3-26",
+   "english": "to pay attention",
+   "emoji": "⚠️"
+  },
+  {
+   "id": "careful",
+   "packId": "hsk3-26",
+   "english": "careful",
+   "emoji": null
+  },
+  {
+   "id": "to-discover",
+   "packId": "hsk3-26",
+   "english": "to discover, notice",
+   "emoji": null
+  },
+  {
+   "id": "to-appear",
+   "packId": "hsk3-26",
+   "english": "to appear",
+   "emoji": null
+  },
+  {
+   "id": "to-be-late",
+   "packId": "hsk3-26",
+   "english": "to be late",
+   "emoji": "⏳"
+  },
+  {
+   "id": "to-marry",
+   "packId": "hsk3-26",
+   "english": "to marry",
+   "emoji": "💒"
+  },
+  {
+   "id": "to-wish",
+   "packId": "hsk3-26",
+   "english": "to wish",
+   "emoji": null
+  },
+  {
+   "id": "to-dare",
+   "packId": "hsk3-26",
+   "english": "to dare",
+   "emoji": null
+  },
+  {
+   "id": "gift",
+   "packId": "hsk3-26",
+   "english": "gift, present",
+   "emoji": "🎁"
+  },
+  {
+   "id": "habit",
+   "packId": "hsk3-26",
+   "english": "habit; to be used to",
+   "emoji": null
+  },
+  {
+   "id": "to-make",
+   "packId": "hsk3-27",
+   "english": "to make, cause",
+   "emoji": null
+  },
+  {
+   "id": "to-affect",
+   "packId": "hsk3-27",
+   "english": "to affect; influence",
+   "emoji": null
+  },
+  {
+   "id": "effect",
+   "packId": "hsk3-27",
+   "english": "effect, function",
+   "emoji": null
+  },
+  {
+   "id": "to-express",
+   "packId": "hsk3-27",
+   "english": "to express, show",
+   "emoji": null
+  },
+  {
+   "id": "according-to",
+   "packId": "hsk3-27",
+   "english": "according to",
+   "emoji": null
+  },
+  {
+   "id": "about",
+   "packId": "hsk3-27",
+   "english": "about, concerning",
+   "emoji": null
+  },
+  {
+   "id": "relationship",
+   "packId": "hsk3-27",
+   "english": "relationship; relation",
+   "emoji": null
+  },
+  {
+   "id": "in-order-to",
+   "packId": "hsk3-27",
+   "english": "in order to",
+   "emoji": null
+  },
+  {
+   "id": "although",
+   "packId": "hsk3-28",
+   "english": "although",
+   "emoji": null
+  },
+  {
+   "id": "and-also",
+   "packId": "hsk3-28",
+   "english": "and also, moreover",
+   "emoji": null
+  },
+  {
+   "id": "or",
+   "packId": "hsk3-28",
+   "english": "or",
+   "emoji": null
+  },
+  {
+   "id": "or-2",
+   "packId": "hsk3-28",
+   "english": "or (in questions); still",
+   "emoji": null
+  },
+  {
+   "id": "if",
+   "packId": "hsk3-28",
+   "english": "if",
+   "emoji": null
+  },
+  {
+   "id": "then-2",
+   "packId": "hsk3-28",
+   "english": "then, after that",
+   "emoji": null
+  },
+  {
+   "id": "besides",
+   "packId": "hsk3-28",
+   "english": "besides, except",
+   "emoji": null
+  },
+  {
+   "id": "actually",
+   "packId": "hsk3-28",
+   "english": "actually",
+   "emoji": null
+  },
+  {
+   "id": "other",
+   "packId": "hsk3-28",
+   "english": "other",
+   "emoji": null
+  },
+  {
+   "id": "of-course",
+   "packId": "hsk3-28",
+   "english": "of course",
+   "emoji": null
+  },
+  {
+   "id": "first-2",
+   "packId": "hsk3-28",
+   "english": "first",
+   "emoji": null
+  },
+  {
+   "id": "only",
+   "packId": "hsk3-28",
+   "english": "only",
+   "emoji": null
+  },
+  {
+   "id": "the-more",
+   "packId": "hsk3-28",
+   "english": "the more…",
+   "emoji": null
+  },
+  {
+   "id": "a",
+   "packId": "hsk3-29",
+   "english": "(softens a sentence: ah, oh)",
+   "emoji": null
+  },
+  {
+   "id": "b",
+   "packId": "hsk3-29",
+   "english": "(puts the object before the verb)",
+   "emoji": null
+  },
+  {
+   "id": "b-i",
+   "packId": "hsk3-29",
+   "english": "(passive: by)",
+   "emoji": null
+  },
+  {
+   "id": "de-3",
+   "packId": "hsk3-29",
+   "english": "(turns a word into \"-ly\")",
+   "emoji": null
+  },
+  {
+   "id": "with",
+   "packId": "hsk3-29",
+   "english": "with; to follow",
+   "emoji": null
+  },
+  {
+   "id": "fairly",
+   "packId": "hsk3-29",
+   "english": "fairly; to compare",
+   "emoji": null
+  },
+  {
+   "id": "how-2",
+   "packId": "hsk3-29",
+   "english": "how (very)",
+   "emoji": null
+  },
+  {
+   "id": "extremely",
+   "packId": "hsk3-29",
+   "english": "extremely",
+   "emoji": null
+  },
+  {
+   "id": "to-resemble",
+   "packId": "hsk3-29",
+   "english": "to resemble, be like",
+   "emoji": null
+  },
+  {
+   "id": "while",
+   "packId": "hsk3-29",
+   "english": "while (doing two things)",
+   "emoji": null
+  },
+  {
+   "id": "definitely",
+   "packId": "hsk3-29",
+   "english": "definitely",
+   "emoji": null
+  },
+  {
+   "id": "why",
+   "packId": "hsk3-29",
+   "english": "why",
    "emoji": null
   }
  ]

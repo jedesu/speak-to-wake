@@ -1,4 +1,5 @@
 import Foundation
+import WakeCore
 
 /// The user's settings, stored in UserDefaults. Views use the same keys with
 /// @AppStorage; the alarm and challenge code reads them through these properties.
@@ -9,6 +10,8 @@ enum AppSettings {
         static let speakingOn = "speakingOn"
         static let gentleWakeUp = "gentleWakeUp"
         static let emergencyMinutes = "emergencyMinutes"
+        static let proUnlocked = "proUnlocked"
+        static let learnMode = "learnMode"
     }
 
     static func register() {
@@ -28,4 +31,11 @@ enum AppSettings {
     static var gentleWakeUp: Bool { UserDefaults.standard.bool(forKey: Key.gentleWakeUp) }
     /// How long before the emergency "press and hold" exit appears.
     static var emergencyAfter: TimeInterval { TimeInterval(UserDefaults.standard.integer(forKey: Key.emergencyMinutes) * 60) }
+    /// Pro isn't for sale yet; Settings > Developer can unlock it for testing.
+    static var proUnlocked: Bool { UserDefaults.standard.bool(forKey: Key.proUnlocked) }
+
+    /// Whether a section can be studied: HSK 1 is free, higher levels are Pro.
+    static func canOpen(_ pack: Pack) -> Bool {
+        pack.tier == .free || proUnlocked
+    }
 }

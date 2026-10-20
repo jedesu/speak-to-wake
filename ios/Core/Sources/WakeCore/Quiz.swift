@@ -82,7 +82,10 @@ public struct QuizMaker: Sendable {
     public func availableKinds(for word: Word) -> [Quiz.Kind] {
         var kinds: [Quiz.Kind] = [.meaningToEnglish, .meaningToChinese, .hearAndTap, .trueFalse, .matchPairs]
         if emoji(word) != nil { kinds.append(.pictureMatch) }
-        if let example = word.example, example.text.contains(word.text) { kinds.append(.fillBlank) }
+        // Fill the blank only when the word appears once: 一边…一边… would give it away.
+        if let example = word.example, example.text.components(separatedBy: word.text).count == 2 {
+            kinds.append(.fillBlank)
+        }
         return kinds
     }
 

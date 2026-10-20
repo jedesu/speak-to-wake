@@ -21,6 +21,14 @@ public struct Pack: Codable, Hashable, Identifiable, Sendable {
     public let order: Int?
 }
 
+/// A friendly group of sections for the Learn tab's Topics view ("Food & drink"),
+/// covering one or more section themes across every HSK level.
+public struct Topic: Codable, Hashable, Identifiable, Sendable {
+    public let id: String
+    public let title: String
+    public let themes: [String]
+}
+
 public struct Concept: Codable, Hashable, Identifiable, Sendable {
     public let id: String
     public let packId: String
@@ -60,11 +68,12 @@ public struct ContentLibrary: Sendable {
     public let concepts: [String: Concept]
     public let language: String
     public let words: [Word]
+    public let topics: [Topic]
 
     private let wordsByPack: [String: [Word]]
     private let wordsByID: [String: Word]
 
-    public init(packsJSON: Data, wordsJSON: Data) throws {
+    public init(packsJSON: Data, wordsJSON: Data, topicsJSON: Data? = nil) throws {
         struct PacksFile: Decodable {
             let packs: [Pack]
             let concepts: [Concept]
@@ -73,6 +82,10 @@ public struct ContentLibrary: Sendable {
             let language: String
             let words: [Word]
         }
+        struct TopicsFile: Decodable {
+            let topics: [Topic]
+        }
+        topics = try topicsJSON.map { try JSONDecoder().decode(TopicsFile.self, from: $0).topics } ?? []
         let packsFile = try JSONDecoder().decode(PacksFile.self, from: packsJSON)
         let wordsFile = try JSONDecoder().decode(WordsFile.self, from: wordsJSON)
 
@@ -100,7 +113,9 @@ public struct ContentLibrary: Sendable {
               let wordsURL = bundle.url(forResource: "words.\(language)", withExtension: "json") else {
             throw CocoaError(.fileNoSuchFile)
         }
-        return try ContentLibrary(packsJSON: Data(contentsOf: packsURL), wordsJSON: Data(contentsOf: wordsURL))
+        let topicsData = try bundle.url(forResource: "topics", withExtension: "json").map { try Data(contentsOf: $0) }
+        return try ContentLibrary(packsJSON: Data(contentsOf: packsURL), wordsJSON: Data(contentsOf: wordsURL),
+                                  topicsJSON: topicsData)
     }
 
     public func words(in pack: Pack) -> [Word] {
@@ -114,6 +129,12 @@ public struct ContentLibrary: Sendable {
     public func pack(for word: Word) -> Pack? {
         guard let packId = concepts[word.conceptId]?.packId else { return nil }
         return packs.first { $0.id == packId }
+    }
+
+    /// A topic's sections, easiest level first.
+    public func packs(in topic: Topic) -> [Pack] {
+        packs.filter { topic.themes.contains($0.theme) }
+            .sorted { ($0.hsk ?? 99, $0.order ?? 0) < ($1.hsk ?? 99, $1.order ?? 0) }
     }
 
     /// HSK levels, each with its sections in order. Packs outside HSK are left out.

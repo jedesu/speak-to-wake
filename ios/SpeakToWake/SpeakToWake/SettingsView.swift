@@ -9,6 +9,7 @@ struct SettingsView: View {
     @AppStorage(AppSettings.Key.gentleWakeUp) private var gentleWakeUp = false
     @AppStorage(AppSettings.Key.emergencyMinutes) private var emergencyMinutes = 3
     @AppStorage(AppSettings.Key.hasOnboarded) private var hasOnboarded = true
+    @AppStorage(AppSettings.Key.proUnlocked) private var proUnlocked = false
 
     var body: some View {
         NavigationStack {
@@ -70,7 +71,12 @@ struct SettingsView: View {
                             .buttonStyle(.plain)
                     }
 
-                    group("Developer") {
+                    group("Developer", footer: "Pro isn't for sale yet. This switch opens HSK 2 and up for testing.") {
+                        Toggle(isOn: $proUnlocked) {
+                            rowText("Pro unlocked (for testing)", "HSK 2–3 sections")
+                        }
+                        .tint(Theme.accent)
+                        divider
                         NavigationLink { SpeechCheckView().softDawnList() } label: { navRow("Speech check", icon: "waveform") }
                             .buttonStyle(.plain)
                         divider

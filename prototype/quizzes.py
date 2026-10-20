@@ -52,7 +52,7 @@ def available_types(item: Item) -> list:
              "true_false", "match_pairs"]
     if item.emoji:
         types.append("picture_match")
-    if item.text in item.example_text:
+    if item.example_text.count(item.text) == 1:  # 一边…一边… would give it away
         types.append("fill_blank")
     return types
 

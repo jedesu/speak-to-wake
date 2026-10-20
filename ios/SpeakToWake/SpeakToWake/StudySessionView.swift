@@ -203,7 +203,7 @@ struct StudySessionView: View {
 
     private func startPractice() {
         queue = words.shuffled().map { Learning.quiz(for: $0) }
-        if let first = words.first, let pairs = try? Learning.maker.make(.matchPairs, for: first, pool: AppContent.library.words) {
+        if let first = words.first, let pairs = try? Learning.maker.make(.matchPairs, for: first, pool: Learning.pool(for: first)) {
             queue.append(pairs)
         }
         position = 0

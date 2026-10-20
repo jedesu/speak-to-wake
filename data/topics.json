@@ -1,0 +1,18 @@
+{
+ "topics": [
+  {"id": "greetings", "title": "Greetings & meeting people", "themes": ["greetings", "people"]},
+  {"id": "family", "title": "Family", "themes": ["family"]},
+  {"id": "food", "title": "Food & drink", "themes": ["food", "eating"]},
+  {"id": "shopping", "title": "Numbers, money & shopping", "themes": ["numbers", "counting", "shopping", "colors"]},
+  {"id": "time", "title": "Time, dates & seasons", "themes": ["dates", "clock", "time", "frequency", "seasons"]},
+  {"id": "home", "title": "Home & daily life", "themes": ["routine", "home", "actions", "things"]},
+  {"id": "school", "title": "School, work & language", "themes": ["school", "language", "work"]},
+  {"id": "travel", "title": "Places & travel", "themes": ["places", "directions", "transport", "town", "travel", "world"]},
+  {"id": "health", "title": "Body, health & clothes", "themes": ["body", "health", "clothes"]},
+  {"id": "hobbies", "title": "Hobbies & media", "themes": ["hobbies", "media"]},
+  {"id": "nature", "title": "Nature & animals", "themes": ["nature"]},
+  {"id": "describing", "title": "Describing people & things", "themes": ["describing", "qualities"]},
+  {"id": "feelings", "title": "Feelings & thinking", "themes": ["feelings", "deciding", "helping", "doing"]},
+  {"id": "grammar", "title": "Grammar & linking words", "themes": ["grammar", "linking", "cause"]}
+ ]
+}

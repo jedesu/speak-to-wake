@@ -1,0 +1,181 @@
+#! HSK 2 (HSK 2.0 list, 147 words). Build with: cd prototype && python build_hsk.py 2
+#! Line format: hanzi | pinyin | English | emoji | example (words split by spaces) | example English | id (optional)
+
+## family | Family
+哥哥 | gēge | older brother | | 我 哥哥 是 医生。 | My older brother is a doctor.
+姐姐 | jiějie | older sister | | 我 姐姐 很 漂亮。 | My older sister is very pretty.
+弟弟 | dìdi | younger brother | | 我 弟弟 八 岁。 | My younger brother is eight.
+妹妹 | mèimei | younger sister | | 我 妹妹 喜欢 唱歌。 | My younger sister likes singing.
+丈夫 | zhàngfu | husband | 💍 | 她 丈夫 在 公司 工作。 | Her husband works at a company.
+妻子 | qīzi | wife | 👰 | 他 的 妻子 是 老师。 | His wife is a teacher.
+孩子 | háizi | child | 🧒 | 他们 有 两 个 孩子。 | They have two children.
+男人 | nánrén | man | | 那 个 男人 是 我 的 老师。 | That man is my teacher.
+女人 | nǚrén | woman | | 那 个 女人 是 医生。 | That woman is a doctor.
+
+## people | Meeting people
+您 | nín | you (polite) | | 您 贵 姓？ | What's your surname? (polite)
+姓 | xìng | surname; to be surnamed | | 我 姓 王。 | My surname is Wang.
+介绍 | jièshào | to introduce | | 我 来 介绍 一下。 | Let me introduce someone.
+欢迎 | huānyíng | to welcome | 🤗 | 欢迎 你 来 ^中国！ | Welcome to China!
+大家 | dàjiā | everyone | 🙌 | 大家 好！ | Hello, everyone!
+它 | tā | it (things, animals) | 🐾 | 它 是 我 的 猫。 | It's my cat.
+
+## food | Food & drink 2
+鸡蛋 | jīdàn | egg | 🥚 | 我 早上 吃 鸡蛋。 | I eat eggs in the morning.
+羊肉 | yángròu | lamb, mutton | 🍖 | 我 不 吃 羊肉。 | I don't eat lamb.
+鱼 | yú | fish | 🐟 | 我 喜欢 吃 鱼。 | I like eating fish.
+牛奶 | niúnǎi | milk | 🍼 | 孩子 每 天 喝 牛奶。 | Children drink milk every day.
+咖啡 | kāfēi | coffee | ☕ | 你 喝 咖啡 吗？ | Do you drink coffee?
+西瓜 | xīguā | watermelon | 🍉 | 我 喜欢 吃 西瓜。 | I like eating watermelon.
+好吃 | hǎochī | delicious | 😋 | 这 个 菜 很 好吃。 | This dish is delicious.
+服务员 | fúwùyuán | waiter, server | 🧑‍🍳 | 服务员，请 给 我 一 杯 茶。 | Waiter, a cup of tea please.
+吧 | ba | (suggestion: let's…; …right?) | | 我们 走 吧！ | Let's go!
+
+## shopping | Shopping & money
+便宜 | piányi | cheap | 🏷️ | 这 个 很 便宜。 | This is very cheap.
+贵 | guì | expensive | 💎 | 这 个 手机 太 贵 了。 | This phone is too expensive.
+卖 | mài | to sell | | 他 在 商店 卖 水果。 | He sells fruit at the store.
+元 | yuán | yuan (unit of money) | 💵 | 这 本 书 三十 元。 | This book is thirty yuan.
+千 | qiān | thousand | | 这 个 电脑 五 千 块。 | This computer costs five thousand yuan.
+百 | bǎi | hundred | 💯 | 我 有 一百 块 钱。 | I have a hundred yuan.
+两 | liǎng | two (of something) | ✌️ | 我 要 两 杯 茶。 | I'd like two cups of tea.
+公斤 | gōngjīn | kilogram | ⚖️ | 我 买 了 两 公斤 苹果。 | I bought two kilograms of apples.
+件 | jiàn | (measure word for clothes, matters) | | 我 买 了 一 件 衣服。 | I bought a piece of clothing.
+张 | zhāng | (measure word for flat things) | | 我 要 一 张 票。 | I'd like one ticket.
+票 | piào | ticket | 🎟️ | 你 买 票 了 吗？ | Did you buy a ticket?
+
+## time | Time & dates 2
+早上 | zǎoshang | early morning | 🌄 | 早上 好！ | Good morning!
+晚上 | wǎnshang | evening | 🌙 | 晚上 我 在 家。 | I'm at home in the evening.
+时间 | shíjiān | time | ⌛ | 你 有 时间 吗？ | Do you have time?
+小时 | xiǎoshí | hour | 🕐 | 我 每 天 学习 两 个 小时。 | I study for two hours every day.
+去年 | qùnián | last year | | 去年 我 去 了 ^北京。 | Last year I went to Beijing.
+生日 | shēngrì | birthday | 🎈 | 今天 是 我 的 生日。 | Today is my birthday.
+号 | hào | day of the month; number | | 明天 是 五 号。 | Tomorrow is the fifth. | number-date
+每 | měi | every, each | | 我 每 天 都 学习。 | I study every day.
+次 | cì | time (occurrence) | | 我 去 过 两 次。 | I've been there twice.
+第一 | dìyī | first | 🥇 | 这 是 我 第一 次 来 ^中国。 | This is my first time in China.
+已经 | yǐjīng | already | | 我 已经 吃 饭 了。 | I've already eaten.
+
+## routine | Daily routine
+起床 | qǐchuáng | to get up | 🛏️ | 你 几 点 起床？ | What time do you get up?
+上班 | shàngbān | to go to work | | 我 每 天 八 点 上班。 | I go to work at eight every day.
+休息 | xiūxi | to rest | 🛋️ | 我 累 了，想 休息 一下。 | I'm tired and want to rest a bit.
+洗 | xǐ | to wash | 🧼 | 我 去 洗 衣服。 | I'm going to wash clothes.
+穿 | chuān | to wear, put on | | 今天 很 冷，多 穿 衣服。 | It's cold today, wear more layers.
+准备 | zhǔnbèi | to prepare | | 我 在 准备 考试。 | I'm preparing for an exam.
+开始 | kāishǐ | to begin | ▶️ | 我们 开始 吧！ | Let's begin!
+完 | wán | to finish | | 我 吃 完 了。 | I've finished eating.
+正在 | zhèngzài | (in the middle of doing) | | 他 正在 看 电视。 | He's watching TV right now.
+
+## hobbies | Sports & hobbies
+打篮球 | dǎ lánqiú | to play basketball | 🏀 | 我 喜欢 打篮球。 | I like playing basketball.
+踢 | tī | to kick | ⚽ | 他们 在 踢 足球。 | They're playing soccer.
+跑步 | pǎobù | to run, jog | 🏃 | 我 每 天 早上 跑步。 | I go running every morning.
+游泳 | yóuyǒng | to swim | 🏊 | 你 会 游泳 吗？ | Can you swim?
+唱歌 | chànggē | to sing | 🎤 | 她 唱歌 很 好听。 | She sings beautifully.
+跳舞 | tiàowǔ | to dance | 💃 | 我们 去 跳舞 吧。 | Let's go dancing.
+运动 | yùndòng | sport, exercise | 🏋️ | 运动 对 身体 好。 | Exercise is good for your health.
+旅游 | lǚyóu | to travel, tour | 🏖️ | 我 想 去 ^中国 旅游。 | I want to travel to China.
+玩 | wán | to play, have fun | 🪁 | 孩子 们 在 外面 玩。 | The kids are playing outside.
+
+## transport | Getting around
+机场 | jīchǎng | airport | 🛫 | 我 去 机场。 | I'm going to the airport.
+船 | chuán | boat, ship | 🚢 | 我们 坐 船 去。 | We're going by boat.
+公共汽车 | gōnggòng qìchē | bus | 🚌 | 我 坐 公共汽车 上班。 | I take the bus to work.
+自行车 | zìxíngchē | bicycle | 🚲 | 他 骑 自行车 去 学校。 | He rides a bike to school.
+路 | lù | road; route | 🛣️ | 这 条 路 很 长{cháng}。 | This road is very long.
+走 | zǒu | to walk; to leave | 👣 | 我 走 路 去 学校。 | I walk to school.
+远 | yuǎn | far | | 你 家 远 吗？ | Is your home far?
+近 | jìn | near | | 我 家 很 近。 | My home is close.
+离 | lí | away from (distance) | | 学校 离 我 家 很 近。 | The school is close to my home.
+到 | dào | to arrive; until | 🏁 | 我 到 家 了。 | I'm home.
+从 | cóng | from | | 我 从 ^北京 来。 | I come from Beijing.
+
+## places | Places & directions
+左边 | zuǒbian | left side | ⬅️ | 商店 在 左边。 | The store is on the left.
+右边 | yòubian | right side | ➡️ | 医院 在 右边。 | The hospital is on the right.
+旁边 | pángbiān | beside, next to | | 我 家 旁边 有 一 个 商店。 | There's a store next to my home.
+外 | wài | outside | | 外面 很 冷。 | It's cold outside.
+门 | mén | door | 🚪 | 请 开 门。 | Please open the door.
+房间 | fángjiān | room | | 我 的 房间 很 小。 | My room is small.
+教室 | jiàoshì | classroom | | 学生 们 在 教室 里。 | The students are in the classroom.
+公司 | gōngsī | company | 🏢 | 他 在 一 家 公司 工作。 | He works at a company.
+进 | jìn | to enter | | 请 进！ | Please come in!
+出 | chū | to go out | | 我 出去 一下。 | I'm going out for a moment.
+向 | xiàng | toward | | 向 前 走。 | Walk straight ahead.
+
+## health | Body & health
+身体 | shēntǐ | body; health | 💪 | 你 身体 好 吗？ | How is your health?
+眼睛 | yǎnjing | eye | 👁️ | 她 的 眼睛 很 大。 | Her eyes are big.
+生病 | shēngbìng | to get sick | 🤒 | 我 生病 了。 | I'm sick.
+药 | yào | medicine | 💊 | 你 吃 药 了 吗？ | Did you take your medicine?
+累 | lèi | tired | 🥱 | 我 今天 很 累。 | I'm very tired today.
+笑 | xiào | to laugh, smile | 😄 | 她 笑 了。 | She smiled.
+
+## describing | Weather & colors
+晴 | qíng | sunny | ☀️ | 今天 是 晴 天。 | It's sunny today.
+阴 | yīn | cloudy, overcast | ☁️ | 明天 是 阴 天。 | Tomorrow will be cloudy.
+雪 | xuě | snow | ❄️ | 下 雪 了！ | It's snowing!
+颜色 | yánsè | color | 🎨 | 你 喜欢 什么 颜色？ | What color do you like?
+白 | bái | white | ⚪ | 我 的 猫 是 白 的。 | My cat is white.
+黑 | hēi | black | ⚫ | 他 穿 黑 衣服。 | He's wearing black clothes.
+红 | hóng | red | 🔴 | 我 喜欢 红 的。 | I like the red one.
+高 | gāo | tall, high | 🦒 | 我 哥哥 很 高。 | My older brother is tall.
+长 | cháng | long | | 她 的 头发 很 长{cháng}。 | Her hair is long.
+新 | xīn | new | 🆕 | 这 是 我 的 新 手机。 | This is my new phone.
+
+## school | School & things
+考试 | kǎoshì | exam; to take an exam | 📝 | 明天 有 考试。 | There's an exam tomorrow.
+课 | kè | class, lesson | 📚 | 今天 有 汉语 课。 | There's a Chinese class today.
+题 | tí | question (on a test) | | 这 个 题 很 难。 | This question is hard.
+问题 | wèntí | question; problem | | 我 有 一 个 问题。 | I have a question.
+回答 | huídá | to answer | 💬 | 请 回答 我 的 问题。 | Please answer my question.
+懂 | dǒng | to understand | 💡 | 你 懂 了 吗？ | Do you understand?
+意思 | yìsi | meaning | | 这 是 什么 意思？ | What does this mean?
+错 | cuò | wrong | ❌ | 对不起，我 错 了。 | Sorry, I was wrong.
+报纸 | bàozhǐ | newspaper | 📰 | 爸爸 在 看 报纸。 | Dad is reading the newspaper.
+手机 | shǒujī | cell phone | 📲 | 你 的 手机 很 新。 | Your phone is new.
+手表 | shǒubiǎo | wristwatch | ⌚ | 这 个 手表 很 贵。 | This watch is expensive.
+
+## feelings | Feelings & thinking
+觉得 | juéde | to feel, think | | 我 觉得 很 好。 | I think it's good.
+希望 | xīwàng | to hope | 🌈 | 我 希望 你 来。 | I hope you come.
+知道 | zhīdao | to know (a fact) | | 我 不 知道。 | I don't know.
+可能 | kěnéng | maybe, possible | 🤔 | 明天 可能 下雨。 | It might rain tomorrow.
+快乐 | kuàilè | happy, joyful | 🥳 | 新年 快乐！ | Happy New Year!
+忙 | máng | busy | | 我 今天 很 忙。 | I'm busy today.
+快 | kuài | fast; soon | ⚡ | 他 跑 得{de} 很 快。 | He runs fast.
+慢 | màn | slow | 🐢 | 请 说 慢 一点。 | Please speak more slowly.
+真 | zhēn | really, truly | | 你 真 好！ | You're really nice!
+非常 | fēicháng | very, extremely | | 我 非常 喜欢 你。 | I like you very much.
+最 | zuì | most | | 我 最 喜欢 苹果。 | I like apples the most.
+
+## helping | Asking & helping
+告诉 | gàosu | to tell | | 请 告诉 我。 | Please tell me.
+问 | wèn | to ask | | 我 可以 问 你 一 个 问题 吗？ | Can I ask you a question?
+帮助 | bāngzhù | to help; help | | 谢谢 你 的 帮助。 | Thank you for your help.
+送 | sòng | to give (as a gift); to see off | 🎀 | 我 送 你 一 本 书。 | I'll give you a book.
+给 | gěi | to give; for | | 请 给 我 一 杯 水。 | Please give me a glass of water.
+让 | ràng | to let; to make (someone do) | | 妈妈 不 让 我 玩。 | Mom doesn't let me play.
+找 | zhǎo | to look for | 🔍 | 你 在 找 什么？ | What are you looking for?
+要 | yào | to want; will; need | | 我 要 喝 水。 | I want to drink water.
+可以 | kěyǐ | can, may | | 我 可以 进来 吗？ | May I come in?
+别 | bié | don't | ✋ | 别 说话！ | Don't talk!
+事情 | shìqing | matter, thing to do | | 我 有 事情 要 做。 | I have something to do.
+
+## linking | Linking words
+但是 | dànshì | but | | 我 想 去，但是 没有 时间。 | I want to go, but I don't have time.
+所以 | suǒyǐ | so, therefore | | 下雨 了，所以 我 不 去。 | It's raining, so I'm not going.
+因为 | yīnwèi | because | | 我 不 去，因为 我 生病 了。 | I'm not going because I'm sick.
+也 | yě | also, too | | 我 也 是 学生。 | I'm a student too.
+还 | hái | still; also | | 他 还{hái} 在 睡觉。 | He's still sleeping.
+就 | jiù | then, right away | | 我 马上 就 来。 | I'll be right there.
+再 | zài | again | 🔁 | 请 再 说 一 次。 | Please say it again.
+一起 | yìqǐ | together | | 我们 一起 去 吧。 | Let's go together.
+
+## grammar | Grammar helpers 2
+着 | zhe | (ongoing state) | | 门 开 着{zhe}。 | The door is open.
+得 | de | (links a verb to how it's done) | | 他 说 得{de} 很 好。 | He speaks well.
+为 | wèi | for | | 我 为{wèi} 你 高兴。 | I'm happy for you.
+比 | bǐ | than (comparing) | | 我 比 他 高。 | I'm taller than him.

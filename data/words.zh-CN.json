@@ -716,11 +716,11 @@
   },
   {
    "conceptId": "restaurant",
-   "text": "饭店",
-   "pinyin": "fàndiàn",
+   "text": "饭馆",
+   "pinyin": "fànguǎn",
    "example": {
-    "text": "我们在饭店吃饭。",
-    "pinyin": "Wǒmen zài fàndiàn chīfàn.",
+    "text": "我们在饭馆吃饭。",
+    "pinyin": "Wǒmen zài fànguǎn chīfàn.",
     "english": "We eat at a restaurant."
    }
   },
@@ -782,16 +782,6 @@
     "text": "今天是十月二十日。",
     "pinyin": "Jīntiān shì shíyuè èrshí rì.",
     "english": "Today is October 20."
-   }
-  },
-  {
-   "conceptId": "number-date",
-   "text": "号",
-   "pinyin": "hào",
-   "example": {
-    "text": "明天是五号。",
-    "pinyin": "Míngtiān shì wǔ hào.",
-    "english": "Tomorrow is the fifth."
    }
   },
   {
@@ -1522,6 +1512,4456 @@
     "text": "我没去。",
     "pinyin": "Wǒ méi qù.",
     "english": "I didn't go."
+   }
+  },
+  {
+   "conceptId": "older-brother",
+   "text": "哥哥",
+   "pinyin": "gēge",
+   "example": {
+    "text": "我哥哥是医生。",
+    "pinyin": "Wǒ gēge shì yīshēng.",
+    "english": "My older brother is a doctor."
+   }
+  },
+  {
+   "conceptId": "older-sister",
+   "text": "姐姐",
+   "pinyin": "jiějie",
+   "example": {
+    "text": "我姐姐很漂亮。",
+    "pinyin": "Wǒ jiějie hěn piàoliang.",
+    "english": "My older sister is very pretty."
+   }
+  },
+  {
+   "conceptId": "younger-brother",
+   "text": "弟弟",
+   "pinyin": "dìdi",
+   "example": {
+    "text": "我弟弟八岁。",
+    "pinyin": "Wǒ dìdi bā suì.",
+    "english": "My younger brother is eight."
+   }
+  },
+  {
+   "conceptId": "younger-sister",
+   "text": "妹妹",
+   "pinyin": "mèimei",
+   "example": {
+    "text": "我妹妹喜欢唱歌。",
+    "pinyin": "Wǒ mèimei xǐhuan chànggē.",
+    "english": "My younger sister likes singing."
+   }
+  },
+  {
+   "conceptId": "husband",
+   "text": "丈夫",
+   "pinyin": "zhàngfu",
+   "example": {
+    "text": "她丈夫在公司工作。",
+    "pinyin": "Tā zhàngfu zài gōngsī gōngzuò.",
+    "english": "Her husband works at a company."
+   }
+  },
+  {
+   "conceptId": "wife",
+   "text": "妻子",
+   "pinyin": "qīzi",
+   "example": {
+    "text": "他的妻子是老师。",
+    "pinyin": "Tā de qīzi shì lǎoshī.",
+    "english": "His wife is a teacher."
+   }
+  },
+  {
+   "conceptId": "child",
+   "text": "孩子",
+   "pinyin": "háizi",
+   "example": {
+    "text": "他们有两个孩子。",
+    "pinyin": "Tāmen yǒu liǎng ge háizi.",
+    "english": "They have two children."
+   }
+  },
+  {
+   "conceptId": "man",
+   "text": "男人",
+   "pinyin": "nánrén",
+   "example": {
+    "text": "那个男人是我的老师。",
+    "pinyin": "Nà ge nánrén shì wǒ de lǎoshī.",
+    "english": "That man is my teacher."
+   }
+  },
+  {
+   "conceptId": "woman",
+   "text": "女人",
+   "pinyin": "nǚrén",
+   "example": {
+    "text": "那个女人是医生。",
+    "pinyin": "Nà ge nǚrén shì yīshēng.",
+    "english": "That woman is a doctor."
+   }
+  },
+  {
+   "conceptId": "you-2",
+   "text": "您",
+   "pinyin": "nín",
+   "example": {
+    "text": "您贵姓？",
+    "pinyin": "Nín guì xìng?",
+    "english": "What's your surname? (polite)"
+   }
+  },
+  {
+   "conceptId": "surname",
+   "text": "姓",
+   "pinyin": "xìng",
+   "example": {
+    "text": "我姓王。",
+    "pinyin": "Wǒ xìng wáng.",
+    "english": "My surname is Wang."
+   }
+  },
+  {
+   "conceptId": "to-introduce",
+   "text": "介绍",
+   "pinyin": "jièshào",
+   "example": {
+    "text": "我来介绍一下。",
+    "pinyin": "Wǒ lái jièshào yíxià.",
+    "english": "Let me introduce someone."
+   }
+  },
+  {
+   "conceptId": "to-welcome",
+   "text": "欢迎",
+   "pinyin": "huānyíng",
+   "example": {
+    "text": "欢迎你来中国！",
+    "pinyin": "Huānyíng nǐ lái Zhōngguó!",
+    "english": "Welcome to China!"
+   }
+  },
+  {
+   "conceptId": "everyone",
+   "text": "大家",
+   "pinyin": "dàjiā",
+   "example": {
+    "text": "大家好！",
+    "pinyin": "Dàjiā hǎo!",
+    "english": "Hello, everyone!"
+   }
+  },
+  {
+   "conceptId": "it",
+   "text": "它",
+   "pinyin": "tā",
+   "example": {
+    "text": "它是我的猫。",
+    "pinyin": "Tā shì wǒ de māo.",
+    "english": "It's my cat."
+   }
+  },
+  {
+   "conceptId": "egg",
+   "text": "鸡蛋",
+   "pinyin": "jīdàn",
+   "example": {
+    "text": "我早上吃鸡蛋。",
+    "pinyin": "Wǒ zǎoshang chī jīdàn.",
+    "english": "I eat eggs in the morning."
+   }
+  },
+  {
+   "conceptId": "lamb",
+   "text": "羊肉",
+   "pinyin": "yángròu",
+   "example": {
+    "text": "我不吃羊肉。",
+    "pinyin": "Wǒ bù chī yángròu.",
+    "english": "I don't eat lamb."
+   }
+  },
+  {
+   "conceptId": "fish",
+   "text": "鱼",
+   "pinyin": "yú",
+   "example": {
+    "text": "我喜欢吃鱼。",
+    "pinyin": "Wǒ xǐhuan chī yú.",
+    "english": "I like eating fish."
+   }
+  },
+  {
+   "conceptId": "milk",
+   "text": "牛奶",
+   "pinyin": "niúnǎi",
+   "example": {
+    "text": "孩子每天喝牛奶。",
+    "pinyin": "Háizi měi tiān hē niúnǎi.",
+    "english": "Children drink milk every day."
+   }
+  },
+  {
+   "conceptId": "coffee",
+   "text": "咖啡",
+   "pinyin": "kāfēi",
+   "example": {
+    "text": "你喝咖啡吗？",
+    "pinyin": "Nǐ hē kāfēi ma?",
+    "english": "Do you drink coffee?"
+   }
+  },
+  {
+   "conceptId": "watermelon",
+   "text": "西瓜",
+   "pinyin": "xīguā",
+   "example": {
+    "text": "我喜欢吃西瓜。",
+    "pinyin": "Wǒ xǐhuan chī xīguā.",
+    "english": "I like eating watermelon."
+   }
+  },
+  {
+   "conceptId": "delicious",
+   "text": "好吃",
+   "pinyin": "hǎochī",
+   "example": {
+    "text": "这个菜很好吃。",
+    "pinyin": "Zhè ge cài hěn hǎochī.",
+    "english": "This dish is delicious."
+   }
+  },
+  {
+   "conceptId": "waiter",
+   "text": "服务员",
+   "pinyin": "fúwùyuán",
+   "example": {
+    "text": "服务员，请给我一杯茶。",
+    "pinyin": "Fúwùyuán, qǐng gěi wǒ yì bēi chá.",
+    "english": "Waiter, a cup of tea please."
+   }
+  },
+  {
+   "conceptId": "ba",
+   "text": "吧",
+   "pinyin": "ba",
+   "example": {
+    "text": "我们走吧！",
+    "pinyin": "Wǒmen zǒu ba!",
+    "english": "Let's go!"
+   }
+  },
+  {
+   "conceptId": "cheap",
+   "text": "便宜",
+   "pinyin": "piányi",
+   "example": {
+    "text": "这个很便宜。",
+    "pinyin": "Zhè ge hěn piányi.",
+    "english": "This is very cheap."
+   }
+  },
+  {
+   "conceptId": "expensive",
+   "text": "贵",
+   "pinyin": "guì",
+   "example": {
+    "text": "这个手机太贵了。",
+    "pinyin": "Zhè ge shǒujī tài guì le.",
+    "english": "This phone is too expensive."
+   }
+  },
+  {
+   "conceptId": "to-sell",
+   "text": "卖",
+   "pinyin": "mài",
+   "example": {
+    "text": "他在商店卖水果。",
+    "pinyin": "Tā zài shāngdiàn mài shuǐguǒ.",
+    "english": "He sells fruit at the store."
+   }
+  },
+  {
+   "conceptId": "yuan-2",
+   "text": "元",
+   "pinyin": "yuán",
+   "example": {
+    "text": "这本书三十元。",
+    "pinyin": "Zhè běn shū sānshí yuán.",
+    "english": "This book is thirty yuan."
+   }
+  },
+  {
+   "conceptId": "thousand",
+   "text": "千",
+   "pinyin": "qiān",
+   "example": {
+    "text": "这个电脑五千块。",
+    "pinyin": "Zhè ge diànnǎo wǔ qiān kuài.",
+    "english": "This computer costs five thousand yuan."
+   }
+  },
+  {
+   "conceptId": "hundred",
+   "text": "百",
+   "pinyin": "bǎi",
+   "example": {
+    "text": "我有一百块钱。",
+    "pinyin": "Wǒ yǒu yìbǎi kuài qián.",
+    "english": "I have a hundred yuan."
+   }
+  },
+  {
+   "conceptId": "two-2",
+   "text": "两",
+   "pinyin": "liǎng",
+   "example": {
+    "text": "我要两杯茶。",
+    "pinyin": "Wǒ yào liǎng bēi chá.",
+    "english": "I'd like two cups of tea."
+   }
+  },
+  {
+   "conceptId": "kilogram",
+   "text": "公斤",
+   "pinyin": "gōngjīn",
+   "example": {
+    "text": "我买了两公斤苹果。",
+    "pinyin": "Wǒ mǎi le liǎng gōngjīn píngguǒ.",
+    "english": "I bought two kilograms of apples."
+   }
+  },
+  {
+   "conceptId": "ji-n",
+   "text": "件",
+   "pinyin": "jiàn",
+   "example": {
+    "text": "我买了一件衣服。",
+    "pinyin": "Wǒ mǎi le yí jiàn yīfu.",
+    "english": "I bought a piece of clothing."
+   }
+  },
+  {
+   "conceptId": "zh-ng",
+   "text": "张",
+   "pinyin": "zhāng",
+   "example": {
+    "text": "我要一张票。",
+    "pinyin": "Wǒ yào yì zhāng piào.",
+    "english": "I'd like one ticket."
+   }
+  },
+  {
+   "conceptId": "ticket",
+   "text": "票",
+   "pinyin": "piào",
+   "example": {
+    "text": "你买票了吗？",
+    "pinyin": "Nǐ mǎi piào le ma?",
+    "english": "Did you buy a ticket?"
+   }
+  },
+  {
+   "conceptId": "early-morning",
+   "text": "早上",
+   "pinyin": "zǎoshang",
+   "example": {
+    "text": "早上好！",
+    "pinyin": "Zǎoshang hǎo!",
+    "english": "Good morning!"
+   }
+  },
+  {
+   "conceptId": "evening",
+   "text": "晚上",
+   "pinyin": "wǎnshang",
+   "example": {
+    "text": "晚上我在家。",
+    "pinyin": "Wǎnshang wǒ zài jiā.",
+    "english": "I'm at home in the evening."
+   }
+  },
+  {
+   "conceptId": "time",
+   "text": "时间",
+   "pinyin": "shíjiān",
+   "example": {
+    "text": "你有时间吗？",
+    "pinyin": "Nǐ yǒu shíjiān ma?",
+    "english": "Do you have time?"
+   }
+  },
+  {
+   "conceptId": "hour",
+   "text": "小时",
+   "pinyin": "xiǎoshí",
+   "example": {
+    "text": "我每天学习两个小时。",
+    "pinyin": "Wǒ měi tiān xuéxí liǎng ge xiǎoshí.",
+    "english": "I study for two hours every day."
+   }
+  },
+  {
+   "conceptId": "last-year",
+   "text": "去年",
+   "pinyin": "qùnián",
+   "example": {
+    "text": "去年我去了北京。",
+    "pinyin": "Qùnián wǒ qù le Běijīng.",
+    "english": "Last year I went to Beijing."
+   }
+  },
+  {
+   "conceptId": "birthday",
+   "text": "生日",
+   "pinyin": "shēngrì",
+   "example": {
+    "text": "今天是我的生日。",
+    "pinyin": "Jīntiān shì wǒ de shēngrì.",
+    "english": "Today is my birthday."
+   }
+  },
+  {
+   "conceptId": "number-date",
+   "text": "号",
+   "pinyin": "hào",
+   "example": {
+    "text": "明天是五号。",
+    "pinyin": "Míngtiān shì wǔ hào.",
+    "english": "Tomorrow is the fifth."
+   }
+  },
+  {
+   "conceptId": "every",
+   "text": "每",
+   "pinyin": "měi",
+   "example": {
+    "text": "我每天都学习。",
+    "pinyin": "Wǒ měi tiān dōu xuéxí.",
+    "english": "I study every day."
+   }
+  },
+  {
+   "conceptId": "time-2",
+   "text": "次",
+   "pinyin": "cì",
+   "example": {
+    "text": "我去过两次。",
+    "pinyin": "Wǒ qù guò liǎng cì.",
+    "english": "I've been there twice."
+   }
+  },
+  {
+   "conceptId": "first",
+   "text": "第一",
+   "pinyin": "dìyī",
+   "example": {
+    "text": "这是我第一次来中国。",
+    "pinyin": "Zhè shì wǒ dìyī cì lái Zhōngguó.",
+    "english": "This is my first time in China."
+   }
+  },
+  {
+   "conceptId": "already",
+   "text": "已经",
+   "pinyin": "yǐjīng",
+   "example": {
+    "text": "我已经吃饭了。",
+    "pinyin": "Wǒ yǐjīng chī fàn le.",
+    "english": "I've already eaten."
+   }
+  },
+  {
+   "conceptId": "to-get-up",
+   "text": "起床",
+   "pinyin": "qǐchuáng",
+   "example": {
+    "text": "你几点起床？",
+    "pinyin": "Nǐ jǐ diǎn qǐchuáng?",
+    "english": "What time do you get up?"
+   }
+  },
+  {
+   "conceptId": "to-go-to-work",
+   "text": "上班",
+   "pinyin": "shàngbān",
+   "example": {
+    "text": "我每天八点上班。",
+    "pinyin": "Wǒ měi tiān bā diǎn shàngbān.",
+    "english": "I go to work at eight every day."
+   }
+  },
+  {
+   "conceptId": "to-rest",
+   "text": "休息",
+   "pinyin": "xiūxi",
+   "example": {
+    "text": "我累了，想休息一下。",
+    "pinyin": "Wǒ lèi le, xiǎng xiūxi yíxià.",
+    "english": "I'm tired and want to rest a bit."
+   }
+  },
+  {
+   "conceptId": "to-wash",
+   "text": "洗",
+   "pinyin": "xǐ",
+   "example": {
+    "text": "我去洗衣服。",
+    "pinyin": "Wǒ qù xǐ yīfu.",
+    "english": "I'm going to wash clothes."
+   }
+  },
+  {
+   "conceptId": "to-wear",
+   "text": "穿",
+   "pinyin": "chuān",
+   "example": {
+    "text": "今天很冷，多穿衣服。",
+    "pinyin": "Jīntiān hěn lěng, duō chuān yīfu.",
+    "english": "It's cold today, wear more layers."
+   }
+  },
+  {
+   "conceptId": "to-prepare",
+   "text": "准备",
+   "pinyin": "zhǔnbèi",
+   "example": {
+    "text": "我在准备考试。",
+    "pinyin": "Wǒ zài zhǔnbèi kǎoshì.",
+    "english": "I'm preparing for an exam."
+   }
+  },
+  {
+   "conceptId": "to-begin",
+   "text": "开始",
+   "pinyin": "kāishǐ",
+   "example": {
+    "text": "我们开始吧！",
+    "pinyin": "Wǒmen kāishǐ ba!",
+    "english": "Let's begin!"
+   }
+  },
+  {
+   "conceptId": "to-finish",
+   "text": "完",
+   "pinyin": "wán",
+   "example": {
+    "text": "我吃完了。",
+    "pinyin": "Wǒ chī wán le.",
+    "english": "I've finished eating."
+   }
+  },
+  {
+   "conceptId": "zh-ngz-i",
+   "text": "正在",
+   "pinyin": "zhèngzài",
+   "example": {
+    "text": "他正在看电视。",
+    "pinyin": "Tā zhèngzài kàn diànshì.",
+    "english": "He's watching TV right now."
+   }
+  },
+  {
+   "conceptId": "to-play-basketball",
+   "text": "打篮球",
+   "pinyin": "dǎ lánqiú",
+   "example": {
+    "text": "我喜欢打篮球。",
+    "pinyin": "Wǒ xǐhuan dǎlánqiú.",
+    "english": "I like playing basketball."
+   }
+  },
+  {
+   "conceptId": "to-kick",
+   "text": "踢",
+   "pinyin": "tī",
+   "example": {
+    "text": "他们在踢足球。",
+    "pinyin": "Tāmen zài tī zúqiú.",
+    "english": "They're playing soccer."
+   }
+  },
+  {
+   "conceptId": "to-run",
+   "text": "跑步",
+   "pinyin": "pǎobù",
+   "example": {
+    "text": "我每天早上跑步。",
+    "pinyin": "Wǒ měi tiān zǎoshang pǎobù.",
+    "english": "I go running every morning."
+   }
+  },
+  {
+   "conceptId": "to-swim",
+   "text": "游泳",
+   "pinyin": "yóuyǒng",
+   "example": {
+    "text": "你会游泳吗？",
+    "pinyin": "Nǐ huì yóuyǒng ma?",
+    "english": "Can you swim?"
+   }
+  },
+  {
+   "conceptId": "to-sing",
+   "text": "唱歌",
+   "pinyin": "chànggē",
+   "example": {
+    "text": "她唱歌很好听。",
+    "pinyin": "Tā chànggē hěn hǎotīng.",
+    "english": "She sings beautifully."
+   }
+  },
+  {
+   "conceptId": "to-dance",
+   "text": "跳舞",
+   "pinyin": "tiàowǔ",
+   "example": {
+    "text": "我们去跳舞吧。",
+    "pinyin": "Wǒmen qù tiàowǔ ba.",
+    "english": "Let's go dancing."
+   }
+  },
+  {
+   "conceptId": "sport",
+   "text": "运动",
+   "pinyin": "yùndòng",
+   "example": {
+    "text": "运动对身体好。",
+    "pinyin": "Yùndòng duì shēntǐ hǎo.",
+    "english": "Exercise is good for your health."
+   }
+  },
+  {
+   "conceptId": "to-travel",
+   "text": "旅游",
+   "pinyin": "lǚyóu",
+   "example": {
+    "text": "我想去中国旅游。",
+    "pinyin": "Wǒ xiǎng qù Zhōngguó lǚyóu.",
+    "english": "I want to travel to China."
+   }
+  },
+  {
+   "conceptId": "to-play",
+   "text": "玩",
+   "pinyin": "wán",
+   "example": {
+    "text": "孩子们在外面玩。",
+    "pinyin": "Háizi men zài wàimiàn wán.",
+    "english": "The kids are playing outside."
+   }
+  },
+  {
+   "conceptId": "airport",
+   "text": "机场",
+   "pinyin": "jīchǎng",
+   "example": {
+    "text": "我去机场。",
+    "pinyin": "Wǒ qù jīchǎng.",
+    "english": "I'm going to the airport."
+   }
+  },
+  {
+   "conceptId": "boat",
+   "text": "船",
+   "pinyin": "chuán",
+   "example": {
+    "text": "我们坐船去。",
+    "pinyin": "Wǒmen zuò chuán qù.",
+    "english": "We're going by boat."
+   }
+  },
+  {
+   "conceptId": "bus",
+   "text": "公共汽车",
+   "pinyin": "gōnggòng qìchē",
+   "example": {
+    "text": "我坐公共汽车上班。",
+    "pinyin": "Wǒ zuò gōnggòngqìchē shàngbān.",
+    "english": "I take the bus to work."
+   }
+  },
+  {
+   "conceptId": "bicycle",
+   "text": "自行车",
+   "pinyin": "zìxíngchē",
+   "example": {
+    "text": "他骑自行车去学校。",
+    "pinyin": "Tā qí zìxíngchē qù xuéxiào.",
+    "english": "He rides a bike to school."
+   }
+  },
+  {
+   "conceptId": "road",
+   "text": "路",
+   "pinyin": "lù",
+   "example": {
+    "text": "这条路很长。",
+    "pinyin": "Zhè tiáo lù hěn cháng.",
+    "english": "This road is very long."
+   }
+  },
+  {
+   "conceptId": "to-walk",
+   "text": "走",
+   "pinyin": "zǒu",
+   "example": {
+    "text": "我走路去学校。",
+    "pinyin": "Wǒ zǒu lù qù xuéxiào.",
+    "english": "I walk to school."
+   }
+  },
+  {
+   "conceptId": "far",
+   "text": "远",
+   "pinyin": "yuǎn",
+   "example": {
+    "text": "你家远吗？",
+    "pinyin": "Nǐ jiā yuǎn ma?",
+    "english": "Is your home far?"
+   }
+  },
+  {
+   "conceptId": "near",
+   "text": "近",
+   "pinyin": "jìn",
+   "example": {
+    "text": "我家很近。",
+    "pinyin": "Wǒ jiā hěn jìn.",
+    "english": "My home is close."
+   }
+  },
+  {
+   "conceptId": "away-from",
+   "text": "离",
+   "pinyin": "lí",
+   "example": {
+    "text": "学校离我家很近。",
+    "pinyin": "Xuéxiào lí wǒ jiā hěn jìn.",
+    "english": "The school is close to my home."
+   }
+  },
+  {
+   "conceptId": "to-arrive",
+   "text": "到",
+   "pinyin": "dào",
+   "example": {
+    "text": "我到家了。",
+    "pinyin": "Wǒ dào jiā le.",
+    "english": "I'm home."
+   }
+  },
+  {
+   "conceptId": "from",
+   "text": "从",
+   "pinyin": "cóng",
+   "example": {
+    "text": "我从北京来。",
+    "pinyin": "Wǒ cóng Běijīng lái.",
+    "english": "I come from Beijing."
+   }
+  },
+  {
+   "conceptId": "left-side",
+   "text": "左边",
+   "pinyin": "zuǒbian",
+   "example": {
+    "text": "商店在左边。",
+    "pinyin": "Shāngdiàn zài zuǒbian.",
+    "english": "The store is on the left."
+   }
+  },
+  {
+   "conceptId": "right-side",
+   "text": "右边",
+   "pinyin": "yòubian",
+   "example": {
+    "text": "医院在右边。",
+    "pinyin": "Yīyuàn zài yòubian.",
+    "english": "The hospital is on the right."
+   }
+  },
+  {
+   "conceptId": "beside",
+   "text": "旁边",
+   "pinyin": "pángbiān",
+   "example": {
+    "text": "我家旁边有一个商店。",
+    "pinyin": "Wǒ jiā pángbiān yǒu yí ge shāngdiàn.",
+    "english": "There's a store next to my home."
+   }
+  },
+  {
+   "conceptId": "outside",
+   "text": "外",
+   "pinyin": "wài",
+   "example": {
+    "text": "外面很冷。",
+    "pinyin": "Wàimiàn hěn lěng.",
+    "english": "It's cold outside."
+   }
+  },
+  {
+   "conceptId": "door",
+   "text": "门",
+   "pinyin": "mén",
+   "example": {
+    "text": "请开门。",
+    "pinyin": "Qǐng kāi mén.",
+    "english": "Please open the door."
+   }
+  },
+  {
+   "conceptId": "room",
+   "text": "房间",
+   "pinyin": "fángjiān",
+   "example": {
+    "text": "我的房间很小。",
+    "pinyin": "Wǒ de fángjiān hěn xiǎo.",
+    "english": "My room is small."
+   }
+  },
+  {
+   "conceptId": "classroom",
+   "text": "教室",
+   "pinyin": "jiàoshì",
+   "example": {
+    "text": "学生们在教室里。",
+    "pinyin": "Xuésheng men zài jiàoshì lǐ.",
+    "english": "The students are in the classroom."
+   }
+  },
+  {
+   "conceptId": "company",
+   "text": "公司",
+   "pinyin": "gōngsī",
+   "example": {
+    "text": "他在一家公司工作。",
+    "pinyin": "Tā zài yì jiā gōngsī gōngzuò.",
+    "english": "He works at a company."
+   }
+  },
+  {
+   "conceptId": "to-enter",
+   "text": "进",
+   "pinyin": "jìn",
+   "example": {
+    "text": "请进！",
+    "pinyin": "Qǐng jìn!",
+    "english": "Please come in!"
+   }
+  },
+  {
+   "conceptId": "to-go-out",
+   "text": "出",
+   "pinyin": "chū",
+   "example": {
+    "text": "我出去一下。",
+    "pinyin": "Wǒ chūqù yíxià.",
+    "english": "I'm going out for a moment."
+   }
+  },
+  {
+   "conceptId": "toward",
+   "text": "向",
+   "pinyin": "xiàng",
+   "example": {
+    "text": "向前走。",
+    "pinyin": "Xiàng qián zǒu.",
+    "english": "Walk straight ahead."
+   }
+  },
+  {
+   "conceptId": "body",
+   "text": "身体",
+   "pinyin": "shēntǐ",
+   "example": {
+    "text": "你身体好吗？",
+    "pinyin": "Nǐ shēntǐ hǎo ma?",
+    "english": "How is your health?"
+   }
+  },
+  {
+   "conceptId": "eye",
+   "text": "眼睛",
+   "pinyin": "yǎnjing",
+   "example": {
+    "text": "她的眼睛很大。",
+    "pinyin": "Tā de yǎnjing hěn dà.",
+    "english": "Her eyes are big."
+   }
+  },
+  {
+   "conceptId": "to-get-sick",
+   "text": "生病",
+   "pinyin": "shēngbìng",
+   "example": {
+    "text": "我生病了。",
+    "pinyin": "Wǒ shēngbìng le.",
+    "english": "I'm sick."
+   }
+  },
+  {
+   "conceptId": "medicine",
+   "text": "药",
+   "pinyin": "yào",
+   "example": {
+    "text": "你吃药了吗？",
+    "pinyin": "Nǐ chī yào le ma?",
+    "english": "Did you take your medicine?"
+   }
+  },
+  {
+   "conceptId": "tired",
+   "text": "累",
+   "pinyin": "lèi",
+   "example": {
+    "text": "我今天很累。",
+    "pinyin": "Wǒ jīntiān hěn lèi.",
+    "english": "I'm very tired today."
+   }
+  },
+  {
+   "conceptId": "to-laugh",
+   "text": "笑",
+   "pinyin": "xiào",
+   "example": {
+    "text": "她笑了。",
+    "pinyin": "Tā xiào le.",
+    "english": "She smiled."
+   }
+  },
+  {
+   "conceptId": "sunny",
+   "text": "晴",
+   "pinyin": "qíng",
+   "example": {
+    "text": "今天是晴天。",
+    "pinyin": "Jīntiān shì qíng tiān.",
+    "english": "It's sunny today."
+   }
+  },
+  {
+   "conceptId": "cloudy",
+   "text": "阴",
+   "pinyin": "yīn",
+   "example": {
+    "text": "明天是阴天。",
+    "pinyin": "Míngtiān shì yīn tiān.",
+    "english": "Tomorrow will be cloudy."
+   }
+  },
+  {
+   "conceptId": "snow",
+   "text": "雪",
+   "pinyin": "xuě",
+   "example": {
+    "text": "下雪了！",
+    "pinyin": "Xià xuě le!",
+    "english": "It's snowing!"
+   }
+  },
+  {
+   "conceptId": "color",
+   "text": "颜色",
+   "pinyin": "yánsè",
+   "example": {
+    "text": "你喜欢什么颜色？",
+    "pinyin": "Nǐ xǐhuan shénme yánsè?",
+    "english": "What color do you like?"
+   }
+  },
+  {
+   "conceptId": "white",
+   "text": "白",
+   "pinyin": "bái",
+   "example": {
+    "text": "我的猫是白的。",
+    "pinyin": "Wǒ de māo shì bái de.",
+    "english": "My cat is white."
+   }
+  },
+  {
+   "conceptId": "black",
+   "text": "黑",
+   "pinyin": "hēi",
+   "example": {
+    "text": "他穿黑衣服。",
+    "pinyin": "Tā chuān hēi yīfu.",
+    "english": "He's wearing black clothes."
+   }
+  },
+  {
+   "conceptId": "red",
+   "text": "红",
+   "pinyin": "hóng",
+   "example": {
+    "text": "我喜欢红的。",
+    "pinyin": "Wǒ xǐhuan hóng de.",
+    "english": "I like the red one."
+   }
+  },
+  {
+   "conceptId": "tall",
+   "text": "高",
+   "pinyin": "gāo",
+   "example": {
+    "text": "我哥哥很高。",
+    "pinyin": "Wǒ gēge hěn gāo.",
+    "english": "My older brother is tall."
+   }
+  },
+  {
+   "conceptId": "long",
+   "text": "长",
+   "pinyin": "cháng",
+   "example": {
+    "text": "她的头发很长。",
+    "pinyin": "Tā de tóufa hěn cháng.",
+    "english": "Her hair is long."
+   }
+  },
+  {
+   "conceptId": "new",
+   "text": "新",
+   "pinyin": "xīn",
+   "example": {
+    "text": "这是我的新手机。",
+    "pinyin": "Zhè shì wǒ de xīn shǒujī.",
+    "english": "This is my new phone."
+   }
+  },
+  {
+   "conceptId": "exam",
+   "text": "考试",
+   "pinyin": "kǎoshì",
+   "example": {
+    "text": "明天有考试。",
+    "pinyin": "Míngtiān yǒu kǎoshì.",
+    "english": "There's an exam tomorrow."
+   }
+  },
+  {
+   "conceptId": "class",
+   "text": "课",
+   "pinyin": "kè",
+   "example": {
+    "text": "今天有汉语课。",
+    "pinyin": "Jīntiān yǒu Hànyǔ kè.",
+    "english": "There's a Chinese class today."
+   }
+  },
+  {
+   "conceptId": "question",
+   "text": "题",
+   "pinyin": "tí",
+   "example": {
+    "text": "这个题很难。",
+    "pinyin": "Zhè ge tí hěn nán.",
+    "english": "This question is hard."
+   }
+  },
+  {
+   "conceptId": "question-2",
+   "text": "问题",
+   "pinyin": "wèntí",
+   "example": {
+    "text": "我有一个问题。",
+    "pinyin": "Wǒ yǒu yí ge wèntí.",
+    "english": "I have a question."
+   }
+  },
+  {
+   "conceptId": "to-answer",
+   "text": "回答",
+   "pinyin": "huídá",
+   "example": {
+    "text": "请回答我的问题。",
+    "pinyin": "Qǐng huídá wǒ de wèntí.",
+    "english": "Please answer my question."
+   }
+  },
+  {
+   "conceptId": "to-understand",
+   "text": "懂",
+   "pinyin": "dǒng",
+   "example": {
+    "text": "你懂了吗？",
+    "pinyin": "Nǐ dǒng le ma?",
+    "english": "Do you understand?"
+   }
+  },
+  {
+   "conceptId": "meaning",
+   "text": "意思",
+   "pinyin": "yìsi",
+   "example": {
+    "text": "这是什么意思？",
+    "pinyin": "Zhè shì shénme yìsi?",
+    "english": "What does this mean?"
+   }
+  },
+  {
+   "conceptId": "wrong",
+   "text": "错",
+   "pinyin": "cuò",
+   "example": {
+    "text": "对不起，我错了。",
+    "pinyin": "Duìbuqǐ, wǒ cuò le.",
+    "english": "Sorry, I was wrong."
+   }
+  },
+  {
+   "conceptId": "newspaper",
+   "text": "报纸",
+   "pinyin": "bàozhǐ",
+   "example": {
+    "text": "爸爸在看报纸。",
+    "pinyin": "Bàba zài kàn bàozhǐ.",
+    "english": "Dad is reading the newspaper."
+   }
+  },
+  {
+   "conceptId": "cell-phone",
+   "text": "手机",
+   "pinyin": "shǒujī",
+   "example": {
+    "text": "你的手机很新。",
+    "pinyin": "Nǐ de shǒujī hěn xīn.",
+    "english": "Your phone is new."
+   }
+  },
+  {
+   "conceptId": "wristwatch",
+   "text": "手表",
+   "pinyin": "shǒubiǎo",
+   "example": {
+    "text": "这个手表很贵。",
+    "pinyin": "Zhè ge shǒubiǎo hěn guì.",
+    "english": "This watch is expensive."
+   }
+  },
+  {
+   "conceptId": "to-feel",
+   "text": "觉得",
+   "pinyin": "juéde",
+   "example": {
+    "text": "我觉得很好。",
+    "pinyin": "Wǒ juéde hěn hǎo.",
+    "english": "I think it's good."
+   }
+  },
+  {
+   "conceptId": "to-hope",
+   "text": "希望",
+   "pinyin": "xīwàng",
+   "example": {
+    "text": "我希望你来。",
+    "pinyin": "Wǒ xīwàng nǐ lái.",
+    "english": "I hope you come."
+   }
+  },
+  {
+   "conceptId": "to-know",
+   "text": "知道",
+   "pinyin": "zhīdao",
+   "example": {
+    "text": "我不知道。",
+    "pinyin": "Wǒ bù zhīdao.",
+    "english": "I don't know."
+   }
+  },
+  {
+   "conceptId": "maybe",
+   "text": "可能",
+   "pinyin": "kěnéng",
+   "example": {
+    "text": "明天可能下雨。",
+    "pinyin": "Míngtiān kěnéng xiàyǔ.",
+    "english": "It might rain tomorrow."
+   }
+  },
+  {
+   "conceptId": "happy-2",
+   "text": "快乐",
+   "pinyin": "kuàilè",
+   "example": {
+    "text": "新年快乐！",
+    "pinyin": "Xīnnián kuàilè!",
+    "english": "Happy New Year!"
+   }
+  },
+  {
+   "conceptId": "busy",
+   "text": "忙",
+   "pinyin": "máng",
+   "example": {
+    "text": "我今天很忙。",
+    "pinyin": "Wǒ jīntiān hěn máng.",
+    "english": "I'm busy today."
+   }
+  },
+  {
+   "conceptId": "fast",
+   "text": "快",
+   "pinyin": "kuài",
+   "example": {
+    "text": "他跑得很快。",
+    "pinyin": "Tā pǎo de hěn kuài.",
+    "english": "He runs fast."
+   }
+  },
+  {
+   "conceptId": "slow",
+   "text": "慢",
+   "pinyin": "màn",
+   "example": {
+    "text": "请说慢一点。",
+    "pinyin": "Qǐng shuō màn yìdiǎn.",
+    "english": "Please speak more slowly."
+   }
+  },
+  {
+   "conceptId": "really",
+   "text": "真",
+   "pinyin": "zhēn",
+   "example": {
+    "text": "你真好！",
+    "pinyin": "Nǐ zhēn hǎo!",
+    "english": "You're really nice!"
+   }
+  },
+  {
+   "conceptId": "very-2",
+   "text": "非常",
+   "pinyin": "fēicháng",
+   "example": {
+    "text": "我非常喜欢你。",
+    "pinyin": "Wǒ fēicháng xǐhuan nǐ.",
+    "english": "I like you very much."
+   }
+  },
+  {
+   "conceptId": "most",
+   "text": "最",
+   "pinyin": "zuì",
+   "example": {
+    "text": "我最喜欢苹果。",
+    "pinyin": "Wǒ zuì xǐhuan píngguǒ.",
+    "english": "I like apples the most."
+   }
+  },
+  {
+   "conceptId": "to-tell",
+   "text": "告诉",
+   "pinyin": "gàosu",
+   "example": {
+    "text": "请告诉我。",
+    "pinyin": "Qǐng gàosu wǒ.",
+    "english": "Please tell me."
+   }
+  },
+  {
+   "conceptId": "to-ask",
+   "text": "问",
+   "pinyin": "wèn",
+   "example": {
+    "text": "我可以问你一个问题吗？",
+    "pinyin": "Wǒ kěyǐ wèn nǐ yí ge wèntí ma?",
+    "english": "Can I ask you a question?"
+   }
+  },
+  {
+   "conceptId": "to-help",
+   "text": "帮助",
+   "pinyin": "bāngzhù",
+   "example": {
+    "text": "谢谢你的帮助。",
+    "pinyin": "Xièxie nǐ de bāngzhù.",
+    "english": "Thank you for your help."
+   }
+  },
+  {
+   "conceptId": "to-give",
+   "text": "送",
+   "pinyin": "sòng",
+   "example": {
+    "text": "我送你一本书。",
+    "pinyin": "Wǒ sòng nǐ yì běn shū.",
+    "english": "I'll give you a book."
+   }
+  },
+  {
+   "conceptId": "to-give-2",
+   "text": "给",
+   "pinyin": "gěi",
+   "example": {
+    "text": "请给我一杯水。",
+    "pinyin": "Qǐng gěi wǒ yì bēi shuǐ.",
+    "english": "Please give me a glass of water."
+   }
+  },
+  {
+   "conceptId": "to-let",
+   "text": "让",
+   "pinyin": "ràng",
+   "example": {
+    "text": "妈妈不让我玩。",
+    "pinyin": "Māma bú ràng wǒ wán.",
+    "english": "Mom doesn't let me play."
+   }
+  },
+  {
+   "conceptId": "to-look-for",
+   "text": "找",
+   "pinyin": "zhǎo",
+   "example": {
+    "text": "你在找什么？",
+    "pinyin": "Nǐ zài zhǎo shénme?",
+    "english": "What are you looking for?"
+   }
+  },
+  {
+   "conceptId": "to-want",
+   "text": "要",
+   "pinyin": "yào",
+   "example": {
+    "text": "我要喝水。",
+    "pinyin": "Wǒ yào hē shuǐ.",
+    "english": "I want to drink water."
+   }
+  },
+  {
+   "conceptId": "can",
+   "text": "可以",
+   "pinyin": "kěyǐ",
+   "example": {
+    "text": "我可以进来吗？",
+    "pinyin": "Wǒ kěyǐ jìnlái ma?",
+    "english": "May I come in?"
+   }
+  },
+  {
+   "conceptId": "don-t",
+   "text": "别",
+   "pinyin": "bié",
+   "example": {
+    "text": "别说话！",
+    "pinyin": "Bié shuōhuà!",
+    "english": "Don't talk!"
+   }
+  },
+  {
+   "conceptId": "matter",
+   "text": "事情",
+   "pinyin": "shìqing",
+   "example": {
+    "text": "我有事情要做。",
+    "pinyin": "Wǒ yǒu shìqing yào zuò.",
+    "english": "I have something to do."
+   }
+  },
+  {
+   "conceptId": "but",
+   "text": "但是",
+   "pinyin": "dànshì",
+   "example": {
+    "text": "我想去，但是没有时间。",
+    "pinyin": "Wǒ xiǎng qù, dànshì méiyǒu shíjiān.",
+    "english": "I want to go, but I don't have time."
+   }
+  },
+  {
+   "conceptId": "so",
+   "text": "所以",
+   "pinyin": "suǒyǐ",
+   "example": {
+    "text": "下雨了，所以我不去。",
+    "pinyin": "Xiàyǔ le, suǒyǐ wǒ bú qù.",
+    "english": "It's raining, so I'm not going."
+   }
+  },
+  {
+   "conceptId": "because",
+   "text": "因为",
+   "pinyin": "yīnwèi",
+   "example": {
+    "text": "我不去，因为我生病了。",
+    "pinyin": "Wǒ bú qù, yīnwèi wǒ shēngbìng le.",
+    "english": "I'm not going because I'm sick."
+   }
+  },
+  {
+   "conceptId": "also",
+   "text": "也",
+   "pinyin": "yě",
+   "example": {
+    "text": "我也是学生。",
+    "pinyin": "Wǒ yě shì xuésheng.",
+    "english": "I'm a student too."
+   }
+  },
+  {
+   "conceptId": "still",
+   "text": "还",
+   "pinyin": "hái",
+   "example": {
+    "text": "他还在睡觉。",
+    "pinyin": "Tā hái zài shuìjiào.",
+    "english": "He's still sleeping."
+   }
+  },
+  {
+   "conceptId": "then",
+   "text": "就",
+   "pinyin": "jiù",
+   "example": {
+    "text": "我马上就来。",
+    "pinyin": "Wǒ mǎshàng jiù lái.",
+    "english": "I'll be right there."
+   }
+  },
+  {
+   "conceptId": "again",
+   "text": "再",
+   "pinyin": "zài",
+   "example": {
+    "text": "请再说一次。",
+    "pinyin": "Qǐng zài shuō yí cì.",
+    "english": "Please say it again."
+   }
+  },
+  {
+   "conceptId": "together",
+   "text": "一起",
+   "pinyin": "yìqǐ",
+   "example": {
+    "text": "我们一起去吧。",
+    "pinyin": "Wǒmen yìqǐ qù ba.",
+    "english": "Let's go together."
+   }
+  },
+  {
+   "conceptId": "zhe",
+   "text": "着",
+   "pinyin": "zhe",
+   "example": {
+    "text": "门开着。",
+    "pinyin": "Mén kāi zhe.",
+    "english": "The door is open."
+   }
+  },
+  {
+   "conceptId": "de-2",
+   "text": "得",
+   "pinyin": "de",
+   "example": {
+    "text": "他说得很好。",
+    "pinyin": "Tā shuō de hěn hǎo.",
+    "english": "He speaks well."
+   }
+  },
+  {
+   "conceptId": "for",
+   "text": "为",
+   "pinyin": "wèi",
+   "example": {
+    "text": "我为你高兴。",
+    "pinyin": "Wǒ wèi nǐ gāoxìng.",
+    "english": "I'm happy for you."
+   }
+  },
+  {
+   "conceptId": "than",
+   "text": "比",
+   "pinyin": "bǐ",
+   "example": {
+    "text": "我比他高。",
+    "pinyin": "Wǒ bǐ tā gāo.",
+    "english": "I'm taller than him."
+   }
+  },
+  {
+   "conceptId": "aunt",
+   "text": "阿姨",
+   "pinyin": "āyí",
+   "example": {
+    "text": "阿姨好！",
+    "pinyin": "Āyí hǎo!",
+    "english": "Hello, auntie!"
+   }
+  },
+  {
+   "conceptId": "uncle",
+   "text": "叔叔",
+   "pinyin": "shūshu",
+   "example": {
+    "text": "我叔叔是医生。",
+    "pinyin": "Wǒ shūshu shì yīshēng.",
+    "english": "My uncle is a doctor."
+   }
+  },
+  {
+   "conceptId": "grandma",
+   "text": "奶奶",
+   "pinyin": "nǎinai",
+   "example": {
+    "text": "我奶奶八十岁了。",
+    "pinyin": "Wǒ nǎinai bāshí suì le.",
+    "english": "My grandma is eighty."
+   }
+  },
+  {
+   "conceptId": "grandpa",
+   "text": "爷爷",
+   "pinyin": "yéye",
+   "example": {
+    "text": "爷爷每天早上跑步。",
+    "pinyin": "Yéye měi tiān zǎoshang pǎobù.",
+    "english": "Grandpa runs every morning."
+   }
+  },
+  {
+   "conceptId": "neighbor",
+   "text": "邻居",
+   "pinyin": "línjū",
+   "example": {
+    "text": "我的邻居很热情。",
+    "pinyin": "Wǒ de línjū hěn rèqíng.",
+    "english": "My neighbor is very friendly."
+   }
+  },
+  {
+   "conceptId": "colleague",
+   "text": "同事",
+   "pinyin": "tóngshì",
+   "example": {
+    "text": "他是我的同事。",
+    "pinyin": "Tā shì wǒ de tóngshì.",
+    "english": "He's my colleague."
+   }
+  },
+  {
+   "conceptId": "guest",
+   "text": "客人",
+   "pinyin": "kèrén",
+   "example": {
+    "text": "今天家里有客人。",
+    "pinyin": "Jīntiān jiā lǐ yǒu kèrén.",
+    "english": "We have guests at home today."
+   }
+  },
+  {
+   "conceptId": "manager",
+   "text": "经理",
+   "pinyin": "jīnglǐ",
+   "example": {
+    "text": "我们的经理很忙。",
+    "pinyin": "Wǒmen de jīnglǐ hěn máng.",
+    "english": "Our manager is very busy."
+   }
+  },
+  {
+   "conceptId": "driver",
+   "text": "司机",
+   "pinyin": "sījī",
+   "example": {
+    "text": "他是出租车司机。",
+    "pinyin": "Tā shì chūzūchē sījī.",
+    "english": "He's a taxi driver."
+   }
+  },
+  {
+   "conceptId": "principal",
+   "text": "校长",
+   "pinyin": "xiàozhǎng",
+   "example": {
+    "text": "校长在办公室。",
+    "pinyin": "Xiàozhǎng zài bàngōngshì.",
+    "english": "The principal is in the office."
+   }
+  },
+  {
+   "conceptId": "other-people",
+   "text": "别人",
+   "pinyin": "biérén",
+   "example": {
+    "text": "别告诉别人。",
+    "pinyin": "Bié gàosu biérén.",
+    "english": "Don't tell anyone else."
+   }
+  },
+  {
+   "conceptId": "oneself",
+   "text": "自己",
+   "pinyin": "zìjǐ",
+   "example": {
+    "text": "我自己做饭。",
+    "pinyin": "Wǒ zìjǐ zuò fàn.",
+    "english": "I cook for myself."
+   }
+  },
+  {
+   "conceptId": "nose",
+   "text": "鼻子",
+   "pinyin": "bízi",
+   "example": {
+    "text": "他的鼻子很高。",
+    "pinyin": "Tā de bízi hěn gāo.",
+    "english": "He has a high-bridged nose."
+   }
+  },
+  {
+   "conceptId": "ear",
+   "text": "耳朵",
+   "pinyin": "ěrduo",
+   "example": {
+    "text": "猫的耳朵很小。",
+    "pinyin": "Māo de ěrduo hěn xiǎo.",
+    "english": "The cat's ears are small."
+   }
+  },
+  {
+   "conceptId": "face",
+   "text": "脸",
+   "pinyin": "liǎn",
+   "example": {
+    "text": "她的脸红了。",
+    "pinyin": "Tā de liǎn hóng le.",
+    "english": "Her face turned red."
+   }
+  },
+  {
+   "conceptId": "foot",
+   "text": "脚",
+   "pinyin": "jiǎo",
+   "example": {
+    "text": "我的脚很疼。",
+    "pinyin": "Wǒ de jiǎo hěn téng.",
+    "english": "My foot hurts."
+   }
+  },
+  {
+   "conceptId": "leg",
+   "text": "腿",
+   "pinyin": "tuǐ",
+   "example": {
+    "text": "他的腿很长。",
+    "pinyin": "Tā de tuǐ hěn cháng.",
+    "english": "His legs are long."
+   }
+  },
+  {
+   "conceptId": "hair",
+   "text": "头发",
+   "pinyin": "tóufa",
+   "example": {
+    "text": "她的头发很漂亮。",
+    "pinyin": "Tā de tóufa hěn piàoliang.",
+    "english": "Her hair is beautiful."
+   }
+  },
+  {
+   "conceptId": "mouth",
+   "text": "口",
+   "pinyin": "kǒu",
+   "example": {
+    "text": "我家有四口人。",
+    "pinyin": "Wǒ jiā yǒu sì kǒu rén.",
+    "english": "There are four people in my family."
+   }
+  },
+  {
+   "conceptId": "sound",
+   "text": "声音",
+   "pinyin": "shēngyīn",
+   "example": {
+    "text": "她的声音很好听。",
+    "pinyin": "Tā de shēngyīn hěn hǎotīng.",
+    "english": "Her voice is lovely."
+   }
+  },
+  {
+   "conceptId": "to-hurt",
+   "text": "疼",
+   "pinyin": "téng",
+   "example": {
+    "text": "我头疼。",
+    "pinyin": "Wǒ tóu téng.",
+    "english": "I have a headache."
+   }
+  },
+  {
+   "conceptId": "to-have-a-fever",
+   "text": "发烧",
+   "pinyin": "fāshāo",
+   "example": {
+    "text": "孩子发烧了。",
+    "pinyin": "Háizi fāshāo le.",
+    "english": "The child has a fever."
+   }
+  },
+  {
+   "conceptId": "to-catch-a-cold",
+   "text": "感冒",
+   "pinyin": "gǎnmào",
+   "example": {
+    "text": "我感冒了。",
+    "pinyin": "Wǒ gǎnmào le.",
+    "english": "I have a cold."
+   }
+  },
+  {
+   "conceptId": "healthy",
+   "text": "健康",
+   "pinyin": "jiànkāng",
+   "example": {
+    "text": "他身体很健康。",
+    "pinyin": "Tā shēntǐ hěn jiànkāng.",
+    "english": "He's very healthy."
+   }
+  },
+  {
+   "conceptId": "to-check",
+   "text": "检查",
+   "pinyin": "jiǎnchá",
+   "example": {
+    "text": "医生给我检查身体。",
+    "pinyin": "Yīshēng gěi wǒ jiǎnchá shēntǐ.",
+    "english": "The doctor gave me a checkup."
+   }
+  },
+  {
+   "conceptId": "comfortable",
+   "text": "舒服",
+   "pinyin": "shūfu",
+   "example": {
+    "text": "我今天不舒服。",
+    "pinyin": "Wǒ jīntiān bù shūfu.",
+    "english": "I don't feel well today."
+   }
+  },
+  {
+   "conceptId": "to-exercise",
+   "text": "锻炼",
+   "pinyin": "duànliàn",
+   "example": {
+    "text": "我每天锻炼身体。",
+    "pinyin": "Wǒ měi tiān duànliàn shēntǐ.",
+    "english": "I work out every day."
+   }
+  },
+  {
+   "conceptId": "to-bathe",
+   "text": "洗澡",
+   "pinyin": "xǐzǎo",
+   "example": {
+    "text": "我晚上洗澡。",
+    "pinyin": "Wǒ wǎnshang xǐzǎo.",
+    "english": "I shower in the evening."
+   }
+  },
+  {
+   "conceptId": "shirt",
+   "text": "衬衫",
+   "pinyin": "chènshān",
+   "example": {
+    "text": "他穿白衬衫。",
+    "pinyin": "Tā chuān bái chènshān.",
+    "english": "He's wearing a white shirt."
+   }
+  },
+  {
+   "conceptId": "pants",
+   "text": "裤子",
+   "pinyin": "kùzi",
+   "example": {
+    "text": "这条裤子太长了。",
+    "pinyin": "Zhè tiáo kùzi tài cháng le.",
+    "english": "These pants are too long."
+   }
+  },
+  {
+   "conceptId": "skirt",
+   "text": "裙子",
+   "pinyin": "qúnzi",
+   "example": {
+    "text": "她穿了一条新裙子。",
+    "pinyin": "Tā chuān le yì tiáo xīn qúnzi.",
+    "english": "She's wearing a new skirt."
+   }
+  },
+  {
+   "conceptId": "hat",
+   "text": "帽子",
+   "pinyin": "màozi",
+   "example": {
+    "text": "外面很冷，戴帽子吧。",
+    "pinyin": "Wàimiàn hěn lěng, dài màozi ba.",
+    "english": "It's cold out, wear a hat."
+   }
+  },
+  {
+   "conceptId": "shoe",
+   "text": "鞋",
+   "pinyin": "xié",
+   "example": {
+    "text": "我的鞋很旧。",
+    "pinyin": "Wǒ de xié hěn jiù.",
+    "english": "My shoes are old."
+   }
+  },
+  {
+   "conceptId": "glasses",
+   "text": "眼镜",
+   "pinyin": "yǎnjìng",
+   "example": {
+    "text": "我找不到我的眼镜。",
+    "pinyin": "Wǒ zhǎo bú dào wǒ de yǎnjìng.",
+    "english": "I can't find my glasses."
+   }
+  },
+  {
+   "conceptId": "umbrella",
+   "text": "伞",
+   "pinyin": "sǎn",
+   "example": {
+    "text": "下雨了，带伞吧。",
+    "pinyin": "Xiàyǔ le, dài sǎn ba.",
+    "english": "It's raining, take an umbrella."
+   }
+  },
+  {
+   "conceptId": "pair",
+   "text": "双",
+   "pinyin": "shuāng",
+   "example": {
+    "text": "我买了一双鞋。",
+    "pinyin": "Wǒ mǎi le yì shuāng xié.",
+    "english": "I bought a pair of shoes."
+   }
+  },
+  {
+   "conceptId": "ti-o",
+   "text": "条",
+   "pinyin": "tiáo",
+   "example": {
+    "text": "我有一条狗。",
+    "pinyin": "Wǒ yǒu yì tiáo gǒu.",
+    "english": "I have a dog."
+   }
+  },
+  {
+   "conceptId": "bag",
+   "text": "包",
+   "pinyin": "bāo",
+   "example": {
+    "text": "我的包很大。",
+    "pinyin": "Wǒ de bāo hěn dà.",
+    "english": "My bag is big."
+   }
+  },
+  {
+   "conceptId": "cake",
+   "text": "蛋糕",
+   "pinyin": "dàngāo",
+   "example": {
+    "text": "我买了一个蛋糕。",
+    "pinyin": "Wǒ mǎi le yí ge dàngāo.",
+    "english": "I bought a cake."
+   }
+  },
+  {
+   "conceptId": "juice",
+   "text": "果汁",
+   "pinyin": "guǒzhī",
+   "example": {
+    "text": "我要一杯果汁。",
+    "pinyin": "Wǒ yào yì bēi guǒzhī.",
+    "english": "I'd like a glass of juice."
+   }
+  },
+  {
+   "conceptId": "bread",
+   "text": "面包",
+   "pinyin": "miànbāo",
+   "example": {
+    "text": "早上我吃面包。",
+    "pinyin": "Zǎoshang wǒ chī miànbāo.",
+    "english": "I eat bread in the morning."
+   }
+  },
+  {
+   "conceptId": "noodles",
+   "text": "面条",
+   "pinyin": "miàntiáo",
+   "example": {
+    "text": "我喜欢吃面条。",
+    "pinyin": "Wǒ xǐhuan chī miàntiáo.",
+    "english": "I like noodles."
+   }
+  },
+  {
+   "conceptId": "beer",
+   "text": "啤酒",
+   "pinyin": "píjiǔ",
+   "example": {
+    "text": "爸爸喜欢喝啤酒。",
+    "pinyin": "Bàba xǐhuan hē píjiǔ.",
+    "english": "Dad likes beer."
+   }
+  },
+  {
+   "conceptId": "sugar",
+   "text": "糖",
+   "pinyin": "táng",
+   "example": {
+    "text": "咖啡里不要糖。",
+    "pinyin": "Kāfēi lǐ bú yào táng.",
+    "english": "No sugar in the coffee, please."
+   }
+  },
+  {
+   "conceptId": "banana",
+   "text": "香蕉",
+   "pinyin": "xiāngjiāo",
+   "example": {
+    "text": "猴子喜欢吃香蕉。",
+    "pinyin": "Hóuzi xǐhuan chī xiāngjiāo.",
+    "english": "Monkeys like bananas."
+   }
+  },
+  {
+   "conceptId": "grape",
+   "text": "葡萄",
+   "pinyin": "pútao",
+   "example": {
+    "text": "这些葡萄很甜。",
+    "pinyin": "Zhè xiē pútao hěn tián.",
+    "english": "These grapes are very sweet."
+   }
+  },
+  {
+   "conceptId": "menu",
+   "text": "菜单",
+   "pinyin": "càidān",
+   "example": {
+    "text": "服务员，请给我菜单。",
+    "pinyin": "Fúwùyuán, qǐng gěi wǒ càidān.",
+    "english": "Waiter, the menu please."
+   }
+  },
+  {
+   "conceptId": "full",
+   "text": "饱",
+   "pinyin": "bǎo",
+   "example": {
+    "text": "我吃饱了。",
+    "pinyin": "Wǒ chī bǎo le.",
+    "english": "I'm full."
+   }
+  },
+  {
+   "conceptId": "hungry",
+   "text": "饿",
+   "pinyin": "è",
+   "example": {
+    "text": "我饿了。",
+    "pinyin": "Wǒ è le.",
+    "english": "I'm hungry."
+   }
+  },
+  {
+   "conceptId": "thirsty",
+   "text": "渴",
+   "pinyin": "kě",
+   "example": {
+    "text": "我很渴，想喝水。",
+    "pinyin": "Wǒ hěn kě, xiǎng hē shuǐ.",
+    "english": "I'm thirsty and want some water."
+   }
+  },
+  {
+   "conceptId": "sweet",
+   "text": "甜",
+   "pinyin": "tián",
+   "example": {
+    "text": "这个蛋糕很甜。",
+    "pinyin": "Zhè ge dàngāo hěn tián.",
+    "english": "This cake is very sweet."
+   }
+  },
+  {
+   "conceptId": "fresh",
+   "text": "新鲜",
+   "pinyin": "xīnxiān",
+   "example": {
+    "text": "这些水果很新鲜。",
+    "pinyin": "Zhè xiē shuǐguǒ hěn xīnxiān.",
+    "english": "This fruit is fresh."
+   }
+  },
+  {
+   "conceptId": "plate",
+   "text": "盘子",
+   "pinyin": "pánzi",
+   "example": {
+    "text": "桌子上有一个盘子。",
+    "pinyin": "Zhuōzi shàng yǒu yí ge pánzi.",
+    "english": "There's a plate on the table."
+   }
+  },
+  {
+   "conceptId": "bowl",
+   "text": "碗",
+   "pinyin": "wǎn",
+   "example": {
+    "text": "我吃了两碗米饭。",
+    "pinyin": "Wǒ chī le liǎng wǎn mǐfàn.",
+    "english": "I ate two bowls of rice."
+   }
+  },
+  {
+   "conceptId": "chopsticks",
+   "text": "筷子",
+   "pinyin": "kuàizi",
+   "example": {
+    "text": "你会用筷子吗？",
+    "pinyin": "Nǐ huì yòng kuàizi ma?",
+    "english": "Can you use chopsticks?"
+   }
+  },
+  {
+   "conceptId": "kitchen",
+   "text": "厨房",
+   "pinyin": "chúfáng",
+   "example": {
+    "text": "妈妈在厨房做饭。",
+    "pinyin": "Māma zài chúfáng zuò fàn.",
+    "english": "Mom is cooking in the kitchen."
+   }
+  },
+  {
+   "conceptId": "refrigerator",
+   "text": "冰箱",
+   "pinyin": "bīngxiāng",
+   "example": {
+    "text": "冰箱里有牛奶。",
+    "pinyin": "Bīngxiāng lǐ yǒu niúnǎi.",
+    "english": "There's milk in the fridge."
+   }
+  },
+  {
+   "conceptId": "air-conditioner",
+   "text": "空调",
+   "pinyin": "kōngtiáo",
+   "example": {
+    "text": "太热了，开空调吧。",
+    "pinyin": "Tài rè le, kāi kōngtiáo ba.",
+    "english": "It's too hot, turn on the AC."
+   }
+  },
+  {
+   "conceptId": "light",
+   "text": "灯",
+   "pinyin": "dēng",
+   "example": {
+    "text": "请开灯。",
+    "pinyin": "Qǐng kāi dēng.",
+    "english": "Please turn on the light."
+   }
+  },
+  {
+   "conceptId": "elevator",
+   "text": "电梯",
+   "pinyin": "diàntī",
+   "example": {
+    "text": "我们坐电梯上楼。",
+    "pinyin": "Wǒmen zuò diàntī shàng lóu.",
+    "english": "Let's take the elevator up."
+   }
+  },
+  {
+   "conceptId": "building",
+   "text": "楼",
+   "pinyin": "lóu",
+   "example": {
+    "text": "我家在五楼。",
+    "pinyin": "Wǒ jiā zài wǔ lóu.",
+    "english": "I live on the fifth floor."
+   }
+  },
+  {
+   "conceptId": "floor",
+   "text": "层",
+   "pinyin": "céng",
+   "example": {
+    "text": "这个楼有二十层。",
+    "pinyin": "Zhè ge lóu yǒu èrshí céng.",
+    "english": "This building has twenty floors."
+   }
+  },
+  {
+   "conceptId": "to-move",
+   "text": "搬",
+   "pinyin": "bān",
+   "example": {
+    "text": "我们下个月搬家。",
+    "pinyin": "Wǒmen xià ge yuè bān jiā.",
+    "english": "We're moving next month."
+   }
+  },
+  {
+   "conceptId": "to-clean",
+   "text": "打扫",
+   "pinyin": "dǎsǎo",
+   "example": {
+    "text": "我在打扫房间。",
+    "pinyin": "Wǒ zài dǎsǎo fángjiān.",
+    "english": "I'm cleaning my room."
+   }
+  },
+  {
+   "conceptId": "clean",
+   "text": "干净",
+   "pinyin": "gānjìng",
+   "example": {
+    "text": "我的房间很干净。",
+    "pinyin": "Wǒ de fángjiān hěn gānjìng.",
+    "english": "My room is clean."
+   }
+  },
+  {
+   "conceptId": "to-brush",
+   "text": "刷",
+   "pinyin": "shuā",
+   "example": {
+    "text": "我每天刷牙。",
+    "pinyin": "Wǒ měi tiān shuā yá.",
+    "english": "I brush my teeth every day."
+   }
+  },
+  {
+   "conceptId": "supermarket",
+   "text": "超市",
+   "pinyin": "chāoshì",
+   "example": {
+    "text": "我去超市买东西。",
+    "pinyin": "Wǒ qù chāoshì mǎi dōngxi.",
+    "english": "I'm going to the supermarket."
+   }
+  },
+  {
+   "conceptId": "hotel",
+   "text": "宾馆",
+   "pinyin": "bīnguǎn",
+   "example": {
+    "text": "我们住在宾馆。",
+    "pinyin": "Wǒmen zhù zài bīnguǎn.",
+    "english": "We're staying at a hotel."
+   }
+  },
+  {
+   "conceptId": "bank",
+   "text": "银行",
+   "pinyin": "yínháng",
+   "example": {
+    "text": "银行在医院旁边。",
+    "pinyin": "Yínháng zài yīyuàn pángbiān.",
+    "english": "The bank is next to the hospital."
+   }
+  },
+  {
+   "conceptId": "park",
+   "text": "公园",
+   "pinyin": "gōngyuán",
+   "example": {
+    "text": "我们去公园吧。",
+    "pinyin": "Wǒmen qù gōngyuán ba.",
+    "english": "Let's go to the park."
+   }
+  },
+  {
+   "conceptId": "library",
+   "text": "图书馆",
+   "pinyin": "túshūguǎn",
+   "example": {
+    "text": "我在图书馆看书。",
+    "pinyin": "Wǒ zài túshūguǎn kàn shū.",
+    "english": "I read in the library."
+   }
+  },
+  {
+   "conceptId": "restroom",
+   "text": "洗手间",
+   "pinyin": "xǐshǒujiān",
+   "example": {
+    "text": "请问，洗手间在哪里？",
+    "pinyin": "Qǐngwèn, xǐshǒujiān zài nǎlǐ?",
+    "english": "Excuse me, where's the restroom?"
+   }
+  },
+  {
+   "conceptId": "office",
+   "text": "办公室",
+   "pinyin": "bàngōngshì",
+   "example": {
+    "text": "经理在办公室。",
+    "pinyin": "Jīnglǐ zài bàngōngshì.",
+    "english": "The manager is in the office."
+   }
+  },
+  {
+   "conceptId": "garden",
+   "text": "花园",
+   "pinyin": "huāyuán",
+   "example": {
+    "text": "我家有一个小花园。",
+    "pinyin": "Wǒ jiā yǒu yí ge xiǎo huāyuán.",
+    "english": "My house has a small garden."
+   }
+  },
+  {
+   "conceptId": "street",
+   "text": "街道",
+   "pinyin": "jiēdào",
+   "example": {
+    "text": "这条街道很安静。",
+    "pinyin": "Zhè tiáo jiēdào hěn ānjìng.",
+    "english": "This street is quiet."
+   }
+  },
+  {
+   "conceptId": "city",
+   "text": "城市",
+   "pinyin": "chéngshì",
+   "example": {
+    "text": "上海是一个大城市。",
+    "pinyin": "Shànghǎi shì yí ge dà chéngshì.",
+    "english": "Shanghai is a big city."
+   }
+  },
+  {
+   "conceptId": "subway",
+   "text": "地铁",
+   "pinyin": "dìtiě",
+   "example": {
+    "text": "我坐地铁上班。",
+    "pinyin": "Wǒ zuò dìtiě shàngbān.",
+    "english": "I take the subway to work."
+   }
+  },
+  {
+   "conceptId": "map",
+   "text": "地图",
+   "pinyin": "dìtú",
+   "example": {
+    "text": "你有地图吗？",
+    "pinyin": "Nǐ yǒu dìtú ma?",
+    "english": "Do you have a map?"
+   }
+  },
+  {
+   "conceptId": "passport",
+   "text": "护照",
+   "pinyin": "hùzhào",
+   "example": {
+    "text": "别忘记带护照！",
+    "pinyin": "Bié wàngjì dài hùzhào!",
+    "english": "Don't forget your passport!"
+   }
+  },
+  {
+   "conceptId": "suitcase",
+   "text": "行李箱",
+   "pinyin": "xínglixiāng",
+   "example": {
+    "text": "我的行李箱很重。",
+    "pinyin": "Wǒ de xínglixiāng hěn zhòng.",
+    "english": "My suitcase is heavy."
+   }
+  },
+  {
+   "conceptId": "station",
+   "text": "站",
+   "pinyin": "zhàn",
+   "example": {
+    "text": "公共汽车站在前面。",
+    "pinyin": "Gōnggòngqìchē zhàn zài qiánmiàn.",
+    "english": "The bus stop is up ahead."
+   }
+  },
+  {
+   "conceptId": "li-ng",
+   "text": "辆",
+   "pinyin": "liàng",
+   "example": {
+    "text": "我有一辆自行车。",
+    "pinyin": "Wǒ yǒu yí liàng zìxíngchē.",
+    "english": "I have a bicycle."
+   }
+  },
+  {
+   "conceptId": "to-ride",
+   "text": "骑",
+   "pinyin": "qí",
+   "example": {
+    "text": "我骑自行车上班。",
+    "pinyin": "Wǒ qí zìxíngchē shàngbān.",
+    "english": "I ride a bike to work."
+   }
+  },
+  {
+   "conceptId": "to-pass-by",
+   "text": "经过",
+   "pinyin": "jīngguò",
+   "example": {
+    "text": "我每天经过这个公园。",
+    "pinyin": "Wǒ měi tiān jīngguò zhè ge gōngyuán.",
+    "english": "I pass this park every day."
+   }
+  },
+  {
+   "conceptId": "to-leave",
+   "text": "离开",
+   "pinyin": "líkāi",
+   "example": {
+    "text": "他已经离开了。",
+    "pinyin": "Tā yǐjīng líkāi le.",
+    "english": "He's already left."
+   }
+  },
+  {
+   "conceptId": "nearby",
+   "text": "附近",
+   "pinyin": "fùjìn",
+   "example": {
+    "text": "附近有超市吗？",
+    "pinyin": "Fùjìn yǒu chāoshì ma?",
+    "english": "Is there a supermarket nearby?"
+   }
+  },
+  {
+   "conceptId": "place",
+   "text": "地方",
+   "pinyin": "dìfang",
+   "example": {
+    "text": "这是什么地方？",
+    "pinyin": "Zhè shì shénme dìfang?",
+    "english": "What is this place?"
+   }
+  },
+  {
+   "conceptId": "east",
+   "text": "东",
+   "pinyin": "dōng",
+   "example": {
+    "text": "太阳从东边出来。",
+    "pinyin": "Tàiyáng cóng dōngbiān chūlái.",
+    "english": "The sun rises in the east."
+   }
+  },
+  {
+   "conceptId": "south",
+   "text": "南",
+   "pinyin": "nán",
+   "example": {
+    "text": "我家在城市的南边。",
+    "pinyin": "Wǒ jiā zài chéngshì de nánbiān.",
+    "english": "My home is in the south of the city."
+   }
+  },
+  {
+   "conceptId": "west",
+   "text": "西",
+   "pinyin": "xī",
+   "example": {
+    "text": "太阳在西边。",
+    "pinyin": "Tàiyáng zài xībiān.",
+    "english": "The sun is in the west."
+   }
+  },
+  {
+   "conceptId": "the-north",
+   "text": "北方",
+   "pinyin": "běifāng",
+   "example": {
+    "text": "北方的冬天很冷。",
+    "pinyin": "Běifāng de dōngtiān hěn lěng.",
+    "english": "Winters in the north are cold."
+   }
+  },
+  {
+   "conceptId": "middle",
+   "text": "中间",
+   "pinyin": "zhōngjiān",
+   "example": {
+    "text": "我坐在他们中间。",
+    "pinyin": "Wǒ zuò zài tāmen zhōngjiān.",
+    "english": "I'm sitting between them."
+   }
+  },
+  {
+   "conceptId": "world",
+   "text": "世界",
+   "pinyin": "shìjiè",
+   "example": {
+    "text": "世界很大。",
+    "pinyin": "Shìjiè hěn dà.",
+    "english": "The world is big."
+   }
+  },
+  {
+   "conceptId": "country",
+   "text": "国家",
+   "pinyin": "guójiā",
+   "example": {
+    "text": "中国是一个大国家。",
+    "pinyin": "Zhōngguó shì yí ge dà guójiā.",
+    "english": "China is a big country."
+   }
+  },
+  {
+   "conceptId": "river",
+   "text": "河",
+   "pinyin": "hé",
+   "example": {
+    "text": "河里有很多鱼。",
+    "pinyin": "Hé lǐ yǒu hěn duō yú.",
+    "english": "There are lots of fish in the river."
+   }
+  },
+  {
+   "conceptId": "environment",
+   "text": "环境",
+   "pinyin": "huánjìng",
+   "example": {
+    "text": "这里的环境很好。",
+    "pinyin": "Zhè lǐ de huánjìng hěn hǎo.",
+    "english": "The surroundings here are nice."
+   }
+  },
+  {
+   "conceptId": "corner",
+   "text": "角",
+   "pinyin": "jiǎo",
+   "example": {
+    "text": "这个苹果五角。",
+    "pinyin": "Zhè ge píngguǒ wǔ jiǎo.",
+    "english": "This apple costs five jiao."
+   }
+  },
+  {
+   "conceptId": "animal",
+   "text": "动物",
+   "pinyin": "dòngwù",
+   "example": {
+    "text": "你喜欢什么动物？",
+    "pinyin": "Nǐ xǐhuan shénme dòngwù?",
+    "english": "What animals do you like?"
+   }
+  },
+  {
+   "conceptId": "panda",
+   "text": "熊猫",
+   "pinyin": "xióngmāo",
+   "example": {
+    "text": "熊猫很可爱。",
+    "pinyin": "Xióngmāo hěn kěài.",
+    "english": "Pandas are cute."
+   }
+  },
+  {
+   "conceptId": "bird",
+   "text": "鸟",
+   "pinyin": "niǎo",
+   "example": {
+    "text": "树上有一只鸟。",
+    "pinyin": "Shù shàng yǒu yì zhī niǎo.",
+    "english": "There's a bird in the tree."
+   }
+  },
+  {
+   "conceptId": "horse",
+   "text": "马",
+   "pinyin": "mǎ",
+   "example": {
+    "text": "他会骑马。",
+    "pinyin": "Tā huì qí mǎ.",
+    "english": "He can ride a horse."
+   }
+  },
+  {
+   "conceptId": "grass",
+   "text": "草",
+   "pinyin": "cǎo",
+   "example": {
+    "text": "草是绿的。",
+    "pinyin": "Cǎo shì lǜ de.",
+    "english": "Grass is green."
+   }
+  },
+  {
+   "conceptId": "tree",
+   "text": "树",
+   "pinyin": "shù",
+   "example": {
+    "text": "公园里有很多树。",
+    "pinyin": "Gōngyuán lǐ yǒu hěn duō shù.",
+    "english": "There are many trees in the park."
+   }
+  },
+  {
+   "conceptId": "flower",
+   "text": "花",
+   "pinyin": "huā",
+   "example": {
+    "text": "这些花很漂亮。",
+    "pinyin": "Zhè xiē huā hěn piàoliang.",
+    "english": "These flowers are beautiful."
+   }
+  },
+  {
+   "conceptId": "sun",
+   "text": "太阳",
+   "pinyin": "tàiyáng",
+   "example": {
+    "text": "今天太阳很大。",
+    "pinyin": "Jīntiān tàiyáng hěn dà.",
+    "english": "The sun is strong today."
+   }
+  },
+  {
+   "conceptId": "moon",
+   "text": "月亮",
+   "pinyin": "yuèliang",
+   "example": {
+    "text": "今天的月亮很圆。",
+    "pinyin": "Jīntiān de yuèliang hěn yuán.",
+    "english": "The moon is full tonight."
+   }
+  },
+  {
+   "conceptId": "cloud",
+   "text": "云",
+   "pinyin": "yún",
+   "example": {
+    "text": "天上有很多云。",
+    "pinyin": "Tiān shàng yǒu hěn duō yún.",
+    "english": "There are lots of clouds in the sky."
+   }
+  },
+  {
+   "conceptId": "to-blow",
+   "text": "刮",
+   "pinyin": "guā",
+   "example": {
+    "text": "今天刮风了。",
+    "pinyin": "Jīntiān guā fēng le.",
+    "english": "It's windy today."
+   }
+  },
+  {
+   "conceptId": "spring",
+   "text": "春",
+   "pinyin": "chūn",
+   "example": {
+    "text": "春天来了。",
+    "pinyin": "Chūntiān lái le.",
+    "english": "Spring is here."
+   }
+  },
+  {
+   "conceptId": "summer",
+   "text": "夏",
+   "pinyin": "xià",
+   "example": {
+    "text": "夏天很热。",
+    "pinyin": "Xiàtiān hěn rè.",
+    "english": "Summer is hot."
+   }
+  },
+  {
+   "conceptId": "autumn",
+   "text": "秋",
+   "pinyin": "qiū",
+   "example": {
+    "text": "秋天是北京最好的季节。",
+    "pinyin": "Qiūtiān shì Běijīng zuì hǎo de jìjié.",
+    "english": "Autumn is the best season in Beijing."
+   }
+  },
+  {
+   "conceptId": "winter",
+   "text": "冬",
+   "pinyin": "dōng",
+   "example": {
+    "text": "冬天很冷。",
+    "pinyin": "Dōngtiān hěn lěng.",
+    "english": "Winter is cold."
+   }
+  },
+  {
+   "conceptId": "season",
+   "text": "季节",
+   "pinyin": "jìjié",
+   "example": {
+    "text": "你最喜欢哪个季节？",
+    "pinyin": "Nǐ zuì xǐhuan nǎ ge jìjié?",
+    "english": "Which season do you like best?"
+   }
+  },
+  {
+   "conceptId": "change",
+   "text": "变化",
+   "pinyin": "biànhuà",
+   "example": {
+    "text": "这里的变化很大。",
+    "pinyin": "Zhè lǐ de biànhuà hěn dà.",
+    "english": "This place has changed a lot."
+   }
+  },
+  {
+   "conceptId": "weekend",
+   "text": "周末",
+   "pinyin": "zhōumò",
+   "example": {
+    "text": "周末我们去公园。",
+    "pinyin": "Zhōumò wǒmen qù gōngyuán.",
+    "english": "We go to the park on weekends."
+   }
+  },
+  {
+   "conceptId": "holiday",
+   "text": "节日",
+   "pinyin": "jiérì",
+   "example": {
+    "text": "春节是中国最重要的节日。",
+    "pinyin": "Chūnjié shì Zhōngguó zuì zhòngyào de jiérì.",
+    "english": "Spring Festival is China's biggest holiday."
+   }
+  },
+  {
+   "conceptId": "just-now",
+   "text": "刚才",
+   "pinyin": "gāngcái",
+   "example": {
+    "text": "他刚才来过。",
+    "pinyin": "Tā gāngcái lái guò.",
+    "english": "He was here just now."
+   }
+  },
+  {
+   "conceptId": "right-away",
+   "text": "马上",
+   "pinyin": "mǎshàng",
+   "example": {
+    "text": "我马上来。",
+    "pinyin": "Wǒ mǎshàng lái.",
+    "english": "I'm coming right away."
+   }
+  },
+  {
+   "conceptId": "recently",
+   "text": "最近",
+   "pinyin": "zuìjìn",
+   "example": {
+    "text": "你最近忙吗？",
+    "pinyin": "Nǐ zuìjìn máng ma?",
+    "english": "Have you been busy lately?"
+   }
+  },
+  {
+   "conceptId": "before",
+   "text": "以前",
+   "pinyin": "yǐqián",
+   "example": {
+    "text": "以前我住在北京。",
+    "pinyin": "Yǐqián wǒ zhù zài Běijīng.",
+    "english": "I used to live in Beijing."
+   }
+  },
+  {
+   "conceptId": "after",
+   "text": "以后",
+   "pinyin": "yǐhòu",
+   "example": {
+    "text": "下班以后我去跑步。",
+    "pinyin": "Xiàbān yǐhòu wǒ qù pǎobù.",
+    "english": "After work I go running."
+   }
+  },
+  {
+   "conceptId": "the-past",
+   "text": "过去",
+   "pinyin": "guòqù",
+   "example": {
+    "text": "过去的事情别想了。",
+    "pinyin": "Guòqù de shìqing bié xiǎng le.",
+    "english": "Don't dwell on the past."
+   }
+  },
+  {
+   "conceptId": "a-little-while",
+   "text": "一会儿",
+   "pinyin": "yíhuìr",
+   "example": {
+    "text": "请等一会儿。",
+    "pinyin": "Qǐng děng yíhuìr.",
+    "english": "Please wait a moment."
+   }
+  },
+  {
+   "conceptId": "long-2",
+   "text": "久",
+   "pinyin": "jiǔ",
+   "example": {
+    "text": "好久不见！",
+    "pinyin": "Hǎo jiǔ bú jiàn!",
+    "english": "Long time no see!"
+   }
+  },
+  {
+   "conceptId": "quarter",
+   "text": "刻",
+   "pinyin": "kè",
+   "example": {
+    "text": "现在三点一刻。",
+    "pinyin": "Xiànzài sān diǎn yí kè.",
+    "english": "It's a quarter past three."
+   }
+  },
+  {
+   "conceptId": "half",
+   "text": "半",
+   "pinyin": "bàn",
+   "example": {
+    "text": "现在七点半。",
+    "pinyin": "Xiànzài qī diǎn bàn.",
+    "english": "It's half past seven."
+   }
+  },
+  {
+   "conceptId": "minute-2",
+   "text": "分",
+   "pinyin": "fēn",
+   "example": {
+    "text": "现在八点十分。",
+    "pinyin": "Xiànzài bā diǎn shí fēn.",
+    "english": "It's ten past eight."
+   }
+  },
+  {
+   "conceptId": "often",
+   "text": "经常",
+   "pinyin": "jīngcháng",
+   "example": {
+    "text": "我经常去图书馆。",
+    "pinyin": "Wǒ jīngcháng qù túshūguǎn.",
+    "english": "I often go to the library."
+   }
+  },
+  {
+   "conceptId": "always",
+   "text": "总是",
+   "pinyin": "zǒngshì",
+   "example": {
+    "text": "他总是迟到。",
+    "pinyin": "Tā zǒngshì chídào.",
+    "english": "He's always late."
+   }
+  },
+  {
+   "conceptId": "all-along",
+   "text": "一直",
+   "pinyin": "yìzhí",
+   "example": {
+    "text": "一直往前走。",
+    "pinyin": "Yìzhí wǎng qián zǒu.",
+    "english": "Go straight ahead."
+   }
+  },
+  {
+   "conceptId": "usually",
+   "text": "一般",
+   "pinyin": "yìbān",
+   "example": {
+    "text": "我一般七点起床。",
+    "pinyin": "Wǒ yìbān qī diǎn qǐchuáng.",
+    "english": "I usually get up at seven."
+   }
+  },
+  {
+   "conceptId": "in-total",
+   "text": "一共",
+   "pinyin": "yígòng",
+   "example": {
+    "text": "一共多少钱？",
+    "pinyin": "Yígòng duōshao qián?",
+    "english": "How much in total?"
+   }
+  },
+  {
+   "conceptId": "almost",
+   "text": "几乎",
+   "pinyin": "jīhū",
+   "example": {
+    "text": "我几乎每天都跑步。",
+    "pinyin": "Wǒ jīhū měi tiān dōu pǎobù.",
+    "english": "I run almost every day."
+   }
+  },
+  {
+   "conceptId": "finally",
+   "text": "终于",
+   "pinyin": "zhōngyú",
+   "example": {
+    "text": "我们终于到了！",
+    "pinyin": "Wǒmen zhōngyú dào le!",
+    "english": "We finally made it!"
+   }
+  },
+  {
+   "conceptId": "suddenly",
+   "text": "突然",
+   "pinyin": "tūrán",
+   "example": {
+    "text": "突然下雨了。",
+    "pinyin": "Tūrán xiàyǔ le.",
+    "english": "Suddenly it started raining."
+   }
+  },
+  {
+   "conceptId": "again-2",
+   "text": "又",
+   "pinyin": "yòu",
+   "example": {
+    "text": "他又迟到了。",
+    "pinyin": "Tā yòu chídào le.",
+    "english": "He's late again."
+   }
+  },
+  {
+   "conceptId": "not-until",
+   "text": "才",
+   "pinyin": "cái",
+   "example": {
+    "text": "我十点才起床。",
+    "pinyin": "Wǒ shí diǎn cái qǐchuáng.",
+    "english": "I didn't get up until ten."
+   }
+  },
+  {
+   "conceptId": "even-more",
+   "text": "更",
+   "pinyin": "gèng",
+   "example": {
+    "text": "今天比昨天更冷。",
+    "pinyin": "Jīntiān bǐ zuótiān gèng lěng.",
+    "english": "Today is even colder than yesterday."
+   }
+  },
+  {
+   "conceptId": "class-2",
+   "text": "班",
+   "pinyin": "bān",
+   "example": {
+    "text": "我们班有三十个学生。",
+    "pinyin": "Wǒmen bān yǒu sānshí ge xuésheng.",
+    "english": "Our class has thirty students."
+   }
+  },
+  {
+   "conceptId": "grade",
+   "text": "年级",
+   "pinyin": "niánjí",
+   "example": {
+    "text": "我上三年级。",
+    "pinyin": "Wǒ shàng sān niánjí.",
+    "english": "I'm in third grade."
+   }
+  },
+  {
+   "conceptId": "math",
+   "text": "数学",
+   "pinyin": "shùxué",
+   "example": {
+    "text": "我喜欢数学。",
+    "pinyin": "Wǒ xǐhuan shùxué.",
+    "english": "I like math."
+   }
+  },
+  {
+   "conceptId": "history",
+   "text": "历史",
+   "pinyin": "lìshǐ",
+   "example": {
+    "text": "中国的历史很长。",
+    "pinyin": "Zhōngguó de lìshǐ hěn cháng.",
+    "english": "China has a long history."
+   }
+  },
+  {
+   "conceptId": "sports",
+   "text": "体育",
+   "pinyin": "tǐyù",
+   "example": {
+    "text": "我们下午有体育课。",
+    "pinyin": "Wǒmen xiàwǔ yǒu tǐyù kè.",
+    "english": "We have PE this afternoon."
+   }
+  },
+  {
+   "conceptId": "homework",
+   "text": "作业",
+   "pinyin": "zuòyè",
+   "example": {
+    "text": "我在做作业。",
+    "pinyin": "Wǒ zài zuò zuòyè.",
+    "english": "I'm doing homework."
+   }
+  },
+  {
+   "conceptId": "to-practice",
+   "text": "练习",
+   "pinyin": "liànxí",
+   "example": {
+    "text": "我每天练习说汉语。",
+    "pinyin": "Wǒ měi tiān liànxí shuō Hànyǔ.",
+    "english": "I practice speaking Chinese every day."
+   }
+  },
+  {
+   "conceptId": "to-review",
+   "text": "复习",
+   "pinyin": "fùxí",
+   "example": {
+    "text": "明天考试，我要复习。",
+    "pinyin": "Míngtiān kǎoshì, wǒ yào fùxí.",
+    "english": "There's an exam tomorrow, so I need to review."
+   }
+  },
+  {
+   "conceptId": "grade-2",
+   "text": "成绩",
+   "pinyin": "chéngjì",
+   "example": {
+    "text": "他的成绩很好。",
+    "pinyin": "Tā de chéngjì hěn hǎo.",
+    "english": "His grades are good."
+   }
+  },
+  {
+   "conceptId": "blackboard",
+   "text": "黑板",
+   "pinyin": "hēibǎn",
+   "example": {
+    "text": "老师在黑板上写字。",
+    "pinyin": "Lǎoshī zài hēibǎn shàng xiě zì.",
+    "english": "The teacher writes on the blackboard."
+   }
+  },
+  {
+   "conceptId": "pencil",
+   "text": "铅笔",
+   "pinyin": "qiānbǐ",
+   "example": {
+    "text": "你有铅笔吗？",
+    "pinyin": "Nǐ yǒu qiānbǐ ma?",
+    "english": "Do you have a pencil?"
+   }
+  },
+  {
+   "conceptId": "word",
+   "text": "词语",
+   "pinyin": "cíyǔ",
+   "example": {
+    "text": "这个词语是什么意思？",
+    "pinyin": "Zhè ge cíyǔ shì shénme yìsi?",
+    "english": "What does this word mean?"
+   }
+  },
+  {
+   "conceptId": "sentence",
+   "text": "句子",
+   "pinyin": "jùzi",
+   "example": {
+    "text": "请读这个句子。",
+    "pinyin": "Qǐng dú zhè ge jùzi.",
+    "english": "Please read this sentence."
+   }
+  },
+  {
+   "conceptId": "dictionary",
+   "text": "字典",
+   "pinyin": "zìdiǎn",
+   "example": {
+    "text": "我用字典查字。",
+    "pinyin": "Wǒ yòng zìdiǎn chá zì.",
+    "english": "I look up characters in the dictionary."
+   }
+  },
+  {
+   "conceptId": "mandarin",
+   "text": "普通话",
+   "pinyin": "pǔtōnghuà",
+   "example": {
+    "text": "你的普通话说得很好。",
+    "pinyin": "Nǐ de pǔtōnghuà shuō de hěn hǎo.",
+    "english": "Your Mandarin is very good."
+   }
+  },
+  {
+   "conceptId": "to-speak",
+   "text": "讲",
+   "pinyin": "jiǎng",
+   "example": {
+    "text": "请再讲一次。",
+    "pinyin": "Qǐng zài jiǎng yí cì.",
+    "english": "Please explain it again."
+   }
+  },
+  {
+   "conceptId": "to-teach",
+   "text": "教",
+   "pinyin": "jiāo",
+   "example": {
+    "text": "她教我汉语。",
+    "pinyin": "Tā jiāo wǒ Hànyǔ.",
+    "english": "She teaches me Chinese."
+   }
+  },
+  {
+   "conceptId": "level",
+   "text": "水平",
+   "pinyin": "shuǐpíng",
+   "example": {
+    "text": "我的汉语水平不高。",
+    "pinyin": "Wǒ de Hànyǔ shuǐpíng bù gāo.",
+    "english": "My Chinese level isn't high."
+   }
+  },
+  {
+   "conceptId": "to-improve",
+   "text": "提高",
+   "pinyin": "tígāo",
+   "example": {
+    "text": "我想提高我的汉语水平。",
+    "pinyin": "Wǒ xiǎng tígāo wǒ de Hànyǔ shuǐpíng.",
+    "english": "I want to improve my Chinese."
+   }
+  },
+  {
+   "conceptId": "to-understand-2",
+   "text": "明白",
+   "pinyin": "míngbai",
+   "example": {
+    "text": "我明白了。",
+    "pinyin": "Wǒ míngbai le.",
+    "english": "I understand."
+   }
+  },
+  {
+   "conceptId": "clear",
+   "text": "清楚",
+   "pinyin": "qīngchu",
+   "example": {
+    "text": "我听不清楚。",
+    "pinyin": "Wǒ tīng bù qīngchu.",
+    "english": "I can't hear clearly."
+   }
+  },
+  {
+   "conceptId": "to-understand-3",
+   "text": "了解",
+   "pinyin": "liǎojiě",
+   "example": {
+    "text": "我不太了解他。",
+    "pinyin": "Wǒ bú tài liǎojiě tā.",
+    "english": "I don't know him very well."
+   }
+  },
+  {
+   "conceptId": "meeting",
+   "text": "会议",
+   "pinyin": "huìyì",
+   "example": {
+    "text": "下午有一个会议。",
+    "pinyin": "Xiàwǔ yǒu yí ge huìyì.",
+    "english": "There's a meeting this afternoon."
+   }
+  },
+  {
+   "conceptId": "way",
+   "text": "办法",
+   "pinyin": "bànfǎ",
+   "example": {
+    "text": "我有一个好办法。",
+    "pinyin": "Wǒ yǒu yí ge hǎo bànfǎ.",
+    "english": "I have a good idea."
+   }
+  },
+  {
+   "conceptId": "to-solve",
+   "text": "解决",
+   "pinyin": "jiějué",
+   "example": {
+    "text": "这个问题很难解决。",
+    "pinyin": "Zhè ge wèntí hěn nán jiějué.",
+    "english": "This problem is hard to solve."
+   }
+  },
+  {
+   "conceptId": "to-complete",
+   "text": "完成",
+   "pinyin": "wánchéng",
+   "example": {
+    "text": "我完成作业了。",
+    "pinyin": "Wǒ wánchéng zuòyè le.",
+    "english": "I finished my homework."
+   }
+  },
+  {
+   "conceptId": "to-hold",
+   "text": "举行",
+   "pinyin": "jǔxíng",
+   "example": {
+    "text": "明天举行比赛。",
+    "pinyin": "Míngtiān jǔxíng bǐsài.",
+    "english": "The competition is tomorrow."
+   }
+  },
+  {
+   "conceptId": "to-take-part-in",
+   "text": "参加",
+   "pinyin": "cānjiā",
+   "example": {
+    "text": "你参加比赛吗？",
+    "pinyin": "Nǐ cānjiā bǐsài ma?",
+    "english": "Are you entering the competition?"
+   }
+  },
+  {
+   "conceptId": "to-end",
+   "text": "结束",
+   "pinyin": "jiéshù",
+   "example": {
+    "text": "会议结束了。",
+    "pinyin": "Huìyì jiéshù le.",
+    "english": "The meeting is over."
+   }
+  },
+  {
+   "conceptId": "chance",
+   "text": "机会",
+   "pinyin": "jīhuì",
+   "example": {
+    "text": "这是一个好机会。",
+    "pinyin": "Zhè shì yí ge hǎo jīhuì.",
+    "english": "This is a good opportunity."
+   }
+  },
+  {
+   "conceptId": "to-require",
+   "text": "要求",
+   "pinyin": "yāoqiú",
+   "example": {
+    "text": "老师要求我们每天练习。",
+    "pinyin": "Lǎoshī yāoqiú wǒmen měi tiān liànxí.",
+    "english": "The teacher wants us to practice every day."
+   }
+  },
+  {
+   "conceptId": "hobby",
+   "text": "爱好",
+   "pinyin": "àihào",
+   "example": {
+    "text": "你的爱好是什么？",
+    "pinyin": "Nǐ de àihào shì shénme?",
+    "english": "What's your hobby?"
+   }
+  },
+  {
+   "conceptId": "interest",
+   "text": "兴趣",
+   "pinyin": "xìngqù",
+   "example": {
+    "text": "我对音乐很有兴趣。",
+    "pinyin": "Wǒ duì yīnyuè hěn yǒu xìngqù.",
+    "english": "I'm very interested in music."
+   }
+  },
+  {
+   "conceptId": "music",
+   "text": "音乐",
+   "pinyin": "yīnyuè",
+   "example": {
+    "text": "我喜欢听音乐。",
+    "pinyin": "Wǒ xǐhuan tīng yīnyuè.",
+    "english": "I like listening to music."
+   }
+  },
+  {
+   "conceptId": "game",
+   "text": "游戏",
+   "pinyin": "yóuxì",
+   "example": {
+    "text": "孩子们在玩游戏。",
+    "pinyin": "Háizi men zài wán yóuxì.",
+    "english": "The kids are playing a game."
+   }
+  },
+  {
+   "conceptId": "program",
+   "text": "节目",
+   "pinyin": "jiémù",
+   "example": {
+    "text": "这个电视节目很有意思。",
+    "pinyin": "Zhè ge diànshì jiémù hěn yǒuyìsi.",
+    "english": "This TV show is interesting."
+   }
+  },
+  {
+   "conceptId": "to-perform",
+   "text": "表演",
+   "pinyin": "biǎoyǎn",
+   "example": {
+    "text": "她在学校表演唱歌。",
+    "pinyin": "Tā zài xuéxiào biǎoyǎn chànggē.",
+    "english": "She sang in a school performance."
+   }
+  },
+  {
+   "conceptId": "competition",
+   "text": "比赛",
+   "pinyin": "bǐsài",
+   "example": {
+    "text": "今天有足球比赛。",
+    "pinyin": "Jīntiān yǒu zúqiú bǐsài.",
+    "english": "There's a soccer match today."
+   }
+  },
+  {
+   "conceptId": "to-draw",
+   "text": "画",
+   "pinyin": "huà",
+   "example": {
+    "text": "我喜欢画画。",
+    "pinyin": "Wǒ xǐhuan huà huà.",
+    "english": "I like drawing."
+   }
+  },
+  {
+   "conceptId": "to-climb-mountains",
+   "text": "爬山",
+   "pinyin": "páshān",
+   "example": {
+    "text": "周末我们去爬山。",
+    "pinyin": "Zhōumò wǒmen qù páshān.",
+    "english": "We go hiking on weekends."
+   }
+  },
+  {
+   "conceptId": "to-go-online",
+   "text": "上网",
+   "pinyin": "shàngwǎng",
+   "example": {
+    "text": "我每天上网。",
+    "pinyin": "Wǒ měi tiān shàngwǎng.",
+    "english": "I go online every day."
+   }
+  },
+  {
+   "conceptId": "photo",
+   "text": "照片",
+   "pinyin": "zhàopiàn",
+   "example": {
+    "text": "这是我家的照片。",
+    "pinyin": "Zhè shì wǒ jiā de zhàopiàn.",
+    "english": "This is a photo of my family."
+   }
+  },
+  {
+   "conceptId": "camera",
+   "text": "照相机",
+   "pinyin": "zhàoxiàngjī",
+   "example": {
+    "text": "我的照相机很旧。",
+    "pinyin": "Wǒ de zhàoxiàngjī hěn jiù.",
+    "english": "My camera is old."
+   }
+  },
+  {
+   "conceptId": "electronic",
+   "text": "电子",
+   "pinyin": "diànzǐ",
+   "example": {
+    "text": "我有一本电子书。",
+    "pinyin": "Wǒ yǒu yì běn diànzǐ shū.",
+    "english": "I have an e-book."
+   }
+  },
+  {
+   "conceptId": "news",
+   "text": "新闻",
+   "pinyin": "xīnwén",
+   "example": {
+    "text": "爸爸每天看新闻。",
+    "pinyin": "Bàba měi tiān kàn xīnwén.",
+    "english": "Dad watches the news every day."
+   }
+  },
+  {
+   "conceptId": "letter",
+   "text": "信",
+   "pinyin": "xìn",
+   "example": {
+    "text": "我给奶奶写信。",
+    "pinyin": "Wǒ gěi nǎinai xiě xìn.",
+    "english": "I'm writing a letter to grandma."
+   }
+  },
+  {
+   "conceptId": "story",
+   "text": "故事",
+   "pinyin": "gùshi",
+   "example": {
+    "text": "奶奶给我讲故事。",
+    "pinyin": "Nǎinai gěi wǒ jiǎng gùshi.",
+    "english": "Grandma tells me stories."
+   }
+  },
+  {
+   "conceptId": "culture",
+   "text": "文化",
+   "pinyin": "wénhuà",
+   "example": {
+    "text": "我对中国文化很有兴趣。",
+    "pinyin": "Wǒ duì Zhōngguó wénhuà hěn yǒu xìngqù.",
+    "english": "I'm very interested in Chinese culture."
+   }
+  },
+  {
+   "conceptId": "to-worry",
+   "text": "担心",
+   "pinyin": "dānxīn",
+   "example": {
+    "text": "别担心！",
+    "pinyin": "Bié dānxīn!",
+    "english": "Don't worry!"
+   }
+  },
+  {
+   "conceptId": "to-be-afraid",
+   "text": "害怕",
+   "pinyin": "hàipà",
+   "example": {
+    "text": "我害怕狗。",
+    "pinyin": "Wǒ hàipà gǒu.",
+    "english": "I'm afraid of dogs."
+   }
+  },
+  {
+   "conceptId": "angry",
+   "text": "生气",
+   "pinyin": "shēngqì",
+   "example": {
+    "text": "妈妈生气了。",
+    "pinyin": "Māma shēngqì le.",
+    "english": "Mom is angry."
+   }
+  },
+  {
+   "conceptId": "sad",
+   "text": "难过",
+   "pinyin": "nánguò",
+   "example": {
+    "text": "他很难过。",
+    "pinyin": "Tā hěn nánguò.",
+    "english": "He is very sad."
+   }
+  },
+  {
+   "conceptId": "anxious",
+   "text": "着急",
+   "pinyin": "zháojí",
+   "example": {
+    "text": "别着急，慢慢来。",
+    "pinyin": "Bié zháojí, mànmàn lái.",
+    "english": "Don't rush, take your time."
+   }
+  },
+  {
+   "conceptId": "to-be-at-ease",
+   "text": "放心",
+   "pinyin": "fàngxīn",
+   "example": {
+    "text": "你放心吧。",
+    "pinyin": "Nǐ fàngxīn ba.",
+    "english": "Don't worry about it."
+   }
+  },
+  {
+   "conceptId": "satisfied",
+   "text": "满意",
+   "pinyin": "mǎnyì",
+   "example": {
+    "text": "我对我的成绩很满意。",
+    "pinyin": "Wǒ duì wǒ de chéngjì hěn mǎnyì.",
+    "english": "I'm happy with my grades."
+   }
+  },
+  {
+   "conceptId": "to-care-about",
+   "text": "关心",
+   "pinyin": "guānxīn",
+   "example": {
+    "text": "妈妈很关心我。",
+    "pinyin": "Māma hěn guānxīn wǒ.",
+    "english": "Mom cares about me a lot."
+   }
+  },
+  {
+   "conceptId": "to-cry",
+   "text": "哭",
+   "pinyin": "kū",
+   "example": {
+    "text": "孩子哭了。",
+    "pinyin": "Háizi kū le.",
+    "english": "The child is crying."
+   }
+  },
+  {
+   "conceptId": "strange",
+   "text": "奇怪",
+   "pinyin": "qíguài",
+   "example": {
+    "text": "这个人很奇怪。",
+    "pinyin": "Zhè ge rén hěn qíguài.",
+    "english": "This person is strange."
+   }
+  },
+  {
+   "conceptId": "short",
+   "text": "矮",
+   "pinyin": "ǎi",
+   "example": {
+    "text": "我比哥哥矮。",
+    "pinyin": "Wǒ bǐ gēge ǎi.",
+    "english": "I'm shorter than my older brother."
+   }
+  },
+  {
+   "conceptId": "fat",
+   "text": "胖",
+   "pinyin": "pàng",
+   "example": {
+    "text": "我的猫很胖。",
+    "pinyin": "Wǒ de māo hěn pàng.",
+    "english": "My cat is chubby."
+   }
+  },
+  {
+   "conceptId": "thin",
+   "text": "瘦",
+   "pinyin": "shòu",
+   "example": {
+    "text": "她很瘦。",
+    "pinyin": "Tā hěn shòu.",
+    "english": "She's thin."
+   }
+  },
+  {
+   "conceptId": "young",
+   "text": "年轻",
+   "pinyin": "niánqīng",
+   "example": {
+    "text": "我的老师很年轻。",
+    "pinyin": "Wǒ de lǎoshī hěn niánqīng.",
+    "english": "My teacher is young."
+   }
+  },
+  {
+   "conceptId": "old",
+   "text": "老",
+   "pinyin": "lǎo",
+   "example": {
+    "text": "爷爷老了。",
+    "pinyin": "Yéye lǎo le.",
+    "english": "Grandpa has gotten old."
+   }
+  },
+  {
+   "conceptId": "smart",
+   "text": "聪明",
+   "pinyin": "cōngming",
+   "example": {
+    "text": "这个孩子很聪明。",
+    "pinyin": "Zhè ge háizi hěn cōngming.",
+    "english": "This child is very smart."
+   }
+  },
+  {
+   "conceptId": "cute",
+   "text": "可爱",
+   "pinyin": "kě'ài",
+   "example": {
+    "text": "你的狗真可爱！",
+    "pinyin": "Nǐ de gǒu zhēn kěài!",
+    "english": "Your dog is so cute!"
+   }
+  },
+  {
+   "conceptId": "warm",
+   "text": "热情",
+   "pinyin": "rèqíng",
+   "example": {
+    "text": "他们对客人很热情。",
+    "pinyin": "Tāmen duì kèrén hěn rèqíng.",
+    "english": "They're very warm to guests."
+   }
+  },
+  {
+   "conceptId": "serious",
+   "text": "认真",
+   "pinyin": "rènzhēn",
+   "example": {
+    "text": "他学习很认真。",
+    "pinyin": "Tā xuéxí hěn rènzhēn.",
+    "english": "He studies very seriously."
+   }
+  },
+  {
+   "conceptId": "to-work-hard",
+   "text": "努力",
+   "pinyin": "nǔlì",
+   "example": {
+    "text": "我会努力学习。",
+    "pinyin": "Wǒ huì nǔlì xuéxí.",
+    "english": "I'll study hard."
+   }
+  },
+  {
+   "conceptId": "famous",
+   "text": "有名",
+   "pinyin": "yǒumíng",
+   "example": {
+    "text": "这个饭馆很有名。",
+    "pinyin": "Zhè ge fànguǎn hěn yǒumíng.",
+    "english": "This restaurant is famous."
+   }
+  },
+  {
+   "conceptId": "quiet",
+   "text": "安静",
+   "pinyin": "ānjìng",
+   "example": {
+    "text": "图书馆里很安静。",
+    "pinyin": "Túshūguǎn lǐ hěn ānjìng.",
+    "english": "It's quiet in the library."
+   }
+  },
+  {
+   "conceptId": "convenient",
+   "text": "方便",
+   "pinyin": "fāngbiàn",
+   "example": {
+    "text": "坐地铁很方便。",
+    "pinyin": "Zuò dìtiě hěn fāngbiàn.",
+    "english": "Taking the subway is convenient."
+   }
+  },
+  {
+   "conceptId": "simple",
+   "text": "简单",
+   "pinyin": "jiǎndān",
+   "example": {
+    "text": "这个题很简单。",
+    "pinyin": "Zhè ge tí hěn jiǎndān.",
+    "english": "This question is simple."
+   }
+  },
+  {
+   "conceptId": "easy",
+   "text": "容易",
+   "pinyin": "róngyì",
+   "example": {
+    "text": "汉语不难，很容易。",
+    "pinyin": "Hànyǔ bù nán, hěn róngyì.",
+    "english": "Chinese isn't hard, it's easy."
+   }
+  },
+  {
+   "conceptId": "difficult",
+   "text": "难",
+   "pinyin": "nán",
+   "example": {
+    "text": "数学很难。",
+    "pinyin": "Shùxué hěn nán.",
+    "english": "Math is hard."
+   }
+  },
+  {
+   "conceptId": "bad",
+   "text": "坏",
+   "pinyin": "huài",
+   "example": {
+    "text": "我的手机坏了。",
+    "pinyin": "Wǒ de shǒujī huài le.",
+    "english": "My phone is broken."
+   }
+  },
+  {
+   "conceptId": "old-2",
+   "text": "旧",
+   "pinyin": "jiù",
+   "example": {
+    "text": "这是我的旧手机。",
+    "pinyin": "Zhè shì wǒ de jiù shǒujī.",
+    "english": "This is my old phone."
+   }
+  },
+  {
+   "conceptId": "short-2",
+   "text": "短",
+   "pinyin": "duǎn",
+   "example": {
+    "text": "我的头发很短。",
+    "pinyin": "Wǒ de tóufa hěn duǎn.",
+    "english": "My hair is short."
+   }
+  },
+  {
+   "conceptId": "low",
+   "text": "低",
+   "pinyin": "dī",
+   "example": {
+    "text": "今天温度很低。",
+    "pinyin": "Jīntiān wēndù hěn dī.",
+    "english": "The temperature is low today."
+   }
+  },
+  {
+   "conceptId": "poor",
+   "text": "差",
+   "pinyin": "chà",
+   "example": {
+    "text": "他的成绩很差。",
+    "pinyin": "Tā de chéngjì hěn chà.",
+    "english": "His grades are poor."
+   }
+  },
+  {
+   "conceptId": "especially",
+   "text": "特别",
+   "pinyin": "tèbié",
+   "example": {
+    "text": "我特别喜欢熊猫。",
+    "pinyin": "Wǒ tèbié xǐhuan xióngmāo.",
+    "english": "I especially like pandas."
+   }
+  },
+  {
+   "conceptId": "important",
+   "text": "重要",
+   "pinyin": "zhòngyào",
+   "example": {
+    "text": "这个会议很重要。",
+    "pinyin": "Zhè ge huìyì hěn zhòngyào.",
+    "english": "This meeting is important."
+   }
+  },
+  {
+   "conceptId": "identical",
+   "text": "相同",
+   "pinyin": "xiāngtóng",
+   "example": {
+    "text": "我们的爱好相同。",
+    "pinyin": "Wǒmen de àihào xiāngtóng.",
+    "english": "We have the same hobbies."
+   }
+  },
+  {
+   "conceptId": "main",
+   "text": "主要",
+   "pinyin": "zhǔyào",
+   "example": {
+    "text": "这是主要的问题。",
+    "pinyin": "Zhè shì zhǔyào de wèntí.",
+    "english": "This is the main problem."
+   }
+  },
+  {
+   "conceptId": "the-same",
+   "text": "一样",
+   "pinyin": "yíyàng",
+   "example": {
+    "text": "我和你一样高。",
+    "pinyin": "Wǒ hé nǐ yíyàng gāo.",
+    "english": "I'm as tall as you."
+   }
+  },
+  {
+   "conceptId": "yellow",
+   "text": "黄",
+   "pinyin": "huáng",
+   "example": {
+    "text": "香蕉是黄的。",
+    "pinyin": "Xiāngjiāo shì huáng de.",
+    "english": "Bananas are yellow."
+   }
+  },
+  {
+   "conceptId": "blue",
+   "text": "蓝",
+   "pinyin": "lán",
+   "example": {
+    "text": "天是蓝的。",
+    "pinyin": "Tiān shì lán de.",
+    "english": "The sky is blue."
+   }
+  },
+  {
+   "conceptId": "green",
+   "text": "绿",
+   "pinyin": "lǜ",
+   "example": {
+    "text": "树是绿的。",
+    "pinyin": "Shù shì lǜ de.",
+    "english": "Trees are green."
+   }
+  },
+  {
+   "conceptId": "ten-thousand",
+   "text": "万",
+   "pinyin": "wàn",
+   "example": {
+    "text": "这个电脑一万块。",
+    "pinyin": "Zhè ge diànnǎo yí wàn kuài.",
+    "english": "This computer costs ten thousand yuan."
+   }
+  },
+  {
+   "conceptId": "meter",
+   "text": "米",
+   "pinyin": "mǐ",
+   "example": {
+    "text": "他有一米八。",
+    "pinyin": "Tā yǒu yì mǐ bā.",
+    "english": "He's 1.8 meters tall."
+   }
+  },
+  {
+   "conceptId": "w-i",
+   "text": "位",
+   "pinyin": "wèi",
+   "example": {
+    "text": "这位是我的老师。",
+    "pinyin": "Zhè wèi shì wǒ de lǎoshī.",
+    "english": "This is my teacher."
+   }
+  },
+  {
+   "conceptId": "section",
+   "text": "段",
+   "pinyin": "duàn",
+   "example": {
+    "text": "这段时间我很忙。",
+    "pinyin": "Zhè duàn shíjiān wǒ hěn máng.",
+    "english": "I've been busy lately."
+   }
+  },
+  {
+   "conceptId": "kind",
+   "text": "种",
+   "pinyin": "zhǒng",
+   "example": {
+    "text": "我喜欢这种水果。",
+    "pinyin": "Wǒ xǐhuan zhè zhǒng shuǐguǒ.",
+    "english": "I like this kind of fruit."
+   }
+  },
+  {
+   "conceptId": "to-take",
+   "text": "拿",
+   "pinyin": "ná",
+   "example": {
+    "text": "请拿一下。",
+    "pinyin": "Qǐng ná yíxià.",
+    "english": "Please hold this."
+   }
+  },
+  {
+   "conceptId": "to-put",
+   "text": "放",
+   "pinyin": "fàng",
+   "example": {
+    "text": "把书放在桌子上。",
+    "pinyin": "Bǎ shū fàng zài zhuōzi shàng.",
+    "english": "Put the book on the table."
+   }
+  },
+  {
+   "conceptId": "to-bring",
+   "text": "带",
+   "pinyin": "dài",
+   "example": {
+    "text": "你带伞了吗？",
+    "pinyin": "Nǐ dài sǎn le ma?",
+    "english": "Did you bring an umbrella?"
+   }
+  },
+  {
+   "conceptId": "to-change",
+   "text": "换",
+   "pinyin": "huàn",
+   "example": {
+    "text": "我想换一个房间。",
+    "pinyin": "Wǒ xiǎng huàn yí ge fángjiān.",
+    "english": "I'd like to change rooms."
+   }
+  },
+  {
+   "conceptId": "to-borrow",
+   "text": "借",
+   "pinyin": "jiè",
+   "example": {
+    "text": "我可以借你的笔吗？",
+    "pinyin": "Wǒ kěyǐ jiè nǐ de bǐ ma?",
+    "english": "Can I borrow your pen?"
+   }
+  },
+  {
+   "conceptId": "to-pick-up",
+   "text": "接",
+   "pinyin": "jiē",
+   "example": {
+    "text": "我去机场接你。",
+    "pinyin": "Wǒ qù jīchǎng jiē nǐ.",
+    "english": "I'll pick you up at the airport."
+   }
+  },
+  {
+   "conceptId": "to-close",
+   "text": "关",
+   "pinyin": "guān",
+   "example": {
+    "text": "请关门。",
+    "pinyin": "Qǐng guān mén.",
+    "english": "Please close the door."
+   }
+  },
+  {
+   "conceptId": "to-use",
+   "text": "用",
+   "pinyin": "yòng",
+   "example": {
+    "text": "我用手机上网。",
+    "pinyin": "Wǒ yòng shǒujī shàngwǎng.",
+    "english": "I use my phone to go online."
+   }
+  },
+  {
+   "conceptId": "to-forget",
+   "text": "忘记",
+   "pinyin": "wàngjì",
+   "example": {
+    "text": "我忘记了他的名字。",
+    "pinyin": "Wǒ wàngjì le tā de míngzi.",
+    "english": "I forgot his name."
+   }
+  },
+  {
+   "conceptId": "to-remember",
+   "text": "记得",
+   "pinyin": "jìde",
+   "example": {
+    "text": "你记得我吗？",
+    "pinyin": "Nǐ jìde wǒ ma?",
+    "english": "Do you remember me?"
+   }
+  },
+  {
+   "conceptId": "to-run-into",
+   "text": "遇到",
+   "pinyin": "yùdào",
+   "example": {
+    "text": "我在超市遇到了老师。",
+    "pinyin": "Wǒ zài chāoshì yùdào le lǎoshī.",
+    "english": "I ran into my teacher at the supermarket."
+   }
+  },
+  {
+   "conceptId": "to-meet",
+   "text": "见面",
+   "pinyin": "jiànmiàn",
+   "example": {
+    "text": "我们明天见面吧。",
+    "pinyin": "Wǒmen míngtiān jiànmiàn ba.",
+    "english": "Let's meet tomorrow."
+   }
+  },
+  {
+   "conceptId": "to-plan",
+   "text": "打算",
+   "pinyin": "dǎsuan",
+   "example": {
+    "text": "你打算去哪里？",
+    "pinyin": "Nǐ dǎsuan qù nǎlǐ?",
+    "english": "Where are you planning to go?"
+   }
+  },
+  {
+   "conceptId": "to-decide",
+   "text": "决定",
+   "pinyin": "juédìng",
+   "example": {
+    "text": "我决定学习汉语。",
+    "pinyin": "Wǒ juédìng xuéxí Hànyǔ.",
+    "english": "I've decided to study Chinese."
+   }
+  },
+  {
+   "conceptId": "to-choose",
+   "text": "选择",
+   "pinyin": "xuǎnzé",
+   "example": {
+    "text": "你选择哪个？",
+    "pinyin": "Nǐ xuǎnzé nǎ ge?",
+    "english": "Which one do you choose?"
+   }
+  },
+  {
+   "conceptId": "to-think",
+   "text": "认为",
+   "pinyin": "rènwéi",
+   "example": {
+    "text": "我认为他说得对。",
+    "pinyin": "Wǒ rènwéi tā shuō de duì.",
+    "english": "I think he's right."
+   }
+  },
+  {
+   "conceptId": "to-think-2",
+   "text": "以为",
+   "pinyin": "yǐwéi",
+   "example": {
+    "text": "我以为你不来了。",
+    "pinyin": "Wǒ yǐwéi nǐ bù lái le.",
+    "english": "I thought you weren't coming."
+   }
+  },
+  {
+   "conceptId": "to-believe",
+   "text": "相信",
+   "pinyin": "xiāngxìn",
+   "example": {
+    "text": "我相信你。",
+    "pinyin": "Wǒ xiāngxìn nǐ.",
+    "english": "I believe you."
+   }
+  },
+  {
+   "conceptId": "to-agree",
+   "text": "同意",
+   "pinyin": "tóngyì",
+   "example": {
+    "text": "我同意你的看法。",
+    "pinyin": "Wǒ tóngyì nǐ de kànfǎ.",
+    "english": "I agree with you."
+   }
+  },
+  {
+   "conceptId": "to-be-willing",
+   "text": "愿意",
+   "pinyin": "yuànyì",
+   "example": {
+    "text": "你愿意帮我吗？",
+    "pinyin": "Nǐ yuànyì bāng wǒ ma?",
+    "english": "Would you be willing to help me?"
+   }
+  },
+  {
+   "conceptId": "to-need",
+   "text": "需要",
+   "pinyin": "xūyào",
+   "example": {
+    "text": "我需要你的帮助。",
+    "pinyin": "Wǒ xūyào nǐ de bāngzhù.",
+    "english": "I need your help."
+   }
+  },
+  {
+   "conceptId": "should",
+   "text": "应该",
+   "pinyin": "yīnggāi",
+   "example": {
+    "text": "你应该多休息。",
+    "pinyin": "Nǐ yīnggāi duō xiūxi.",
+    "english": "You should rest more."
+   }
+  },
+  {
+   "conceptId": "must",
+   "text": "必须",
+   "pinyin": "bìxū",
+   "example": {
+    "text": "我们必须早点走。",
+    "pinyin": "Wǒmen bìxū zǎo diǎn zǒu.",
+    "english": "We have to leave early."
+   }
+  },
+  {
+   "conceptId": "to-help-2",
+   "text": "帮忙",
+   "pinyin": "bāngmáng",
+   "example": {
+    "text": "你能帮忙吗？",
+    "pinyin": "Nǐ néng bāngmáng ma?",
+    "english": "Can you help out?"
+   }
+  },
+  {
+   "conceptId": "to-take-care-of",
+   "text": "照顾",
+   "pinyin": "zhàogù",
+   "example": {
+    "text": "她照顾奶奶。",
+    "pinyin": "Tā zhàogù nǎinai.",
+    "english": "She takes care of grandma."
+   }
+  },
+  {
+   "conceptId": "to-pay-attention",
+   "text": "注意",
+   "pinyin": "zhùyì",
+   "example": {
+    "text": "请注意安全。",
+    "pinyin": "Qǐng zhùyì ānquán.",
+    "english": "Please be careful."
+   }
+  },
+  {
+   "conceptId": "careful",
+   "text": "小心",
+   "pinyin": "xiǎoxīn",
+   "example": {
+    "text": "小心！",
+    "pinyin": "Xiǎoxīn!",
+    "english": "Careful!"
+   }
+  },
+  {
+   "conceptId": "to-discover",
+   "text": "发现",
+   "pinyin": "fāxiàn",
+   "example": {
+    "text": "我发现我的钱没了。",
+    "pinyin": "Wǒ fāxiàn wǒ de qián méi le.",
+    "english": "I noticed my money was gone."
+   }
+  },
+  {
+   "conceptId": "to-appear",
+   "text": "出现",
+   "pinyin": "chūxiàn",
+   "example": {
+    "text": "太阳出现了。",
+    "pinyin": "Tàiyáng chūxiàn le.",
+    "english": "The sun came out."
+   }
+  },
+  {
+   "conceptId": "to-be-late",
+   "text": "迟到",
+   "pinyin": "chídào",
+   "example": {
+    "text": "别迟到！",
+    "pinyin": "Bié chídào!",
+    "english": "Don't be late!"
+   }
+  },
+  {
+   "conceptId": "to-marry",
+   "text": "结婚",
+   "pinyin": "jiéhūn",
+   "example": {
+    "text": "他们结婚了。",
+    "pinyin": "Tāmen jiéhūn le.",
+    "english": "They got married."
+   }
+  },
+  {
+   "conceptId": "to-wish",
+   "text": "祝",
+   "pinyin": "zhù",
+   "example": {
+    "text": "祝你生日快乐！",
+    "pinyin": "Zhù nǐ shēngrì kuàilè!",
+    "english": "Happy birthday to you!"
+   }
+  },
+  {
+   "conceptId": "to-dare",
+   "text": "敢",
+   "pinyin": "gǎn",
+   "example": {
+    "text": "我不敢说。",
+    "pinyin": "Wǒ bù gǎn shuō.",
+    "english": "I don't dare say it."
+   }
+  },
+  {
+   "conceptId": "gift",
+   "text": "礼物",
+   "pinyin": "lǐwù",
+   "example": {
+    "text": "这是送你的礼物。",
+    "pinyin": "Zhè shì sòng nǐ de lǐwù.",
+    "english": "This is a gift for you."
+   }
+  },
+  {
+   "conceptId": "habit",
+   "text": "习惯",
+   "pinyin": "xíguàn",
+   "example": {
+    "text": "我习惯早起床。",
+    "pinyin": "Wǒ xíguàn zǎo qǐchuáng.",
+    "english": "I'm used to getting up early."
+   }
+  },
+  {
+   "conceptId": "to-make",
+   "text": "使",
+   "pinyin": "shǐ",
+   "example": {
+    "text": "这件事使我很高兴。",
+    "pinyin": "Zhè jiàn shì shǐ wǒ hěn gāoxìng.",
+    "english": "This made me very happy."
+   }
+  },
+  {
+   "conceptId": "to-affect",
+   "text": "影响",
+   "pinyin": "yǐngxiǎng",
+   "example": {
+    "text": "天气影响了我们的比赛。",
+    "pinyin": "Tiānqì yǐngxiǎng le wǒmen de bǐsài.",
+    "english": "The weather affected our match."
+   }
+  },
+  {
+   "conceptId": "effect",
+   "text": "作用",
+   "pinyin": "zuòyòng",
+   "example": {
+    "text": "这个药没有作用。",
+    "pinyin": "Zhè ge yào méiyǒu zuòyòng.",
+    "english": "This medicine doesn't work."
+   }
+  },
+  {
+   "conceptId": "to-express",
+   "text": "表示",
+   "pinyin": "biǎoshì",
+   "example": {
+    "text": "他点头表示同意。",
+    "pinyin": "Tā diǎntóu biǎoshì tóngyì.",
+    "english": "He nodded to show he agreed."
+   }
+  },
+  {
+   "conceptId": "according-to",
+   "text": "根据",
+   "pinyin": "gēnjù",
+   "example": {
+    "text": "根据天气预报，明天下雨。",
+    "pinyin": "Gēnjù tiānqì yùbào, míngtiān xiàyǔ.",
+    "english": "According to the forecast, it'll rain tomorrow."
+   }
+  },
+  {
+   "conceptId": "about",
+   "text": "关于",
+   "pinyin": "guānyú",
+   "example": {
+    "text": "这是一本关于熊猫的书。",
+    "pinyin": "Zhè shì yì běn guānyú xióngmāo de shū.",
+    "english": "This is a book about pandas."
+   }
+  },
+  {
+   "conceptId": "relationship",
+   "text": "关系",
+   "pinyin": "guānxi",
+   "example": {
+    "text": "我们的关系很好。",
+    "pinyin": "Wǒmen de guānxi hěn hǎo.",
+    "english": "We get along well."
+   }
+  },
+  {
+   "conceptId": "in-order-to",
+   "text": "为了",
+   "pinyin": "wèile",
+   "example": {
+    "text": "为了健康，我每天锻炼。",
+    "pinyin": "Wèile jiànkāng, wǒ měi tiān duànliàn.",
+    "english": "I exercise every day to stay healthy."
+   }
+  },
+  {
+   "conceptId": "although",
+   "text": "虽然",
+   "pinyin": "suīrán",
+   "example": {
+    "text": "虽然很累，但是我很高兴。",
+    "pinyin": "Suīrán hěn lèi, dànshì wǒ hěn gāoxìng.",
+    "english": "Although I'm tired, I'm happy."
+   }
+  },
+  {
+   "conceptId": "and-also",
+   "text": "而且",
+   "pinyin": "érqiě",
+   "example": {
+    "text": "这个饭馆很便宜，而且很好吃。",
+    "pinyin": "Zhè ge fànguǎn hěn piányi, érqiě hěn hǎochī.",
+    "english": "This restaurant is cheap, and the food is good too."
+   }
+  },
+  {
+   "conceptId": "or",
+   "text": "或者",
+   "pinyin": "huòzhě",
+   "example": {
+    "text": "你可以喝茶或者咖啡。",
+    "pinyin": "Nǐ kěyǐ hē chá huòzhě kāfēi.",
+    "english": "You can have tea or coffee."
+   }
+  },
+  {
+   "conceptId": "or-2",
+   "text": "还是",
+   "pinyin": "háishi",
+   "example": {
+    "text": "你喝茶还是咖啡？",
+    "pinyin": "Nǐ hē chá háishi kāfēi?",
+    "english": "Would you like tea or coffee?"
+   }
+  },
+  {
+   "conceptId": "if",
+   "text": "如果",
+   "pinyin": "rúguǒ",
+   "example": {
+    "text": "如果下雨，我们就不去。",
+    "pinyin": "Rúguǒ xiàyǔ, wǒmen jiù bú qù.",
+    "english": "If it rains, we won't go."
+   }
+  },
+  {
+   "conceptId": "then-2",
+   "text": "然后",
+   "pinyin": "ránhòu",
+   "example": {
+    "text": "我先吃饭，然后看书。",
+    "pinyin": "Wǒ xiān chī fàn, ránhòu kàn shū.",
+    "english": "First I eat, then I read."
+   }
+  },
+  {
+   "conceptId": "besides",
+   "text": "除了",
+   "pinyin": "chúle",
+   "example": {
+    "text": "除了他，我们都去。",
+    "pinyin": "Chúle tā, wǒmen dōu qù.",
+    "english": "Everyone's going except him."
+   }
+  },
+  {
+   "conceptId": "actually",
+   "text": "其实",
+   "pinyin": "qíshí",
+   "example": {
+    "text": "其实我不喜欢咖啡。",
+    "pinyin": "Qíshí wǒ bù xǐhuan kāfēi.",
+    "english": "Actually, I don't like coffee."
+   }
+  },
+  {
+   "conceptId": "other",
+   "text": "其他",
+   "pinyin": "qítā",
+   "example": {
+    "text": "其他人都走了。",
+    "pinyin": "Qítā rén dōu zǒu le.",
+    "english": "Everyone else has left."
+   }
+  },
+  {
+   "conceptId": "of-course",
+   "text": "当然",
+   "pinyin": "dāngrán",
+   "example": {
+    "text": "当然可以！",
+    "pinyin": "Dāngrán kěyǐ!",
+    "english": "Of course you can!"
+   }
+  },
+  {
+   "conceptId": "first-2",
+   "text": "先",
+   "pinyin": "xiān",
+   "example": {
+    "text": "你先走吧。",
+    "pinyin": "Nǐ xiān zǒu ba.",
+    "english": "You go first."
+   }
+  },
+  {
+   "conceptId": "only",
+   "text": "只",
+   "pinyin": "zhǐ",
+   "example": {
+    "text": "我只有一个弟弟。",
+    "pinyin": "Wǒ zhǐ yǒu yí ge dìdi.",
+    "english": "I only have one younger brother."
+   }
+  },
+  {
+   "conceptId": "the-more",
+   "text": "越",
+   "pinyin": "yuè",
+   "example": {
+    "text": "天气越来越冷了。",
+    "pinyin": "Tiānqì yuè lái yuè lěng le.",
+    "english": "It's getting colder and colder."
+   }
+  },
+  {
+   "conceptId": "a",
+   "text": "啊",
+   "pinyin": "a",
+   "example": {
+    "text": "好啊！",
+    "pinyin": "Hǎo a!",
+    "english": "Sure!"
+   }
+  },
+  {
+   "conceptId": "b",
+   "text": "把",
+   "pinyin": "bǎ",
+   "example": {
+    "text": "请把门关上。",
+    "pinyin": "Qǐng bǎ mén guān shàng.",
+    "english": "Please close the door."
+   }
+  },
+  {
+   "conceptId": "b-i",
+   "text": "被",
+   "pinyin": "bèi",
+   "example": {
+    "text": "我的蛋糕被弟弟吃了。",
+    "pinyin": "Wǒ de dàngāo bèi dìdi chī le.",
+    "english": "My cake was eaten by my little brother."
+   }
+  },
+  {
+   "conceptId": "de-3",
+   "text": "地",
+   "pinyin": "de",
+   "example": {
+    "text": "他高兴地笑了。",
+    "pinyin": "Tā gāoxìng de xiào le.",
+    "english": "He smiled happily."
+   }
+  },
+  {
+   "conceptId": "with",
+   "text": "跟",
+   "pinyin": "gēn",
+   "example": {
+    "text": "我跟朋友去看电影。",
+    "pinyin": "Wǒ gēn péngyou qù kàn diànyǐng.",
+    "english": "I'm seeing a movie with a friend."
+   }
+  },
+  {
+   "conceptId": "fairly",
+   "text": "比较",
+   "pinyin": "bǐjiào",
+   "example": {
+    "text": "今天比较冷。",
+    "pinyin": "Jīntiān bǐjiào lěng.",
+    "english": "It's fairly cold today."
+   }
+  },
+  {
+   "conceptId": "how-2",
+   "text": "多么",
+   "pinyin": "duōme",
+   "example": {
+    "text": "这里多么漂亮啊！",
+    "pinyin": "Zhè lǐ duōme piàoliang a!",
+    "english": "How beautiful it is here!"
+   }
+  },
+  {
+   "conceptId": "extremely",
+   "text": "极",
+   "pinyin": "jí",
+   "example": {
+    "text": "好极了！",
+    "pinyin": "Hǎo jí le!",
+    "english": "Excellent!"
+   }
+  },
+  {
+   "conceptId": "to-resemble",
+   "text": "像",
+   "pinyin": "xiàng",
+   "example": {
+    "text": "你像你妈妈。",
+    "pinyin": "Nǐ xiàng nǐ māma.",
+    "english": "You look like your mom."
+   }
+  },
+  {
+   "conceptId": "while",
+   "text": "一边",
+   "pinyin": "yìbiān",
+   "example": {
+    "text": "他一边吃饭一边看电视。",
+    "pinyin": "Tā yìbiān chī fàn yìbiān kàn diànshì.",
+    "english": "He eats while watching TV."
+   }
+  },
+  {
+   "conceptId": "definitely",
+   "text": "一定",
+   "pinyin": "yídìng",
+   "example": {
+    "text": "我一定来。",
+    "pinyin": "Wǒ yídìng lái.",
+    "english": "I'll definitely come."
+   }
+  },
+  {
+   "conceptId": "why",
+   "text": "为什么",
+   "pinyin": "wèishénme",
+   "example": {
+    "text": "你为什么不来？",
+    "pinyin": "Nǐ wèishénme bù lái?",
+    "english": "Why aren't you coming?"
    }
   }
  ]
