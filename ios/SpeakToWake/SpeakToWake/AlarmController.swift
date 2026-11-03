@@ -237,7 +237,9 @@ final class AlarmController {
             schedule: schedule,
             attributes: attributes,
             stopIntent: StopAlarmIntent(alarmID: id.uuidString),
-            secondaryIntent: OpenChallengeIntent(alarmID: id.uuidString)
+            secondaryIntent: OpenChallengeIntent(alarmID: id.uuidString),
+            // The same beeps the challenge screen plays (AlarmSound), so the ring doesn't change sound.
+            sound: .named("MingoAlarm.wav")
         )
         do {
             _ = try await AlarmManager.shared.schedule(id: id, configuration: configuration)
