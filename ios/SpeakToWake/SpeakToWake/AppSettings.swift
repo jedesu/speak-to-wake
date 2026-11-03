@@ -12,6 +12,7 @@ enum AppSettings {
         static let emergencyMinutes = "emergencyMinutes"
         static let proUnlocked = "proUnlocked"
         static let learnMode = "learnMode"
+        static let demoMode = "demoMode"
     }
 
     static func register() {
@@ -33,6 +34,10 @@ enum AppSettings {
     static var emergencyAfter: TimeInterval { TimeInterval(UserDefaults.standard.integer(forKey: Key.emergencyMinutes) * 60) }
     /// Pro isn't for sale yet; Settings > Developer can unlock it for testing.
     static var proUnlocked: Bool { UserDefaults.standard.bool(forKey: Key.proUnlocked) }
+    /// Set by "Set up demo": counts as signed in, so a live demo never depends on the network.
+    static var demoMode: Bool { UserDefaults.standard.bool(forKey: Key.demoMode) }
+    /// Signed in, or in demo mode: unlocks sections past the trial and the alarm's words.
+    static var hasAccountAccess: Bool { AuthService.shared.isSignedIn || demoMode }
 
     /// Whether a section can be studied: HSK 1 is free, higher levels are Pro.
     static func canOpen(_ pack: Pack) -> Bool {

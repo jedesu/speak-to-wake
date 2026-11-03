@@ -21,7 +21,7 @@ struct ProgressTabView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 14) {
                     VStack(alignment: .leading, spacing: 2) {
-                        Text("HSK 1").font(.subheadline.bold()).foregroundStyle(Theme.muted)
+                        Text("Mandarin · HSK 1–3").font(.subheadline.bold()).foregroundStyle(Theme.muted)
                         Text("Progress").font(.largeTitle.weight(.heavy))
                     }
                     .padding(.horizontal, 4)
@@ -35,6 +35,27 @@ struct ProgressTabView: View {
                             .foregroundStyle(Theme.muted)
                     }
                     .card(padding: 20)
+
+                    NavigationLink {
+                        YourWordsView()
+                    } label: {
+                        HStack(spacing: 14) {
+                            Image(systemName: "character.book.closed.fill")
+                                .font(.title2)
+                                .foregroundStyle(.white)
+                                .frame(width: 52, height: 52)
+                                .background(Theme.accent, in: .rect(cornerRadius: 16))
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text("Your words").font(.headline)
+                                Text("\(reviews.count) words unlocked").font(.subheadline.bold()).foregroundStyle(Theme.muted)
+                            }
+                            Spacer()
+                            Image(systemName: "chevron.right").foregroundStyle(Theme.muted)
+                        }
+                        .padding(16)
+                        .background(Theme.tip, in: .rect(cornerRadius: 24))
+                    }
+                    .buttonStyle(.plain)
 
                     LazyVGrid(columns: [GridItem(.flexible(), spacing: 14), GridItem(.flexible())], spacing: 14) {
                         tile("\(reviews.count)", "words in review", "rectangle.stack.fill")

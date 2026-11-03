@@ -244,6 +244,6 @@ struct AccountCard: View {
 extension Learning {
     /// The first section is a free trial; learning more needs an account.
     static func needsSignIn(toStudy pack: Pack, learnedPackIDs: Set<String>) -> Bool {
-        !AuthService.shared.isSignedIn && !learnedPackIDs.isEmpty && !learnedPackIDs.contains(pack.id)
+        !AppSettings.hasAccountAccess && !learnedPackIDs.isEmpty && !learnedPackIDs.contains(pack.id)
     }
 }

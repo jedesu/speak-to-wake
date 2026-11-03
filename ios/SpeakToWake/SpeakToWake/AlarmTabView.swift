@@ -175,7 +175,7 @@ private struct AlarmCard: View {
             .accessibilityLabel(config.daysText)
             if config.enabled, let next = config.nextRingDate() {
                 TimelineView(.everyMinute) { context in
-                    Text("Rings in \(AlarmTabView.countdown(from: context.date, to: next)) · \(words) words to say")
+                    Text("Rings in \(AlarmTabView.countdown(from: context.date, to: next)) · \(words) \(AppSettings.speakingOn ? "words to say" : "questions to answer")")
                         .font(.subheadline.bold())
                         .foregroundStyle(Theme.muted)
                 }

@@ -10,6 +10,9 @@ struct SettingsView: View {
     @AppStorage(AppSettings.Key.emergencyMinutes) private var emergencyMinutes = 3
     @AppStorage(AppSettings.Key.hasOnboarded) private var hasOnboarded = true
     @AppStorage(AppSettings.Key.proUnlocked) private var proUnlocked = false
+    @AppStorage(AppSettings.Key.demoMode) private var demoMode = false
+    @Environment(\.modelContext) private var modelContext
+    @State private var demoLoaded = false
 
     var body: some View {
         NavigationStack {
@@ -70,6 +73,23 @@ struct SettingsView: View {
                     }
 
                     group("Developer", footer: "Pro isn't for sale yet. This switch opens HSK 2 and up for testing.") {
+                        Button {
+                            Task {
+                                await DemoData.load(into: modelContext)
+                                demoLoaded = true
+                            }
+                        } label: {
+                            navRow(demoLoaded ? "Demo ready ✓" : "Set up demo", icon: "sparkles.rectangle.stack")
+                        }
+                        .buttonStyle(.plain)
+                        Text("Loads HSK 1 sections 1–3 as learned, 6 words due today and a 7:00 AM weekday alarm. Turns on demo mode and Pro, and turns speaking prompts off (tap questions only).")
+                            .font(.caption)
+                            .foregroundStyle(Theme.muted)
+                        Toggle(isOn: $demoMode) {
+                            rowText("Demo mode", "Counts as signed in, works offline")
+                        }
+                        .tint(Theme.accent)
+                        divider
                         Toggle(isOn: $proUnlocked) {
                             rowText("Pro unlocked (for testing)", "HSK 2–3 sections")
                         }

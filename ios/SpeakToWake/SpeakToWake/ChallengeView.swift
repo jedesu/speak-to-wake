@@ -50,7 +50,7 @@ struct ChallengeView: View {
         .background(Theme.ground)
         .onAppear {
             // The alarm quizzes your words once you're signed in (the first section is a trial).
-            if session == nil { session = WakeSession(reviews: AuthService.shared.isSignedIn ? reviews : []) }
+            if session == nil { session = WakeSession(reviews: AppSettings.hasAccountAccess ? reviews : []) }
             AlarmSound.shared.start()
         }
         .onDisappear {
@@ -121,8 +121,8 @@ struct ChallengeView: View {
     private var noWords: some View {
         VStack(spacing: 16) {
             Spacer()
-            Text(AuthService.shared.isSignedIn ? "No words to ask yet" : "Sign in to use your words").font(.title.bold())
-            Text(AuthService.shared.isSignedIn
+            Text(AppSettings.hasAccountAccess ? "No words to ask yet" : "Sign in to use your words").font(.title.bold())
+            Text(AppSettings.hasAccountAccess
                  ? "Your alarm only asks words you've learned. Learn a section in the Learn tab so tomorrow's alarm has words."
                  : "Sign in from Settings so your alarm can quiz you on the words you've learned.")
                 .multilineTextAlignment(.center)
