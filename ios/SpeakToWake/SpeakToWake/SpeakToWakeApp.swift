@@ -28,6 +28,8 @@ struct SpeakToWakeApp: App {
             .fontDesign(.rounded)
             .tint(Theme.accent)
             .foregroundStyle(Theme.text)
+            // Soft Dawn is a light design; keep it light even when the phone is in Dark Mode.
+            .preferredColorScheme(.light)
             .task { alarms.startObserving() }
         }
         .modelContainer(for: [PackProgress.self, ReviewState.self, Attempt.self, AlarmConfig.self])

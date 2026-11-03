@@ -200,39 +200,70 @@ struct AlarmEditView: View {
 
     var body: some View {
         NavigationStack {
-            Form {
-                Section {
+            ScrollView {
+                VStack(alignment: .leading, spacing: 16) {
                     DatePicker("Time", selection: $time, displayedComponents: .hourAndMinute)
                         .datePickerStyle(.wheel)
                         .labelsHidden()
                         .frame(maxWidth: .infinity)
-                }
-                .listRowBackground(Color.clear)
+                        .card(padding: 12)
 
-                Section {
-                    NavigationLink {
-                        RepeatPicker(weekdays: $weekdays)
-                    } label: {
-                        LabeledContent("Repeat", value: AlarmConfig.daysText(for: weekdays, never: "Never"))
+                    VStack(alignment: .leading, spacing: 12) {
+                        HStack {
+                            Text("Repeat").font(.headline)
+                            Spacer()
+                            Text(AlarmConfig.daysText(for: weekdays, never: "Never"))
+                                .font(.subheadline.bold())
+                                .foregroundStyle(Theme.muted)
+                        }
+                        HStack(spacing: 0) {
+                            ForEach(1...7, id: \.self) { day in
+                                let on = weekdays.contains(day)
+                                Button {
+                                    if on { weekdays.remove(day) } else { weekdays.insert(day) }
+                                } label: {
+                                    Text(Calendar.current.veryShortWeekdaySymbols[day - 1])
+                                        .font(.subheadline.bold())
+                                        .frame(width: 40, height: 40)
+                                        .background(on ? Theme.accent : Theme.chip, in: .circle)
+                                        .foregroundStyle(on ? .white : Theme.muted)
+                                }
+                                .buttonStyle(.plain)
+                                .accessibilityLabel(Calendar.current.weekdaySymbols[day - 1])
+                                .accessibilityAddTraits(on ? .isSelected : [])
+                                .frame(maxWidth: .infinity)
+                            }
+                        }
+                        Rectangle().fill(Theme.toggleOff).frame(height: 1)
+                        HStack {
+                            Text("Label").font(.headline)
+                            TextField("Alarm", text: $label)
+                                .multilineTextAlignment(.trailing)
+                                .foregroundStyle(Theme.text)
+                        }
+                        .frame(minHeight: 32)
                     }
-                    LabeledContent("Label") {
-                        TextField("Alarm", text: $label)
-                            .multilineTextAlignment(.trailing)
-                    }
-                }
+                    .card(padding: 18)
 
-                if let config {
-                    Section {
-                        Button("Delete Alarm", role: .destructive) {
+                    if let config {
+                        Button(role: .destructive) {
                             AlarmController.shared.unschedule(config)
                             modelContext.delete(config)
                             try? modelContext.save()
                             dismiss()
+                        } label: {
+                            Text("Delete Alarm")
+                                .font(.headline)
+                                .foregroundStyle(.red)
+                                .frame(maxWidth: .infinity, minHeight: 44)
                         }
-                        .frame(maxWidth: .infinity)
+                        .buttonStyle(.plain)
+                        .card(padding: 8)
                     }
                 }
+                .padding(18)
             }
+            .background(Theme.ground)
             .navigationTitle(config == nil ? "Add Alarm" : "Edit Alarm")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -244,7 +275,6 @@ struct AlarmEditView: View {
                 }
             }
             .onAppear(perform: load)
-            .softDawnList()
         }
     }
 
@@ -267,30 +297,5 @@ struct AlarmEditView: View {
         try? modelContext.save()
         Task { await AlarmController.shared.schedule(target) }
         dismiss()
-    }
-}
-
-/// "Every Monday" ... "Every Sunday" with checkmarks, like the Clock app.
-private struct RepeatPicker: View {
-    @Binding var weekdays: Set<Int>
-
-    var body: some View {
-        List {
-            ForEach(1...7, id: \.self) { day in
-                Button {
-                    if weekdays.contains(day) { weekdays.remove(day) } else { weekdays.insert(day) }
-                } label: {
-                    HStack {
-                        Text("Every \(Calendar.current.weekdaySymbols[day - 1])")
-                            .foregroundStyle(.primary)
-                        Spacer()
-                        if weekdays.contains(day) {
-                            Image(systemName: "checkmark").foregroundStyle(.tint)
-                        }
-                    }
-                }
-            }
-        }
-        .navigationTitle("Repeat")
     }
 }
