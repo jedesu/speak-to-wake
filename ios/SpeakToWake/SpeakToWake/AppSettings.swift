@@ -13,6 +13,7 @@ enum AppSettings {
         static let proUnlocked = "proUnlocked"
         static let learnMode = "learnMode"
         static let demoMode = "demoMode"
+        static let language = "language"
     }
 
     static func register() {
@@ -21,6 +22,7 @@ enum AppSettings {
             Key.speakingOn: true,
             Key.gentleWakeUp: false,
             Key.emergencyMinutes: 3,
+            Key.language: "zh-CN",
         ])
     }
 

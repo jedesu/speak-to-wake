@@ -8,7 +8,7 @@ struct OnboardingView: View {
     let onFinish: () -> Void
 
     private enum Step: Int, CaseIterable {
-        case welcome, howItWorks, permissions, alarm, volume
+        case welcome, language, howItWorks, permissions, alarm, volume
     }
 
     @Environment(\.modelContext) private var modelContext
@@ -43,6 +43,7 @@ struct OnboardingView: View {
             Group {
                 switch step {
                 case .welcome: welcome
+                case .language: languageStep
                 case .howItWorks: howItWorks
                 case .permissions: permissions
                 case .alarm: alarm
@@ -96,7 +97,7 @@ struct OnboardingView: View {
             Spacer()
             Text("🐼").font(.system(size: 120))
             Text("Mingo").font(.system(size: 48, weight: .bold, design: .rounded))
-            Text("Wake up speaking Mandarin.")
+            Text("Wake up speaking a new language.")
                 .font(.title2)
                 .foregroundStyle(.secondary)
                 .multilineTextAlignment(.center)
@@ -111,11 +112,24 @@ struct OnboardingView: View {
         }
     }
 
+    private var languageStep: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 16) {
+                Text("What are you learning?").font(.largeTitle.bold())
+                Text("Your alarm will ask you words in this language.")
+                    .foregroundStyle(.secondary)
+                LanguageList()
+            }
+            .padding(.top, 12)
+        }
+        .scrollIndicators(.hidden)
+    }
+
     private var howItWorks: some View {
         VStack(alignment: .leading, spacing: 28) {
             Text("How it works").font(.largeTitle.bold())
             stepRow("book.fill", .blue, "Learn a few words",
-                    "Study short HSK 1 sections with flashcards, audio and quick quizzes.")
+                    "Study short sections of everyday words with flashcards, audio and quick quizzes.")
             stepRow("alarm.fill", Theme.accent, "Your alarm asks them",
                     "In the morning, Mingo quizzes you on words you've learned.")
             stepRow("mic.fill", .green, "Say it to turn it off",

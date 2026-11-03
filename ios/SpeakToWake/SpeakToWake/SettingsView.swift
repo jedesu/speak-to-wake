@@ -22,6 +22,17 @@ struct SettingsView: View {
                         AccountCard()
                     }
 
+                    group("Language") {
+                        NavigationLink {
+                            ScrollView { LanguageList().padding(18) }
+                                .background(Theme.ground)
+                                .navigationTitle("Language")
+                        } label: {
+                            navRow("\(LanguageOption.current.flag)  \(LanguageOption.current.name)", icon: "globe")
+                        }
+                        .buttonStyle(.plain)
+                    }
+
                     group("Wake-up challenge",
                           footer: "A wrong answer swaps in a different word. After two missed speaking prompts in a row, you get a tap quiz instead.") {
                         HStack {

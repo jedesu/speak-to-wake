@@ -14,6 +14,7 @@ struct LearnView: View {
     @Query private var progress: [PackProgress]
     @Query private var reviews: [ReviewState]
     @State private var reviewing = false
+    @State private var choosingLanguage = false
     @AppStorage(AppSettings.Key.learnMode) private var mode = Mode.levels
     @AppStorage(AppSettings.Key.proUnlocked) private var proUnlocked = false
 
@@ -60,9 +61,23 @@ struct LearnView: View {
     private var header: some View {
         let learned = library.packs.filter(isLearned).count
         return VStack(alignment: .leading, spacing: 10) {
-            Text("Mandarin · HSK 1–\(library.hskLevels.last?.level ?? 1)")
+            Button {
+                choosingLanguage = true
+            } label: {
+                let language = LanguageOption.current
+                HStack(spacing: 6) {
+                    Text("\(language.flag) \(language.name) · \(language.levels) 1–\(library.hskLevels.last?.level ?? 1)")
+                    Image(systemName: "chevron.down").font(.caption.bold())
+                }
                 .font(.subheadline.bold())
                 .foregroundStyle(Theme.muted)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 6)
+                .background(Theme.chip, in: .capsule)
+            }
+            .buttonStyle(.plain)
+            .accessibilityHint("Change language")
+            .sheet(isPresented: $choosingLanguage) { LanguagePickerView() }
             Text("Learn")
                 .font(.largeTitle.weight(.heavy))
             ProgressView(value: Double(learned), total: Double(max(library.packs.count, 1)))

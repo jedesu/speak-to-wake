@@ -21,7 +21,7 @@ struct ProgressTabView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 14) {
                     VStack(alignment: .leading, spacing: 2) {
-                        Text("Mandarin · HSK 1–3").font(.subheadline.bold()).foregroundStyle(Theme.muted)
+                        Text("\(LanguageOption.current.name) · \(LanguageOption.current.levels) 1–3").font(.subheadline.bold()).foregroundStyle(Theme.muted)
                         Text("Progress").font(.largeTitle.weight(.heavy))
                     }
                     .padding(.horizontal, 4)
