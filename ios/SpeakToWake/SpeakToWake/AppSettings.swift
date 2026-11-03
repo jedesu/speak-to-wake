@@ -17,9 +17,16 @@ enum AppSettings {
     }
 
     static func register() {
+        #if targetEnvironment(simulator)
+        // The browser demo (Appetize) runs the simulator build: count it as signed in, tap questions only.
+        let demoByDefault = true
+        #else
+        let demoByDefault = false
+        #endif
         UserDefaults.standard.register(defaults: [
+            Key.demoMode: demoByDefault,
             Key.promptsPerWake: 3,
-            Key.speakingOn: true,
+            Key.speakingOn: !demoByDefault,  // no mic in the browser demo
             Key.gentleWakeUp: false,
             Key.emergencyMinutes: 3,
             Key.language: "zh-CN",
