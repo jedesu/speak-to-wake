@@ -14,6 +14,7 @@ struct SettingsView: View {
     @Environment(\.modelContext) private var modelContext
     @State private var demoLoaded = false
     @State private var showingPaywall = false
+    @State private var confirmingStartOver = false
 
     var body: some View {
         NavigationStack {
@@ -104,6 +105,18 @@ struct SettingsView: View {
                             navRow(demoLoaded ? "Demo ready ✓" : "Set up demo", icon: "sparkles.rectangle.stack")
                         }
                         .buttonStyle(.plain)
+                        Button { confirmingStartOver = true } label: {
+                            navRow("Start over", icon: "arrow.counterclockwise")
+                        }
+                        .buttonStyle(.plain)
+                        .confirmationDialog("Start over?", isPresented: $confirmingStartOver, titleVisibility: .visible) {
+                            Button("Erase everything and start over", role: .destructive) {
+                                dismiss()
+                                DemoData.startOver(modelContext)
+                            }
+                        } message: {
+                            Text("Erases your words, answers, alarms and settings, signs you out and shows the welcome screens, like a new install.")
+                        }
                         Text("Loads HSK 1 sections 1–3 as learned, 6 words due today and a 7:00 AM weekday alarm. Turns on demo mode and Pro, and turns speaking prompts off (tap questions only).")
                             .font(.caption)
                             .foregroundStyle(Theme.muted)

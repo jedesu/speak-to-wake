@@ -6,6 +6,25 @@ import WakeCore
 /// the app never starts empty on stage. Demo mode also counts as signed in, so
 /// the demo doesn't depend on the network.
 enum DemoData {
+    /// "Start over": wipes progress, answers, alarms and settings, signs out, and
+    /// shows the welcome screens again, like a fresh install.
+    @MainActor
+    static func startOver(_ context: ModelContext) {
+        let alarms = (try? context.fetch(FetchDescriptor<AlarmConfig>())) ?? []
+        for alarm in alarms { AlarmController.shared.unschedule(alarm) }
+        try? context.delete(model: AlarmConfig.self)
+        try? context.delete(model: PackProgress.self)
+        try? context.delete(model: ReviewState.self)
+        try? context.delete(model: Attempt.self)
+        try? context.save()
+        AuthService.shared.signOut()
+        if let bundleID = Bundle.main.bundleIdentifier {
+            UserDefaults.standard.removePersistentDomain(forName: bundleID)
+        }
+        AppSettings.register()
+        UserDefaults.standard.set(false, forKey: AppSettings.Key.hasOnboarded)
+    }
+
     static func load(into context: ModelContext) async {
         let library = AppContent.library
         let today = Day.today
