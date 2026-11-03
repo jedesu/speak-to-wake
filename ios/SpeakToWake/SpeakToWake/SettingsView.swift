@@ -13,6 +13,7 @@ struct SettingsView: View {
     @AppStorage(AppSettings.Key.demoMode) private var demoMode = false
     @Environment(\.modelContext) private var modelContext
     @State private var demoLoaded = false
+    @State private var showingPaywall = false
 
     var body: some View {
         NavigationStack {
@@ -20,6 +21,16 @@ struct SettingsView: View {
                 VStack(alignment: .leading, spacing: 10) {
                     group("Account") {
                         AccountCard()
+                    }
+
+                    group("Mingo Pro") {
+                        Button { showingPaywall = true } label: {
+                            navRow(proUnlocked ? "Pro is on" : "Try Pro free for 7 days", icon: "crown")
+                        }
+                        .buttonStyle(.plain)
+                        .sheet(isPresented: $showingPaywall) {
+                            PaywallView { showingPaywall = false }
+                        }
                     }
 
                     group("Language") {

@@ -9,6 +9,9 @@ import WakeCore
 struct SignInView: View {
     var title = "Save your progress"
     var message = "Your first section is free to try. Sign in to keep learning, save your progress and let your alarm quiz you."
+    var skipTitle = "Not now"
+    /// Called instead of dismissing, when this screen is a step inside another flow (onboarding).
+    var onDone: (() -> Void)? = nil
 
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
@@ -60,7 +63,7 @@ struct SignInView: View {
                 }
                 if working { ProgressView() }
 
-                Button("Not now") { dismiss() }
+                Button(skipTitle) { finish() }
                     .font(.subheadline.bold())
                     .foregroundStyle(Theme.link)
                     .frame(minHeight: 44)
@@ -70,7 +73,7 @@ struct SignInView: View {
         }
         .background(Theme.ground)
         .onChange(of: AuthService.shared.isSignedIn) {
-            if AuthService.shared.isSignedIn { dismiss() }
+            if AuthService.shared.isSignedIn { finish() }
         }
     }
 
@@ -146,7 +149,11 @@ struct SignInView: View {
 
     private func signedIn() async {
         await SyncService.shared.sync(modelContext)
-        dismiss()
+        finish()
+    }
+
+    private func finish() {
+        if let onDone { onDone() } else { dismiss() }
     }
 
     private func signInWithGoogle() async {

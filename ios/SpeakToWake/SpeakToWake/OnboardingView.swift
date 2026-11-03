@@ -8,7 +8,7 @@ struct OnboardingView: View {
     let onFinish: () -> Void
 
     private enum Step: Int, CaseIterable {
-        case welcome, language, howItWorks, permissions, alarm, volume
+        case welcome, language, howItWorks, permissions, alarm, volume, account, trial
     }
 
     @Environment(\.modelContext) private var modelContext
@@ -48,6 +48,14 @@ struct OnboardingView: View {
                 case .permissions: permissions
                 case .alarm: alarm
                 case .volume: volume
+                case .account:
+                    SignInView(title: "Save your progress",
+                               message: "Sign in so your words, streak and alarm history are safe if you change phones.",
+                               skipTitle: "Maybe later", onDone: advance)
+                    .padding(.horizontal, -24)
+                case .trial:
+                    PaywallView(onDone: onFinish)
+                    .padding(.horizontal, -24)
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -55,15 +63,16 @@ struct OnboardingView: View {
             .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)).combined(with: .opacity))
             .id(step)
 
-            Button(action: next) {
-                Text(buttonTitle)
-                    .font(.title3.bold())
-                    .frame(maxWidth: .infinity, minHeight: 56)
+            // The sign-in and trial steps have their own buttons.
+            if step != .account && step != .trial {
+                Button(action: next) {
+                    Text(buttonTitle)
+                        .font(.title3.bold())
+                        .frame(maxWidth: .infinity, minHeight: 56)
+                }
+                .buttonStyle(PrimaryButtonStyle())
+                .padding(24)
             }
-            .buttonStyle(.borderedProminent)
-            .tint(Theme.accent)
-            .clipShape(.capsule)
-            .padding(24)
         }
         .background(Theme.ground)
     }
@@ -72,7 +81,6 @@ struct OnboardingView: View {
         switch step {
         case .welcome: "Get started"
         case .alarm: "Set alarm"
-        case .volume: "Learn my first words"
         default: "Next"
         }
     }
@@ -81,13 +89,17 @@ struct OnboardingView: View {
         switch step {
         case .alarm:
             saveAlarm()
-        case .volume:
-            onFinish()
-            return
         default:
             break
         }
-        withAnimation { step = Step(rawValue: step.rawValue + 1) ?? .volume }
+        advance()
+    }
+
+    /// Next step; skips sign-in when the user already has an account.
+    private func advance() {
+        var target = Step(rawValue: step.rawValue + 1) ?? .trial
+        if target == .account && AuthService.shared.isSignedIn { target = .trial }
+        withAnimation { step = target }
     }
 
     // MARK: Steps
@@ -243,9 +255,6 @@ struct OnboardingView: View {
                 }
             }
             .tint(Theme.accent)
-            Label("Your progress is saved on this iPhone.", systemImage: "iphone")
-                .font(.footnote)
-                .foregroundStyle(.secondary)
             Spacer()
         }
         .padding(.top, 12)
