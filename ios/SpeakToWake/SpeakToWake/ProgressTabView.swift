@@ -4,12 +4,21 @@ import WakeCore
 
 /// Progress tab: simple counts as tiles. Streak and detailed stats come later.
 struct ProgressTabView: View {
-    @Query private var packs: [PackProgress]
-    @Query private var reviews: [ReviewState]
-    @Query private var attempts: [Attempt]
+    @Query private var allPacks: [PackProgress]
+    @Query private var allReviews: [ReviewState]
+    @Query private var allAttempts: [Attempt]
+    /// Progress is shown for the current language only.
+    @AppStorage(AppSettings.Key.language) private var languageCode = "zh-CN"
+    private var language: LanguageOption { LanguageOption.option(for: languageCode) }
+    private var library: ContentLibrary { AppContent.library(for: languageCode) }
+    private var packs: [PackProgress] { allPacks.forLanguage(language.id) }
+    private var reviews: [ReviewState] { allReviews.forLanguage(language.id) }
+    private var attempts: [Attempt] { allAttempts.forLanguage(language.id) }
 
-    private var learnedSections: Int { packs.filter { $0.learnedAt != nil }.count }
-    private var totalSections: Int { AppContent.library.packs.count }
+    private var learnedSections: Int {
+        packs.filter { p in p.learnedAt != nil && library.packs.contains { $0.id == p.packID } }.count
+    }
+    private var totalSections: Int { library.packs.count }
     private var accuracy: String {
         guard !attempts.isEmpty else { return "–" }
         return "\(Int((Double(attempts.count { $0.passed }) / Double(attempts.count) * 100).rounded()))%"
@@ -21,7 +30,9 @@ struct ProgressTabView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 14) {
                     VStack(alignment: .leading, spacing: 2) {
-                        Text("\(LanguageOption.current.name) · \(LanguageOption.current.levels) 1–3").font(.subheadline.bold()).foregroundStyle(Theme.muted)
+                        Text("\(language.flag) \(language.name) · \(language.levelRange(upTo: library.hskLevels.last?.level ?? 1))")
+                            .font(.subheadline.bold())
+                            .foregroundStyle(Theme.muted)
                         Text("Progress").font(.largeTitle.weight(.heavy))
                     }
                     .padding(.horizontal, 4)

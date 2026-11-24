@@ -13,19 +13,23 @@ enum Learning {
     static let singleWordKinds: [Quiz.Kind] = [.meaningToEnglish, .meaningToChinese, .hearAndTap,
                                                .pictureMatch, .trueFalse, .fillBlank]
 
-    static let maker = QuizMaker(library: AppContent.library)
+    /// Builds quizzes in the word's own language.
+    static func quizMaker(for word: Word) -> QuizMaker {
+        QuizMaker(library: AppContent.library(for: word.language))
+    }
 
     /// A random single-word quiz, preferring a different kind from `avoiding` (for retries).
     static func quiz(for word: Word, avoiding: Quiz.Kind? = nil) -> Quiz {
+        let maker = quizMaker(for: word)
         let kinds = maker.availableKinds(for: word).filter { singleWordKinds.contains($0) }
         let kind = kinds.filter { $0 != avoiding }.randomElement() ?? kinds.randomElement()!
         return try! maker.make(kind, for: word, pool: pool(for: word))
     }
 
-    /// Wrong answers come from the word's own HSK level or easier, so an HSK 1
-    /// learner never sees HSK 3 words among the choices.
+    /// Wrong answers come from the word's own language and level or easier, so an
+    /// HSK 1 learner never sees HSK 3 words among the choices.
     static func pool(for word: Word) -> [Word] {
-        let library = AppContent.library
+        let library = AppContent.library(for: word.language)
         let level = library.pack(for: word)?.hsk ?? 1
         return library.words.filter { (library.pack(for: $0)?.hsk ?? 1) <= level }
     }
@@ -36,7 +40,7 @@ enum Learning {
 
     /// Call when a study session ends. Words already in review keep their progress.
     static func markLearned(_ pack: Pack, in context: ModelContext, today: Day = .today) {
-        let library = AppContent.library
+        let library = AppContent.library  // studying always happens in the current language
         let packID = pack.id
         let language = library.language
         let existing = try? context.fetch(FetchDescriptor<PackProgress>(

@@ -40,12 +40,16 @@ public struct ChallengePlanner: Sendable {
     public static let speechFallbackAfter = 2
     /// Chance that a word gets a speech prompt rather than a tap quiz.
     public static let speechShare = 0.5
+    /// Languages with a speech matcher. Korean and Japanese get tap quizzes until
+    /// their matchers are ported (PORTING-ko-ja.md, step 4).
+    public static let speechLanguages: Set<String> = ["zh-CN"]
 
     public init(maker: QuizMaker) {
         self.maker = maker
     }
 
     public func speechChallenges(for word: Word) -> [Challenge] {
+        guard Self.speechLanguages.contains(word.language) else { return [] }
         var challenges: [Challenge] = []
         if hanziCount(word.text) >= Self.minSpeechCharacters {
             challenges += [.sayIt, .hearAndRepeat]

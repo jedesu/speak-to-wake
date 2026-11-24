@@ -12,18 +12,20 @@ struct WordPicture: View {
         UIImage(named: "pic-\(word.conceptId)") != nil || AppContent.library.concept(for: word)?.emoji != nil
     }
 
+    private var label: String { "Picture of \(AppContent.library(for: word.language).english(word))" }
+
     var body: some View {
         if UIImage(named: "pic-\(word.conceptId)") != nil {
             Image("pic-\(word.conceptId)")
                 .resizable()
                 .scaledToFit()
                 .frame(width: size, height: size)
-                .accessibilityLabel("Picture of \(AppContent.library.concept(for: word)?.english ?? word.text)")
+                .accessibilityLabel(label)
         } else if let emoji = AppContent.library.concept(for: word)?.emoji {
             Text(emoji)
                 .font(.system(size: size * 0.85))
                 .frame(width: size, height: size)
-                .accessibilityLabel("Picture of \(AppContent.library.concept(for: word)?.english ?? word.text)")
+                .accessibilityLabel(label)
         }
     }
 }

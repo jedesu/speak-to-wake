@@ -23,7 +23,7 @@ struct SpeechPromptView: View {
     @State private var idleTask: Task<Void, Never>?
     @State private var timedOut = false
 
-    private let locale = Locale(identifier: "zh-CN")
+    private var locale: Locale { Locale(identifier: word.language) }
 
     /// What has to be said.
     private var target: String {

@@ -1,0 +1,45 @@
+# Builds the iPhone app and runs the tests on GitHub's Macs, so code written on
+# Windows gets compiled and checked. Free for public repositories.
+name: Build and test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  python:
+    name: Word data and prototypes (Python)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pytest pypinyin pykakasi
+      - run: python -m pytest -q
+        working-directory: prototype
+
+  ios:
+    name: iPhone app (Swift)
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v4
+      - name: Xcode version
+        run: xcodebuild -version
+      - name: Core tests (WakeCore, PinyinMatcher)
+        run: swift test --package-path ios/Core
+      - name: Build the app for the simulator
+        run: |
+          xcodebuild build \
+            -project ios/SpeakToWake/SpeakToWake.xcodeproj \
+            -scheme SpeakToWake \
+            -destination 'generic/platform=iOS Simulator' \
+            -configuration Debug \
+            CODE_SIGNING_ALLOWED=NO \
+            -quiet

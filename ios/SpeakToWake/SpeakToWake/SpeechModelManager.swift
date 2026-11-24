@@ -1,8 +1,8 @@
 import Foundation
 import Speech
 
-/// Checks whether this phone can transcribe Mandarin on-device, and downloads
-/// the speech model if it isn't installed yet.
+/// Checks whether this phone can transcribe the current language on-device, and
+/// downloads the speech model if it isn't installed yet.
 @Observable
 final class SpeechModelManager {
     enum State: Equatable {
@@ -14,7 +14,7 @@ final class SpeechModelManager {
         case failed(String)
     }
 
-    let wanted = Locale(identifier: "zh-CN")
+    let wanted = Locale(identifier: LanguageOption.current.id)
 
     private(set) var state: State = .checking
     private(set) var matchedLocale: Locale?
@@ -26,9 +26,11 @@ final class SpeechModelManager {
         state = .checking
         let supported = await SpeechTranscriber.supportedLocales
         supportedCount = supported.count
+        // Every locale in the current language's family (zh/yue, ko, ja), for the debug screen.
+        let family = String(wanted.identifier(.bcp47).prefix(2))
         chineseLocales = supported
             .map { $0.identifier(.bcp47) }
-            .filter { $0.hasPrefix("zh") || $0.hasPrefix("yue") }
+            .filter { $0.hasPrefix(family) || (family == "zh" && $0.hasPrefix("yue")) }
             .sorted()
 
         guard let locale = await SpeechTranscriber.supportedLocale(equivalentTo: wanted) else {

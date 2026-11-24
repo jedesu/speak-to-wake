@@ -100,14 +100,44 @@ final class Attempt {
 }
 
 /// The word packs bundled with the app (copied in from the repo's data/ folder).
+/// Each language's words are loaded the first time they're needed, then kept.
 enum AppContent {
-    static let library: ContentLibrary = {
+    private static var cache: [String: ContentLibrary] = [:]
+
+    /// The words of the language the user picked.
+    static var library: ContentLibrary { library(for: LanguageOption.current.id) }
+
+    static func library(for code: String) -> ContentLibrary {
+        let code = LanguageOption.option(for: code).id
+        if let cached = cache[code] { return cached }
         do {
-            return try ContentLibrary.load(language: "zh-CN")
+            let library = try ContentLibrary.load(language: code)
+            cache[code] = library
+            return library
         } catch {
-            fatalError("Word data missing from the app bundle: \(error)")
+            fatalError("Word data for \(code) missing from the app bundle: \(error)")
         }
-    }()
+    }
+}
+
+// Saved progress covers every language; screens show the current one only.
+extension Array where Element == ReviewState {
+    /// Review states for one language's words (ids look like "ko-KR:apple").
+    func forLanguage(_ code: String) -> [ReviewState] {
+        filter { $0.wordID.hasPrefix(code + ":") }
+    }
+}
+
+extension Array where Element == PackProgress {
+    func forLanguage(_ code: String) -> [PackProgress] {
+        filter { $0.language == code }
+    }
+}
+
+extension Array where Element == Attempt {
+    func forLanguage(_ code: String) -> [Attempt] {
+        filter { $0.wordID.hasPrefix(code + ":") }
+    }
 }
 
 /// One of the user's alarms. Its id is also the system (AlarmKit) alarm's id.

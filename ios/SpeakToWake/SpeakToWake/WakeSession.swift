@@ -25,8 +25,7 @@ final class WakeSession {
 
     var hasWords: Bool { !pool.isEmpty }
 
-    private let library = AppContent.library
-    private let planner = ChallengePlanner(maker: Learning.maker)
+    private let planner = ChallengePlanner(maker: QuizMaker(library: AppContent.library))
     private var pool: [Word] = []
     private var planned: [(word: Word, challenge: Challenge)] = []
     private var nextIndex = 0
@@ -40,7 +39,9 @@ final class WakeSession {
     init(reviews: [ReviewState], required: Int = AppSettings.promptsPerWake, allowSpeech: Bool = AppSettings.speakingOn,
          difficulty: SRS.Difficulty = .normal) {
         self.allowSpeech = allowSpeech
+        // The alarm asks words in the language picked now; other languages' progress waits.
         let library = AppContent.library
+        let reviews = reviews.forLanguage(library.language)
         let pool = reviews.compactMap { library.word(id: $0.wordID) }
         self.required = min(required, max(pool.count, 1))
         self.pool = pool
@@ -115,7 +116,7 @@ final class WakeSession {
     private func make(_ word: Word, _ challenge: Challenge) -> Prompt {
         var quiz: Quiz?
         if case .tap(let kind) = challenge {
-            quiz = try? Learning.maker.make(kind, for: word, pool: Learning.pool(for: word))
+            quiz = try? Learning.quizMaker(for: word).make(kind, for: word, pool: Learning.pool(for: word))
         }
         return Prompt(word: word, challenge: challenge, quiz: quiz)
     }

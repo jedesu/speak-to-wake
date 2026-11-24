@@ -6,13 +6,18 @@ import WakeCore
 /// HSK level or by topic (Food & drink, Places & travel...).
 struct LearnView: View {
     private enum Mode: String, CaseIterable {
-        case levels = "HSK levels"
+        case levels = "HSK levels"  // saved setting value; the label comes from the language
         case topics = "Topics"
     }
 
-    private let library = AppContent.library
-    @Query private var progress: [PackProgress]
-    @Query private var reviews: [ReviewState]
+    /// Changing the language redraws the tab with that language's sections.
+    @AppStorage(AppSettings.Key.language) private var languageCode = "zh-CN"
+    private var language: LanguageOption { LanguageOption.option(for: languageCode) }
+    private var library: ContentLibrary { AppContent.library(for: languageCode) }
+    @Query private var allProgress: [PackProgress]
+    @Query private var allReviews: [ReviewState]
+    private var progress: [PackProgress] { allProgress.forLanguage(library.language) }
+    private var reviews: [ReviewState] { allReviews.forLanguage(library.language) }
     @State private var reviewing = false
     @State private var choosingLanguage = false
     @AppStorage(AppSettings.Key.learnMode) private var mode = Mode.levels
@@ -25,7 +30,7 @@ struct LearnView: View {
                     header
                     if !reviews.isEmpty { reviewCard }
                     Picker("Browse", selection: $mode) {
-                        ForEach(Mode.allCases, id: \.self) { Text($0.rawValue).tag($0) }
+                        ForEach(Mode.allCases, id: \.self) { Text($0 == .levels ? language.levelsTitle : $0.rawValue).tag($0) }
                     }
                     .pickerStyle(.segmented)
                     .padding(.vertical, 4)
@@ -33,14 +38,16 @@ struct LearnView: View {
                     switch mode {
                     case .levels:
                         ForEach(library.hskLevels, id: \.level) { group in
-                            groupHeader("HSK \(group.level)", packs: group.packs, isPro: group.level > 1)
+                            groupHeader(language.levelName(group.level), packs: group.packs, isPro: group.level > 1)
                             sectionCards(group.packs, showLevel: false)
                         }
                     case .topics:
                         ForEach(library.topics) { topic in
                             let packs = library.packs(in: topic)
-                            groupHeader(topic.title, packs: packs, isPro: false)
-                            sectionCards(packs, showLevel: true)
+                            if !packs.isEmpty {  // Korean/Japanese have no words yet for some topics
+                                groupHeader(topic.title, packs: packs, isPro: false)
+                                sectionCards(packs, showLevel: true)
+                            }
                         }
                     }
                 }
@@ -64,9 +71,8 @@ struct LearnView: View {
             Button {
                 choosingLanguage = true
             } label: {
-                let language = LanguageOption.current
                 HStack(spacing: 6) {
-                    Text("\(language.flag) \(language.name) · \(language.levels) 1–\(library.hskLevels.last?.level ?? 1)")
+                    Text("\(language.flag) \(language.name) · \(language.levelRange(upTo: library.hskLevels.last?.level ?? 1))")
                     Image(systemName: "chevron.down").font(.caption.bold())
                 }
                 .font(.subheadline.bold())
@@ -178,7 +184,7 @@ private struct SectionCard: View {
 
             VStack(alignment: .leading, spacing: 3) {
                 if showLevel {
-                    Text("HSK \(pack.hsk ?? 1)")
+                    Text(LanguageOption.current.levelName(pack.hsk ?? 1))
                         .font(.caption.weight(.heavy))
                         .foregroundStyle(Theme.link)
                 }
@@ -208,10 +214,13 @@ private struct SectionCard: View {
 /// The words in one section, and the buttons to study them.
 struct PackDetailView: View {
     let pack: Pack
-    private let library = AppContent.library
+    private var library: ContentLibrary { AppContent.library }
+    private var language: LanguageOption { LanguageOption.current }
 
-    @Query private var progress: [PackProgress]
-    @Query private var reviews: [ReviewState]
+    @Query private var allProgress: [PackProgress]
+    @Query private var allReviews: [ReviewState]
+    private var progress: [PackProgress] { allProgress.forLanguage(library.language) }
+    private var reviews: [ReviewState] { allReviews.forLanguage(library.language) }
     @State private var studying = false
     @State private var quizzing = false
     @State private var signingIn = false
@@ -232,7 +241,7 @@ struct PackDetailView: View {
     /// Why studying is blocked, if it is.
     private var blockedReason: String? {
         if !AppSettings.canOpen(pack) && !proUnlocked {
-            return "HSK \(pack.hsk ?? 2) is part of Mingo Pro, which isn't available yet."
+            return "\(language.levelName(pack.hsk ?? 2)) is part of Mingo Pro, which isn't available yet."
         }
         let due = Learning.dueCount(reviews)
         if !learned && due > Learning.overdueLimit {
@@ -248,10 +257,12 @@ struct PackDetailView: View {
                 ForEach(library.words(in: pack)) { word in
                     WordCard(word: word)
                 }
-                Text("A syllable with no tone mark is a neutral tone: say it short and light, like the second ma in māma.")
-                    .font(.footnote)
-                    .foregroundStyle(Theme.muted)
-                    .padding(.horizontal, 6)
+                if let tip = Self.pronunciationTip[library.language] {
+                    Text(tip)
+                        .font(.footnote)
+                        .foregroundStyle(Theme.muted)
+                        .padding(.horizontal, 6)
+                }
             }
             .padding(.horizontal, 18)
             .padding(.bottom, 24)
@@ -273,7 +284,7 @@ struct PackDetailView: View {
         VStack(alignment: .leading, spacing: 12) {
             HStack {
                 VStack(alignment: .leading, spacing: 2) {
-                    Text("HSK \(pack.hsk ?? 1) · \(library.words(in: pack).count) words")
+                    Text("\(language.levelName(pack.hsk ?? 1)) · \(library.words(in: pack).count) words")
                         .font(.subheadline.bold())
                         .foregroundStyle(Theme.muted)
                     Text(learned ? "Learned" : "Not learned yet")
@@ -311,9 +322,16 @@ struct PackDetailView: View {
         }
         .card(padding: 20)
     }
+
+    /// A one-line pronunciation tip under each section's words.
+    private static let pronunciationTip = [
+        "zh-CN": "A syllable with no tone mark is a neutral tone: say it short and light, like the second ma in māma.",
+        "ko-KR": "The romanization shows how a word is said, so it can differ from the letters: 감사합니다 is gamsahamnida.",
+        "ja-JP": "Long sounds matter: おばさん (aunt) and おばあさん (grandma) are different words. Hold the long vowel a beat longer.",
+    ]
 }
 
-/// One word in the section list: picture, characters, pinyin, meaning, example.
+/// One word in the section list: picture, characters, pronunciation, meaning, example.
 private struct WordCard: View {
     let word: Word
 
@@ -330,12 +348,20 @@ private struct WordCard: View {
             .background(Theme.chip, in: .rect(cornerRadius: 16))
 
             VStack(alignment: .leading, spacing: 4) {
+                if let kana = word.kanaHint {
+                    Text(kana).font(.caption).foregroundStyle(Theme.muted)
+                }
                 HStack(alignment: .firstTextBaseline, spacing: 8) {
                     Text(word.text).font(.title2.weight(.semibold))
                     Text(word.pinyin).foregroundStyle(Theme.muted)
                 }
-                Text(AppContent.library.concept(for: word)?.english ?? "")
+                Text(AppContent.library(for: word.language).english(word))
                     .font(.subheadline.bold())
+                if let note = word.note {
+                    Label(note, systemImage: "info.circle")
+                        .font(.caption)
+                        .foregroundStyle(Theme.link)
+                }
                 if let example = word.example {
                     Text("\(example.text)  \(example.english)")
                         .font(.caption)

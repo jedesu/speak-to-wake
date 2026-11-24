@@ -34,10 +34,15 @@ public struct Concept: Codable, Hashable, Identifiable, Sendable {
     public let packId: String
     public let english: String
     public let emoji: String?
+    /// Only these languages have the concept (Korean/Japanese particles). Nil means every language.
+    public let languages: [String]?
 }
 
 public struct ExampleSentence: Codable, Hashable, Sendable {
     public let text: String
+    /// Japanese only: the sentence in hiragana.
+    public let reading: String?
+    /// Pronunciation in Latin letters: pinyin, Korean romanization or romaji.
     public let pinyin: String
     public let english: String
 }
@@ -45,7 +50,14 @@ public struct ExampleSentence: Codable, Hashable, Sendable {
 public struct Word: Codable, Hashable, Identifiable, Sendable {
     public let conceptId: String
     public let text: String
+    /// Japanese only: the word in hiragana (ねこ for 猫).
+    public let reading: String?
+    /// Pronunciation in Latin letters: pinyin, Korean romanization or romaji.
     public let pinyin: String
+    /// This language's own English, when the shared one doesn't fit ("won (Korean money)").
+    public let meaning: String?
+    /// A short usage tip ("Written は but said わ").
+    public let note: String?
     public let example: ExampleSentence?
     /// Other ways of saying it that also count as correct (您好 for 你好).
     public let alternates: [String]?
@@ -57,7 +69,13 @@ public struct Word: Codable, Hashable, Identifiable, Sendable {
     public var id: String { "\(language):\(conceptId)" }
 
     enum CodingKeys: String, CodingKey {
-        case conceptId, text, pinyin, example, alternates
+        case conceptId, text, reading, pinyin, meaning, note, example, alternates
+    }
+
+    /// Japanese words show their kana when the text has kanji (猫 → ねこ).
+    public var kanaHint: String? {
+        guard let reading, reading != text else { return nil }
+        return reading
     }
 }
 
@@ -89,7 +107,6 @@ public struct ContentLibrary: Sendable {
         let packsFile = try JSONDecoder().decode(PacksFile.self, from: packsJSON)
         let wordsFile = try JSONDecoder().decode(WordsFile.self, from: wordsJSON)
 
-        packs = packsFile.packs
         concepts = Dictionary(uniqueKeysWithValues: packsFile.concepts.map { ($0.id, $0) })
         language = wordsFile.language
         words = wordsFile.words.map { word in
@@ -98,8 +115,16 @@ public struct ContentLibrary: Sendable {
             return word
         }
         let concepts = self.concepts
-        wordsByPack = Dictionary(grouping: words) { concepts[$0.conceptId]?.packId ?? "" }
+        let wordsByPack = Dictionary(grouping: words) { concepts[$0.conceptId]?.packId ?? "" }
+        self.wordsByPack = wordsByPack
         wordsByID = Dictionary(uniqueKeysWithValues: words.map { ($0.id, $0) })
+        // Korean and Japanese only have level 1 so far: hide sections with no words.
+        packs = packsFile.packs.filter { !(wordsByPack[$0.id] ?? []).isEmpty }
+    }
+
+    /// What the word means in English: its own meaning if it has one, else the shared concept's.
+    public func english(_ word: Word) -> String {
+        word.meaning ?? concepts[word.conceptId]?.english ?? ""
     }
 
     /// Looks up a word by its saved id, like "zh-CN:apple".

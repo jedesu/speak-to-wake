@@ -7,10 +7,10 @@ import WakeCore
 struct YourWordsView: View {
     @Query private var progress: [PackProgress]
     @Query private var reviews: [ReviewState]
-    private let library = AppContent.library
+    private var library: ContentLibrary { AppContent.library }
 
     private var learnedPacks: [Pack] {
-        let ids = Set(progress.filter { $0.learnedAt != nil }.map(\.packID))
+        let ids = Set(progress.forLanguage(library.language).filter { $0.learnedAt != nil }.map(\.packID))
         return library.packs.filter { ids.contains($0.id) }
             .sorted { ($0.hsk ?? 0, $0.order ?? 0) < ($1.hsk ?? 0, $1.order ?? 0) }
     }
@@ -24,7 +24,7 @@ struct YourWordsView: View {
                         .card(padding: 20)
                 }
                 ForEach(learnedPacks) { pack in
-                    Text("HSK \(pack.hsk ?? 1) · \(pack.title)")
+                    Text("\(LanguageOption.current.levelName(pack.hsk ?? 1)) · \(pack.title)")
                         .font(.headline)
                         .foregroundStyle(Theme.muted)
                         .padding(.horizontal, 6)
@@ -62,9 +62,10 @@ struct YourWordsView: View {
             VStack(alignment: .leading, spacing: 1) {
                 HStack(alignment: .firstTextBaseline, spacing: 8) {
                     Text(word.text).font(.title3.weight(.semibold))
-                    Text(word.pinyin).font(.subheadline).foregroundStyle(Theme.link)
+                    Text(word.kanaHint.map { "\($0) · \(word.pinyin)" } ?? word.pinyin)
+                        .font(.subheadline).foregroundStyle(Theme.link)
                 }
-                Text(library.concept(for: word)?.english ?? "").font(.subheadline).foregroundStyle(Theme.muted)
+                Text(library.english(word)).font(.subheadline).foregroundStyle(Theme.muted)
             }
             Spacer(minLength: 0)
             // Review level as dots: more dots, better known.

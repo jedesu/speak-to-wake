@@ -133,7 +133,13 @@ public struct QuizMaker: Sendable {
     // MARK: Helpers
 
     public func english(_ word: Word) -> String {
-        library.concept(for: word)?.english ?? ""
+        library.english(word)
+    }
+
+    /// How a word is said, without spaces or punctuation: kana for Japanese,
+    /// otherwise the romanization (pinyin keeps its tone marks, so 买/卖 differ).
+    public func sound(_ word: Word) -> String {
+        (word.reading ?? word.pinyin).lowercased().filter { !" '’.,!?-".contains($0) }
     }
 
     public func emoji(_ word: Word) -> String? {
@@ -151,7 +157,10 @@ public struct QuizMaker: Sendable {
     private func distractors<R: RandomNumberGenerator>(
         _ word: Word, _ pool: [Word], _ count: Int, _ sameTheme: Bool, _ rng: inout R
     ) throws -> [Word] {
-        let others = pool.filter { $0.id != word.id && english($0) != english(word) && $0.text != word.text }
+        // Never a wrong answer that sounds the same (他/她 are both tā): "hear and tap" couldn't tell them apart.
+        let others = pool.filter {
+            $0.id != word.id && english($0) != english(word) && $0.text != word.text && sound($0) != sound(word)
+        }
         let preferred = others.filter { (theme($0) == theme(word)) == sameTheme }.shuffled(using: &rng)
         let rest = others.filter { (theme($0) == theme(word)) != sameTheme }.shuffled(using: &rng)
         let chosen = Array((preferred + rest).prefix(count))

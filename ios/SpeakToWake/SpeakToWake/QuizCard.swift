@@ -4,14 +4,15 @@ import WakeCore
 /// Shows any tap quiz and reports the answer. Used by Learn practice, Review and
 /// the wake-up challenge. Give each quiz its own `.id` so state resets.
 ///
-/// Quizzes show characters only, never pinyin: pinyin would give the answer away.
-/// Where it helps, a Show hint button reveals the word's picture.
+/// Quizzes show characters only, never pinyin or romanization: they would give
+/// the answer away. Japanese is the exception: kana appears small above kanji,
+/// since beginners can't read 猫 yet. Where it helps, Show hint reveals a picture.
 struct QuizCard: View {
     let quiz: Quiz
     /// Called when the user taps Continue. `chosen` is what they picked, for the log.
     let onFinish: (_ correct: Bool, _ chosen: String, _ usedHint: Bool) -> Void
 
-    private let maker = QuizMaker(library: AppContent.library)
+    private var maker: QuizMaker { Learning.quizMaker(for: quiz.target) }
 
     @State private var picked: Word?
     @State private var pickedBool: Bool?
@@ -98,7 +99,7 @@ struct QuizCard: View {
     private var prompt: some View {
         switch quiz {
         case .meaningToEnglish(let target, _):
-            Text(target.text).font(.system(size: 72, weight: .medium))
+            WordText(word: target, size: 72)
         case .meaningToChinese(let target, _):
             Text(maker.english(target)).font(.largeTitle.bold()).multilineTextAlignment(.center)
         case .hearAndTap(let target, _):
@@ -112,7 +113,7 @@ struct QuizCard: View {
             WordPicture(word: target, size: 120)
         case .trueFalse(let target, let shown, _):
             VStack(spacing: 6) {
-                Text(target.text).font(.system(size: 64, weight: .medium))
+                WordText(word: target, size: 64)
                 Text("means “\(shown)”").font(.title2.bold())
             }
         case .fillBlank(_, let sentence, let hint, _):
@@ -172,7 +173,7 @@ struct QuizCard: View {
                 if quiz.kind == .meaningToEnglish {
                     Text(maker.english(option)).font(.title3.bold())
                 } else {
-                    Text(option.text).font(.title.weight(.medium))
+                    WordText(word: option, size: 28)
                 }
             }
             .frame(maxWidth: .infinity, minHeight: 60)
@@ -220,7 +221,7 @@ struct QuizCard: View {
             VStack(spacing: 10) {
                 ForEach(words) { word in
                     pairButton(id: word.id, selected: selectedLeft == word) {
-                        Text(word.text).font(.title2.weight(.medium))
+                        WordText(word: word, size: 22)
                     } action: {
                         selectedLeft = word
                         Speaker.shared.say(word.text)
@@ -292,5 +293,23 @@ struct QuizCard: View {
         case .matchPairs: "\(mistakes) mistakes"
         default: picked?.text ?? ""
         }
+    }
+}
+
+/// A word's characters, with its kana small on top when it has kanji (Japanese).
+struct WordText: View {
+    let word: Word
+    let size: CGFloat
+
+    var body: some View {
+        VStack(spacing: 0) {
+            if let kana = word.kanaHint {
+                Text(kana)
+                    .font(.system(size: max(size * 0.32, 12)))
+                    .foregroundStyle(Theme.muted)
+            }
+            Text(word.text).font(.system(size: size, weight: .medium))
+        }
+        .accessibilityElement(children: .combine)
     }
 }

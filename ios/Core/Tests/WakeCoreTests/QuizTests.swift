@@ -35,6 +35,25 @@ func quizIsWellFormed(_ c: QuizCase, sameTheme: Bool) throws {
     }
 }
 
+/// 他/她/它 are all tā: a "hear and tap" with two of them couldn't be answered.
+@Test(arguments: ["zh-CN", "ko-KR", "ja-JP"])
+func wrongAnswersNeverSoundLikeTheRightOne(language: String) throws {
+    let lib = loadLibrary(language)
+    let maker = QuizMaker(library: lib)
+    for word in lib.words {
+        for kind in [Quiz.Kind.meaningToChinese, .hearAndTap] {
+            for seed in 0..<3 {
+                var rng = SeededRandom(seed: UInt64(seed))
+                let quiz = try maker.make(kind, for: word, pool: lib.words, using: &rng)
+                #expect(quiz.options.count == 4 && quiz.options.contains(word))
+                for option in quiz.options where option != word {
+                    #expect(maker.sound(option) != maker.sound(word), "\(word.text) and \(option.text)")
+                }
+            }
+        }
+    }
+}
+
 @Test func trueFalseHasBothOutcomes() throws {
     var answers = Set<Bool>()
     for seed in 0..<20 {

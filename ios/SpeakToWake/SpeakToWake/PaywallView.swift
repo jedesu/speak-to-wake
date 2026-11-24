@@ -24,9 +24,9 @@ struct PaywallView: View {
 
                 VStack(alignment: .leading, spacing: 14) {
                     feature("brain.head.profile", "Spaced repetition", "The alarm and Review bring back words right before you'd forget them")
-                    feature("square.stack.3d.up.fill", "Every word pack", "All HSK levels and topics, not just the starter sections")
+                    feature("square.stack.3d.up.fill", "Every word pack", "All levels and topics, not just the starter sections")
                     feature("chart.bar.fill", "Detailed progress", "See which words stick and which keep slipping")
-                    feature("globe", "New languages as they launch", "Japanese and Korean are next")
+                    feature("globe", "New languages as they launch", "Spanish and French are next")
                 }
                 .card(padding: 20)
 

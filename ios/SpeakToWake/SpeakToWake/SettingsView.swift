@@ -11,6 +11,7 @@ struct SettingsView: View {
     @AppStorage(AppSettings.Key.hasOnboarded) private var hasOnboarded = true
     @AppStorage(AppSettings.Key.proUnlocked) private var proUnlocked = false
     @AppStorage(AppSettings.Key.demoMode) private var demoMode = false
+    @AppStorage(AppSettings.Key.language) private var languageCode = "zh-CN"
     @Environment(\.modelContext) private var modelContext
     @State private var demoLoaded = false
     @State private var showingPaywall = false
@@ -40,7 +41,8 @@ struct SettingsView: View {
                                 .background(Theme.ground)
                                 .navigationTitle("Language")
                         } label: {
-                            navRow("\(LanguageOption.current.flag)  \(LanguageOption.current.name)", icon: "globe")
+                            let language = LanguageOption.option(for: languageCode)
+                            navRow("\(language.flag)  \(language.name)", icon: "globe")
                         }
                         .buttonStyle(.plain)
                     }
@@ -95,7 +97,7 @@ struct SettingsView: View {
                             .buttonStyle(.plain)
                     }
 
-                    group("Developer", footer: "Pro isn't for sale yet. This switch opens HSK 2 and up for testing.") {
+                    group("Developer", footer: "Pro isn't for sale yet. This switch opens the Pro sections (HSK 2 and up) for testing.") {
                         Button {
                             Task {
                                 await DemoData.load(into: modelContext)
@@ -117,7 +119,7 @@ struct SettingsView: View {
                         } message: {
                             Text("Erases your words, answers, alarms and settings, signs you out and shows the welcome screens, like a new install.")
                         }
-                        Text("Loads HSK 1 sections 1–3 as learned, 6 words due today and a 7:00 AM weekday alarm. Turns on demo mode and Pro, and turns speaking prompts off (tap questions only).")
+                        Text("Loads sections 1–3 of the current language as learned, 6 words due today and a 7:00 AM weekday alarm. Turns on demo mode and Pro, and turns speaking prompts off (tap questions only).")
                             .font(.caption)
                             .foregroundStyle(Theme.muted)
                         Toggle(isOn: $demoMode) {
@@ -126,7 +128,7 @@ struct SettingsView: View {
                         .tint(Theme.accent)
                         divider
                         Toggle(isOn: $proUnlocked) {
-                            rowText("Pro unlocked (for testing)", "HSK 2–3 sections")
+                            rowText("Pro unlocked (for testing)", "Higher-level sections")
                         }
                         .tint(Theme.accent)
                         divider

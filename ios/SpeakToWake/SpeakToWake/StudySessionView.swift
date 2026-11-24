@@ -204,7 +204,8 @@ struct StudySessionView: View {
 
     private func startPractice() {
         queue = words.shuffled().map { Learning.quiz(for: $0) }
-        if let first = words.first, let pairs = try? Learning.maker.make(.matchPairs, for: first, pool: Learning.pool(for: first)) {
+        if let first = words.first,
+           let pairs = try? Learning.quizMaker(for: first).make(.matchPairs, for: first, pool: Learning.pool(for: first)) {
             queue.append(pairs)
         }
         position = 0
@@ -267,13 +268,14 @@ struct StudySessionView: View {
     }
 }
 
-/// One flashcard: picture, word, pinyin, meaning and an example, read aloud.
+/// One flashcard: picture, word (with kana for Japanese), pronunciation, meaning,
+/// a usage note and an example, read aloud.
 struct FlashcardView: View {
     let word: Word
     /// False hides the picture, meaning and example, for flip-card recall.
     var revealed = true
 
-    private var concept: Concept? { AppContent.library.concept(for: word) }
+    private var english: String { AppContent.library(for: word.language).english(word) }
 
     var body: some View {
         VStack(spacing: 14) {
@@ -286,18 +288,29 @@ struct FlashcardView: View {
                     WordPictureBubble(word: word, size: 140)
                 }
             }
-            Text(word.text).font(.system(size: 72, weight: .medium))
+            WordText(word: word, size: 72)
             HStack(spacing: 10) {
                 Text(word.pinyin).font(.title.weight(.semibold)).foregroundStyle(Theme.link)
                 soundButton("speaker.wave.2.fill", label: "Play pronunciation") { Speaker.shared.say(word.text) }
                 soundButton("tortoise.fill", label: "Play slowly") { Speaker.shared.say(word.text, slow: true) }
             }
-            Text(revealed ? concept?.english ?? "" : "What does it mean?")
+            Text(revealed ? english : "What does it mean?")
                 .font(.title2.bold())
                 .foregroundStyle(revealed ? Theme.text : Theme.muted)
+                .multilineTextAlignment(.center)
+
+            if revealed, let note = word.note {
+                Label(note, systemImage: "info.circle")
+                    .font(.subheadline)
+                    .foregroundStyle(Theme.link)
+                    .multilineTextAlignment(.center)
+            }
 
             if revealed, let example = word.example {
                 VStack(spacing: 4) {
+                    if let reading = example.reading, reading != example.text {
+                        Text(reading).font(.caption).foregroundStyle(Theme.muted)
+                    }
                     HStack {
                         Text(example.text).font(.title3.weight(.medium))
                         soundButton("speaker.wave.2", label: "Play example sentence") { Speaker.shared.say(example.text) }

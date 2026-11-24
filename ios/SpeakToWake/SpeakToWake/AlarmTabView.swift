@@ -7,8 +7,8 @@ struct AlarmTabView: View {
     @Environment(\.modelContext) private var modelContext
     @Query(sort: [SortDescriptor(\AlarmConfig.hour), SortDescriptor(\AlarmConfig.minute)])
     private var configs: [AlarmConfig]
-    @Query private var reviews: [ReviewState]
     @Query private var progress: [PackProgress]
+    @AppStorage(AppSettings.Key.language) private var languageCode = "zh-CN"
 
     private var controller = AlarmController.shared
     @State private var volume = VolumeMonitor()
@@ -91,14 +91,16 @@ struct AlarmTabView: View {
     /// Which words tomorrow's alarm can ask.
     @ViewBuilder
     private var wordsTip: some View {
-        let library = AppContent.library
-        let learned = library.packs.filter { pack in progress.contains { $0.packID == pack.id && $0.learnedAt != nil } }
+        let language = LanguageOption.option(for: languageCode)
+        let library = AppContent.library(for: language.id)
+        let mine = progress.forLanguage(language.id)
+        let learned = library.packs.filter { pack in mine.contains { $0.packID == pack.id && $0.learnedAt != nil } }
         if learned.isEmpty {
-            tip("book.fill", "Learn your first words",
-                "Your alarm asks words you've learned. Start with HSK 1 · Greetings in the Learn tab.")
+            tip("book.fill", "Learn your first \(language.name) words",
+                "Your alarm asks words you've learned. Start with \(language.levelName(1)) · Greetings in the Learn tab.")
         } else {
-            tip("character.book.closed.fill", "Your alarm's words come from",
-                "HSK 1 · " + learned.map(\.title).joined(separator: ", "))
+            tip("character.book.closed.fill", "Your alarm asks \(language.name) words from",
+                learned.map(\.title).joined(separator: ", "))
         }
     }
 

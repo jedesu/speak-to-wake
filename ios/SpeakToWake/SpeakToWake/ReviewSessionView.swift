@@ -47,7 +47,8 @@ struct ReviewSessionView: View {
 
     private func start() {
         guard queue.isEmpty else { return }
-        let ids = SRS.pickForAlarm(reviews.map(\.card), today: .today, n: Learning.reviewSessionSize)
+        let mine = reviews.forLanguage(AppContent.library.language)
+        let ids = SRS.pickForAlarm(mine.map(\.card), today: .today, n: Learning.reviewSessionSize)
         queue = ids.compactMap { AppContent.library.word(id: $0) }.map { (Learning.quiz(for: $0), false) }
     }
 

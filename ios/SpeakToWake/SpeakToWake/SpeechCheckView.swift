@@ -95,13 +95,13 @@ struct SpeechCheckView: View {
                     }
                 }
 
-                Section("Mandarin (zh-CN)") {
+                Section("\(LanguageOption.current.name) (\(LanguageOption.current.id))") {
                     statusRow
                     if let locale = model.matchedLocale {
                         LabeledContent("Matched locale", value: locale.identifier(.bcp47))
                     }
                     if model.state == .notInstalled {
-                        Button("Download Mandarin model") {
+                        Button("Download \(LanguageOption.current.name) model") {
                             Task { await model.download() }
                         }
                     }
@@ -110,7 +110,7 @@ struct SpeechCheckView: View {
                     }
                 }
 
-                Section("Chinese locales on this phone") {
+                Section("\(LanguageOption.current.name) locales on this phone") {
                     if model.chineseLocales.isEmpty {
                         Text("None found").foregroundStyle(.secondary)
                     }
