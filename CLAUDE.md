@@ -8,11 +8,11 @@ A class project (individual entrepreneurship class, ~3 months from late Sept 202
 ## How to work with the user
 - Build in small steps. After each step, say how to run and test it, then stop and wait.
 - If the platform can't do something, say so plainly and suggest the closest thing that works.
-- Keep v1 out of scope: accounts/login, real payments, social features, AI-generated lessons, multiple languages at once.
+- Keep v1 out of scope: accounts/login, real payments, social features, AI-generated lessons, learning several languages at the same time (choosing or switching one language is fine).
 
 ## Decisions made
 - Platform: native iOS 26 (built with Xcode 27), Swift + SwiftUI, AlarmKit, SpeechAnalyzer, SwiftData. Mac + iPhone.
-- Language: Mandarin (zh-CN, simplified) only for the MVP. Data model supports more languages later. Japanese and Korean come later.
+- Language: Mandarin (zh-CN, simplified) first. **Korean (ko-KR) and Japanese (ja-JP) added Nov 2026** (user decision): they reuse the shared sections (concepts) of HSK 1, translated, with Chinese-only concepts skipped with a reason and 4 particle concepts only they have (`"languages"` in packs.json). Level 1 only so far; shown as "Level", not HSK/TOPIK/JLPT. Data and Python logic are done; the iOS app is not yet ported: follow **PORTING-ko-ja.md**.
 - AlarmKit cannot remove the Stop button. Design: a second "Speak" button opens the challenge, and Stop schedules a bounded series of re-rings until the challenge is passed. See PHASE0.md.
 - Matching is by pinyin, not characters. Homophones pass.
 - Pinyin style in the word data follows the standard dictionary (现代汉语词典), like Pleco, HelloChinese and the HSK lists: neutral tones are unmarked (葡萄 pútao, 谢谢 xièxie, 朋友 péngyou). An unmarked syllable means neutral tone, not a missing mark. Show a short note about this in the Learn tab.
@@ -35,7 +35,9 @@ Done (Python prototypes in prototype/, run on Windows, 1,200+ tests):
 - quizzes.py: tap-quiz generators
 - srs.py: Leitner spaced repetition, plus simulate_srs.py
 
-Run the Python tests: `cd prototype && python -m pytest -q` (needs `pip install pypinyin pytest`; a venv at .venv is gitignored).
+- Korean/Japanese (Nov 2026, on Windows): hand-written `data/source/ko-KR.txt` and `ja-JP.txt` (146 words each, 9 concepts skipped with reasons) → `cd prototype && python build_lang.py ko-KR|ja-JP` → `data/words.<lang>.json`. Korean romanization is our own Revised Romanization with sound changes (`korean.py`); Japanese readings are hand-written and checked against pykakasi, with a short list of hand-checked exceptions in `test_lang_data.py`. Matchers: `korean.py` (compares Hangul letter by letter; ㅐ/ㅔ nearly free, plain/aspirated/tense half cost) and `japanese.py` (compares kana beats; vowel length and small っ cost 0.8 because they change the word, voicing 0.5). Cases in `cases.ko-KR.json` and `cases.ja-JP.json`. Quizzes load any language, use per-language `meaning`, and never offer a wrong answer that sounds like the right one (this also fixes Mandarin 他/她; the Swift fix is step 0 of PORTING-ko-ja.md).
+
+Run the Python tests: `cd prototype && python -m pytest -q` (needs `pip install pypinyin pytest pykakasi`; a venv at .venv is gitignored).
 
 Done on the Mac (Oct 2026):
 - Setup: macOS 27, **Xcode 27** (iOS 27 SDK), iPhone 17 Pro on **iOS 26.6**, Developer Mode on, free Apple ID (Personal Team `522FQ565F9`). Deployment target is iOS 26.0.

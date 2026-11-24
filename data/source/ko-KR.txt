@@ -1,0 +1,193 @@
+#! Korean, level 1 (the same sections as HSK 1). Build with: cd prototype && python build_lang.py ko-KR
+#! Line format: concept id | word | meaning (only if it differs from the shared English) | example | example English | alternates (comma-separated) | note
+#! "- id | reason" skips a shared concept that doesn't fit Korean.
+#! "+id | ..." adds a concept only some languages have (meaning required).
+#! Verbs and adjectives are in dictionary form (먹다); the polite form (먹어요) is an accepted alternate.
+#! Romanization is generated (Revised Romanization with sound changes).
+
+## hsk1-01
+hello | 안녕하세요 | | 안녕하세요, 저는 ^민수예요. | Hello, I'm Minsu. | 안녕 |
+thanks | 감사합니다 | | 도와주셔서 감사합니다. | Thank you for helping me. | 고맙습니다, 고마워요 |
+youre-welcome | 천만에요 | | 천만에요! | You're welcome! | |
+goodbye | 안녕히 가세요 | goodbye (to someone leaving) | 내일 봐요, 안녕히 가세요. | See you tomorrow, goodbye. | 안녕히 계세요, 잘 가 | Said to someone who is leaving. If you are the one leaving, say 안녕히 계세요.
+sorry | 미안해요 | | 늦어서 미안해요. | Sorry I'm late. | 죄송합니다, 미안합니다 |
+no-problem | 괜찮아요 | it's okay, no problem | 괜찮아요, 저는 안 바빠요. | It's okay, I'm not busy. | 괜찮습니다 |
+please | 주세요 | please (give me) | 물 좀 주세요. | Water, please. | | Goes after what you want: 커피 주세요 (coffee, please).
+hey-phone | 여보세요 | | 여보세요, 누구세요? | Hello, who is this? | |
+be | 이에요 | to be (am, is, are) | 저는 학생이에요. | I am a student. | 예요, 입니다 | Goes after a word ending in a consonant; after a vowel it's 예요.
+not | 아니요 | no | 아니요, 저는 학생이 아니에요. | No, I'm not a student. | 아니오, 아뇨 |
+
+## hsk1-02
+i | 저 | I, me (polite) | 저는 ^김민수예요. | I'm Kim Minsu. | 나 | Polite. With friends, say 나.
+you | 너 | you (to a friend) | 너는 학생이야? | Are you a student? | 당신 | Casual. Koreans usually use the person's name or title instead of "you".
+he | 그 | he (in writing) | 그는 제 친구예요. | He is my friend. | 그 사람 | Mostly written. In speech, say 그 사람 (that person).
+she | 그녀 | she (in writing) | 그녀는 아주 예뻐요. | She is very pretty. | | Mostly written.
+we | 우리 | | 우리는 반 친구예요. | We are classmates. | 저희 |
+person | 사람 | | 그는 ^한국 사람이에요. | He is Korean. | |
+who | 누구 | | 그녀는 누구예요? | Who is she? | 누가 |
+name | 이름 | | 이름이 뭐예요? | What's your name? | 성함 |
+- be-called | Korean says 제 이름은 ...이에요 (my name is ...) instead.
+mister | 씨 | Mr., Ms. (after a name) | ^민수 씨는 의사예요. | Minsu is a doctor. | | Polite, added after a name. Never used for yourself.
+- miss | Covered by 씨 (Mr., Ms.).
+
+## hsk1-03
+one | 하나 | | 사과 하나 주세요. | One apple, please. | 일, 한 | Korean has two sets of numbers: native (하나, 둘...) for counting things, hours and age, and Sino-Korean (일, 이...) for dates, money and minutes. Either one counts as correct here.
+two | 둘 | | 고양이가 둘 있어요. | There are two cats. | 이, 두 |
+three | 셋 | | 우리는 셋이에요. | There are three of us. | 삼, 세 |
+four | 넷 | | 우리 가족은 넷이에요. | There are four people in my family. | 사, 네 |
+five | 다섯 | | 친구가 다섯 명 있어요. | I have five friends. | 오 |
+six | 여섯 | | 지금 여섯 시예요. | It's six o'clock now. | 육 |
+seven | 일곱 | | 아침 일곱 시에 일어나요. | I get up at seven in the morning. | 칠 |
+eight | 여덟 | | 저는 여덟 살이에요. | I am eight years old. | 팔 |
+nine | 아홉 | | 저는 아홉 시에 자요. | I go to bed at nine. | 구 |
+ten | 열 | | 지금 열 시예요. | It's ten o'clock now. | 십 |
+
+## hsk1-04
+zero | 영 | | 오늘은 영 도예요. | It's zero degrees today. | 공 | Phone numbers use 공 for zero.
+measure-ge | 개 | (counter for things) | 사과 세 개 주세요. | Three apples, please. | |
+years-old | 살 | years old | 몇 살이에요? | How old are you? | 세 |
+measure-ben | 권 | (counter for books) | 책 두 권을 샀어요. | I bought two books. | |
+- some | Korean splits this into 몇 (a few) and 좀 (a little), taught later.
+yuan | 원 | won (Korean money) | 이 컵은 삼천 원이에요. | This cup costs 3,000 won. | |
+how-many-small | 몇 | how many | 가족이 몇 명이에요? | How many people are in your family? | |
+how-much | 얼마 | how much (price) | 이 책은 얼마예요? | How much is this book? | |
+many | 많다 | many, a lot | 저는 친구가 많아요. | I have a lot of friends. | 많아요 |
+few | 적다 | few, little | 오늘은 사람이 적어요. | There are few people today. | 적어요 |
+
+## hsk1-05
+mom | 엄마 | | 저는 엄마를 사랑해요. | I love my mom. | 어머니 |
+dad | 아빠 | | 우리 아빠는 선생님이에요. | My dad is a teacher. | 아버지 |
+son | 아들 | | 그의 아들은 학생이에요. | His son is a student. | |
+daughter | 딸 | | 제 딸은 아주 예뻐요. | My daughter is very pretty. | |
+home | 집 | home, house | 저는 지금 집에 있어요. | I'm at home now. | |
+love | 사랑하다 | | 저는 가족을 사랑해요. | I love my family. | 사랑해요 |
+and | 하고 | and (between nouns) | 아빠하고 엄마는 집에 있어요. | Dad and Mom are at home. | 와, 과, 그리고 |
+friend | 친구 | | 그는 제 친구예요. | He is my friend. | |
+classmate | 반 친구 | | ^민수는 제 반 친구예요. | Minsu is my classmate. | 동창 |
+
+## hsk1-06
+teacher | 선생님 | | 우리 선생님은 ^한국 사람이에요. | My teacher is Korean. | 선생 |
+student | 학생 | | 그는 제 학생이에요. | He is my student. | |
+doctor | 의사 | | 그녀의 엄마는 의사예요. | Her mom is a doctor. | |
+school | 학교 | | 우리 학교는 커요. | Our school is big. | |
+hospital | 병원 | | 의사는 병원에서 일해요. | Doctors work at the hospital. | |
+study | 공부하다 | | 저는 ^한국어를 공부해요. | I'm studying Korean. | 공부해요 |
+work | 일하다 | to work | 저는 내일 일하지 않아요. | I don't work tomorrow. | 일해요 |
+book | 책 | | 저는 책 읽는 것을 좋아해요. | I like reading books. | |
+chinese-language | 중국어 | | ^중국어를 할 수 있어요? | Can you speak Chinese? | |
+character | 글자 | (written) letter, character | 이 글자는 어떻게 읽어요? | How do you read this letter? | 글씨 |
+read | 읽다 | to read | 이 글자를 읽어 주세요. | Please read this letter. | 읽어요 |
+write | 쓰다 | | 저는 제 이름을 쓸 수 있어요. | I can write my name. | 써요 |
+
+## hsk1-07
+eat | 먹다 | | 저는 밥을 먹고 싶어요. | I want to eat rice. | 먹어요 |
+drink | 마시다 | | 뭐 마시고 싶어요? | What would you like to drink? | 마셔요 |
+water | 물 | | 저는 물을 마시고 싶어요. | I want to drink water. | |
+tea | 차 | | 차를 마셔요? | Do you drink tea? | | 차 also means "car".
+dish | 요리 | dish, cooking | 이 요리는 정말 맛있어요. | This dish is really delicious. | 음식 |
+rice | 밥 | cooked rice; meal | 저녁에 밥을 먹어요. | I eat rice in the evening. | |
+fruit | 과일 | | 저는 과일을 좋아해요. | I like fruit. | |
+apple | 사과 | | 저는 사과를 좋아해요. | I like apples. | | 사과 also means "apology".
+cup | 컵 | | 이 컵은 제 거예요. | This cup is mine. | 잔 |
+restaurant | 식당 | | 우리는 식당에서 밥을 먹어요. | We eat at a restaurant. | 레스토랑 |
+
+## hsk1-08
+today | 오늘 | | 오늘은 월요일이에요. | Today is Monday. | |
+tomorrow | 내일 | | 내일 ^서울에 가요. | Tomorrow I'm going to Seoul. | |
+yesterday | 어제 | | 어제는 추웠어요. | Yesterday was cold. | |
+year | 년 | year (after numbers) | 저는 일 년 동안 ^한국어를 공부했어요. | I studied Korean for one year. | 해 |
+month | 월 | month (after numbers) | 제 생일은 삼월이에요. | My birthday is in March. | 달 |
+day-of-month | 일 | | 오늘은 시월 이십 일이에요. | Today is October 20. | |
+week | 주 | | 일주일은 칠 일이에요. | A week has seven days. | 주일 |
+
+## hsk1-09
+morning | 오전 | morning (a.m.) | 저는 오전에 공부해요. | I study in the morning. | 아침 |
+noon | 점심 | noon, lunchtime | 점심에 같이 먹어요. | Let's eat together at noon. | 정오 |
+afternoon | 오후 | | 오후에 가게에 가요. | In the afternoon I go to the store. | |
+now | 지금 | | 지금 몇 시예요? | What time is it now? | |
+when | 때 | | 어릴 때 ^서울에 살았어요. | When I was little, I lived in Seoul. | |
+oclock | 시 | | 일곱 시에 일어나요. | I get up at seven. | |
+minute | 분 | | 오 분만 기다려요. | Let's wait five minutes. | |
+
+## hsk1-10
+this | 이것 | this (thing) | 이것은 제 책이에요. | This is my book. | 이거 |
+that | 저것 | that (over there) | 저것은 우리 학교예요. | That is our school. | 저거 |
+which | 어느 | | 어느 나라 사람이에요? | Which country are you from? | |
+at | 에 | at, in, to (a place) | 저는 집에 있어요. | I'm at home. | | Attached to a place: 집에 (at home).
+china | 중국 | | 저는 ^중국에 가고 싶어요. | I want to go to China. | |
+beijing | 베이징 | | ^베이징은 커요. | Beijing is big. | 북경 |
+train-station | 기차역 | | 저는 기차역에 있어요. | I'm at the train station. | 역 |
+store | 가게 | | 가게에 물건이 많아요. | There are lots of things in the store. | |
+
+## hsk1-11
+come | 오다 | | 언제 우리 집에 와요? | When are you coming to my house? | 와요 |
+go | 가다 | | 내일 학교에 가요. | I'm going to school tomorrow. | 가요 |
+return | 돌아가다 | to go back, return | 저는 집에 돌아가고 싶어요. | I want to go home. | 돌아가요 |
+sit | 앉다 | to sit | 여기 앉으세요. | Please sit here. | 앉아요 |
+open | 열다 | to open | 문 좀 열어 주세요. | Please open the door. | 열어요 |
+on | 위 | | 책이 책상 위에 있어요. | The book is on the desk. | |
+under | 아래 | | 고양이가 의자 아래에 있어요. | The cat is under the chair. | 밑 |
+front | 앞 | | 학교 앞에 가게가 있어요. | There's a store in front of the school. | |
+behind | 뒤 | | 우리 집 뒤에 병원이 있어요. | There's a hospital behind my house. | |
+inside | 안 | | 컵 안에 물이 있어요. | There's water in the cup. | 속 |
+
+## hsk1-12
+look | 보다 | | 저는 텔레비전을 봐요. | I'm watching TV. | 봐요 |
+listen | 듣다 | | 저는 음악을 들어요. | I listen to music. | 들어요 |
+talk | 말하다 | | 그는 말을 안 해요. | He doesn't talk. | 말해요 |
+- see | Korean uses 보다 (look, watch) for "see" too.
+do | 하다 | | 지금 뭐 해요? | What are you doing now? | 해요 |
+buy | 사다 | | 저는 책을 사고 싶어요. | I want to buy a book. | 사요 |
+live | 살다 | | 저는 ^서울에 살아요. | I live in Seoul. | 살아요 |
+sleep | 자다 | | 저는 열 시에 자요. | I go to sleep at ten. | 자요 |
+phone-call | 전화하다 | | 저는 엄마한테 전화해요. | I call my mom. | 전화해요 |
+rain | 비가 오다 | | 오늘 비가 왔어요. | It rained today. | 비가 와요 |
+
+## hsk1-13
+like | 좋아하다 | | 저는 고양이를 좋아해요. | I like cats. | 좋아해요 |
+want | 원하다 | to want | 뭘 원해요? | What do you want? | 원해요 | Everyday Korean usually says -고 싶다 (want to): 먹고 싶어요 (I want to eat).
+- can-know-how | Korean uses 할 수 있다 for both kinds of "can".
+can-able | 할 수 있다 | | 내일 올 수 있어요? | Can you come tomorrow? | 할 수 있어요 |
+know-someone | 알다 | to know | 저는 ^민수 씨를 알아요. | I know Minsu. | 알아요 |
+have | 있다 | | 저는 책이 많이 있어요. | I have a lot of books. | 있어요 |
+happy | 기쁘다 | | 만나서 기뻐요. | I'm glad to meet you. | 기뻐요, 행복하다 |
+
+## hsk1-14
+clothes | 옷 | | 이 옷은 예뻐요. | These clothes are pretty. | |
+money | 돈 | | 저는 돈이 없어요. | I don't have any money. | |
+airplane | 비행기 | | 비행기로 ^서울에 가요. | I'm flying to Seoul. | |
+taxi | 택시 | | 택시가 왔어요. | The taxi is here. | |
+tv | 텔레비전 | | 아빠는 텔레비전을 봐요. | Dad is watching TV. | 티비 |
+computer | 컴퓨터 | | 제 컴퓨터는 작아요. | My computer is small. | |
+movie | 영화 | | 같이 영화 보러 가요. | Let's go see a movie. | |
+thing | 물건 | thing, item | 이 물건은 뭐예요? | What is this thing? | 것 |
+table | 책상 | desk, table | 책상 위에 책이 있어요. | There's a book on the desk. | 탁자 |
+chair | 의자 | | 의자에 앉으세요. | Please sit on the chair. | |
+cat | 고양이 | | 그 고양이는 정말 귀여워요. | That cat is really cute. | |
+dog | 강아지 | dog, puppy | 저는 강아지가 한 마리 있어요. | I have a dog. | 개 | Koreans often call any pet dog 강아지. 개 (dog) is also the counter for things.
+
+## hsk1-15
+good | 좋다 | good | 오늘 날씨가 좋아요. | The weather is good today. | 좋아요 |
+big | 크다 | | 우리 집은 커요. | My home is big. | 커요 |
+small | 작다 | | 이 컵은 작아요. | This cup is small. | 작아요 |
+cold | 춥다 | cold (weather) | ^서울은 추워요. | Seoul is cold. | 추워요 |
+hot | 덥다 | hot (weather) | 오늘은 더워요. | It's hot today. | 더워요 |
+pretty | 예쁘다 | | 그녀의 옷은 예뻐요. | Her clothes are pretty. | 예뻐요 |
+very | 아주 | | 저는 아주 잘 지내요. | I'm doing very well. | 정말, 매우 |
+too | 너무 | too, so | 너무 좋아요! | That's so great! | |
+all | 모두 | all, everyone | 우리는 모두 학생이에요. | We are all students. | 다 |
+weather | 날씨 | | 오늘 날씨 어때요? | How's the weather today? | |
+
+## hsk1-16
+what | 뭐 | | 이게 뭐예요? | What is this? | 무엇 |
+how | 어떻게 | | 이 글자는 어떻게 써요? | How do you write this letter? | |
+how-is-it | 어때요 | | 일은 어때요? | How is your job? | 어떻습니까 |
+- ma | Korean asks yes/no questions with the verb ending, not a separate word.
+- ne | Korean adds 는요? to a word instead (저는요? "and me?").
+de | 의 | | ^민수의 책이에요. | It's Minsu's book. | | In speech, 저의 is usually shortened to 제 (my).
+- le | Korean marks finished actions with a verb ending (-었-), not a separate word.
+- not-past | Korean puts 안 (not) before the verb; 안 here is "inside", and negation comes in a later level.
++topic-marker | 는 | (topic marker: as for...) | 저는 학생이에요. | I am a student. | 은 | After a vowel 는, after a consonant 은.
++subject-marker | 가 | (subject marker) | 고양이가 귀여워요. | The cat is cute. | 이 | After a vowel 가, after a consonant 이.
++object-marker | 를 | (object marker) | 저는 사과를 먹어요. | I eat an apple. | 을 | After a vowel 를, after a consonant 을.
++place-of-action | 에서 | at, in (where something happens) | 저는 학교에서 공부해요. | I study at school. | |

@@ -1,0 +1,2087 @@
+{
+ "language": "ja-JP",
+ "words": [
+  {
+   "conceptId": "hello",
+   "text": "こんにちは",
+   "reading": "こんにちわ",
+   "pinyin": "konnichiwa",
+   "note": "Written with は but said わ.",
+   "example": {
+    "text": "こんにちは、田中です。",
+    "reading": "こんにちわ、たなかです。",
+    "pinyin": "Konnichiwa, Tanaka desu.",
+    "english": "Hello, I'm Tanaka."
+   }
+  },
+  {
+   "conceptId": "thanks",
+   "text": "ありがとう",
+   "reading": "ありがとう",
+   "pinyin": "arigatou",
+   "alternates": [
+    "ありがとうございます"
+   ],
+   "example": {
+    "text": "手伝ってくれて、ありがとう。",
+    "reading": "てつだってくれて、ありがとう。",
+    "pinyin": "Tetsudatte kurete, arigatou.",
+    "english": "Thanks for helping me."
+   }
+  },
+  {
+   "conceptId": "youre-welcome",
+   "text": "どういたしまして",
+   "reading": "どういたしまして",
+   "pinyin": "douitashimashite",
+   "example": {
+    "text": "どういたしまして！",
+    "reading": "どういたしまして！",
+    "pinyin": "Douitashimashite!",
+    "english": "You're welcome!"
+   }
+  },
+  {
+   "conceptId": "goodbye",
+   "text": "さようなら",
+   "reading": "さようなら",
+   "pinyin": "sayounara",
+   "alternates": [
+    "さよなら",
+    "じゃあね"
+   ],
+   "note": "Fairly formal. Friends say じゃあね (see you).",
+   "example": {
+    "text": "先生、さようなら。",
+    "reading": "せんせい、さようなら。",
+    "pinyin": "Sensei, sayounara.",
+    "english": "Goodbye, teacher."
+   }
+  },
+  {
+   "conceptId": "sorry",
+   "text": "ごめんなさい",
+   "reading": "ごめんなさい",
+   "pinyin": "gomennasai",
+   "alternates": [
+    "すみません",
+    "ごめん"
+   ],
+   "example": {
+    "text": "遅れて、ごめんなさい。",
+    "reading": "おくれて、ごめんなさい。",
+    "pinyin": "Okurete, gomennasai.",
+    "english": "Sorry I'm late."
+   }
+  },
+  {
+   "conceptId": "no-problem",
+   "text": "大丈夫",
+   "reading": "だいじょうぶ",
+   "pinyin": "daijoubu",
+   "meaning": "it's okay, no problem",
+   "example": {
+    "text": "大丈夫です、忙しくないです。",
+    "reading": "だいじょうぶです、いそがしくないです。",
+    "pinyin": "Daijoubu desu, isogashiku nai desu.",
+    "english": "It's okay, I'm not busy."
+   }
+  },
+  {
+   "conceptId": "please",
+   "text": "どうぞ",
+   "reading": "どうぞ",
+   "pinyin": "douzo",
+   "meaning": "please (go ahead)",
+   "note": "For offering. To ask for something, use ください: 水をください (water, please).",
+   "example": {
+    "text": "どうぞ、座ってください。",
+    "reading": "どうぞ、すわってください。",
+    "pinyin": "Douzo, suwatte kudasai.",
+    "english": "Please, have a seat."
+   }
+  },
+  {
+   "conceptId": "hey-phone",
+   "text": "もしもし",
+   "reading": "もしもし",
+   "pinyin": "moshimoshi",
+   "example": {
+    "text": "もしもし、どなたですか。",
+    "reading": "もしもし、どなたですか。",
+    "pinyin": "Moshimoshi, donata desu ka.",
+    "english": "Hello, who is this?"
+   }
+  },
+  {
+   "conceptId": "be",
+   "text": "です",
+   "reading": "です",
+   "pinyin": "desu",
+   "meaning": "to be (am, is, are)",
+   "alternates": [
+    "だ"
+   ],
+   "note": "Polite. だ is the casual form.",
+   "example": {
+    "text": "私は学生です。",
+    "reading": "わたしはがくせいです。",
+    "pinyin": "Watashi wa gakusei desu.",
+    "english": "I am a student."
+   }
+  },
+  {
+   "conceptId": "not",
+   "text": "いいえ",
+   "reading": "いいえ",
+   "pinyin": "iie",
+   "meaning": "no",
+   "alternates": [
+    "いえ"
+   ],
+   "example": {
+    "text": "いいえ、学生じゃないです。",
+    "reading": "いいえ、がくせいじゃないです。",
+    "pinyin": "Iie, gakusei ja nai desu.",
+    "english": "No, I'm not a student."
+   }
+  },
+  {
+   "conceptId": "i",
+   "text": "私",
+   "reading": "わたし",
+   "pinyin": "watashi",
+   "alternates": [
+    "僕",
+    "あたし"
+   ],
+   "note": "Polite and neutral. Men often say 僕 (boku) casually.",
+   "example": {
+    "text": "私は田中です。",
+    "reading": "わたしはたなかです。",
+    "pinyin": "Watashi wa Tanaka desu.",
+    "english": "I'm Tanaka."
+   }
+  },
+  {
+   "conceptId": "you",
+   "text": "あなた",
+   "reading": "あなた",
+   "pinyin": "anata",
+   "note": "People usually say the person's name + さん instead.",
+   "example": {
+    "text": "あなたは先生ですか。",
+    "reading": "あなたはせんせいですか。",
+    "pinyin": "Anata wa sensei desu ka.",
+    "english": "Are you a teacher?"
+   }
+  },
+  {
+   "conceptId": "he",
+   "text": "彼",
+   "reading": "かれ",
+   "pinyin": "kare",
+   "note": "Also means \"boyfriend\".",
+   "example": {
+    "text": "彼は私の友達です。",
+    "reading": "かれはわたしのともだちです。",
+    "pinyin": "Kare wa watashi no tomodachi desu.",
+    "english": "He is my friend."
+   }
+  },
+  {
+   "conceptId": "she",
+   "text": "彼女",
+   "reading": "かのじょ",
+   "pinyin": "kanojo",
+   "note": "Also means \"girlfriend\".",
+   "example": {
+    "text": "彼女はとてもきれいです。",
+    "reading": "かのじょはとてもきれいです。",
+    "pinyin": "Kanojo wa totemo kirei desu.",
+    "english": "She is very pretty."
+   }
+  },
+  {
+   "conceptId": "we",
+   "text": "私たち",
+   "reading": "わたしたち",
+   "pinyin": "watashitachi",
+   "alternates": [
+    "僕たち"
+   ],
+   "example": {
+    "text": "私たちはクラスメートです。",
+    "reading": "わたしたちはくらすめーとです。",
+    "pinyin": "Watashitachi wa kurasumeeto desu.",
+    "english": "We are classmates."
+   }
+  },
+  {
+   "conceptId": "person",
+   "text": "人",
+   "reading": "ひと",
+   "pinyin": "hito",
+   "note": "After a country it's read じん: 日本人 (Japanese person).",
+   "example": {
+    "text": "彼は日本人です。",
+    "reading": "かれはにほんじんです。",
+    "pinyin": "Kare wa nihonjin desu.",
+    "english": "He is Japanese."
+   }
+  },
+  {
+   "conceptId": "who",
+   "text": "誰",
+   "reading": "だれ",
+   "pinyin": "dare",
+   "alternates": [
+    "どなた"
+   ],
+   "example": {
+    "text": "彼女は誰ですか。",
+    "reading": "かのじょはだれですか。",
+    "pinyin": "Kanojo wa dare desu ka.",
+    "english": "Who is she?"
+   }
+  },
+  {
+   "conceptId": "name",
+   "text": "名前",
+   "reading": "なまえ",
+   "pinyin": "namae",
+   "example": {
+    "text": "お名前は何ですか。",
+    "reading": "おなまえはなんですか。",
+    "pinyin": "Onamae wa nan desu ka.",
+    "english": "What's your name?"
+   }
+  },
+  {
+   "conceptId": "mister",
+   "text": "さん",
+   "reading": "さん",
+   "pinyin": "san",
+   "meaning": "Mr., Ms. (after a name)",
+   "note": "Polite, added after a name. Never used for yourself.",
+   "example": {
+    "text": "田中さんは医者です。",
+    "reading": "たなかさんはいしゃです。",
+    "pinyin": "Tanaka san wa isha desu.",
+    "english": "Mr. Tanaka is a doctor."
+   }
+  },
+  {
+   "conceptId": "one",
+   "text": "一",
+   "reading": "いち",
+   "pinyin": "ichi",
+   "note": "Japanese also counts things with ひとつ, ふたつ... (one thing, two things).",
+   "example": {
+    "text": "りんごを一つください。",
+    "reading": "りんごをひとつください。",
+    "pinyin": "Ringo o hitotsu kudasai.",
+    "english": "One apple, please."
+   }
+  },
+  {
+   "conceptId": "two",
+   "text": "二",
+   "reading": "に",
+   "pinyin": "ni",
+   "example": {
+    "text": "今は二月です。",
+    "reading": "いまはにがつです。",
+    "pinyin": "Ima wa nigatsu desu.",
+    "english": "It is February now."
+   }
+  },
+  {
+   "conceptId": "three",
+   "text": "三",
+   "reading": "さん",
+   "pinyin": "san",
+   "example": {
+    "text": "猫が三匹います。",
+    "reading": "ねこがさんびきいます。",
+    "pinyin": "Neko ga sanbiki imasu.",
+    "english": "There are three cats."
+   }
+  },
+  {
+   "conceptId": "four",
+   "text": "四",
+   "reading": "よん",
+   "pinyin": "yon",
+   "alternates": [
+    "し"
+   ],
+   "example": {
+    "text": "家族は四人です。",
+    "reading": "かぞくはよにんです。",
+    "pinyin": "Kazoku wa yonin desu.",
+    "english": "There are four people in my family."
+   }
+  },
+  {
+   "conceptId": "five",
+   "text": "五",
+   "reading": "ご",
+   "pinyin": "go",
+   "example": {
+    "text": "友達が五人います。",
+    "reading": "ともだちがごにんいます。",
+    "pinyin": "Tomodachi ga gonin imasu.",
+    "english": "I have five friends."
+   }
+  },
+  {
+   "conceptId": "six",
+   "text": "六",
+   "reading": "ろく",
+   "pinyin": "roku",
+   "example": {
+    "text": "今、六時です。",
+    "reading": "いま、ろくじです。",
+    "pinyin": "Ima, rokuji desu.",
+    "english": "It's six o'clock now."
+   }
+  },
+  {
+   "conceptId": "seven",
+   "text": "七",
+   "reading": "なな",
+   "pinyin": "nana",
+   "alternates": [
+    "しち"
+   ],
+   "example": {
+    "text": "一週間は七日です。",
+    "reading": "いっしゅうかんはなのかです。",
+    "pinyin": "Isshuukan wa nanoka desu.",
+    "english": "A week has seven days."
+   }
+  },
+  {
+   "conceptId": "eight",
+   "text": "八",
+   "reading": "はち",
+   "pinyin": "hachi",
+   "example": {
+    "text": "私は八歳です。",
+    "reading": "わたしははっさいです。",
+    "pinyin": "Watashi wa hassai desu.",
+    "english": "I am eight years old."
+   }
+  },
+  {
+   "conceptId": "nine",
+   "text": "九",
+   "reading": "きゅう",
+   "pinyin": "kyuu",
+   "alternates": [
+    "く"
+   ],
+   "example": {
+    "text": "私は九時に起きます。",
+    "reading": "わたしはくじにおきます。",
+    "pinyin": "Watashi wa kuji ni okimasu.",
+    "english": "I get up at nine."
+   }
+  },
+  {
+   "conceptId": "ten",
+   "text": "十",
+   "reading": "じゅう",
+   "pinyin": "juu",
+   "alternates": [
+    "とお"
+   ],
+   "example": {
+    "text": "今、十時です。",
+    "reading": "いま、じゅうじです。",
+    "pinyin": "Ima, juuji desu.",
+    "english": "It's ten o'clock now."
+   }
+  },
+  {
+   "conceptId": "zero",
+   "text": "ゼロ",
+   "reading": "ぜろ",
+   "pinyin": "zero",
+   "alternates": [
+    "零",
+    "れい"
+   ],
+   "example": {
+    "text": "気温はゼロ度です。",
+    "reading": "きおんはぜろどです。",
+    "pinyin": "Kion wa zero do desu.",
+    "english": "It's zero degrees."
+   }
+  },
+  {
+   "conceptId": "measure-ge",
+   "text": "個",
+   "reading": "こ",
+   "pinyin": "ko",
+   "meaning": "(counter for small things)",
+   "example": {
+    "text": "りんごを三個ください。",
+    "reading": "りんごをさんこください。",
+    "pinyin": "Ringo o sanko kudasai.",
+    "english": "Three apples, please."
+   }
+  },
+  {
+   "conceptId": "years-old",
+   "text": "歳",
+   "reading": "さい",
+   "pinyin": "sai",
+   "alternates": [
+    "才"
+   ],
+   "example": {
+    "text": "何歳ですか。",
+    "reading": "なんさいですか。",
+    "pinyin": "Nansai desu ka.",
+    "english": "How old are you?"
+   }
+  },
+  {
+   "conceptId": "measure-ben",
+   "text": "冊",
+   "reading": "さつ",
+   "pinyin": "satsu",
+   "example": {
+    "text": "本を二冊買いました。",
+    "reading": "ほんをにさつかいました。",
+    "pinyin": "Hon o nisatsu kaimashita.",
+    "english": "I bought two books."
+   }
+  },
+  {
+   "conceptId": "yuan",
+   "text": "円",
+   "reading": "えん",
+   "pinyin": "en",
+   "meaning": "yen (Japanese money)",
+   "example": {
+    "text": "このコップは三百円です。",
+    "reading": "このこっぷはさんびゃくえんです。",
+    "pinyin": "Kono koppu wa sanbyakuen desu.",
+    "english": "This cup costs 300 yen."
+   }
+  },
+  {
+   "conceptId": "how-many-small",
+   "text": "いくつ",
+   "reading": "いくつ",
+   "pinyin": "ikutsu",
+   "meaning": "how many",
+   "example": {
+    "text": "りんごはいくつありますか。",
+    "reading": "りんごはいくつありますか。",
+    "pinyin": "Ringo wa ikutsu arimasu ka.",
+    "english": "How many apples are there?"
+   }
+  },
+  {
+   "conceptId": "how-much",
+   "text": "いくら",
+   "reading": "いくら",
+   "pinyin": "ikura",
+   "meaning": "how much (price)",
+   "example": {
+    "text": "この本はいくらですか。",
+    "reading": "このほんはいくらですか。",
+    "pinyin": "Kono hon wa ikura desu ka.",
+    "english": "How much is this book?"
+   }
+  },
+  {
+   "conceptId": "many",
+   "text": "多い",
+   "reading": "おおい",
+   "pinyin": "ooi",
+   "alternates": [
+    "多いです"
+   ],
+   "example": {
+    "text": "友達が多いです。",
+    "reading": "ともだちがおおいです。",
+    "pinyin": "Tomodachi ga ooi desu.",
+    "english": "I have a lot of friends."
+   }
+  },
+  {
+   "conceptId": "few",
+   "text": "少ない",
+   "reading": "すくない",
+   "pinyin": "sukunai",
+   "alternates": [
+    "少ないです"
+   ],
+   "example": {
+    "text": "今日は人が少ないです。",
+    "reading": "きょうはひとがすくないです。",
+    "pinyin": "Kyou wa hito ga sukunai desu.",
+    "english": "There are few people today."
+   }
+  },
+  {
+   "conceptId": "mom",
+   "text": "お母さん",
+   "reading": "おかあさん",
+   "pinyin": "okaasan",
+   "alternates": [
+    "母",
+    "ママ"
+   ],
+   "note": "Use 母 (はは) for your own mom when talking to others.",
+   "example": {
+    "text": "お母さんが大好きです。",
+    "reading": "おかあさんがだいすきです。",
+    "pinyin": "Okaasan ga daisuki desu.",
+    "english": "I love my mom."
+   }
+  },
+  {
+   "conceptId": "dad",
+   "text": "お父さん",
+   "reading": "おとうさん",
+   "pinyin": "otousan",
+   "alternates": [
+    "父",
+    "パパ"
+   ],
+   "note": "Use 父 (ちち) for your own dad when talking to others.",
+   "example": {
+    "text": "お父さんは先生です。",
+    "reading": "おとうさんはせんせいです。",
+    "pinyin": "Otousan wa sensei desu.",
+    "english": "My dad is a teacher."
+   }
+  },
+  {
+   "conceptId": "son",
+   "text": "息子",
+   "reading": "むすこ",
+   "pinyin": "musuko",
+   "example": {
+    "text": "彼の息子は学生です。",
+    "reading": "かれのむすこはがくせいです。",
+    "pinyin": "Kare no musuko wa gakusei desu.",
+    "english": "His son is a student."
+   }
+  },
+  {
+   "conceptId": "daughter",
+   "text": "娘",
+   "reading": "むすめ",
+   "pinyin": "musume",
+   "example": {
+    "text": "私の娘はとてもかわいいです。",
+    "reading": "わたしのむすめはとてもかわいいです。",
+    "pinyin": "Watashi no musume wa totemo kawaii desu.",
+    "english": "My daughter is very cute."
+   }
+  },
+  {
+   "conceptId": "home",
+   "text": "家",
+   "reading": "いえ",
+   "pinyin": "ie",
+   "meaning": "home, house",
+   "alternates": [
+    "うち"
+   ],
+   "example": {
+    "text": "私は今、家にいます。",
+    "reading": "わたしはいま、いえにいます。",
+    "pinyin": "Watashi wa ima, ie ni imasu.",
+    "english": "I'm at home now."
+   }
+  },
+  {
+   "conceptId": "love",
+   "text": "愛する",
+   "reading": "あいする",
+   "pinyin": "aisuru",
+   "alternates": [
+    "大好き"
+   ],
+   "note": "Strong and a bit formal. Everyday speech uses 大好き (really like).",
+   "example": {
+    "text": "私は家族を愛しています。",
+    "reading": "わたしはかぞくをあいしています。",
+    "pinyin": "Watashi wa kazoku o aishite imasu.",
+    "english": "I love my family."
+   }
+  },
+  {
+   "conceptId": "and",
+   "text": "と",
+   "reading": "と",
+   "pinyin": "to",
+   "meaning": "and (between nouns)",
+   "example": {
+    "text": "父と母は家にいます。",
+    "reading": "ちちとはははいえにいます。",
+    "pinyin": "Chichi to haha wa ie ni imasu.",
+    "english": "Dad and Mom are at home."
+   }
+  },
+  {
+   "conceptId": "friend",
+   "text": "友達",
+   "reading": "ともだち",
+   "pinyin": "tomodachi",
+   "alternates": [
+    "友だち"
+   ],
+   "example": {
+    "text": "彼は私の友達です。",
+    "reading": "かれはわたしのともだちです。",
+    "pinyin": "Kare wa watashi no tomodachi desu.",
+    "english": "He is my friend."
+   }
+  },
+  {
+   "conceptId": "classmate",
+   "text": "クラスメート",
+   "reading": "くらすめーと",
+   "pinyin": "kurasumeeto",
+   "alternates": [
+    "クラスメイト",
+    "同級生"
+   ],
+   "example": {
+    "text": "彼はクラスメートです。",
+    "reading": "かれはくらすめーとです。",
+    "pinyin": "Kare wa kurasumeeto desu.",
+    "english": "He is my classmate."
+   }
+  },
+  {
+   "conceptId": "teacher",
+   "text": "先生",
+   "reading": "せんせい",
+   "pinyin": "sensei",
+   "example": {
+    "text": "私の先生は日本人です。",
+    "reading": "わたしのせんせいはにほんじんです。",
+    "pinyin": "Watashi no sensei wa nihonjin desu.",
+    "english": "My teacher is Japanese."
+   }
+  },
+  {
+   "conceptId": "student",
+   "text": "学生",
+   "reading": "がくせい",
+   "pinyin": "gakusei",
+   "alternates": [
+    "生徒"
+   ],
+   "example": {
+    "text": "彼は私の学生です。",
+    "reading": "かれはわたしのがくせいです。",
+    "pinyin": "Kare wa watashi no gakusei desu.",
+    "english": "He is my student."
+   }
+  },
+  {
+   "conceptId": "doctor",
+   "text": "医者",
+   "reading": "いしゃ",
+   "pinyin": "isha",
+   "alternates": [
+    "お医者さん"
+   ],
+   "example": {
+    "text": "彼女のお母さんは医者です。",
+    "reading": "かのじょのおかあさんはいしゃです。",
+    "pinyin": "Kanojo no okaasan wa isha desu.",
+    "english": "Her mom is a doctor."
+   }
+  },
+  {
+   "conceptId": "school",
+   "text": "学校",
+   "reading": "がっこう",
+   "pinyin": "gakkou",
+   "example": {
+    "text": "私たちの学校は大きいです。",
+    "reading": "わたしたちのがっこうはおおきいです。",
+    "pinyin": "Watashitachi no gakkou wa ookii desu.",
+    "english": "Our school is big."
+   }
+  },
+  {
+   "conceptId": "hospital",
+   "text": "病院",
+   "reading": "びょういん",
+   "pinyin": "byouin",
+   "example": {
+    "text": "医者は病院で働きます。",
+    "reading": "いしゃはびょういんではたらきます。",
+    "pinyin": "Isha wa byouin de hatarakimasu.",
+    "english": "Doctors work at the hospital."
+   }
+  },
+  {
+   "conceptId": "study",
+   "text": "勉強する",
+   "reading": "べんきょうする",
+   "pinyin": "benkyousuru",
+   "alternates": [
+    "勉強します"
+   ],
+   "example": {
+    "text": "私は日本語を勉強しています。",
+    "reading": "わたしはにほんごをべんきょうしています。",
+    "pinyin": "Watashi wa nihongo o benkyoushite imasu.",
+    "english": "I'm studying Japanese."
+   }
+  },
+  {
+   "conceptId": "work",
+   "text": "仕事",
+   "reading": "しごと",
+   "pinyin": "shigoto",
+   "meaning": "work, job",
+   "example": {
+    "text": "明日は仕事がありません。",
+    "reading": "あしたはしごとがありません。",
+    "pinyin": "Ashita wa shigoto ga arimasen.",
+    "english": "I don't work tomorrow."
+   }
+  },
+  {
+   "conceptId": "book",
+   "text": "本",
+   "reading": "ほん",
+   "pinyin": "hon",
+   "example": {
+    "text": "私は本を読むのが好きです。",
+    "reading": "わたしはほんをよむのがすきです。",
+    "pinyin": "Watashi wa hon o yomu no ga suki desu.",
+    "english": "I like reading books."
+   }
+  },
+  {
+   "conceptId": "chinese-language",
+   "text": "中国語",
+   "reading": "ちゅうごくご",
+   "pinyin": "chuugokugo",
+   "example": {
+    "text": "中国語が話せますか。",
+    "reading": "ちゅうごくごがはなせますか。",
+    "pinyin": "Chuugokugo ga hanasemasu ka.",
+    "english": "Can you speak Chinese?"
+   }
+  },
+  {
+   "conceptId": "character",
+   "text": "字",
+   "reading": "じ",
+   "pinyin": "ji",
+   "alternates": [
+    "文字"
+   ],
+   "example": {
+    "text": "この字はどう読みますか。",
+    "reading": "このじはどうよみますか。",
+    "pinyin": "Kono ji wa dou yomimasu ka.",
+    "english": "How do you read this character?"
+   }
+  },
+  {
+   "conceptId": "read",
+   "text": "読む",
+   "reading": "よむ",
+   "pinyin": "yomu",
+   "meaning": "to read",
+   "alternates": [
+    "読みます"
+   ],
+   "example": {
+    "text": "この字を読んでください。",
+    "reading": "このじをよんでください。",
+    "pinyin": "Kono ji o yonde kudasai.",
+    "english": "Please read this character."
+   }
+  },
+  {
+   "conceptId": "write",
+   "text": "書く",
+   "reading": "かく",
+   "pinyin": "kaku",
+   "alternates": [
+    "書きます"
+   ],
+   "example": {
+    "text": "名前を書いてください。",
+    "reading": "なまえをかいてください。",
+    "pinyin": "Namae o kaite kudasai.",
+    "english": "Please write your name."
+   }
+  },
+  {
+   "conceptId": "eat",
+   "text": "食べる",
+   "reading": "たべる",
+   "pinyin": "taberu",
+   "alternates": [
+    "食べます"
+   ],
+   "example": {
+    "text": "ご飯を食べたいです。",
+    "reading": "ごはんをたべたいです。",
+    "pinyin": "Gohan o tabetai desu.",
+    "english": "I want to eat rice."
+   }
+  },
+  {
+   "conceptId": "drink",
+   "text": "飲む",
+   "reading": "のむ",
+   "pinyin": "nomu",
+   "alternates": [
+    "飲みます"
+   ],
+   "example": {
+    "text": "何を飲みたいですか。",
+    "reading": "なにをのみたいですか。",
+    "pinyin": "Nani o nomitai desu ka.",
+    "english": "What would you like to drink?"
+   }
+  },
+  {
+   "conceptId": "water",
+   "text": "水",
+   "reading": "みず",
+   "pinyin": "mizu",
+   "alternates": [
+    "お水"
+   ],
+   "example": {
+    "text": "水を飲みたいです。",
+    "reading": "みずをのみたいです。",
+    "pinyin": "Mizu o nomitai desu.",
+    "english": "I want to drink water."
+   }
+  },
+  {
+   "conceptId": "tea",
+   "text": "お茶",
+   "reading": "おちゃ",
+   "pinyin": "ocha",
+   "meaning": "tea (green tea)",
+   "alternates": [
+    "茶"
+   ],
+   "example": {
+    "text": "お茶を飲みますか。",
+    "reading": "おちゃをのみますか。",
+    "pinyin": "Ocha o nomimasu ka.",
+    "english": "Do you drink tea?"
+   }
+  },
+  {
+   "conceptId": "dish",
+   "text": "料理",
+   "reading": "りょうり",
+   "pinyin": "ryouri",
+   "meaning": "dish, cooking",
+   "example": {
+    "text": "この料理はおいしいです。",
+    "reading": "このりょうりはおいしいです。",
+    "pinyin": "Kono ryouri wa oishii desu.",
+    "english": "This dish is delicious."
+   }
+  },
+  {
+   "conceptId": "rice",
+   "text": "ご飯",
+   "reading": "ごはん",
+   "pinyin": "gohan",
+   "meaning": "cooked rice; meal",
+   "alternates": [
+    "ごはん",
+    "飯"
+   ],
+   "example": {
+    "text": "毎日ご飯を食べます。",
+    "reading": "まいにちごはんをたべます。",
+    "pinyin": "Mainichi gohan o tabemasu.",
+    "english": "I eat rice every day."
+   }
+  },
+  {
+   "conceptId": "fruit",
+   "text": "果物",
+   "reading": "くだもの",
+   "pinyin": "kudamono",
+   "alternates": [
+    "フルーツ"
+   ],
+   "example": {
+    "text": "私は果物が好きです。",
+    "reading": "わたしはくだものがすきです。",
+    "pinyin": "Watashi wa kudamono ga suki desu.",
+    "english": "I like fruit."
+   }
+  },
+  {
+   "conceptId": "apple",
+   "text": "りんご",
+   "reading": "りんご",
+   "pinyin": "ringo",
+   "alternates": [
+    "リンゴ",
+    "林檎"
+   ],
+   "example": {
+    "text": "私はりんごが好きです。",
+    "reading": "わたしはりんごがすきです。",
+    "pinyin": "Watashi wa ringo ga suki desu.",
+    "english": "I like apples."
+   }
+  },
+  {
+   "conceptId": "cup",
+   "text": "コップ",
+   "reading": "こっぷ",
+   "pinyin": "koppu",
+   "alternates": [
+    "カップ"
+   ],
+   "example": {
+    "text": "このコップは私のです。",
+    "reading": "このこっぷはわたしのです。",
+    "pinyin": "Kono koppu wa watashi no desu.",
+    "english": "This cup is mine."
+   }
+  },
+  {
+   "conceptId": "restaurant",
+   "text": "レストラン",
+   "reading": "れすとらん",
+   "pinyin": "resutoran",
+   "alternates": [
+    "食堂"
+   ],
+   "example": {
+    "text": "私たちはレストランで食べます。",
+    "reading": "わたしたちはれすとらんでたべます。",
+    "pinyin": "Watashitachi wa resutoran de tabemasu.",
+    "english": "We eat at a restaurant."
+   }
+  },
+  {
+   "conceptId": "today",
+   "text": "今日",
+   "reading": "きょう",
+   "pinyin": "kyou",
+   "example": {
+    "text": "今日は月曜日です。",
+    "reading": "きょうはげつようびです。",
+    "pinyin": "Kyou wa getsuyoubi desu.",
+    "english": "Today is Monday."
+   }
+  },
+  {
+   "conceptId": "tomorrow",
+   "text": "明日",
+   "reading": "あした",
+   "pinyin": "ashita",
+   "alternates": [
+    "あす"
+   ],
+   "example": {
+    "text": "明日、東京に行きます。",
+    "reading": "あした、とうきょうにいきます。",
+    "pinyin": "Ashita, Toukyou ni ikimasu.",
+    "english": "Tomorrow I'm going to Tokyo."
+   }
+  },
+  {
+   "conceptId": "yesterday",
+   "text": "昨日",
+   "reading": "きのう",
+   "pinyin": "kinou",
+   "example": {
+    "text": "昨日は寒かったです。",
+    "reading": "きのうはさむかったです。",
+    "pinyin": "Kinou wa samukatta desu.",
+    "english": "Yesterday was cold."
+   }
+  },
+  {
+   "conceptId": "year",
+   "text": "年",
+   "reading": "ねん",
+   "pinyin": "nen",
+   "meaning": "year (after numbers)",
+   "alternates": [
+    "とし"
+   ],
+   "example": {
+    "text": "一年間日本語を勉強しました。",
+    "reading": "いちねんかんにほんごをべんきょうしました。",
+    "pinyin": "Ichinenkan nihongo o benkyoushimashita.",
+    "english": "I studied Japanese for one year."
+   }
+  },
+  {
+   "conceptId": "month",
+   "text": "月",
+   "reading": "がつ",
+   "pinyin": "gatsu",
+   "meaning": "month (after numbers)",
+   "example": {
+    "text": "私の誕生日は三月です。",
+    "reading": "わたしのたんじょうびはさんがつです。",
+    "pinyin": "Watashi no tanjoubi wa sangatsu desu.",
+    "english": "My birthday is in March."
+   }
+  },
+  {
+   "conceptId": "day-of-month",
+   "text": "日",
+   "reading": "にち",
+   "pinyin": "nichi",
+   "note": "Days 1-10, 14, 20 and 24 have special readings: 一日 (ついたち), 二十日 (はつか).",
+   "example": {
+    "text": "十一日は休みです。",
+    "reading": "じゅういちにちはやすみです。",
+    "pinyin": "Juuichinichi wa yasumi desu.",
+    "english": "The 11th is a day off."
+   }
+  },
+  {
+   "conceptId": "week",
+   "text": "週",
+   "reading": "しゅう",
+   "pinyin": "shuu",
+   "alternates": [
+    "週間"
+   ],
+   "example": {
+    "text": "一週間は七日です。",
+    "reading": "いっしゅうかんはなのかです。",
+    "pinyin": "Isshuukan wa nanoka desu.",
+    "english": "A week has seven days."
+   }
+  },
+  {
+   "conceptId": "morning",
+   "text": "午前",
+   "reading": "ごぜん",
+   "pinyin": "gozen",
+   "meaning": "morning (a.m.)",
+   "alternates": [
+    "朝"
+   ],
+   "example": {
+    "text": "午前中に勉強します。",
+    "reading": "ごぜんちゅうにべんきょうします。",
+    "pinyin": "Gozenchuu ni benkyoushimasu.",
+    "english": "I study in the morning."
+   }
+  },
+  {
+   "conceptId": "noon",
+   "text": "昼",
+   "reading": "ひる",
+   "pinyin": "hiru",
+   "meaning": "noon, daytime",
+   "alternates": [
+    "お昼"
+   ],
+   "example": {
+    "text": "昼にご飯を食べます。",
+    "reading": "ひるにごはんをたべます。",
+    "pinyin": "Hiru ni gohan o tabemasu.",
+    "english": "I eat at noon."
+   }
+  },
+  {
+   "conceptId": "afternoon",
+   "text": "午後",
+   "reading": "ごご",
+   "pinyin": "gogo",
+   "example": {
+    "text": "午後、店に行きます。",
+    "reading": "ごご、みせにいきます。",
+    "pinyin": "Gogo, mise ni ikimasu.",
+    "english": "In the afternoon I go to the store."
+   }
+  },
+  {
+   "conceptId": "now",
+   "text": "今",
+   "reading": "いま",
+   "pinyin": "ima",
+   "example": {
+    "text": "今、何時ですか。",
+    "reading": "いま、なんじですか。",
+    "pinyin": "Ima, nanji desu ka.",
+    "english": "What time is it now?"
+   }
+  },
+  {
+   "conceptId": "when",
+   "text": "とき",
+   "reading": "とき",
+   "pinyin": "toki",
+   "alternates": [
+    "時"
+   ],
+   "example": {
+    "text": "子どものとき、大阪に住んでいました。",
+    "reading": "こどものとき、おおさかにすんでいました。",
+    "pinyin": "Kodomo no toki, Oosaka ni sunde imashita.",
+    "english": "When I was a child, I lived in Osaka."
+   }
+  },
+  {
+   "conceptId": "oclock",
+   "text": "時",
+   "reading": "じ",
+   "pinyin": "ji",
+   "example": {
+    "text": "七時に起きます。",
+    "reading": "しちじにおきます。",
+    "pinyin": "Shichiji ni okimasu.",
+    "english": "I get up at seven."
+   }
+  },
+  {
+   "conceptId": "minute",
+   "text": "分",
+   "reading": "ふん",
+   "pinyin": "fun",
+   "alternates": [
+    "ぷん"
+   ],
+   "note": "Said ぷん after some numbers: 一分 (いっぷん).",
+   "example": {
+    "text": "五分待ちましょう。",
+    "reading": "ごふんまちましょう。",
+    "pinyin": "Gofun machimashou.",
+    "english": "Let's wait five minutes."
+   }
+  },
+  {
+   "conceptId": "this",
+   "text": "これ",
+   "reading": "これ",
+   "pinyin": "kore",
+   "meaning": "this (thing)",
+   "example": {
+    "text": "これは私の本です。",
+    "reading": "これはわたしのほんです。",
+    "pinyin": "Kore wa watashi no hon desu.",
+    "english": "This is my book."
+   }
+  },
+  {
+   "conceptId": "that",
+   "text": "あれ",
+   "reading": "あれ",
+   "pinyin": "are",
+   "meaning": "that (over there)",
+   "alternates": [
+    "それ"
+   ],
+   "example": {
+    "text": "あれは私たちの学校です。",
+    "reading": "あれはわたしたちのがっこうです。",
+    "pinyin": "Are wa watashitachi no gakkou desu.",
+    "english": "That is our school."
+   }
+  },
+  {
+   "conceptId": "which",
+   "text": "どの",
+   "reading": "どの",
+   "pinyin": "dono",
+   "alternates": [
+    "どれ"
+   ],
+   "example": {
+    "text": "どの国の人ですか。",
+    "reading": "どのくにのひとですか。",
+    "pinyin": "Dono kuni no hito desu ka.",
+    "english": "Which country are you from?"
+   }
+  },
+  {
+   "conceptId": "at",
+   "text": "に",
+   "reading": "に",
+   "pinyin": "ni",
+   "meaning": "at, in, to (a place)",
+   "note": "Goes after a place: 家に (at home).",
+   "example": {
+    "text": "私は家にいます。",
+    "reading": "わたしはいえにいます。",
+    "pinyin": "Watashi wa ie ni imasu.",
+    "english": "I'm at home."
+   }
+  },
+  {
+   "conceptId": "china",
+   "text": "中国",
+   "reading": "ちゅうごく",
+   "pinyin": "chuugoku",
+   "example": {
+    "text": "私は中国に行きたいです。",
+    "reading": "わたしはちゅうごくにいきたいです。",
+    "pinyin": "Watashi wa Chuugoku ni ikitai desu.",
+    "english": "I want to go to China."
+   }
+  },
+  {
+   "conceptId": "beijing",
+   "text": "北京",
+   "reading": "ぺきん",
+   "pinyin": "pekin",
+   "example": {
+    "text": "北京は大きいです。",
+    "reading": "ぺきんはおおきいです。",
+    "pinyin": "Pekin wa ookii desu.",
+    "english": "Beijing is big."
+   }
+  },
+  {
+   "conceptId": "train-station",
+   "text": "駅",
+   "reading": "えき",
+   "pinyin": "eki",
+   "example": {
+    "text": "私は駅にいます。",
+    "reading": "わたしはえきにいます。",
+    "pinyin": "Watashi wa eki ni imasu.",
+    "english": "I'm at the train station."
+   }
+  },
+  {
+   "conceptId": "store",
+   "text": "店",
+   "reading": "みせ",
+   "pinyin": "mise",
+   "alternates": [
+    "お店"
+   ],
+   "example": {
+    "text": "店に物がたくさんあります。",
+    "reading": "みせにものがたくさんあります。",
+    "pinyin": "Mise ni mono ga takusan arimasu.",
+    "english": "There are lots of things in the store."
+   }
+  },
+  {
+   "conceptId": "come",
+   "text": "来る",
+   "reading": "くる",
+   "pinyin": "kuru",
+   "alternates": [
+    "来ます"
+   ],
+   "example": {
+    "text": "いつ私の家に来ますか。",
+    "reading": "いつわたしのいえにきますか。",
+    "pinyin": "Itsu watashi no ie ni kimasu ka.",
+    "english": "When are you coming to my house?"
+   }
+  },
+  {
+   "conceptId": "go",
+   "text": "行く",
+   "reading": "いく",
+   "pinyin": "iku",
+   "alternates": [
+    "行きます"
+   ],
+   "example": {
+    "text": "明日、学校に行きます。",
+    "reading": "あした、がっこうにいきます。",
+    "pinyin": "Ashita, gakkou ni ikimasu.",
+    "english": "I'm going to school tomorrow."
+   }
+  },
+  {
+   "conceptId": "return",
+   "text": "帰る",
+   "reading": "かえる",
+   "pinyin": "kaeru",
+   "meaning": "to go back, return (home)",
+   "alternates": [
+    "帰ります"
+   ],
+   "example": {
+    "text": "私は家に帰りたいです。",
+    "reading": "わたしはいえにかえりたいです。",
+    "pinyin": "Watashi wa ie ni kaeritai desu.",
+    "english": "I want to go home."
+   }
+  },
+  {
+   "conceptId": "sit",
+   "text": "座る",
+   "reading": "すわる",
+   "pinyin": "suwaru",
+   "meaning": "to sit",
+   "alternates": [
+    "座ります"
+   ],
+   "example": {
+    "text": "ここに座ってください。",
+    "reading": "ここにすわってください。",
+    "pinyin": "Koko ni suwatte kudasai.",
+    "english": "Please sit here."
+   }
+  },
+  {
+   "conceptId": "open",
+   "text": "開ける",
+   "reading": "あける",
+   "pinyin": "akeru",
+   "meaning": "to open",
+   "alternates": [
+    "開けます"
+   ],
+   "example": {
+    "text": "ドアを開けてください。",
+    "reading": "どあをあけてください。",
+    "pinyin": "Doa o akete kudasai.",
+    "english": "Please open the door."
+   }
+  },
+  {
+   "conceptId": "on",
+   "text": "上",
+   "reading": "うえ",
+   "pinyin": "ue",
+   "example": {
+    "text": "本は机の上にあります。",
+    "reading": "ほんはつくえのうえにあります。",
+    "pinyin": "Hon wa tsukue no ue ni arimasu.",
+    "english": "The book is on the desk."
+   }
+  },
+  {
+   "conceptId": "under",
+   "text": "下",
+   "reading": "した",
+   "pinyin": "shita",
+   "example": {
+    "text": "猫は椅子の下にいます。",
+    "reading": "ねこはいすのしたにいます。",
+    "pinyin": "Neko wa isu no shita ni imasu.",
+    "english": "The cat is under the chair."
+   }
+  },
+  {
+   "conceptId": "front",
+   "text": "前",
+   "reading": "まえ",
+   "pinyin": "mae",
+   "example": {
+    "text": "学校の前に店があります。",
+    "reading": "がっこうのまえにみせがあります。",
+    "pinyin": "Gakkou no mae ni mise ga arimasu.",
+    "english": "There's a store in front of the school."
+   }
+  },
+  {
+   "conceptId": "behind",
+   "text": "後ろ",
+   "reading": "うしろ",
+   "pinyin": "ushiro",
+   "example": {
+    "text": "私の家の後ろに病院があります。",
+    "reading": "わたしのいえのうしろにびょういんがあります。",
+    "pinyin": "Watashi no ie no ushiro ni byouin ga arimasu.",
+    "english": "There's a hospital behind my house."
+   }
+  },
+  {
+   "conceptId": "inside",
+   "text": "中",
+   "reading": "なか",
+   "pinyin": "naka",
+   "example": {
+    "text": "コップの中に水があります。",
+    "reading": "こっぷのなかにみずがあります。",
+    "pinyin": "Koppu no naka ni mizu ga arimasu.",
+    "english": "There's water in the cup."
+   }
+  },
+  {
+   "conceptId": "look",
+   "text": "見る",
+   "reading": "みる",
+   "pinyin": "miru",
+   "alternates": [
+    "見ます"
+   ],
+   "example": {
+    "text": "私はテレビを見ます。",
+    "reading": "わたしはてれびをみます。",
+    "pinyin": "Watashi wa terebi o mimasu.",
+    "english": "I watch TV."
+   }
+  },
+  {
+   "conceptId": "listen",
+   "text": "聞く",
+   "reading": "きく",
+   "pinyin": "kiku",
+   "alternates": [
+    "聞きます"
+   ],
+   "example": {
+    "text": "私は音楽を聞きます。",
+    "reading": "わたしはおんがくをききます。",
+    "pinyin": "Watashi wa ongaku o kikimasu.",
+    "english": "I listen to music."
+   }
+  },
+  {
+   "conceptId": "talk",
+   "text": "話す",
+   "reading": "はなす",
+   "pinyin": "hanasu",
+   "alternates": [
+    "話します"
+   ],
+   "example": {
+    "text": "彼はあまり話しません。",
+    "reading": "かれはあまりはなしません。",
+    "pinyin": "Kare wa amari hanashimasen.",
+    "english": "He doesn't talk much."
+   }
+  },
+  {
+   "conceptId": "do",
+   "text": "する",
+   "reading": "する",
+   "pinyin": "suru",
+   "alternates": [
+    "します"
+   ],
+   "example": {
+    "text": "今、何をしていますか。",
+    "reading": "いま、なにをしていますか。",
+    "pinyin": "Ima, nani o shite imasu ka.",
+    "english": "What are you doing now?"
+   }
+  },
+  {
+   "conceptId": "buy",
+   "text": "買う",
+   "reading": "かう",
+   "pinyin": "kau",
+   "alternates": [
+    "買います"
+   ],
+   "example": {
+    "text": "本を買いたいです。",
+    "reading": "ほんをかいたいです。",
+    "pinyin": "Hon o kaitai desu.",
+    "english": "I want to buy a book."
+   }
+  },
+  {
+   "conceptId": "live",
+   "text": "住む",
+   "reading": "すむ",
+   "pinyin": "sumu",
+   "alternates": [
+    "住んでいます"
+   ],
+   "example": {
+    "text": "私は東京に住んでいます。",
+    "reading": "わたしはとうきょうにすんでいます。",
+    "pinyin": "Watashi wa Toukyou ni sunde imasu.",
+    "english": "I live in Tokyo."
+   }
+  },
+  {
+   "conceptId": "sleep",
+   "text": "寝る",
+   "reading": "ねる",
+   "pinyin": "neru",
+   "meaning": "to sleep, go to bed",
+   "alternates": [
+    "寝ます"
+   ],
+   "example": {
+    "text": "私は十時に寝ます。",
+    "reading": "わたしはじゅうじにねます。",
+    "pinyin": "Watashi wa juuji ni nemasu.",
+    "english": "I go to bed at ten."
+   }
+  },
+  {
+   "conceptId": "phone-call",
+   "text": "電話する",
+   "reading": "でんわする",
+   "pinyin": "denwasuru",
+   "alternates": [
+    "電話します"
+   ],
+   "example": {
+    "text": "私はお母さんに電話します。",
+    "reading": "わたしはおかあさんにでんわします。",
+    "pinyin": "Watashi wa okaasan ni denwashimasu.",
+    "english": "I call my mom."
+   }
+  },
+  {
+   "conceptId": "rain",
+   "text": "雨が降る",
+   "reading": "あめがふる",
+   "pinyin": "amegafuru",
+   "alternates": [
+    "雨が降ります"
+   ],
+   "example": {
+    "text": "今日は雨が降りました。",
+    "reading": "きょうはあめがふりました。",
+    "pinyin": "Kyou wa ame ga furimashita.",
+    "english": "It rained today."
+   }
+  },
+  {
+   "conceptId": "like",
+   "text": "好き",
+   "reading": "すき",
+   "pinyin": "suki",
+   "meaning": "to like",
+   "alternates": [
+    "好きです",
+    "大好き"
+   ],
+   "note": "An adjective in Japanese: 猫が好きです is literally \"cats are liked (by me)\".",
+   "example": {
+    "text": "私は猫が好きです。",
+    "reading": "わたしはねこがすきです。",
+    "pinyin": "Watashi wa neko ga suki desu.",
+    "english": "I like cats."
+   }
+  },
+  {
+   "conceptId": "want",
+   "text": "ほしい",
+   "reading": "ほしい",
+   "pinyin": "hoshii",
+   "meaning": "to want (a thing)",
+   "alternates": [
+    "欲しい"
+   ],
+   "note": "For actions, use -たい: 食べたい (I want to eat).",
+   "example": {
+    "text": "新しいパソコンがほしいです。",
+    "reading": "あたらしいぱそこんがほしいです。",
+    "pinyin": "Atarashii pasokon ga hoshii desu.",
+    "english": "I want a new computer."
+   }
+  },
+  {
+   "conceptId": "can-able",
+   "text": "できる",
+   "reading": "できる",
+   "pinyin": "dekiru",
+   "alternates": [
+    "できます"
+   ],
+   "example": {
+    "text": "明日来ることができますか。",
+    "reading": "あしたくることができますか。",
+    "pinyin": "Ashita kuru koto ga dekimasu ka.",
+    "english": "Can you come tomorrow?"
+   }
+  },
+  {
+   "conceptId": "know-someone",
+   "text": "知る",
+   "reading": "しる",
+   "pinyin": "shiru",
+   "meaning": "to know",
+   "alternates": [
+    "知っています"
+   ],
+   "note": "Usually said as 知っています (I know).",
+   "example": {
+    "text": "私はあなたの先生を知っています。",
+    "reading": "わたしはあなたのせんせいをしっています。",
+    "pinyin": "Watashi wa anata no sensei o shitte imasu.",
+    "english": "I know your teacher."
+   }
+  },
+  {
+   "conceptId": "have",
+   "text": "ある",
+   "reading": "ある",
+   "pinyin": "aru",
+   "meaning": "to have; there is (things)",
+   "alternates": [
+    "あります"
+   ],
+   "note": "For people and animals, use いる.",
+   "example": {
+    "text": "本がたくさんあります。",
+    "reading": "ほんがたくさんあります。",
+    "pinyin": "Hon ga takusan arimasu.",
+    "english": "I have a lot of books."
+   }
+  },
+  {
+   "conceptId": "happy",
+   "text": "うれしい",
+   "reading": "うれしい",
+   "pinyin": "ureshii",
+   "alternates": [
+    "嬉しい"
+   ],
+   "example": {
+    "text": "会えてうれしいです。",
+    "reading": "あえてうれしいです。",
+    "pinyin": "Aete ureshii desu.",
+    "english": "I'm glad to see you."
+   }
+  },
+  {
+   "conceptId": "clothes",
+   "text": "服",
+   "reading": "ふく",
+   "pinyin": "fuku",
+   "alternates": [
+    "洋服"
+   ],
+   "example": {
+    "text": "この服はきれいです。",
+    "reading": "このふくはきれいです。",
+    "pinyin": "Kono fuku wa kirei desu.",
+    "english": "These clothes are pretty."
+   }
+  },
+  {
+   "conceptId": "money",
+   "text": "お金",
+   "reading": "おかね",
+   "pinyin": "okane",
+   "example": {
+    "text": "お金がありません。",
+    "reading": "おかねがありません。",
+    "pinyin": "Okane ga arimasen.",
+    "english": "I don't have any money."
+   }
+  },
+  {
+   "conceptId": "airplane",
+   "text": "飛行機",
+   "reading": "ひこうき",
+   "pinyin": "hikouki",
+   "example": {
+    "text": "飛行機で東京に行きます。",
+    "reading": "ひこうきでとうきょうにいきます。",
+    "pinyin": "Hikouki de Toukyou ni ikimasu.",
+    "english": "I'm flying to Tokyo."
+   }
+  },
+  {
+   "conceptId": "taxi",
+   "text": "タクシー",
+   "reading": "たくしー",
+   "pinyin": "takushii",
+   "example": {
+    "text": "タクシーが来ました。",
+    "reading": "たくしーがきました。",
+    "pinyin": "Takushii ga kimashita.",
+    "english": "The taxi is here."
+   }
+  },
+  {
+   "conceptId": "tv",
+   "text": "テレビ",
+   "reading": "てれび",
+   "pinyin": "terebi",
+   "example": {
+    "text": "お父さんはテレビを見ています。",
+    "reading": "おとうさんはてれびをみています。",
+    "pinyin": "Otousan wa terebi o mite imasu.",
+    "english": "Dad is watching TV."
+   }
+  },
+  {
+   "conceptId": "computer",
+   "text": "パソコン",
+   "reading": "ぱそこん",
+   "pinyin": "pasokon",
+   "alternates": [
+    "コンピューター"
+   ],
+   "example": {
+    "text": "私のパソコンは小さいです。",
+    "reading": "わたしのぱそこんはちいさいです。",
+    "pinyin": "Watashi no pasokon wa chiisai desu.",
+    "english": "My computer is small."
+   }
+  },
+  {
+   "conceptId": "movie",
+   "text": "映画",
+   "reading": "えいが",
+   "pinyin": "eiga",
+   "example": {
+    "text": "一緒に映画を見に行きましょう。",
+    "reading": "いっしょにえいがをみにいきましょう。",
+    "pinyin": "Isshoni eiga o mi ni ikimashou.",
+    "english": "Let's go see a movie."
+   }
+  },
+  {
+   "conceptId": "thing",
+   "text": "物",
+   "reading": "もの",
+   "pinyin": "mono",
+   "meaning": "thing, stuff",
+   "alternates": [
+    "もの"
+   ],
+   "example": {
+    "text": "これは大切な物です。",
+    "reading": "これはたいせつなものです。",
+    "pinyin": "Kore wa taisetsuna mono desu.",
+    "english": "This is an important thing."
+   }
+  },
+  {
+   "conceptId": "table",
+   "text": "机",
+   "reading": "つくえ",
+   "pinyin": "tsukue",
+   "meaning": "desk, table",
+   "alternates": [
+    "テーブル"
+   ],
+   "example": {
+    "text": "机の上に本があります。",
+    "reading": "つくえのうえにほんがあります。",
+    "pinyin": "Tsukue no ue ni hon ga arimasu.",
+    "english": "There's a book on the desk."
+   }
+  },
+  {
+   "conceptId": "chair",
+   "text": "椅子",
+   "reading": "いす",
+   "pinyin": "isu",
+   "alternates": [
+    "いす"
+   ],
+   "example": {
+    "text": "椅子に座ってください。",
+    "reading": "いすにすわってください。",
+    "pinyin": "Isu ni suwatte kudasai.",
+    "english": "Please sit on the chair."
+   }
+  },
+  {
+   "conceptId": "cat",
+   "text": "猫",
+   "reading": "ねこ",
+   "pinyin": "neko",
+   "alternates": [
+    "ネコ"
+   ],
+   "example": {
+    "text": "その猫はとてもかわいいです。",
+    "reading": "そのねこはとてもかわいいです。",
+    "pinyin": "Sono neko wa totemo kawaii desu.",
+    "english": "That cat is very cute."
+   }
+  },
+  {
+   "conceptId": "dog",
+   "text": "犬",
+   "reading": "いぬ",
+   "pinyin": "inu",
+   "alternates": [
+    "イヌ"
+   ],
+   "example": {
+    "text": "私は犬を飼っています。",
+    "reading": "わたしはいぬをかっています。",
+    "pinyin": "Watashi wa inu o katte imasu.",
+    "english": "I have a dog."
+   }
+  },
+  {
+   "conceptId": "good",
+   "text": "いい",
+   "reading": "いい",
+   "pinyin": "ii",
+   "alternates": [
+    "良い",
+    "よい"
+   ],
+   "example": {
+    "text": "今日は天気がいいです。",
+    "reading": "きょうはてんきがいいです。",
+    "pinyin": "Kyou wa tenki ga ii desu.",
+    "english": "The weather is good today."
+   }
+  },
+  {
+   "conceptId": "big",
+   "text": "大きい",
+   "reading": "おおきい",
+   "pinyin": "ookii",
+   "example": {
+    "text": "私の家は大きいです。",
+    "reading": "わたしのいえはおおきいです。",
+    "pinyin": "Watashi no ie wa ookii desu.",
+    "english": "My home is big."
+   }
+  },
+  {
+   "conceptId": "small",
+   "text": "小さい",
+   "reading": "ちいさい",
+   "pinyin": "chiisai",
+   "example": {
+    "text": "このコップは小さいです。",
+    "reading": "このこっぷはちいさいです。",
+    "pinyin": "Kono koppu wa chiisai desu.",
+    "english": "This cup is small."
+   }
+  },
+  {
+   "conceptId": "cold",
+   "text": "寒い",
+   "reading": "さむい",
+   "pinyin": "samui",
+   "meaning": "cold (weather)",
+   "example": {
+    "text": "東京は寒いです。",
+    "reading": "とうきょうはさむいです。",
+    "pinyin": "Toukyou wa samui desu.",
+    "english": "Tokyo is cold."
+   }
+  },
+  {
+   "conceptId": "hot",
+   "text": "暑い",
+   "reading": "あつい",
+   "pinyin": "atsui",
+   "meaning": "hot (weather)",
+   "example": {
+    "text": "今日は暑いです。",
+    "reading": "きょうはあついです。",
+    "pinyin": "Kyou wa atsui desu.",
+    "english": "It's hot today."
+   }
+  },
+  {
+   "conceptId": "pretty",
+   "text": "きれい",
+   "reading": "きれい",
+   "pinyin": "kirei",
+   "meaning": "pretty; clean",
+   "alternates": [
+    "綺麗"
+   ],
+   "example": {
+    "text": "彼女の服はきれいです。",
+    "reading": "かのじょのふくはきれいです。",
+    "pinyin": "Kanojo no fuku wa kirei desu.",
+    "english": "Her clothes are pretty."
+   }
+  },
+  {
+   "conceptId": "very",
+   "text": "とても",
+   "reading": "とても",
+   "pinyin": "totemo",
+   "alternates": [
+    "すごく"
+   ],
+   "example": {
+    "text": "私はとても元気です。",
+    "reading": "わたしはとてもげんきです。",
+    "pinyin": "Watashi wa totemo genki desu.",
+    "english": "I'm very well."
+   }
+  },
+  {
+   "conceptId": "all",
+   "text": "みんな",
+   "reading": "みんな",
+   "pinyin": "minna",
+   "meaning": "all, everyone",
+   "alternates": [
+    "皆",
+    "皆さん"
+   ],
+   "example": {
+    "text": "私たちはみんな学生です。",
+    "reading": "わたしたちはみんながくせいです。",
+    "pinyin": "Watashitachi wa minna gakusei desu.",
+    "english": "We are all students."
+   }
+  },
+  {
+   "conceptId": "weather",
+   "text": "天気",
+   "reading": "てんき",
+   "pinyin": "tenki",
+   "example": {
+    "text": "今日の天気はどうですか。",
+    "reading": "きょうのてんきはどうですか。",
+    "pinyin": "Kyou no tenki wa dou desu ka.",
+    "english": "How's the weather today?"
+   }
+  },
+  {
+   "conceptId": "what",
+   "text": "何",
+   "reading": "なに",
+   "pinyin": "nani",
+   "alternates": [
+    "なん"
+   ],
+   "note": "Read なん before です and counters.",
+   "example": {
+    "text": "これは何ですか。",
+    "reading": "これはなんですか。",
+    "pinyin": "Kore wa nan desu ka.",
+    "english": "What is this?"
+   }
+  },
+  {
+   "conceptId": "how",
+   "text": "どうやって",
+   "reading": "どうやって",
+   "pinyin": "douyatte",
+   "meaning": "how (by what means)",
+   "example": {
+    "text": "この字はどうやって書きますか。",
+    "reading": "このじはどうやってかきますか。",
+    "pinyin": "Kono ji wa douyatte kakimasu ka.",
+    "english": "How do you write this character?"
+   }
+  },
+  {
+   "conceptId": "how-is-it",
+   "text": "どう",
+   "reading": "どう",
+   "pinyin": "dou",
+   "alternates": [
+    "いかが"
+   ],
+   "example": {
+    "text": "仕事はどうですか。",
+    "reading": "しごとはどうですか。",
+    "pinyin": "Shigoto wa dou desu ka.",
+    "english": "How is your job?"
+   }
+  },
+  {
+   "conceptId": "ma",
+   "text": "か",
+   "reading": "か",
+   "pinyin": "ka",
+   "meaning": "(turns a sentence into a question)",
+   "example": {
+    "text": "あなたは学生ですか。",
+    "reading": "あなたはがくせいですか。",
+    "pinyin": "Anata wa gakusei desu ka.",
+    "english": "Are you a student?"
+   }
+  },
+  {
+   "conceptId": "de",
+   "text": "の",
+   "reading": "の",
+   "pinyin": "no",
+   "example": {
+    "text": "これは私の本です。",
+    "reading": "これはわたしのほんです。",
+    "pinyin": "Kore wa watashi no hon desu.",
+    "english": "This is my book."
+   }
+  },
+  {
+   "conceptId": "topic-marker",
+   "text": "は",
+   "reading": "わ",
+   "pinyin": "wa",
+   "meaning": "(topic marker: as for...)",
+   "note": "Written は but said わ.",
+   "example": {
+    "text": "私は学生です。",
+    "reading": "わたしはがくせいです。",
+    "pinyin": "Watashi wa gakusei desu.",
+    "english": "I am a student."
+   }
+  },
+  {
+   "conceptId": "subject-marker",
+   "text": "が",
+   "reading": "が",
+   "pinyin": "ga",
+   "meaning": "(subject marker)",
+   "example": {
+    "text": "猫がいます。",
+    "reading": "ねこがいます。",
+    "pinyin": "Neko ga imasu.",
+    "english": "There's a cat."
+   }
+  },
+  {
+   "conceptId": "object-marker",
+   "text": "を",
+   "reading": "を",
+   "pinyin": "o",
+   "meaning": "(object marker)",
+   "note": "Said お.",
+   "example": {
+    "text": "水を飲みます。",
+    "reading": "みずをのみます。",
+    "pinyin": "Mizu o nomimasu.",
+    "english": "I drink water."
+   }
+  },
+  {
+   "conceptId": "place-of-action",
+   "text": "で",
+   "reading": "で",
+   "pinyin": "de",
+   "meaning": "at, in (where something happens)",
+   "example": {
+    "text": "学校で勉強します。",
+    "reading": "がっこうでべんきょうします。",
+    "pinyin": "Gakkou de benkyoushimasu.",
+    "english": "I study at school."
+   }
+  }
+ ],
+ "skipped": {
+  "be-called": "Japanese says 〜です or 〜と申します (I am ...) instead.",
+  "miss": "Covered by さん (Mr., Ms.).",
+  "some": "Japanese splits this into いくつか (a few) and 少し (a little), taught later.",
+  "see": "Japanese uses 見る (look, watch) for \"see\" too.",
+  "can-know-how": "Japanese uses できる for both kinds of \"can\".",
+  "too": "Japanese adds すぎる to a word (暑すぎる \"too hot\"), taught later.",
+  "ne": "Japanese asks \"and you?\" with あなたは？, using the topic marker below.",
+  "le": "Japanese marks finished actions with a verb ending (-ました), not a separate word.",
+  "not-past": "Japanese marks \"did not\" with a verb ending (-ませんでした), taught later."
+ }
+}

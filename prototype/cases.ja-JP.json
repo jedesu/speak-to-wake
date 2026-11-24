@@ -1,0 +1,22 @@
+[
+  {"note": "exact match", "target": "猫", "reading": "ねこ", "heard": "猫", "expect": "pass"},
+  {"note": "written in katakana", "target": "猫", "reading": "ねこ", "heard": "ネコ", "expect": "pass"},
+  {"note": "written in hiragana", "target": "猫", "reading": "ねこ", "heard": "ねこ", "expect": "pass"},
+  {"note": "homophone with different kanji (箸 chopsticks / 橋 bridge)", "target": "箸", "reading": "はし", "heard": "橋", "expect": "pass"},
+  {"note": "word followed by です", "target": "学校", "reading": "がっこう", "heard": "学校です", "expect": "pass"},
+  {"note": "katakana word in hiragana", "target": "タクシー", "reading": "たくしー", "heard": "たくしー", "expect": "pass"},
+  {"note": "digit instead of kanji", "target": "十", "reading": "じゅう", "heard": "10", "expect": "pass"},
+  {"note": "digit for a number with two readings", "target": "四", "reading": "よん", "heard": "4", "alternates": ["し"], "expect": "pass"},
+  {"note": "other reading listed as alternate", "target": "七", "reading": "なな", "heard": "しち", "alternates": ["しち"], "expect": "pass"},
+  {"note": "particle written は, said わ", "target": "は", "reading": "わ", "heard": "わ", "expect": "pass"},
+  {"note": "polite form accepted when listed", "target": "食べる", "reading": "たべる", "heard": "食べます", "alternates": ["食べます"], "expect": "pass"},
+  {"note": "polite form not accepted unless listed", "target": "食べる", "reading": "たべる", "heard": "食べます", "expect": "fail"},
+  {"note": "price heard with digits", "target": "円", "reading": "えん", "heard": "300円", "expect": "pass"},
+  {"note": "long vowel changes the word (aunt vs grandma): near", "target": "おばさん", "reading": "おばさん", "heard": "おばあさん", "expect": "near"},
+  {"note": "missing long vowel: near", "target": "学校", "reading": "がっこう", "heard": "がっこ", "expect": "near"},
+  {"note": "missing small っ (stamp vs come): near", "target": "切手", "reading": "きって", "heard": "きて", "expect": "near"},
+  {"note": "voicing slip in a 2-beat word: near", "target": "来る", "reading": "くる", "heard": "グル", "expect": "near"},
+  {"note": "different word", "target": "猫", "reading": "ねこ", "heard": "犬", "expect": "fail"},
+  {"note": "recognizer heard nothing", "target": "猫", "reading": "ねこ", "heard": "", "expect": "fail"},
+  {"note": "long unrelated sentence", "target": "猫", "reading": "ねこ", "heard": "今日はとても良い天気ですね", "expect": "fail"}
+]

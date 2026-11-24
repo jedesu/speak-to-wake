@@ -1,0 +1,1830 @@
+{
+ "language": "ko-KR",
+ "words": [
+  {
+   "conceptId": "hello",
+   "text": "안녕하세요",
+   "pinyin": "annyeonghaseyo",
+   "alternates": [
+    "안녕"
+   ],
+   "example": {
+    "text": "안녕하세요, 저는 민수예요.",
+    "pinyin": "Annyeonghaseyo, jeoneun Minsuyeyo.",
+    "english": "Hello, I'm Minsu."
+   }
+  },
+  {
+   "conceptId": "thanks",
+   "text": "감사합니다",
+   "pinyin": "gamsahamnida",
+   "alternates": [
+    "고맙습니다",
+    "고마워요"
+   ],
+   "example": {
+    "text": "도와주셔서 감사합니다.",
+    "pinyin": "Dowajusyeoseo gamsahamnida.",
+    "english": "Thank you for helping me."
+   }
+  },
+  {
+   "conceptId": "youre-welcome",
+   "text": "천만에요",
+   "pinyin": "cheonmaneyo",
+   "example": {
+    "text": "천만에요!",
+    "pinyin": "Cheonmaneyo!",
+    "english": "You're welcome!"
+   }
+  },
+  {
+   "conceptId": "goodbye",
+   "text": "안녕히 가세요",
+   "pinyin": "annyeonghi gaseyo",
+   "meaning": "goodbye (to someone leaving)",
+   "alternates": [
+    "안녕히 계세요",
+    "잘 가"
+   ],
+   "note": "Said to someone who is leaving. If you are the one leaving, say 안녕히 계세요.",
+   "example": {
+    "text": "내일 봐요, 안녕히 가세요.",
+    "pinyin": "Naeil bwayo, annyeonghi gaseyo.",
+    "english": "See you tomorrow, goodbye."
+   }
+  },
+  {
+   "conceptId": "sorry",
+   "text": "미안해요",
+   "pinyin": "mianhaeyo",
+   "alternates": [
+    "죄송합니다",
+    "미안합니다"
+   ],
+   "example": {
+    "text": "늦어서 미안해요.",
+    "pinyin": "Neujeoseo mianhaeyo.",
+    "english": "Sorry I'm late."
+   }
+  },
+  {
+   "conceptId": "no-problem",
+   "text": "괜찮아요",
+   "pinyin": "gwaenchanayo",
+   "meaning": "it's okay, no problem",
+   "alternates": [
+    "괜찮습니다"
+   ],
+   "example": {
+    "text": "괜찮아요, 저는 안 바빠요.",
+    "pinyin": "Gwaenchanayo, jeoneun an bappayo.",
+    "english": "It's okay, I'm not busy."
+   }
+  },
+  {
+   "conceptId": "please",
+   "text": "주세요",
+   "pinyin": "juseyo",
+   "meaning": "please (give me)",
+   "note": "Goes after what you want: 커피 주세요 (coffee, please).",
+   "example": {
+    "text": "물 좀 주세요.",
+    "pinyin": "Mul jom juseyo.",
+    "english": "Water, please."
+   }
+  },
+  {
+   "conceptId": "hey-phone",
+   "text": "여보세요",
+   "pinyin": "yeoboseyo",
+   "example": {
+    "text": "여보세요, 누구세요?",
+    "pinyin": "Yeoboseyo, nuguseyo?",
+    "english": "Hello, who is this?"
+   }
+  },
+  {
+   "conceptId": "be",
+   "text": "이에요",
+   "pinyin": "ieyo",
+   "meaning": "to be (am, is, are)",
+   "alternates": [
+    "예요",
+    "입니다"
+   ],
+   "note": "Goes after a word ending in a consonant; after a vowel it's 예요.",
+   "example": {
+    "text": "저는 학생이에요.",
+    "pinyin": "Jeoneun haksaengieyo.",
+    "english": "I am a student."
+   }
+  },
+  {
+   "conceptId": "not",
+   "text": "아니요",
+   "pinyin": "aniyo",
+   "meaning": "no",
+   "alternates": [
+    "아니오",
+    "아뇨"
+   ],
+   "example": {
+    "text": "아니요, 저는 학생이 아니에요.",
+    "pinyin": "Aniyo, jeoneun haksaengi anieyo.",
+    "english": "No, I'm not a student."
+   }
+  },
+  {
+   "conceptId": "i",
+   "text": "저",
+   "pinyin": "jeo",
+   "meaning": "I, me (polite)",
+   "alternates": [
+    "나"
+   ],
+   "note": "Polite. With friends, say 나.",
+   "example": {
+    "text": "저는 김민수예요.",
+    "pinyin": "Jeoneun Gimminsuyeyo.",
+    "english": "I'm Kim Minsu."
+   }
+  },
+  {
+   "conceptId": "you",
+   "text": "너",
+   "pinyin": "neo",
+   "meaning": "you (to a friend)",
+   "alternates": [
+    "당신"
+   ],
+   "note": "Casual. Koreans usually use the person's name or title instead of \"you\".",
+   "example": {
+    "text": "너는 학생이야?",
+    "pinyin": "Neoneun haksaengiya?",
+    "english": "Are you a student?"
+   }
+  },
+  {
+   "conceptId": "he",
+   "text": "그",
+   "pinyin": "geu",
+   "meaning": "he (in writing)",
+   "alternates": [
+    "그 사람"
+   ],
+   "note": "Mostly written. In speech, say 그 사람 (that person).",
+   "example": {
+    "text": "그는 제 친구예요.",
+    "pinyin": "Geuneun je chinguyeyo.",
+    "english": "He is my friend."
+   }
+  },
+  {
+   "conceptId": "she",
+   "text": "그녀",
+   "pinyin": "geunyeo",
+   "meaning": "she (in writing)",
+   "note": "Mostly written.",
+   "example": {
+    "text": "그녀는 아주 예뻐요.",
+    "pinyin": "Geunyeoneun aju yeppeoyo.",
+    "english": "She is very pretty."
+   }
+  },
+  {
+   "conceptId": "we",
+   "text": "우리",
+   "pinyin": "uri",
+   "alternates": [
+    "저희"
+   ],
+   "example": {
+    "text": "우리는 반 친구예요.",
+    "pinyin": "Urineun ban chinguyeyo.",
+    "english": "We are classmates."
+   }
+  },
+  {
+   "conceptId": "person",
+   "text": "사람",
+   "pinyin": "saram",
+   "example": {
+    "text": "그는 한국 사람이에요.",
+    "pinyin": "Geuneun Hanguk saramieyo.",
+    "english": "He is Korean."
+   }
+  },
+  {
+   "conceptId": "who",
+   "text": "누구",
+   "pinyin": "nugu",
+   "alternates": [
+    "누가"
+   ],
+   "example": {
+    "text": "그녀는 누구예요?",
+    "pinyin": "Geunyeoneun nuguyeyo?",
+    "english": "Who is she?"
+   }
+  },
+  {
+   "conceptId": "name",
+   "text": "이름",
+   "pinyin": "ireum",
+   "alternates": [
+    "성함"
+   ],
+   "example": {
+    "text": "이름이 뭐예요?",
+    "pinyin": "Ireumi mwoyeyo?",
+    "english": "What's your name?"
+   }
+  },
+  {
+   "conceptId": "mister",
+   "text": "씨",
+   "pinyin": "ssi",
+   "meaning": "Mr., Ms. (after a name)",
+   "note": "Polite, added after a name. Never used for yourself.",
+   "example": {
+    "text": "민수 씨는 의사예요.",
+    "pinyin": "Minsu ssineun uisayeyo.",
+    "english": "Minsu is a doctor."
+   }
+  },
+  {
+   "conceptId": "one",
+   "text": "하나",
+   "pinyin": "hana",
+   "alternates": [
+    "일",
+    "한"
+   ],
+   "note": "Korean has two sets of numbers: native (하나, 둘...) for counting things, hours and age, and Sino-Korean (일, 이...) for dates, money and minutes. Either one counts as correct here.",
+   "example": {
+    "text": "사과 하나 주세요.",
+    "pinyin": "Sagwa hana juseyo.",
+    "english": "One apple, please."
+   }
+  },
+  {
+   "conceptId": "two",
+   "text": "둘",
+   "pinyin": "dul",
+   "alternates": [
+    "이",
+    "두"
+   ],
+   "example": {
+    "text": "고양이가 둘 있어요.",
+    "pinyin": "Goyangiga dul isseoyo.",
+    "english": "There are two cats."
+   }
+  },
+  {
+   "conceptId": "three",
+   "text": "셋",
+   "pinyin": "set",
+   "alternates": [
+    "삼",
+    "세"
+   ],
+   "example": {
+    "text": "우리는 셋이에요.",
+    "pinyin": "Urineun sesieyo.",
+    "english": "There are three of us."
+   }
+  },
+  {
+   "conceptId": "four",
+   "text": "넷",
+   "pinyin": "net",
+   "alternates": [
+    "사",
+    "네"
+   ],
+   "example": {
+    "text": "우리 가족은 넷이에요.",
+    "pinyin": "Uri gajogeun nesieyo.",
+    "english": "There are four people in my family."
+   }
+  },
+  {
+   "conceptId": "five",
+   "text": "다섯",
+   "pinyin": "daseot",
+   "alternates": [
+    "오"
+   ],
+   "example": {
+    "text": "친구가 다섯 명 있어요.",
+    "pinyin": "Chinguga daseot myeong isseoyo.",
+    "english": "I have five friends."
+   }
+  },
+  {
+   "conceptId": "six",
+   "text": "여섯",
+   "pinyin": "yeoseot",
+   "alternates": [
+    "육"
+   ],
+   "example": {
+    "text": "지금 여섯 시예요.",
+    "pinyin": "Jigeum yeoseot siyeyo.",
+    "english": "It's six o'clock now."
+   }
+  },
+  {
+   "conceptId": "seven",
+   "text": "일곱",
+   "pinyin": "ilgop",
+   "alternates": [
+    "칠"
+   ],
+   "example": {
+    "text": "아침 일곱 시에 일어나요.",
+    "pinyin": "Achim ilgop sie ireonayo.",
+    "english": "I get up at seven in the morning."
+   }
+  },
+  {
+   "conceptId": "eight",
+   "text": "여덟",
+   "pinyin": "yeodeol",
+   "alternates": [
+    "팔"
+   ],
+   "example": {
+    "text": "저는 여덟 살이에요.",
+    "pinyin": "Jeoneun yeodeol sarieyo.",
+    "english": "I am eight years old."
+   }
+  },
+  {
+   "conceptId": "nine",
+   "text": "아홉",
+   "pinyin": "ahop",
+   "alternates": [
+    "구"
+   ],
+   "example": {
+    "text": "저는 아홉 시에 자요.",
+    "pinyin": "Jeoneun ahop sie jayo.",
+    "english": "I go to bed at nine."
+   }
+  },
+  {
+   "conceptId": "ten",
+   "text": "열",
+   "pinyin": "yeol",
+   "alternates": [
+    "십"
+   ],
+   "example": {
+    "text": "지금 열 시예요.",
+    "pinyin": "Jigeum yeol siyeyo.",
+    "english": "It's ten o'clock now."
+   }
+  },
+  {
+   "conceptId": "zero",
+   "text": "영",
+   "pinyin": "yeong",
+   "alternates": [
+    "공"
+   ],
+   "note": "Phone numbers use 공 for zero.",
+   "example": {
+    "text": "오늘은 영 도예요.",
+    "pinyin": "Oneureun yeong doyeyo.",
+    "english": "It's zero degrees today."
+   }
+  },
+  {
+   "conceptId": "measure-ge",
+   "text": "개",
+   "pinyin": "gae",
+   "meaning": "(counter for things)",
+   "example": {
+    "text": "사과 세 개 주세요.",
+    "pinyin": "Sagwa se gae juseyo.",
+    "english": "Three apples, please."
+   }
+  },
+  {
+   "conceptId": "years-old",
+   "text": "살",
+   "pinyin": "sal",
+   "meaning": "years old",
+   "alternates": [
+    "세"
+   ],
+   "example": {
+    "text": "몇 살이에요?",
+    "pinyin": "Myeot sarieyo?",
+    "english": "How old are you?"
+   }
+  },
+  {
+   "conceptId": "measure-ben",
+   "text": "권",
+   "pinyin": "gwon",
+   "meaning": "(counter for books)",
+   "example": {
+    "text": "책 두 권을 샀어요.",
+    "pinyin": "Chaek du gwoneul sasseoyo.",
+    "english": "I bought two books."
+   }
+  },
+  {
+   "conceptId": "yuan",
+   "text": "원",
+   "pinyin": "won",
+   "meaning": "won (Korean money)",
+   "example": {
+    "text": "이 컵은 삼천 원이에요.",
+    "pinyin": "I keobeun samcheon wonieyo.",
+    "english": "This cup costs 3,000 won."
+   }
+  },
+  {
+   "conceptId": "how-many-small",
+   "text": "몇",
+   "pinyin": "myeot",
+   "meaning": "how many",
+   "example": {
+    "text": "가족이 몇 명이에요?",
+    "pinyin": "Gajogi myeot myeongieyo?",
+    "english": "How many people are in your family?"
+   }
+  },
+  {
+   "conceptId": "how-much",
+   "text": "얼마",
+   "pinyin": "eolma",
+   "meaning": "how much (price)",
+   "example": {
+    "text": "이 책은 얼마예요?",
+    "pinyin": "I chaegeun eolmayeyo?",
+    "english": "How much is this book?"
+   }
+  },
+  {
+   "conceptId": "many",
+   "text": "많다",
+   "pinyin": "manta",
+   "meaning": "many, a lot",
+   "alternates": [
+    "많아요"
+   ],
+   "example": {
+    "text": "저는 친구가 많아요.",
+    "pinyin": "Jeoneun chinguga manayo.",
+    "english": "I have a lot of friends."
+   }
+  },
+  {
+   "conceptId": "few",
+   "text": "적다",
+   "pinyin": "jeokda",
+   "meaning": "few, little",
+   "alternates": [
+    "적어요"
+   ],
+   "example": {
+    "text": "오늘은 사람이 적어요.",
+    "pinyin": "Oneureun sarami jeogeoyo.",
+    "english": "There are few people today."
+   }
+  },
+  {
+   "conceptId": "mom",
+   "text": "엄마",
+   "pinyin": "eomma",
+   "alternates": [
+    "어머니"
+   ],
+   "example": {
+    "text": "저는 엄마를 사랑해요.",
+    "pinyin": "Jeoneun eommareul saranghaeyo.",
+    "english": "I love my mom."
+   }
+  },
+  {
+   "conceptId": "dad",
+   "text": "아빠",
+   "pinyin": "appa",
+   "alternates": [
+    "아버지"
+   ],
+   "example": {
+    "text": "우리 아빠는 선생님이에요.",
+    "pinyin": "Uri appaneun seonsaengnimieyo.",
+    "english": "My dad is a teacher."
+   }
+  },
+  {
+   "conceptId": "son",
+   "text": "아들",
+   "pinyin": "adeul",
+   "example": {
+    "text": "그의 아들은 학생이에요.",
+    "pinyin": "Geuui adeureun haksaengieyo.",
+    "english": "His son is a student."
+   }
+  },
+  {
+   "conceptId": "daughter",
+   "text": "딸",
+   "pinyin": "ttal",
+   "example": {
+    "text": "제 딸은 아주 예뻐요.",
+    "pinyin": "Je ttareun aju yeppeoyo.",
+    "english": "My daughter is very pretty."
+   }
+  },
+  {
+   "conceptId": "home",
+   "text": "집",
+   "pinyin": "jip",
+   "meaning": "home, house",
+   "example": {
+    "text": "저는 지금 집에 있어요.",
+    "pinyin": "Jeoneun jigeum jibe isseoyo.",
+    "english": "I'm at home now."
+   }
+  },
+  {
+   "conceptId": "love",
+   "text": "사랑하다",
+   "pinyin": "saranghada",
+   "alternates": [
+    "사랑해요"
+   ],
+   "example": {
+    "text": "저는 가족을 사랑해요.",
+    "pinyin": "Jeoneun gajogeul saranghaeyo.",
+    "english": "I love my family."
+   }
+  },
+  {
+   "conceptId": "and",
+   "text": "하고",
+   "pinyin": "hago",
+   "meaning": "and (between nouns)",
+   "alternates": [
+    "와",
+    "과",
+    "그리고"
+   ],
+   "example": {
+    "text": "아빠하고 엄마는 집에 있어요.",
+    "pinyin": "Appahago eommaneun jibe isseoyo.",
+    "english": "Dad and Mom are at home."
+   }
+  },
+  {
+   "conceptId": "friend",
+   "text": "친구",
+   "pinyin": "chingu",
+   "example": {
+    "text": "그는 제 친구예요.",
+    "pinyin": "Geuneun je chinguyeyo.",
+    "english": "He is my friend."
+   }
+  },
+  {
+   "conceptId": "classmate",
+   "text": "반 친구",
+   "pinyin": "ban chingu",
+   "alternates": [
+    "동창"
+   ],
+   "example": {
+    "text": "민수는 제 반 친구예요.",
+    "pinyin": "Minsuneun je ban chinguyeyo.",
+    "english": "Minsu is my classmate."
+   }
+  },
+  {
+   "conceptId": "teacher",
+   "text": "선생님",
+   "pinyin": "seonsaengnim",
+   "alternates": [
+    "선생"
+   ],
+   "example": {
+    "text": "우리 선생님은 한국 사람이에요.",
+    "pinyin": "Uri seonsaengnimeun Hanguk saramieyo.",
+    "english": "My teacher is Korean."
+   }
+  },
+  {
+   "conceptId": "student",
+   "text": "학생",
+   "pinyin": "haksaeng",
+   "example": {
+    "text": "그는 제 학생이에요.",
+    "pinyin": "Geuneun je haksaengieyo.",
+    "english": "He is my student."
+   }
+  },
+  {
+   "conceptId": "doctor",
+   "text": "의사",
+   "pinyin": "uisa",
+   "example": {
+    "text": "그녀의 엄마는 의사예요.",
+    "pinyin": "Geunyeoui eommaneun uisayeyo.",
+    "english": "Her mom is a doctor."
+   }
+  },
+  {
+   "conceptId": "school",
+   "text": "학교",
+   "pinyin": "hakgyo",
+   "example": {
+    "text": "우리 학교는 커요.",
+    "pinyin": "Uri hakgyoneun keoyo.",
+    "english": "Our school is big."
+   }
+  },
+  {
+   "conceptId": "hospital",
+   "text": "병원",
+   "pinyin": "byeongwon",
+   "example": {
+    "text": "의사는 병원에서 일해요.",
+    "pinyin": "Uisaneun byeongwoneseo ilhaeyo.",
+    "english": "Doctors work at the hospital."
+   }
+  },
+  {
+   "conceptId": "study",
+   "text": "공부하다",
+   "pinyin": "gongbuhada",
+   "alternates": [
+    "공부해요"
+   ],
+   "example": {
+    "text": "저는 한국어를 공부해요.",
+    "pinyin": "Jeoneun Hangugeoreul gongbuhaeyo.",
+    "english": "I'm studying Korean."
+   }
+  },
+  {
+   "conceptId": "work",
+   "text": "일하다",
+   "pinyin": "ilhada",
+   "meaning": "to work",
+   "alternates": [
+    "일해요"
+   ],
+   "example": {
+    "text": "저는 내일 일하지 않아요.",
+    "pinyin": "Jeoneun naeil ilhaji anayo.",
+    "english": "I don't work tomorrow."
+   }
+  },
+  {
+   "conceptId": "book",
+   "text": "책",
+   "pinyin": "chaek",
+   "example": {
+    "text": "저는 책 읽는 것을 좋아해요.",
+    "pinyin": "Jeoneun chaek ingneun geoseul joahaeyo.",
+    "english": "I like reading books."
+   }
+  },
+  {
+   "conceptId": "chinese-language",
+   "text": "중국어",
+   "pinyin": "junggugeo",
+   "example": {
+    "text": "중국어를 할 수 있어요?",
+    "pinyin": "Junggugeoreul hal su isseoyo?",
+    "english": "Can you speak Chinese?"
+   }
+  },
+  {
+   "conceptId": "character",
+   "text": "글자",
+   "pinyin": "geulja",
+   "meaning": "(written) letter, character",
+   "alternates": [
+    "글씨"
+   ],
+   "example": {
+    "text": "이 글자는 어떻게 읽어요?",
+    "pinyin": "I geuljaneun eotteoke ilgeoyo?",
+    "english": "How do you read this letter?"
+   }
+  },
+  {
+   "conceptId": "read",
+   "text": "읽다",
+   "pinyin": "ikda",
+   "meaning": "to read",
+   "alternates": [
+    "읽어요"
+   ],
+   "example": {
+    "text": "이 글자를 읽어 주세요.",
+    "pinyin": "I geuljareul ilgeo juseyo.",
+    "english": "Please read this letter."
+   }
+  },
+  {
+   "conceptId": "write",
+   "text": "쓰다",
+   "pinyin": "sseuda",
+   "alternates": [
+    "써요"
+   ],
+   "example": {
+    "text": "저는 제 이름을 쓸 수 있어요.",
+    "pinyin": "Jeoneun je ireumeul sseul su isseoyo.",
+    "english": "I can write my name."
+   }
+  },
+  {
+   "conceptId": "eat",
+   "text": "먹다",
+   "pinyin": "meokda",
+   "alternates": [
+    "먹어요"
+   ],
+   "example": {
+    "text": "저는 밥을 먹고 싶어요.",
+    "pinyin": "Jeoneun babeul meokgo sipeoyo.",
+    "english": "I want to eat rice."
+   }
+  },
+  {
+   "conceptId": "drink",
+   "text": "마시다",
+   "pinyin": "masida",
+   "alternates": [
+    "마셔요"
+   ],
+   "example": {
+    "text": "뭐 마시고 싶어요?",
+    "pinyin": "Mwo masigo sipeoyo?",
+    "english": "What would you like to drink?"
+   }
+  },
+  {
+   "conceptId": "water",
+   "text": "물",
+   "pinyin": "mul",
+   "example": {
+    "text": "저는 물을 마시고 싶어요.",
+    "pinyin": "Jeoneun mureul masigo sipeoyo.",
+    "english": "I want to drink water."
+   }
+  },
+  {
+   "conceptId": "tea",
+   "text": "차",
+   "pinyin": "cha",
+   "note": "차 also means \"car\".",
+   "example": {
+    "text": "차를 마셔요?",
+    "pinyin": "Chareul masyeoyo?",
+    "english": "Do you drink tea?"
+   }
+  },
+  {
+   "conceptId": "dish",
+   "text": "요리",
+   "pinyin": "yori",
+   "meaning": "dish, cooking",
+   "alternates": [
+    "음식"
+   ],
+   "example": {
+    "text": "이 요리는 정말 맛있어요.",
+    "pinyin": "I yorineun jeongmal masisseoyo.",
+    "english": "This dish is really delicious."
+   }
+  },
+  {
+   "conceptId": "rice",
+   "text": "밥",
+   "pinyin": "bap",
+   "meaning": "cooked rice; meal",
+   "example": {
+    "text": "저녁에 밥을 먹어요.",
+    "pinyin": "Jeonyeoge babeul meogeoyo.",
+    "english": "I eat rice in the evening."
+   }
+  },
+  {
+   "conceptId": "fruit",
+   "text": "과일",
+   "pinyin": "gwail",
+   "example": {
+    "text": "저는 과일을 좋아해요.",
+    "pinyin": "Jeoneun gwaireul joahaeyo.",
+    "english": "I like fruit."
+   }
+  },
+  {
+   "conceptId": "apple",
+   "text": "사과",
+   "pinyin": "sagwa",
+   "note": "사과 also means \"apology\".",
+   "example": {
+    "text": "저는 사과를 좋아해요.",
+    "pinyin": "Jeoneun sagwareul joahaeyo.",
+    "english": "I like apples."
+   }
+  },
+  {
+   "conceptId": "cup",
+   "text": "컵",
+   "pinyin": "keop",
+   "alternates": [
+    "잔"
+   ],
+   "example": {
+    "text": "이 컵은 제 거예요.",
+    "pinyin": "I keobeun je geoyeyo.",
+    "english": "This cup is mine."
+   }
+  },
+  {
+   "conceptId": "restaurant",
+   "text": "식당",
+   "pinyin": "sikdang",
+   "alternates": [
+    "레스토랑"
+   ],
+   "example": {
+    "text": "우리는 식당에서 밥을 먹어요.",
+    "pinyin": "Urineun sikdangeseo babeul meogeoyo.",
+    "english": "We eat at a restaurant."
+   }
+  },
+  {
+   "conceptId": "today",
+   "text": "오늘",
+   "pinyin": "oneul",
+   "example": {
+    "text": "오늘은 월요일이에요.",
+    "pinyin": "Oneureun woryoirieyo.",
+    "english": "Today is Monday."
+   }
+  },
+  {
+   "conceptId": "tomorrow",
+   "text": "내일",
+   "pinyin": "naeil",
+   "example": {
+    "text": "내일 서울에 가요.",
+    "pinyin": "Naeil Seoure gayo.",
+    "english": "Tomorrow I'm going to Seoul."
+   }
+  },
+  {
+   "conceptId": "yesterday",
+   "text": "어제",
+   "pinyin": "eoje",
+   "example": {
+    "text": "어제는 추웠어요.",
+    "pinyin": "Eojeneun chuwosseoyo.",
+    "english": "Yesterday was cold."
+   }
+  },
+  {
+   "conceptId": "year",
+   "text": "년",
+   "pinyin": "nyeon",
+   "meaning": "year (after numbers)",
+   "alternates": [
+    "해"
+   ],
+   "example": {
+    "text": "저는 일 년 동안 한국어를 공부했어요.",
+    "pinyin": "Jeoneun il nyeon dongan Hangugeoreul gongbuhaesseoyo.",
+    "english": "I studied Korean for one year."
+   }
+  },
+  {
+   "conceptId": "month",
+   "text": "월",
+   "pinyin": "wol",
+   "meaning": "month (after numbers)",
+   "alternates": [
+    "달"
+   ],
+   "example": {
+    "text": "제 생일은 삼월이에요.",
+    "pinyin": "Je saengireun samworieyo.",
+    "english": "My birthday is in March."
+   }
+  },
+  {
+   "conceptId": "day-of-month",
+   "text": "일",
+   "pinyin": "il",
+   "example": {
+    "text": "오늘은 시월 이십 일이에요.",
+    "pinyin": "Oneureun siwol isip irieyo.",
+    "english": "Today is October 20."
+   }
+  },
+  {
+   "conceptId": "week",
+   "text": "주",
+   "pinyin": "ju",
+   "alternates": [
+    "주일"
+   ],
+   "example": {
+    "text": "일주일은 칠 일이에요.",
+    "pinyin": "Iljuireun chil irieyo.",
+    "english": "A week has seven days."
+   }
+  },
+  {
+   "conceptId": "morning",
+   "text": "오전",
+   "pinyin": "ojeon",
+   "meaning": "morning (a.m.)",
+   "alternates": [
+    "아침"
+   ],
+   "example": {
+    "text": "저는 오전에 공부해요.",
+    "pinyin": "Jeoneun ojeone gongbuhaeyo.",
+    "english": "I study in the morning."
+   }
+  },
+  {
+   "conceptId": "noon",
+   "text": "점심",
+   "pinyin": "jeomsim",
+   "meaning": "noon, lunchtime",
+   "alternates": [
+    "정오"
+   ],
+   "example": {
+    "text": "점심에 같이 먹어요.",
+    "pinyin": "Jeomsime gachi meogeoyo.",
+    "english": "Let's eat together at noon."
+   }
+  },
+  {
+   "conceptId": "afternoon",
+   "text": "오후",
+   "pinyin": "ohu",
+   "example": {
+    "text": "오후에 가게에 가요.",
+    "pinyin": "Ohue gagee gayo.",
+    "english": "In the afternoon I go to the store."
+   }
+  },
+  {
+   "conceptId": "now",
+   "text": "지금",
+   "pinyin": "jigeum",
+   "example": {
+    "text": "지금 몇 시예요?",
+    "pinyin": "Jigeum myeot siyeyo?",
+    "english": "What time is it now?"
+   }
+  },
+  {
+   "conceptId": "when",
+   "text": "때",
+   "pinyin": "ttae",
+   "example": {
+    "text": "어릴 때 서울에 살았어요.",
+    "pinyin": "Eoril ttae Seoure sarasseoyo.",
+    "english": "When I was little, I lived in Seoul."
+   }
+  },
+  {
+   "conceptId": "oclock",
+   "text": "시",
+   "pinyin": "si",
+   "example": {
+    "text": "일곱 시에 일어나요.",
+    "pinyin": "Ilgop sie ireonayo.",
+    "english": "I get up at seven."
+   }
+  },
+  {
+   "conceptId": "minute",
+   "text": "분",
+   "pinyin": "bun",
+   "example": {
+    "text": "오 분만 기다려요.",
+    "pinyin": "O bunman gidaryeoyo.",
+    "english": "Let's wait five minutes."
+   }
+  },
+  {
+   "conceptId": "this",
+   "text": "이것",
+   "pinyin": "igeot",
+   "meaning": "this (thing)",
+   "alternates": [
+    "이거"
+   ],
+   "example": {
+    "text": "이것은 제 책이에요.",
+    "pinyin": "Igeoseun je chaegieyo.",
+    "english": "This is my book."
+   }
+  },
+  {
+   "conceptId": "that",
+   "text": "저것",
+   "pinyin": "jeogeot",
+   "meaning": "that (over there)",
+   "alternates": [
+    "저거"
+   ],
+   "example": {
+    "text": "저것은 우리 학교예요.",
+    "pinyin": "Jeogeoseun uri hakgyoyeyo.",
+    "english": "That is our school."
+   }
+  },
+  {
+   "conceptId": "which",
+   "text": "어느",
+   "pinyin": "eoneu",
+   "example": {
+    "text": "어느 나라 사람이에요?",
+    "pinyin": "Eoneu nara saramieyo?",
+    "english": "Which country are you from?"
+   }
+  },
+  {
+   "conceptId": "at",
+   "text": "에",
+   "pinyin": "e",
+   "meaning": "at, in, to (a place)",
+   "note": "Attached to a place: 집에 (at home).",
+   "example": {
+    "text": "저는 집에 있어요.",
+    "pinyin": "Jeoneun jibe isseoyo.",
+    "english": "I'm at home."
+   }
+  },
+  {
+   "conceptId": "china",
+   "text": "중국",
+   "pinyin": "jungguk",
+   "example": {
+    "text": "저는 중국에 가고 싶어요.",
+    "pinyin": "Jeoneun Jungguge gago sipeoyo.",
+    "english": "I want to go to China."
+   }
+  },
+  {
+   "conceptId": "beijing",
+   "text": "베이징",
+   "pinyin": "beijing",
+   "alternates": [
+    "북경"
+   ],
+   "example": {
+    "text": "베이징은 커요.",
+    "pinyin": "Beijingeun keoyo.",
+    "english": "Beijing is big."
+   }
+  },
+  {
+   "conceptId": "train-station",
+   "text": "기차역",
+   "pinyin": "gichayeok",
+   "alternates": [
+    "역"
+   ],
+   "example": {
+    "text": "저는 기차역에 있어요.",
+    "pinyin": "Jeoneun gichayeoge isseoyo.",
+    "english": "I'm at the train station."
+   }
+  },
+  {
+   "conceptId": "store",
+   "text": "가게",
+   "pinyin": "gage",
+   "example": {
+    "text": "가게에 물건이 많아요.",
+    "pinyin": "Gagee mulgeoni manayo.",
+    "english": "There are lots of things in the store."
+   }
+  },
+  {
+   "conceptId": "come",
+   "text": "오다",
+   "pinyin": "oda",
+   "alternates": [
+    "와요"
+   ],
+   "example": {
+    "text": "언제 우리 집에 와요?",
+    "pinyin": "Eonje uri jibe wayo?",
+    "english": "When are you coming to my house?"
+   }
+  },
+  {
+   "conceptId": "go",
+   "text": "가다",
+   "pinyin": "gada",
+   "alternates": [
+    "가요"
+   ],
+   "example": {
+    "text": "내일 학교에 가요.",
+    "pinyin": "Naeil hakgyoe gayo.",
+    "english": "I'm going to school tomorrow."
+   }
+  },
+  {
+   "conceptId": "return",
+   "text": "돌아가다",
+   "pinyin": "doragada",
+   "meaning": "to go back, return",
+   "alternates": [
+    "돌아가요"
+   ],
+   "example": {
+    "text": "저는 집에 돌아가고 싶어요.",
+    "pinyin": "Jeoneun jibe doragago sipeoyo.",
+    "english": "I want to go home."
+   }
+  },
+  {
+   "conceptId": "sit",
+   "text": "앉다",
+   "pinyin": "anda",
+   "meaning": "to sit",
+   "alternates": [
+    "앉아요"
+   ],
+   "example": {
+    "text": "여기 앉으세요.",
+    "pinyin": "Yeogi anjeuseyo.",
+    "english": "Please sit here."
+   }
+  },
+  {
+   "conceptId": "open",
+   "text": "열다",
+   "pinyin": "yeolda",
+   "meaning": "to open",
+   "alternates": [
+    "열어요"
+   ],
+   "example": {
+    "text": "문 좀 열어 주세요.",
+    "pinyin": "Mun jom yeoreo juseyo.",
+    "english": "Please open the door."
+   }
+  },
+  {
+   "conceptId": "on",
+   "text": "위",
+   "pinyin": "wi",
+   "example": {
+    "text": "책이 책상 위에 있어요.",
+    "pinyin": "Chaegi chaeksang wie isseoyo.",
+    "english": "The book is on the desk."
+   }
+  },
+  {
+   "conceptId": "under",
+   "text": "아래",
+   "pinyin": "arae",
+   "alternates": [
+    "밑"
+   ],
+   "example": {
+    "text": "고양이가 의자 아래에 있어요.",
+    "pinyin": "Goyangiga uija araee isseoyo.",
+    "english": "The cat is under the chair."
+   }
+  },
+  {
+   "conceptId": "front",
+   "text": "앞",
+   "pinyin": "ap",
+   "example": {
+    "text": "학교 앞에 가게가 있어요.",
+    "pinyin": "Hakgyo ape gagega isseoyo.",
+    "english": "There's a store in front of the school."
+   }
+  },
+  {
+   "conceptId": "behind",
+   "text": "뒤",
+   "pinyin": "dwi",
+   "example": {
+    "text": "우리 집 뒤에 병원이 있어요.",
+    "pinyin": "Uri jip dwie byeongwoni isseoyo.",
+    "english": "There's a hospital behind my house."
+   }
+  },
+  {
+   "conceptId": "inside",
+   "text": "안",
+   "pinyin": "an",
+   "alternates": [
+    "속"
+   ],
+   "example": {
+    "text": "컵 안에 물이 있어요.",
+    "pinyin": "Keop ane muri isseoyo.",
+    "english": "There's water in the cup."
+   }
+  },
+  {
+   "conceptId": "look",
+   "text": "보다",
+   "pinyin": "boda",
+   "alternates": [
+    "봐요"
+   ],
+   "example": {
+    "text": "저는 텔레비전을 봐요.",
+    "pinyin": "Jeoneun tellebijeoneul bwayo.",
+    "english": "I'm watching TV."
+   }
+  },
+  {
+   "conceptId": "listen",
+   "text": "듣다",
+   "pinyin": "deutda",
+   "alternates": [
+    "들어요"
+   ],
+   "example": {
+    "text": "저는 음악을 들어요.",
+    "pinyin": "Jeoneun eumageul deureoyo.",
+    "english": "I listen to music."
+   }
+  },
+  {
+   "conceptId": "talk",
+   "text": "말하다",
+   "pinyin": "malhada",
+   "alternates": [
+    "말해요"
+   ],
+   "example": {
+    "text": "그는 말을 안 해요.",
+    "pinyin": "Geuneun mareul an haeyo.",
+    "english": "He doesn't talk."
+   }
+  },
+  {
+   "conceptId": "do",
+   "text": "하다",
+   "pinyin": "hada",
+   "alternates": [
+    "해요"
+   ],
+   "example": {
+    "text": "지금 뭐 해요?",
+    "pinyin": "Jigeum mwo haeyo?",
+    "english": "What are you doing now?"
+   }
+  },
+  {
+   "conceptId": "buy",
+   "text": "사다",
+   "pinyin": "sada",
+   "alternates": [
+    "사요"
+   ],
+   "example": {
+    "text": "저는 책을 사고 싶어요.",
+    "pinyin": "Jeoneun chaegeul sago sipeoyo.",
+    "english": "I want to buy a book."
+   }
+  },
+  {
+   "conceptId": "live",
+   "text": "살다",
+   "pinyin": "salda",
+   "alternates": [
+    "살아요"
+   ],
+   "example": {
+    "text": "저는 서울에 살아요.",
+    "pinyin": "Jeoneun Seoure sarayo.",
+    "english": "I live in Seoul."
+   }
+  },
+  {
+   "conceptId": "sleep",
+   "text": "자다",
+   "pinyin": "jada",
+   "alternates": [
+    "자요"
+   ],
+   "example": {
+    "text": "저는 열 시에 자요.",
+    "pinyin": "Jeoneun yeol sie jayo.",
+    "english": "I go to sleep at ten."
+   }
+  },
+  {
+   "conceptId": "phone-call",
+   "text": "전화하다",
+   "pinyin": "jeonhwahada",
+   "alternates": [
+    "전화해요"
+   ],
+   "example": {
+    "text": "저는 엄마한테 전화해요.",
+    "pinyin": "Jeoneun eommahante jeonhwahaeyo.",
+    "english": "I call my mom."
+   }
+  },
+  {
+   "conceptId": "rain",
+   "text": "비가 오다",
+   "pinyin": "biga oda",
+   "alternates": [
+    "비가 와요"
+   ],
+   "example": {
+    "text": "오늘 비가 왔어요.",
+    "pinyin": "Oneul biga wasseoyo.",
+    "english": "It rained today."
+   }
+  },
+  {
+   "conceptId": "like",
+   "text": "좋아하다",
+   "pinyin": "joahada",
+   "alternates": [
+    "좋아해요"
+   ],
+   "example": {
+    "text": "저는 고양이를 좋아해요.",
+    "pinyin": "Jeoneun goyangireul joahaeyo.",
+    "english": "I like cats."
+   }
+  },
+  {
+   "conceptId": "want",
+   "text": "원하다",
+   "pinyin": "wonhada",
+   "meaning": "to want",
+   "alternates": [
+    "원해요"
+   ],
+   "note": "Everyday Korean usually says -고 싶다 (want to): 먹고 싶어요 (I want to eat).",
+   "example": {
+    "text": "뭘 원해요?",
+    "pinyin": "Mwol wonhaeyo?",
+    "english": "What do you want?"
+   }
+  },
+  {
+   "conceptId": "can-able",
+   "text": "할 수 있다",
+   "pinyin": "hal su itda",
+   "alternates": [
+    "할 수 있어요"
+   ],
+   "example": {
+    "text": "내일 올 수 있어요?",
+    "pinyin": "Naeil ol su isseoyo?",
+    "english": "Can you come tomorrow?"
+   }
+  },
+  {
+   "conceptId": "know-someone",
+   "text": "알다",
+   "pinyin": "alda",
+   "meaning": "to know",
+   "alternates": [
+    "알아요"
+   ],
+   "example": {
+    "text": "저는 민수 씨를 알아요.",
+    "pinyin": "Jeoneun Minsu ssireul arayo.",
+    "english": "I know Minsu."
+   }
+  },
+  {
+   "conceptId": "have",
+   "text": "있다",
+   "pinyin": "itda",
+   "alternates": [
+    "있어요"
+   ],
+   "example": {
+    "text": "저는 책이 많이 있어요.",
+    "pinyin": "Jeoneun chaegi mani isseoyo.",
+    "english": "I have a lot of books."
+   }
+  },
+  {
+   "conceptId": "happy",
+   "text": "기쁘다",
+   "pinyin": "gippeuda",
+   "alternates": [
+    "기뻐요",
+    "행복하다"
+   ],
+   "example": {
+    "text": "만나서 기뻐요.",
+    "pinyin": "Mannaseo gippeoyo.",
+    "english": "I'm glad to meet you."
+   }
+  },
+  {
+   "conceptId": "clothes",
+   "text": "옷",
+   "pinyin": "ot",
+   "example": {
+    "text": "이 옷은 예뻐요.",
+    "pinyin": "I oseun yeppeoyo.",
+    "english": "These clothes are pretty."
+   }
+  },
+  {
+   "conceptId": "money",
+   "text": "돈",
+   "pinyin": "don",
+   "example": {
+    "text": "저는 돈이 없어요.",
+    "pinyin": "Jeoneun doni eopseoyo.",
+    "english": "I don't have any money."
+   }
+  },
+  {
+   "conceptId": "airplane",
+   "text": "비행기",
+   "pinyin": "bihaenggi",
+   "example": {
+    "text": "비행기로 서울에 가요.",
+    "pinyin": "Bihaenggiro Seoure gayo.",
+    "english": "I'm flying to Seoul."
+   }
+  },
+  {
+   "conceptId": "taxi",
+   "text": "택시",
+   "pinyin": "taeksi",
+   "example": {
+    "text": "택시가 왔어요.",
+    "pinyin": "Taeksiga wasseoyo.",
+    "english": "The taxi is here."
+   }
+  },
+  {
+   "conceptId": "tv",
+   "text": "텔레비전",
+   "pinyin": "tellebijeon",
+   "alternates": [
+    "티비"
+   ],
+   "example": {
+    "text": "아빠는 텔레비전을 봐요.",
+    "pinyin": "Appaneun tellebijeoneul bwayo.",
+    "english": "Dad is watching TV."
+   }
+  },
+  {
+   "conceptId": "computer",
+   "text": "컴퓨터",
+   "pinyin": "keompyuteo",
+   "example": {
+    "text": "제 컴퓨터는 작아요.",
+    "pinyin": "Je keompyuteoneun jagayo.",
+    "english": "My computer is small."
+   }
+  },
+  {
+   "conceptId": "movie",
+   "text": "영화",
+   "pinyin": "yeonghwa",
+   "example": {
+    "text": "같이 영화 보러 가요.",
+    "pinyin": "Gachi yeonghwa boreo gayo.",
+    "english": "Let's go see a movie."
+   }
+  },
+  {
+   "conceptId": "thing",
+   "text": "물건",
+   "pinyin": "mulgeon",
+   "meaning": "thing, item",
+   "alternates": [
+    "것"
+   ],
+   "example": {
+    "text": "이 물건은 뭐예요?",
+    "pinyin": "I mulgeoneun mwoyeyo?",
+    "english": "What is this thing?"
+   }
+  },
+  {
+   "conceptId": "table",
+   "text": "책상",
+   "pinyin": "chaeksang",
+   "meaning": "desk, table",
+   "alternates": [
+    "탁자"
+   ],
+   "example": {
+    "text": "책상 위에 책이 있어요.",
+    "pinyin": "Chaeksang wie chaegi isseoyo.",
+    "english": "There's a book on the desk."
+   }
+  },
+  {
+   "conceptId": "chair",
+   "text": "의자",
+   "pinyin": "uija",
+   "example": {
+    "text": "의자에 앉으세요.",
+    "pinyin": "Uijae anjeuseyo.",
+    "english": "Please sit on the chair."
+   }
+  },
+  {
+   "conceptId": "cat",
+   "text": "고양이",
+   "pinyin": "goyangi",
+   "example": {
+    "text": "그 고양이는 정말 귀여워요.",
+    "pinyin": "Geu goyangineun jeongmal gwiyeowoyo.",
+    "english": "That cat is really cute."
+   }
+  },
+  {
+   "conceptId": "dog",
+   "text": "강아지",
+   "pinyin": "gangaji",
+   "meaning": "dog, puppy",
+   "alternates": [
+    "개"
+   ],
+   "note": "Koreans often call any pet dog 강아지. 개 (dog) is also the counter for things.",
+   "example": {
+    "text": "저는 강아지가 한 마리 있어요.",
+    "pinyin": "Jeoneun gangajiga han mari isseoyo.",
+    "english": "I have a dog."
+   }
+  },
+  {
+   "conceptId": "good",
+   "text": "좋다",
+   "pinyin": "jota",
+   "meaning": "good",
+   "alternates": [
+    "좋아요"
+   ],
+   "example": {
+    "text": "오늘 날씨가 좋아요.",
+    "pinyin": "Oneul nalssiga joayo.",
+    "english": "The weather is good today."
+   }
+  },
+  {
+   "conceptId": "big",
+   "text": "크다",
+   "pinyin": "keuda",
+   "alternates": [
+    "커요"
+   ],
+   "example": {
+    "text": "우리 집은 커요.",
+    "pinyin": "Uri jibeun keoyo.",
+    "english": "My home is big."
+   }
+  },
+  {
+   "conceptId": "small",
+   "text": "작다",
+   "pinyin": "jakda",
+   "alternates": [
+    "작아요"
+   ],
+   "example": {
+    "text": "이 컵은 작아요.",
+    "pinyin": "I keobeun jagayo.",
+    "english": "This cup is small."
+   }
+  },
+  {
+   "conceptId": "cold",
+   "text": "춥다",
+   "pinyin": "chupda",
+   "meaning": "cold (weather)",
+   "alternates": [
+    "추워요"
+   ],
+   "example": {
+    "text": "서울은 추워요.",
+    "pinyin": "Seoureun chuwoyo.",
+    "english": "Seoul is cold."
+   }
+  },
+  {
+   "conceptId": "hot",
+   "text": "덥다",
+   "pinyin": "deopda",
+   "meaning": "hot (weather)",
+   "alternates": [
+    "더워요"
+   ],
+   "example": {
+    "text": "오늘은 더워요.",
+    "pinyin": "Oneureun deowoyo.",
+    "english": "It's hot today."
+   }
+  },
+  {
+   "conceptId": "pretty",
+   "text": "예쁘다",
+   "pinyin": "yeppeuda",
+   "alternates": [
+    "예뻐요"
+   ],
+   "example": {
+    "text": "그녀의 옷은 예뻐요.",
+    "pinyin": "Geunyeoui oseun yeppeoyo.",
+    "english": "Her clothes are pretty."
+   }
+  },
+  {
+   "conceptId": "very",
+   "text": "아주",
+   "pinyin": "aju",
+   "alternates": [
+    "정말",
+    "매우"
+   ],
+   "example": {
+    "text": "저는 아주 잘 지내요.",
+    "pinyin": "Jeoneun aju jal jinaeyo.",
+    "english": "I'm doing very well."
+   }
+  },
+  {
+   "conceptId": "too",
+   "text": "너무",
+   "pinyin": "neomu",
+   "meaning": "too, so",
+   "example": {
+    "text": "너무 좋아요!",
+    "pinyin": "Neomu joayo!",
+    "english": "That's so great!"
+   }
+  },
+  {
+   "conceptId": "all",
+   "text": "모두",
+   "pinyin": "modu",
+   "meaning": "all, everyone",
+   "alternates": [
+    "다"
+   ],
+   "example": {
+    "text": "우리는 모두 학생이에요.",
+    "pinyin": "Urineun modu haksaengieyo.",
+    "english": "We are all students."
+   }
+  },
+  {
+   "conceptId": "weather",
+   "text": "날씨",
+   "pinyin": "nalssi",
+   "example": {
+    "text": "오늘 날씨 어때요?",
+    "pinyin": "Oneul nalssi eottaeyo?",
+    "english": "How's the weather today?"
+   }
+  },
+  {
+   "conceptId": "what",
+   "text": "뭐",
+   "pinyin": "mwo",
+   "alternates": [
+    "무엇"
+   ],
+   "example": {
+    "text": "이게 뭐예요?",
+    "pinyin": "Ige mwoyeyo?",
+    "english": "What is this?"
+   }
+  },
+  {
+   "conceptId": "how",
+   "text": "어떻게",
+   "pinyin": "eotteoke",
+   "example": {
+    "text": "이 글자는 어떻게 써요?",
+    "pinyin": "I geuljaneun eotteoke sseoyo?",
+    "english": "How do you write this letter?"
+   }
+  },
+  {
+   "conceptId": "how-is-it",
+   "text": "어때요",
+   "pinyin": "eottaeyo",
+   "alternates": [
+    "어떻습니까"
+   ],
+   "example": {
+    "text": "일은 어때요?",
+    "pinyin": "Ireun eottaeyo?",
+    "english": "How is your job?"
+   }
+  },
+  {
+   "conceptId": "de",
+   "text": "의",
+   "pinyin": "ui",
+   "note": "In speech, 저의 is usually shortened to 제 (my).",
+   "example": {
+    "text": "민수의 책이에요.",
+    "pinyin": "Minsuui chaegieyo.",
+    "english": "It's Minsu's book."
+   }
+  },
+  {
+   "conceptId": "topic-marker",
+   "text": "는",
+   "pinyin": "neun",
+   "meaning": "(topic marker: as for...)",
+   "alternates": [
+    "은"
+   ],
+   "note": "After a vowel 는, after a consonant 은.",
+   "example": {
+    "text": "저는 학생이에요.",
+    "pinyin": "Jeoneun haksaengieyo.",
+    "english": "I am a student."
+   }
+  },
+  {
+   "conceptId": "subject-marker",
+   "text": "가",
+   "pinyin": "ga",
+   "meaning": "(subject marker)",
+   "alternates": [
+    "이"
+   ],
+   "note": "After a vowel 가, after a consonant 이.",
+   "example": {
+    "text": "고양이가 귀여워요.",
+    "pinyin": "Goyangiga gwiyeowoyo.",
+    "english": "The cat is cute."
+   }
+  },
+  {
+   "conceptId": "object-marker",
+   "text": "를",
+   "pinyin": "reul",
+   "meaning": "(object marker)",
+   "alternates": [
+    "을"
+   ],
+   "note": "After a vowel 를, after a consonant 을.",
+   "example": {
+    "text": "저는 사과를 먹어요.",
+    "pinyin": "Jeoneun sagwareul meogeoyo.",
+    "english": "I eat an apple."
+   }
+  },
+  {
+   "conceptId": "place-of-action",
+   "text": "에서",
+   "pinyin": "eseo",
+   "meaning": "at, in (where something happens)",
+   "example": {
+    "text": "저는 학교에서 공부해요.",
+    "pinyin": "Jeoneun hakgyoeseo gongbuhaeyo.",
+    "english": "I study at school."
+   }
+  }
+ ],
+ "skipped": {
+  "be-called": "Korean says 제 이름은 ...이에요 (my name is ...) instead.",
+  "miss": "Covered by 씨 (Mr., Ms.).",
+  "some": "Korean splits this into 몇 (a few) and 좀 (a little), taught later.",
+  "see": "Korean uses 보다 (look, watch) for \"see\" too.",
+  "can-know-how": "Korean uses 할 수 있다 for both kinds of \"can\".",
+  "ma": "Korean asks yes/no questions with the verb ending, not a separate word.",
+  "ne": "Korean adds 는요? to a word instead (저는요? \"and me?\").",
+  "le": "Korean marks finished actions with a verb ending (-었-), not a separate word.",
+  "not-past": "Korean puts 안 (not) before the verb; 안 here is \"inside\", and negation comes in a later level."
+ }
+}

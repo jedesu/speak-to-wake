@@ -10,6 +10,7 @@ true_false, fill_blank, match_pairs.
 """
 import json
 import random
+import re
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -29,19 +30,30 @@ class Item:
     example_text: str
     example_pinyin: str
     example_english: str
+    sound: str = ""  # how it's said, to keep same-sounding words apart (三/さん)
+
+
+def sound_key(word: dict) -> str:
+    """Pronunciation with spacing and punctuation removed: Japanese kana reading,
+    otherwise the romanization (pinyin keeps its tone marks)."""
+    said = word.get("reading") or word["pinyin"]
+    return re.sub(r"[\s'’.,!?-]", "", said.lower())
 
 
 def load_items(data_dir: Path = DATA, language: str = "zh-CN") -> list:
+    """Words of one language. Concepts that language skips simply aren't there."""
     packs = json.loads((data_dir / "packs.json").read_text(encoding="utf-8"))
     words = json.loads((data_dir / f"words.{language}.json").read_text(encoding="utf-8"))
     pack_by_id = {p["id"]: p for p in packs["packs"]}
     word_by_concept = {w["conceptId"]: w for w in words["words"]}
     items = []
     for c in packs["concepts"]:
-        w, p = word_by_concept[c["id"]], pack_by_id[c["packId"]]
-        ex = w["example"]
-        items.append(Item(c["id"], p["theme"], p["level"], c["english"], c["emoji"],
-                          w["text"], w["pinyin"], ex["text"], ex["pinyin"], ex["english"]))
+        w = word_by_concept.get(c["id"])
+        if w is None:
+            continue
+        p, ex = pack_by_id[c["packId"]], w["example"]
+        items.append(Item(c["id"], p["theme"], p["level"], w.get("meaning") or c["english"], c["emoji"],
+                          w["text"], w["pinyin"], ex["text"], ex["pinyin"], ex["english"], sound_key(w)))
     return items
 
 
@@ -60,7 +72,8 @@ def available_types(item: Item) -> list:
 # --- helpers ----------------------------------------------------------------
 def _distractors(item, pool, k, rng, same_theme, need=lambda i: True):
     others = [i for i in pool if i.id != item.id and need(i)
-              and i.english != item.english and i.text != item.text]
+              and i.english != item.english and i.text != item.text
+              and not (i.sound and i.sound == item.sound)]
     preferred = [i for i in others if (i.theme == item.theme) == same_theme]
     rest = [i for i in others if i not in preferred]
     rng.shuffle(preferred)

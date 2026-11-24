@@ -1,0 +1,21 @@
+[
+  {"note": "exact match", "target": "물", "heard": "물", "expect": "pass"},
+  {"note": "extra ending after the word", "target": "물", "heard": "물이요", "expect": "pass"},
+  {"note": "word inside a sentence", "target": "선생님", "heard": "우리 선생님이에요", "expect": "pass"},
+  {"note": "spaces don't matter", "target": "반 친구", "heard": "반친구", "expect": "pass"},
+  {"note": "accepted alternate", "target": "감사합니다", "heard": "고마워요", "alternates": ["고맙습니다", "고마워요"], "expect": "pass"},
+  {"note": "polite form accepted when listed", "target": "먹다", "heard": "먹어요", "alternates": ["먹어요"], "expect": "pass"},
+  {"note": "polite form not accepted unless listed", "target": "먹다", "heard": "먹어요", "expect": "fail"},
+  {"note": "digit read as Sino-Korean, matching an alternate", "target": "셋", "heard": "3", "alternates": ["삼", "세"], "expect": "pass"},
+  {"note": "ㅐ/ㅔ sound the same for most speakers", "target": "개", "heard": "게", "expect": "pass"},
+  {"note": "final ㅅ/ㄷ sound the same", "target": "옷", "heard": "옫", "expect": "pass"},
+  {"note": "ㅕ/ㅛ slip in a long word", "target": "안녕하세요", "heard": "안녕하세여", "expect": "pass"},
+  {"note": "plain/tense slip in a 2-syllable word: near", "target": "학교", "heard": "학꾜", "expect": "near"},
+  {"note": "plain/aspirated slip in a 2-syllable word: near", "target": "친구", "heard": "진구", "expect": "near"},
+  {"note": "different consonant: a different word", "target": "물", "heard": "불", "expect": "fail"},
+  {"note": "different final: a different word", "target": "물", "heard": "문", "expect": "fail"},
+  {"note": "half the word wrong", "target": "사과", "heard": "사가", "expect": "fail"},
+  {"note": "recognizer heard nothing", "target": "사과", "heard": "", "expect": "fail"},
+  {"note": "long unrelated sentence", "target": "사과", "heard": "오늘 날씨가 정말 좋네요", "expect": "fail"},
+  {"note": "English or other script only", "target": "사과", "heard": "apple", "expect": "fail"}
+]

@@ -1,0 +1,194 @@
+#! Japanese, level 1 (the same sections as HSK 1). Build with: cd prototype && python build_lang.py ja-JP
+#! Line format: concept id | word | reading (hiragana) | meaning (only if it differs from the shared English) | example (words split by spaces) | example English | alternates (comma-separated) | note
+#! In examples, force a reading with 今日{きょう}; spaces are removed from the Japanese and only used to split the romaji.
+#! "- id | reason" skips a shared concept that doesn't fit Japanese.
+#! "+id | ..." adds a concept only some languages have (meaning required).
+#! Verbs and adjectives are in dictionary form (食べる); the polite form (食べます) is an accepted alternate.
+#! Romaji is generated from the readings.
+
+## hsk1-01
+hello | こんにちは | こんにちわ | | こんにちは{こんにちわ} 、 ^田中{たなか} です 。 | Hello, I'm Tanaka. | | Written with は but said わ.
+thanks | ありがとう | ありがとう | | 手伝って くれて 、 ありがとう 。 | Thanks for helping me. | ありがとうございます |
+youre-welcome | どういたしまして | どういたしまして | | どういたしまして ！ | You're welcome! | |
+goodbye | さようなら | さようなら | | 先生 、 さようなら 。 | Goodbye, teacher. | さよなら, じゃあね | Fairly formal. Friends say じゃあね (see you).
+sorry | ごめんなさい | ごめんなさい | | 遅れて 、 ごめんなさい 。 | Sorry I'm late. | すみません, ごめん |
+no-problem | 大丈夫 | だいじょうぶ | it's okay, no problem | 大丈夫 です 、 忙しく ない です 。 | It's okay, I'm not busy. | |
+please | どうぞ | どうぞ | please (go ahead) | どうぞ 、 座って ください 。 | Please, have a seat. | | For offering. To ask for something, use ください: 水をください (water, please).
+hey-phone | もしもし | もしもし | | もしもし 、 どなた です か 。 | Hello, who is this? | |
+be | です | です | to be (am, is, are) | 私 は 学生 です 。 | I am a student. | だ | Polite. だ is the casual form.
+not | いいえ | いいえ | no | いいえ 、 学生 じゃ ない です 。 | No, I'm not a student. | いえ |
+
+## hsk1-02
+i | 私 | わたし | | 私 は ^田中{たなか} です 。 | I'm Tanaka. | 僕, あたし | Polite and neutral. Men often say 僕 (boku) casually.
+you | あなた | あなた | | あなた は 先生 です か 。 | Are you a teacher? | | People usually say the person's name + さん instead.
+he | 彼 | かれ | | 彼 は 私 の 友達 です 。 | He is my friend. | | Also means "boyfriend".
+she | 彼女 | かのじょ | | 彼女 は とても きれい です 。 | She is very pretty. | | Also means "girlfriend".
+we | 私たち | わたしたち | | 私たち は クラスメート です 。 | We are classmates. | 僕たち |
+person | 人 | ひと | | 彼 は 日本人{にほんじん} です 。 | He is Japanese. | | After a country it's read じん: 日本人 (Japanese person).
+who | 誰 | だれ | | 彼女 は 誰 です か 。 | Who is she? | どなた |
+name | 名前 | なまえ | | お名前{おなまえ} は 何{なん} です か 。 | What's your name? | |
+- be-called | Japanese says 〜です or 〜と申します (I am ...) instead.
+mister | さん | さん | Mr., Ms. (after a name) | ^田中{たなか} さん は 医者 です 。 | Mr. Tanaka is a doctor. | | Polite, added after a name. Never used for yourself.
+- miss | Covered by さん (Mr., Ms.).
+
+## hsk1-03
+one | 一 | いち | | りんご を 一つ{ひとつ} ください 。 | One apple, please. | | Japanese also counts things with ひとつ, ふたつ... (one thing, two things).
+two | 二 | に | | 今 は 二月{にがつ} です 。 | It is February now. | |
+three | 三 | さん | | 猫 が 三匹{さんびき} います 。 | There are three cats. | |
+four | 四 | よん | | 家族 は 四人{よにん} です 。 | There are four people in my family. | し |
+five | 五 | ご | | 友達 が 五人{ごにん} います 。 | I have five friends. | |
+six | 六 | ろく | | 今 、 六時{ろくじ} です 。 | It's six o'clock now. | |
+seven | 七 | なな | | 一週間{いっしゅうかん} は 七日{なのか} です 。 | A week has seven days. | しち |
+eight | 八 | はち | | 私 は 八歳{はっさい} です 。 | I am eight years old. | |
+nine | 九 | きゅう | | 私 は 九時{くじ} に 起きます 。 | I get up at nine. | く |
+ten | 十 | じゅう | | 今 、 十時{じゅうじ} です 。 | It's ten o'clock now. | とお |
+
+## hsk1-04
+zero | ゼロ | ぜろ | | 気温 は ゼロ 度 です 。 | It's zero degrees. | 零, れい |
+measure-ge | 個 | こ | (counter for small things) | りんご を 三個{さんこ} ください 。 | Three apples, please. | |
+years-old | 歳 | さい | | 何歳{なんさい} です か 。 | How old are you? | 才 |
+measure-ben | 冊 | さつ | | 本 を 二冊{にさつ} 買いました 。 | I bought two books. | |
+- some | Japanese splits this into いくつか (a few) and 少し (a little), taught later.
+yuan | 円 | えん | yen (Japanese money) | この コップ は 三百円{さんびゃくえん} です 。 | This cup costs 300 yen. | |
+how-many-small | いくつ | いくつ | how many | りんご は いくつ あります か 。 | How many apples are there? | |
+how-much | いくら | いくら | how much (price) | この 本 は いくら です か 。 | How much is this book? | |
+many | 多い | おおい | | 友達 が 多い です 。 | I have a lot of friends. | 多いです |
+few | 少ない | すくない | | 今日{きょう} は 人{ひと} が 少ない です 。 | There are few people today. | 少ないです |
+
+## hsk1-05
+mom | お母さん | おかあさん | | お母さん が 大好き です 。 | I love my mom. | 母, ママ | Use 母 (はは) for your own mom when talking to others.
+dad | お父さん | おとうさん | | お父さん は 先生 です 。 | My dad is a teacher. | 父, パパ | Use 父 (ちち) for your own dad when talking to others.
+son | 息子 | むすこ | | 彼 の 息子 は 学生 です 。 | His son is a student. | |
+daughter | 娘 | むすめ | | 私 の 娘 は とても かわいい です 。 | My daughter is very cute. | |
+home | 家 | いえ | home, house | 私 は 今 、 家{いえ} に います 。 | I'm at home now. | うち |
+love | 愛する | あいする | | 私 は 家族 を 愛して{あいして} います 。 | I love my family. | 大好き | Strong and a bit formal. Everyday speech uses 大好き (really like).
+and | と | と | and (between nouns) | 父 と 母 は 家{いえ} に います 。 | Dad and Mom are at home. | |
+friend | 友達 | ともだち | | 彼 は 私 の 友達 です 。 | He is my friend. | 友だち |
+classmate | クラスメート | くらすめーと | | 彼 は クラスメート です 。 | He is my classmate. | クラスメイト, 同級生 |
+
+## hsk1-06
+teacher | 先生 | せんせい | | 私 の 先生 は 日本人{にほんじん} です 。 | My teacher is Japanese. | |
+student | 学生 | がくせい | | 彼 は 私 の 学生 です 。 | He is my student. | 生徒 |
+doctor | 医者 | いしゃ | | 彼女 の お母さん は 医者 です 。 | Her mom is a doctor. | お医者さん |
+school | 学校 | がっこう | | 私たち の 学校 は 大きい です 。 | Our school is big. | |
+hospital | 病院 | びょういん | | 医者 は 病院 で 働きます 。 | Doctors work at the hospital. | |
+study | 勉強する | べんきょうする | | 私 は 日本語 を 勉強して います 。 | I'm studying Japanese. | 勉強します |
+work | 仕事 | しごと | work, job | 明日{あした} は 仕事 が ありません 。 | I don't work tomorrow. | |
+book | 本 | ほん | | 私 は 本 を 読む の が 好き です 。 | I like reading books. | |
+chinese-language | 中国語 | ちゅうごくご | | 中国語 が 話せます か 。 | Can you speak Chinese? | |
+character | 字 | じ | | この 字 は どう 読みます か 。 | How do you read this character? | 文字 |
+read | 読む | よむ | to read | この 字 を 読んで ください 。 | Please read this character. | 読みます |
+write | 書く | かく | | 名前 を 書いて ください 。 | Please write your name. | 書きます |
+
+## hsk1-07
+eat | 食べる | たべる | | ご飯{ごはん} を 食べたい です 。 | I want to eat rice. | 食べます |
+drink | 飲む | のむ | | 何{なに} を 飲みたい です か 。 | What would you like to drink? | 飲みます |
+water | 水 | みず | | 水 を 飲みたい です 。 | I want to drink water. | お水 |
+tea | お茶 | おちゃ | tea (green tea) | お茶 を 飲みます か 。 | Do you drink tea? | 茶 |
+dish | 料理 | りょうり | dish, cooking | この 料理 は おいしい です 。 | This dish is delicious. | |
+rice | ご飯 | ごはん | cooked rice; meal | 毎日 ご飯{ごはん} を 食べます 。 | I eat rice every day. | ごはん, 飯 |
+fruit | 果物 | くだもの | | 私 は 果物 が 好き です 。 | I like fruit. | フルーツ |
+apple | りんご | りんご | | 私 は りんご が 好き です 。 | I like apples. | リンゴ, 林檎 |
+cup | コップ | こっぷ | | この コップ は 私 の です 。 | This cup is mine. | カップ |
+restaurant | レストラン | れすとらん | | 私たち は レストラン で 食べます 。 | We eat at a restaurant. | 食堂 |
+
+## hsk1-08
+today | 今日 | きょう | | 今日{きょう} は 月曜日 です 。 | Today is Monday. | |
+tomorrow | 明日 | あした | | 明日{あした} 、 ^東京 に 行きます 。 | Tomorrow I'm going to Tokyo. | あす |
+yesterday | 昨日 | きのう | | 昨日{きのう} は 寒かった です 。 | Yesterday was cold. | |
+year | 年 | ねん | year (after numbers) | 一年間{いちねんかん} 日本語 を 勉強しました 。 | I studied Japanese for one year. | とし |
+month | 月 | がつ | month (after numbers) | 私 の 誕生日 は 三月{さんがつ} です 。 | My birthday is in March. | |
+day-of-month | 日 | にち | | 十一日{じゅういちにち} は 休み です 。 | The 11th is a day off. | | Days 1-10, 14, 20 and 24 have special readings: 一日 (ついたち), 二十日 (はつか).
+week | 週 | しゅう | | 一週間{いっしゅうかん} は 七日{なのか} です 。 | A week has seven days. | 週間 |
+
+## hsk1-09
+morning | 午前 | ごぜん | morning (a.m.) | 午前中{ごぜんちゅう} に 勉強します 。 | I study in the morning. | 朝 |
+noon | 昼 | ひる | noon, daytime | 昼 に ご飯{ごはん} を 食べます 。 | I eat at noon. | お昼 |
+afternoon | 午後 | ごご | | 午後 、 店 に 行きます 。 | In the afternoon I go to the store. | |
+now | 今 | いま | | 今 、 何時{なんじ} です か 。 | What time is it now? | |
+when | とき | とき | | 子ども の とき 、 ^大阪 に 住んで いました 。 | When I was a child, I lived in Osaka. | 時 |
+oclock | 時 | じ | | 七時{しちじ} に 起きます 。 | I get up at seven. | |
+minute | 分 | ふん | | 五分{ごふん} 待ちましょう 。 | Let's wait five minutes. | ぷん | Said ぷん after some numbers: 一分 (いっぷん).
+
+## hsk1-10
+this | これ | これ | this (thing) | これ は 私 の 本 です 。 | This is my book. | |
+that | あれ | あれ | that (over there) | あれ は 私たち の 学校 です 。 | That is our school. | それ |
+which | どの | どの | | どの 国 の 人{ひと} です か 。 | Which country are you from? | どれ |
+at | に | に | at, in, to (a place) | 私 は 家{いえ} に います 。 | I'm at home. | | Goes after a place: 家に (at home).
+china | 中国 | ちゅうごく | | 私 は ^中国 に 行きたい です 。 | I want to go to China. | |
+beijing | 北京 | ぺきん | | ^北京 は 大きい です 。 | Beijing is big. | |
+train-station | 駅 | えき | | 私 は 駅 に います 。 | I'm at the train station. | |
+store | 店 | みせ | | 店 に 物 が たくさん あります 。 | There are lots of things in the store. | お店 |
+
+## hsk1-11
+come | 来る | くる | | いつ 私 の 家{いえ} に 来ます か 。 | When are you coming to my house? | 来ます |
+go | 行く | いく | | 明日{あした} 、 学校 に 行きます 。 | I'm going to school tomorrow. | 行きます |
+return | 帰る | かえる | to go back, return (home) | 私 は 家{いえ} に 帰りたい です 。 | I want to go home. | 帰ります |
+sit | 座る | すわる | to sit | ここ に 座って ください 。 | Please sit here. | 座ります |
+open | 開ける | あける | to open | ドア を 開けて{あけて} ください 。 | Please open the door. | 開けます |
+on | 上 | うえ | | 本 は 机 の 上 に あります 。 | The book is on the desk. | |
+under | 下 | した | | 猫 は 椅子 の 下 に います 。 | The cat is under the chair. | |
+front | 前 | まえ | | 学校 の 前 に 店 が あります 。 | There's a store in front of the school. | |
+behind | 後ろ | うしろ | | 私 の 家{いえ} の 後ろ に 病院 が あります 。 | There's a hospital behind my house. | |
+inside | 中 | なか | | コップ の 中 に 水 が あります 。 | There's water in the cup. | |
+
+## hsk1-12
+look | 見る | みる | | 私 は テレビ を 見ます 。 | I watch TV. | 見ます |
+listen | 聞く | きく | | 私 は 音楽 を 聞きます 。 | I listen to music. | 聞きます |
+talk | 話す | はなす | | 彼 は あまり 話しません 。 | He doesn't talk much. | 話します |
+- see | Japanese uses 見る (look, watch) for "see" too.
+do | する | する | | 今 、 何{なに} を して います か 。 | What are you doing now? | します |
+buy | 買う | かう | | 本 を 買いたい です 。 | I want to buy a book. | 買います |
+live | 住む | すむ | | 私 は ^東京 に 住んで います 。 | I live in Tokyo. | 住んでいます |
+sleep | 寝る | ねる | to sleep, go to bed | 私 は 十時{じゅうじ} に 寝ます 。 | I go to bed at ten. | 寝ます |
+phone-call | 電話する | でんわする | | 私 は お母さん に 電話します 。 | I call my mom. | 電話します |
+rain | 雨が降る | あめがふる | | 今日{きょう} は 雨 が 降りました{ふりました} 。 | It rained today. | 雨が降ります |
+
+## hsk1-13
+like | 好き | すき | to like | 私 は 猫 が 好き です 。 | I like cats. | 好きです, 大好き | An adjective in Japanese: 猫が好きです is literally "cats are liked (by me)".
+want | ほしい | ほしい | to want (a thing) | 新しい パソコン が ほしい です 。 | I want a new computer. | 欲しい | For actions, use -たい: 食べたい (I want to eat).
+- can-know-how | Japanese uses できる for both kinds of "can".
+can-able | できる | できる | | 明日{あした} 来る こと が できます か 。 | Can you come tomorrow? | できます |
+know-someone | 知る | しる | to know | 私 は あなた の 先生 を 知って います 。 | I know your teacher. | 知っています | Usually said as 知っています (I know).
+have | ある | ある | to have; there is (things) | 本 が たくさん あります 。 | I have a lot of books. | あります | For people and animals, use いる.
+happy | うれしい | うれしい | | 会えて うれしい です 。 | I'm glad to see you. | 嬉しい |
+
+## hsk1-14
+clothes | 服 | ふく | | この 服 は きれい です 。 | These clothes are pretty. | 洋服 |
+money | お金 | おかね | | お金{おかね} が ありません 。 | I don't have any money. | |
+airplane | 飛行機 | ひこうき | | 飛行機 で ^東京 に 行きます 。 | I'm flying to Tokyo. | |
+taxi | タクシー | たくしー | | タクシー が 来ました 。 | The taxi is here. | |
+tv | テレビ | てれび | | お父さん は テレビ を 見て います 。 | Dad is watching TV. | |
+computer | パソコン | ぱそこん | | 私 の パソコン は 小さい{ちいさい} です 。 | My computer is small. | コンピューター |
+movie | 映画 | えいが | | 一緒に 映画 を 見{み} に 行きましょう 。 | Let's go see a movie. | |
+thing | 物 | もの | thing, stuff | これ は 大切な 物 です 。 | This is an important thing. | もの |
+table | 机 | つくえ | desk, table | 机 の 上 に 本 が あります 。 | There's a book on the desk. | テーブル |
+chair | 椅子 | いす | | 椅子 に 座って ください 。 | Please sit on the chair. | いす |
+cat | 猫 | ねこ | | その 猫 は とても かわいい です 。 | That cat is very cute. | ネコ |
+dog | 犬 | いぬ | | 私 は 犬 を 飼って います 。 | I have a dog. | イヌ |
+
+## hsk1-15
+good | いい | いい | | 今日{きょう} は 天気 が いい です 。 | The weather is good today. | 良い, よい |
+big | 大きい | おおきい | | 私 の 家{いえ} は 大きい です 。 | My home is big. | |
+small | 小さい | ちいさい | | この コップ は 小さい{ちいさい} です 。 | This cup is small. | |
+cold | 寒い | さむい | cold (weather) | ^東京 は 寒い です 。 | Tokyo is cold. | |
+hot | 暑い | あつい | hot (weather) | 今日{きょう} は 暑い です 。 | It's hot today. | |
+pretty | きれい | きれい | pretty; clean | 彼女 の 服 は きれい です 。 | Her clothes are pretty. | 綺麗 |
+very | とても | とても | | 私 は とても 元気 です 。 | I'm very well. | すごく |
+- too | Japanese adds すぎる to a word (暑すぎる "too hot"), taught later.
+all | みんな | みんな | all, everyone | 私たち は みんな 学生 です 。 | We are all students. | 皆, 皆さん |
+weather | 天気 | てんき | | 今日{きょう} の 天気 は どう です か 。 | How's the weather today? | |
+
+## hsk1-16
+what | 何 | なに | | これ は 何{なん} です か 。 | What is this? | なん | Read なん before です and counters.
+how | どうやって | どうやって | how (by what means) | この 字 は どうやって 書きます か 。 | How do you write this character? | |
+how-is-it | どう | どう | | 仕事 は どう です か 。 | How is your job? | いかが |
+ma | か | か | (turns a sentence into a question) | あなた は 学生 です か 。 | Are you a student? | |
+- ne | Japanese asks "and you?" with あなたは？, using the topic marker below.
+de | の | の | | これ は 私 の 本 です 。 | This is my book. | |
+- le | Japanese marks finished actions with a verb ending (-ました), not a separate word.
+- not-past | Japanese marks "did not" with a verb ending (-ませんでした), taught later.
++topic-marker | は | わ | (topic marker: as for...) | 私 は 学生 です 。 | I am a student. | | Written は but said わ.
++subject-marker | が | が | (subject marker) | 猫 が います 。 | There's a cat. | |
++object-marker | を | を | (object marker) | 水 を 飲みます 。 | I drink water. | | Said お.
++place-of-action | で | で | at, in (where something happens) | 学校 で 勉強します 。 | I study at school. | |

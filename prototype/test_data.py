@@ -77,7 +77,9 @@ def test_ids_are_unique():
 
 
 def test_every_concept_has_one_word_and_known_pack():
-    assert {w["conceptId"] for w in WORDS} == set(CONCEPTS)
+    # Concepts tagged "languages" (e.g. Korean/Japanese particles) don't apply to Mandarin.
+    mandarin = {cid for cid, c in CONCEPTS.items() if "zh-CN" in c.get("languages", ["zh-CN"])}
+    assert {w["conceptId"] for w in WORDS} == mandarin
     assert all(c["packId"] in PACKS for c in CONCEPTS.values())
 
 

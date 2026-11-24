@@ -1458,6 +1458,46 @@
    "emoji": null
   },
   {
+   "id": "topic-marker",
+   "packId": "hsk1-16",
+   "english": "(topic marker: as for...)",
+   "emoji": null,
+   "languages": [
+    "ko-KR",
+    "ja-JP"
+   ]
+  },
+  {
+   "id": "subject-marker",
+   "packId": "hsk1-16",
+   "english": "(subject marker)",
+   "emoji": null,
+   "languages": [
+    "ko-KR",
+    "ja-JP"
+   ]
+  },
+  {
+   "id": "object-marker",
+   "packId": "hsk1-16",
+   "english": "(object marker)",
+   "emoji": null,
+   "languages": [
+    "ko-KR",
+    "ja-JP"
+   ]
+  },
+  {
+   "id": "place-of-action",
+   "packId": "hsk1-16",
+   "english": "at, in (where something happens)",
+   "emoji": null,
+   "languages": [
+    "ko-KR",
+    "ja-JP"
+   ]
+  },
+  {
    "id": "older-brother",
    "packId": "hsk2-01",
    "english": "older brother",
