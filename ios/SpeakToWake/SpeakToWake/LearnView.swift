@@ -214,6 +214,10 @@ private struct SectionCard: View {
 /// The words in one section, and the buttons to study them.
 struct PackDetailView: View {
     let pack: Pack
+
+    init(pack: Pack) {
+        self.pack = pack
+    }
     private var library: ContentLibrary { AppContent.library }
     private var language: LanguageOption { LanguageOption.current }
 
