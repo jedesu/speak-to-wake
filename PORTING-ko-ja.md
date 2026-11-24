@@ -2,7 +2,13 @@
 
 Done on Windows (Nov 2026): the word lists and the logic, in Python, with tests.
 This file lists what the iOS app needs, in small steps. Build and run after each
-step, as usual. Nothing here has been compiled yet.
+step, as usual.
+
+**Status (Nov 24, 2026):** steps 0, 1, 2 and 5 are done and compile on GitHub's
+Macs (`.github/workflows/build.yml`), but haven't been run on a phone yet. Japanese
+quizzes show kana above kanji (the step 5 decision, easy to change in `WordText`).
+Korean and Japanese use tap quizzes only, through `ChallengePlanner.speechLanguages`,
+until step 4 (the matchers) is done. Steps 3, 4 and 6 are still to do.
 
 ## What exists now
 
