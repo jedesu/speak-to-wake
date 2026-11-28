@@ -1,4 +1,5 @@
 import SwiftUI
+import WakeCore
 
 /// Settings, opened from the gear icon on every tab. Soft Dawn cards, one per group.
 struct SettingsView: View {
@@ -14,6 +15,7 @@ struct SettingsView: View {
     @AppStorage(AppSettings.Key.language) private var languageCode = "zh-CN"
     @Environment(\.modelContext) private var modelContext
     @State private var demoLoaded = false
+    @State private var streakAdded = false
     @State private var showingPaywall = false
     @State private var confirmingStartOver = false
 
@@ -131,6 +133,15 @@ struct SettingsView: View {
                             rowText("Pro unlocked (for testing)", "Higher-level sections")
                         }
                         .tint(Theme.accent)
+                        divider
+                        Button {
+                            // A 7-day streak ending yesterday: earns one free-section token.
+                            for days in 1...FreePlan.streakForToken { AppSettings.recordWakeUp(on: Day.today - days) }
+                            streakAdded = true
+                        } label: {
+                            navRow(streakAdded ? "Added: 1 free section earned ✓" : "Add a 7-day wake-up streak", icon: "flame")
+                        }
+                        .buttonStyle(.plain)
                         divider
                         NavigationLink { SpeechCheckView().softDawnList() } label: { navRow("Speech check", icon: "waveform") }
                             .buttonStyle(.plain)

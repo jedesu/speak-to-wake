@@ -112,6 +112,7 @@ struct ChallengeView: View {
             Spacer()
         }
         .task {
+            AppSettings.recordWakeUp()  // counts toward the streak and free-section tokens
             await SyncService.shared.sync(modelContext)
             try? await Task.sleep(for: .seconds(1.5))
             AlarmController.shared.challengePassed()

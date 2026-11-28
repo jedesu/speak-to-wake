@@ -14,6 +14,11 @@ enum AppSettings {
         static let learnMode = "learnMode"
         static let demoMode = "demoMode"
         static let language = "language"
+        /// Days a wake-up challenge was passed, as `Day.ordinal`s (for streaks and tokens).
+        static let wakeDays = "wakeDays"
+        /// Pro sections unlocked with an earned token, comma-separated pack ids
+        /// (a string, so views can watch it with @AppStorage).
+        static let unlockedPacks = "unlockedPacks"
     }
 
     static func register() {
@@ -48,8 +53,40 @@ enum AppSettings {
     /// Signed in, or in demo mode: unlocks sections past the trial and the alarm's words.
     static var hasAccountAccess: Bool { AuthService.shared.isSignedIn || demoMode }
 
-    /// Whether a section can be studied: HSK 1 is free, higher levels are Pro.
+    /// Pro: every section and spaced repetition. For now the free trial button and
+    /// Settings > Developer turn it on; the App Store purchase will too.
+    static var isPro: Bool { proUnlocked }
+
+    /// Whether a section can be studied: level 1 is free, higher levels need Pro or a token.
     static func canOpen(_ pack: Pack) -> Bool {
-        pack.tier == .free || proUnlocked
+        FreePlan.canOpen(pack, isPro: isPro, unlockedPackIDs: unlockedPackIDs)
+    }
+
+    // MARK: Wake-up streak and section tokens (free plan)
+
+    static var wakeDays: Set<Day> {
+        Set((UserDefaults.standard.array(forKey: Key.wakeDays) as? [Int] ?? []).map(Day.init(ordinal:)))
+    }
+
+    static var unlockedPackIDs: Set<String> {
+        Set((UserDefaults.standard.string(forKey: Key.unlockedPacks) ?? "").split(separator: ",").map(String.init))
+    }
+
+    static var tokensLeft: Int {
+        FreePlan.tokensLeft(wakeDays: wakeDays, unlockedPackIDs: unlockedPackIDs)
+    }
+
+    /// Call when a wake-up challenge is passed (not the emergency exit).
+    static func recordWakeUp(on day: Day = .today) {
+        let days = wakeDays.union([day]).map(\.ordinal).sorted()
+        UserDefaults.standard.set(days, forKey: Key.wakeDays)
+    }
+
+    /// Spends a token on a Pro section. Returns false if there's no token left.
+    @discardableResult
+    static func unlockWithToken(_ pack: Pack) -> Bool {
+        guard tokensLeft > 0, !canOpen(pack) else { return false }
+        UserDefaults.standard.set(unlockedPackIDs.union([pack.id]).sorted().joined(separator: ","), forKey: Key.unlockedPacks)
+        return true
     }
 }

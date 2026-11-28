@@ -45,7 +45,10 @@ final class WakeSession {
         let pool = reviews.compactMap { library.word(id: $0.wordID) }
         self.required = min(required, max(pool.count, 1))
         self.pool = pool
-        let ids = SRS.pickForAlarm(reviews.map(\.card), today: .today, n: self.required, difficulty: difficulty)
+        // Pro: the words you're about to forget. Free: learned words at random.
+        let ids = AppSettings.isPro
+            ? SRS.pickForAlarm(reviews.map(\.card), today: .today, n: self.required, difficulty: difficulty)
+            : FreePlan.pickRandom(reviews.map(\.card), n: self.required, using: &rng)
         let words = ids.compactMap { library.word(id: $0) }
         planned = Array(zip(words, planner.plan(words, allowSpeech: allowSpeech, using: &rng)))
         advance()

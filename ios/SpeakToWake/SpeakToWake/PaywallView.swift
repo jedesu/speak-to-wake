@@ -50,7 +50,7 @@ struct PaywallView: View {
                     .foregroundStyle(Theme.link)
                     .frame(maxWidth: .infinity, minHeight: 44)
 
-                Text("Free keeps the speaking alarm, every challenge type and the starter sections. We'll remind you 2 days before the trial ends, and you can cancel in one tap. Payments aren't live in this test version, so no card is needed.")
+                Text("Free keeps the speaking alarm, every challenge type and the level 1 sections, and a 7-day wake-up streak still earns a free Pro section. We'll remind you 2 days before the trial ends, and you can cancel in one tap. Payments aren't live in this test version, so no card is needed.")
                     .font(.footnote)
                     .foregroundStyle(Theme.muted)
                     .multilineTextAlignment(.center)

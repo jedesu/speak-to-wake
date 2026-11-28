@@ -67,6 +67,9 @@ enum DemoData {
         }
         try? context.save()
 
+        // A 5-day wake-up streak (2 more earn a free section on the free plan).
+        for days in 1...5 { AppSettings.recordWakeUp(on: today - days) }
+
         // A real-looking weekday alarm.
         let alarms = (try? context.fetch(FetchDescriptor<AlarmConfig>())) ?? []
         if !alarms.contains(where: { $0.label == "Wake up early" }) {

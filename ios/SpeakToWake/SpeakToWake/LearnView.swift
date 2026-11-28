@@ -22,12 +22,14 @@ struct LearnView: View {
     @State private var choosingLanguage = false
     @AppStorage(AppSettings.Key.learnMode) private var mode = Mode.levels
     @AppStorage(AppSettings.Key.proUnlocked) private var proUnlocked = false
+    @AppStorage(AppSettings.Key.unlockedPacks) private var unlockedPacks = ""
 
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 14) {
                     header
+                    if !proUnlocked { FreePlanBanner() }
                     if !reviews.isEmpty { reviewCard }
                     Picker("Browse", selection: $mode) {
                         ForEach(Mode.allCases, id: \.self) { Text($0 == .levels ? language.levelsTitle : $0.rawValue).tag($0) }
@@ -120,15 +122,23 @@ struct LearnView: View {
     private func sectionCards(_ packs: [Pack], showLevel: Bool) -> some View {
         ForEach(packs) { pack in
             NavigationLink(value: pack) {
-                SectionCard(pack: pack, learned: isLearned(pack), locked: !AppSettings.canOpen(pack) && !proUnlocked,
-                            showLevel: showLevel)
+                SectionCard(pack: pack, learned: isLearned(pack), locked: isLocked(pack), showLevel: showLevel)
             }
             .buttonStyle(.plain)
         }
     }
 
+    private func isLocked(_ pack: Pack) -> Bool {
+        _ = (proUnlocked, unlockedPacks)  // redraw when Pro or a token unlock changes
+        return !AppSettings.canOpen(pack)
+    }
+
     private var reviewCard: some View {
         let due = Learning.dueCount(reviews)
+        // Free reviews pick learned words at random, so "due" only means something on Pro.
+        let detail = !proUnlocked ? "Practice \(min(reviews.count, Learning.reviewSessionSize)) of your words"
+            : due == 0 ? "Nothing due today. You can review early."
+            : "\(due) \(due == 1 ? "word" : "words") due today"
         return Button {
             reviewing = true
         } label: {
@@ -140,10 +150,9 @@ struct LearnView: View {
                     .background(Theme.accent, in: .rect(cornerRadius: 16))
                 VStack(alignment: .leading, spacing: 2) {
                     Text("Review").font(.headline)
-                    Text(due == 0 ? "Nothing due today. You can review early."
-                                  : "\(due) \(due == 1 ? "word" : "words") due today")
+                    Text(detail)
                         .font(.subheadline.bold())
-                        .foregroundStyle(due > Learning.overdueLimit ? Theme.accent : Theme.muted)
+                        .foregroundStyle(proUnlocked && due > Learning.overdueLimit ? Theme.accent : Theme.muted)
                 }
                 Spacer()
                 Image(systemName: "chevron.right").foregroundStyle(Theme.muted)
@@ -156,6 +165,50 @@ struct LearnView: View {
 
     private func isLearned(_ pack: Pack) -> Bool {
         progress.contains { $0.packID == pack.id && $0.language == library.language && $0.learnedAt != nil }
+    }
+}
+
+/// Free plan only: the wake-up streak and how close the next free section is.
+struct FreePlanBanner: View {
+    @AppStorage(AppSettings.Key.unlockedPacks) private var unlockedPacks = ""
+    @State private var showingPaywall = false
+
+    var body: some View {
+        let wakeDays = AppSettings.wakeDays
+        let streak = FreePlan.currentStreak(wakeDays: wakeDays, today: .today)
+        let tokens = (unlockedPacks, AppSettings.tokensLeft).1
+        let left = FreePlan.daysToNextToken(wakeDays: wakeDays, today: .today)
+        let done = FreePlan.streakForToken - left
+        Button { showingPaywall = true } label: {
+            HStack(spacing: 14) {
+                Image(systemName: tokens > 0 ? "ticket.fill" : "flame.fill")
+                    .font(.title2.bold())
+                    .foregroundStyle(.white)
+                    .frame(width: 52, height: 52)
+                    .background(Theme.link, in: .rect(cornerRadius: 16))
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(tokens > 0 ? "You have \(tokens) free \(tokens == 1 ? "section" : "sections") to unlock"
+                                    : "\(streak)-day wake-up streak")
+                        .font(.headline)
+                    if tokens > 0 {
+                        Text("Open any locked section and tap “Use a free section”.")
+                            .font(.subheadline).foregroundStyle(Theme.muted)
+                    } else {
+                        ProgressView(value: Double(done), total: Double(FreePlan.streakForToken)).tint(Theme.link)
+                        Text("\(left) more \(left == 1 ? "wake-up" : "wake-ups") to earn a free Pro section")
+                            .font(.subheadline).foregroundStyle(Theme.muted)
+                    }
+                }
+                Spacer(minLength: 0)
+            }
+            .padding(16)
+            .background(Theme.card, in: .rect(cornerRadius: 24))
+        }
+        .buttonStyle(.plain)
+        .accessibilityHint("Shows Mingo Pro")
+        .sheet(isPresented: $showingPaywall) {
+            PaywallView { showingPaywall = false }
+        }
     }
 }
 
@@ -241,14 +294,21 @@ struct PackDetailView: View {
     }
 
     @AppStorage(AppSettings.Key.proUnlocked) private var proUnlocked = false
+    @AppStorage(AppSettings.Key.unlockedPacks) private var unlockedPacks = ""
+    @State private var showingPaywall = false
+    @State private var confirmingToken = false
 
-    /// Why studying is blocked, if it is.
+    /// A Pro section, and the user has neither Pro nor a token spent on it.
+    private var locked: Bool {
+        _ = (proUnlocked, unlockedPacks)  // redraw when these change
+        return !AppSettings.canOpen(pack)
+    }
+
+    /// Why studying is blocked, if it is (other than the Pro lock, which has its own buttons).
     private var blockedReason: String? {
-        if !AppSettings.canOpen(pack) && !proUnlocked {
-            return "\(language.levelName(pack.hsk ?? 2)) is part of Mingo Pro, which isn't available yet."
-        }
+        // Pro's spaced repetition makes words "due"; free users' review is random, so no backlog rule.
         let due = Learning.dueCount(reviews)
-        if !learned && due > Learning.overdueLimit {
+        if proUnlocked && !learned && due > Learning.overdueLimit {
             return "You have \(due) words due. Do a Review first, so old words don't pile up."
         }
         return nil
@@ -306,6 +366,8 @@ struct PackDetailView: View {
                 Button { studying = true } label: { Label("Flashcards", systemImage: "rectangle.on.rectangle") }
                     .buttonStyle(ChipButtonStyle())
                     .frame(maxWidth: .infinity)
+            } else if locked {
+                proLock
             } else if needsSignIn && blockedReason == nil {
                 Button { signingIn = true } label: { Label("Sign in to keep learning", systemImage: "person.crop.circle") }
                     .buttonStyle(PrimaryButtonStyle())
@@ -325,6 +387,37 @@ struct PackDetailView: View {
             }
         }
         .card(padding: 20)
+        .sheet(isPresented: $showingPaywall) {
+            PaywallView { showingPaywall = false }
+        }
+    }
+
+    /// A Pro section on the free plan: go Pro, or spend an earned token.
+    @ViewBuilder
+    private var proLock: some View {
+        let tokens = AppSettings.tokensLeft
+        Label("\(language.levelName(pack.hsk ?? 2)) sections are part of Mingo Pro.", systemImage: "lock.fill")
+            .font(.subheadline.bold())
+            .foregroundStyle(Theme.muted)
+        Button { showingPaywall = true } label: { Label("Unlock with Pro", systemImage: "crown.fill") }
+            .buttonStyle(PrimaryButtonStyle())
+        if tokens > 0 {
+            Button { confirmingToken = true } label: {
+                Label("Use a free section (\(tokens) left)", systemImage: "ticket.fill")
+            }
+            .buttonStyle(ChipButtonStyle())
+            .frame(maxWidth: .infinity)
+            .confirmationDialog("Unlock \(pack.title) for good?", isPresented: $confirmingToken, titleVisibility: .visible) {
+                Button("Use 1 free section") { AppSettings.unlockWithToken(pack); unlockedPacks = AppSettings.unlockedPackIDs.sorted().joined(separator: ",") }
+            } message: {
+                Text("It stays unlocked in every language. You earn another by waking up \(FreePlan.streakForToken) days in a row.")
+            }
+        } else {
+            let left = FreePlan.daysToNextToken(wakeDays: AppSettings.wakeDays, today: .today)
+            Text("Or earn it free: pass your wake-up alarm \(FreePlan.streakForToken) days in a row. \(left) to go.")
+                .font(.subheadline)
+                .foregroundStyle(Theme.muted)
+        }
     }
 
     /// A one-line pronunciation tip under each section's words.
