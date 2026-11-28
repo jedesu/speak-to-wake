@@ -53,9 +53,9 @@ enum AppSettings {
     /// Signed in, or in demo mode: unlocks sections past the trial and the alarm's words.
     static var hasAccountAccess: Bool { AuthService.shared.isSignedIn || demoMode }
 
-    /// Pro: every section and spaced repetition. For now the free trial button and
-    /// Settings > Developer turn it on; the App Store purchase will too.
-    static var isPro: Bool { proUnlocked }
+    /// Pro: every section and spaced repetition. On with an active App Store
+    /// subscription (`Store`), or the Settings > Developer switch for testing.
+    static var isPro: Bool { proUnlocked || UserDefaults.standard.bool(forKey: Store.proKey) }
 
     /// Whether a section can be studied: level 1 is free, higher levels need Pro or a token.
     static func canOpen(_ pack: Pack) -> Bool {

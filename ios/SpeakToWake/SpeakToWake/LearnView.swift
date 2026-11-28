@@ -21,7 +21,9 @@ struct LearnView: View {
     @State private var reviewing = false
     @State private var choosingLanguage = false
     @AppStorage(AppSettings.Key.learnMode) private var mode = Mode.levels
-    @AppStorage(AppSettings.Key.proUnlocked) private var proUnlocked = false
+    @AppStorage(AppSettings.Key.proUnlocked) private var devPro = false  // Settings > Developer
+    @AppStorage(Store.proKey) private var storePro = false  // App Store subscription
+    private var proUnlocked: Bool { devPro || storePro }
     @AppStorage(AppSettings.Key.unlockedPacks) private var unlockedPacks = ""
 
     var body: some View {
@@ -293,7 +295,9 @@ struct PackDetailView: View {
         progress.contains { $0.packID == pack.id && $0.language == library.language && $0.learnedAt != nil }
     }
 
-    @AppStorage(AppSettings.Key.proUnlocked) private var proUnlocked = false
+    @AppStorage(AppSettings.Key.proUnlocked) private var devPro = false  // Settings > Developer
+    @AppStorage(Store.proKey) private var storePro = false  // App Store subscription
+    private var proUnlocked: Bool { devPro || storePro }
     @AppStorage(AppSettings.Key.unlockedPacks) private var unlockedPacks = ""
     @State private var showingPaywall = false
     @State private var confirmingToken = false

@@ -29,7 +29,8 @@ struct SettingsView: View {
 
                     group("Mingo Pro") {
                         Button { showingPaywall = true } label: {
-                            navRow(proUnlocked ? "Pro is on" : "Try Pro free for 7 days", icon: "crown")
+                            navRow(Store.shared.isPro ? "Pro is on · Manage" : proUnlocked ? "Pro is on (testing switch)"
+                                   : "Get Mingo Pro", icon: "crown")
                         }
                         .buttonStyle(.plain)
                         .sheet(isPresented: $showingPaywall) {
